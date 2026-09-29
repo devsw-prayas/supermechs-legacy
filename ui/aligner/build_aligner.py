@@ -56,14 +56,8 @@ for cat, pat in CATS.items():
         files["s/%s/%s.png" % (cat, f)] = os.path.relpath(p, ROOT)
     manifest[cat] = rows
 
-# reference: the game's own workshop screenshot; measured earlier at 0.596 native px per torso-PNG px
-k = 0.596
-ref = {"src": "s/ref/workshop.webp", "x": round(-(487 - 122 * k) / k, 1), "y": round(-(287 - 275 * k) / k, 1),
-       "s": round(1 / k, 3), "w": 1902}
-files["s/ref/workshop.webp"] = "ui/refs/workshop-item-info.webp"
-
 tpl = open(os.path.join(OUT, "aligner.template.html"), encoding="utf-8").read()
-html = tpl.replace("/*MANIFEST*/null", json.dumps(manifest, separators=(",", ":"))).replace("/*REFDEFAULT*/null", json.dumps(ref))
+html = tpl.replace("/*MANIFEST*/null", json.dumps(manifest, separators=(",", ":")))
 open(os.path.join(OUT, "index.html"), "w", encoding="utf-8").write(html)
 json.dump(files, open(os.path.join(OUT, "publish_files.json"), "w"), indent=1)
 print("sprites:", {c: len(r) for c, r in manifest.items()}, "files to publish:", len(files) + 1)
