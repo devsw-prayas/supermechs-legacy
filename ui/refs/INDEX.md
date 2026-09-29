@@ -76,3 +76,4 @@ Open question: meaning of the mech glyph + number on item tiles ("/50" looks lik
 
 ## Splash banner animation (from the user)
 All event splashes (Overkill, Ultrakill, Shutdown!, Overheat, Energy Break): the banner grows big and shakes. Stills of them show different points in the animation, so the banner size varies between screenshots. Shutdown! also jitters, rotating clockwise and anticlockwise.
+- battle-emp (seen in chat, no file): firing an EMP weapon on the clan boss. Label bar above the action bar reads "EMP" with the weapon slot outlined, two cyan energy blasts sweep in from both mechs and meet in the middle with electric arcs, the "Energy Break" splash shows with -342 floating (energy damage), the boss energy bar hits 0 / 300 while the player's energy drops to 114 / 519.
