@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Direction A — Workshop</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<style>
+:root{--ink:#0b1020;--blue:#1d4dff;--blue2:#0f36c9;--paper:#eceff4;--grid:#d6dbe6;--orange:#ff6a13;--yellow:#ffd400;--green:#1fae55;--red:#e5392a;--violet:#8a3ffc;--mute:#5a6480}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#0b1020;overflow:hidden}
+.stage{position:absolute;width:1600px;height:900px;transform-origin:0 0;overflow:hidden;background:var(--paper);
+ background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:50px 50px;
+ font-family:'Barlow',system-ui,sans-serif;color:var(--ink)}
+.disp{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-style:italic;font-weight:800;text-transform:uppercase;letter-spacing:.01em}
+.num{font-family:'JetBrains Mono',ui-monospace,monospace;font-weight:800}
+.mask{display:inline-block;background:currentColor;-webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat}
+.plate{background:#fff;border:4px solid var(--ink);box-shadow:7px 7px 0 var(--ink)}
+.skew{transform:skewX(-14deg)}
+.skew>.un{transform:skewX(14deg)}
+
+/* blue mech field on the left, paper on the right */
+.cut{position:absolute;inset:0;background:var(--blue);clip-path:polygon(0 0,900px 0,760px 900px,0 900px)}
+.cut::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.06) 0 2px,transparent 2px 26px)}
+.cut::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 0 60%,rgba(0,0,0,.2) 60.2% 62.6%,transparent 62.8%)}
+.bigword{position:absolute;left:150px;top:200px;font-size:250px;line-height:.8;color:transparent;-webkit-text-stroke:3px rgba(255,255,255,.28);pointer-events:none;white-space:nowrap}
+
+/* top bar */
+.top{position:absolute;left:36px;right:36px;top:26px;height:72px;display:flex;align-items:flex-start;gap:26px}
+.back{width:76px;height:70px;background:var(--ink);color:#fff;border:4px solid var(--ink);box-shadow:7px 7px 0 rgba(11,16,32,.35);display:flex;align-items:center;justify-content:center}
+.back .mask{width:34px;height:34px;transform:scaleX(-1)}
+.ttl{height:70px;padding:0 34px;display:flex;align-items:center;background:var(--yellow)}
+.ttl span{font-size:44px;line-height:1}
+.chips{margin-left:auto;display:flex;gap:22px}
+.chip{height:62px;display:flex;align-items:center;gap:12px;padding-left:16px;min-width:214px}
+.chip img{width:36px;height:36px;object-fit:contain}
+.chip b{font-size:30px;flex:1}
+.chip .plus{width:52px;align-self:stretch;background:var(--orange);color:#fff;display:flex;align-items:center;justify-content:center;font-size:38px;border-left:4px solid var(--ink)}
+
+/* left rail: slot filters */
+.rail{position:absolute;left:36px;top:132px;display:flex;flex-direction:column;gap:16px}
+.rb{width:96px;height:96px;background:#fff;display:flex;align-items:center;justify-content:center;position:relative}
+.rb .mask{width:48px;height:48px}
+.rb.on{background:var(--yellow)}
+.rb small{position:absolute;left:8px;bottom:5px;font-size:12px;font-style:italic;letter-spacing:.06em}
+
+/* mech + pad */
+.pad{position:absolute;left:210px;top:630px;width:560px;height:52px;background:repeating-linear-gradient(-55deg,var(--yellow) 0 20px,var(--ink) 20px 40px);border:4px solid var(--ink);transform:skewX(-30deg);box-shadow:8px 10px 0 var(--ink)}
+.pad::after{content:"";position:absolute;left:0;right:0;top:0;height:14px;background:var(--ink)}
+#mech{position:absolute;left:250px;top:120px;filter:drop-shadow(10px 12px 0 rgba(11,16,32,.28))}
+.arrow{position:absolute;top:360px;width:64px;height:88px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:38px}
+.mechname{position:absolute;left:170px;top:112px;color:#fff}
+.mechname small{display:block;font:700 15px 'Barlow';letter-spacing:.3em;opacity:.85}
+.mechname b{font-size:50px;line-height:1}
+
+/* weight + equipped */
+.weight{position:absolute;left:196px;top:704px;width:420px;height:62px;padding:0 22px 0 0;display:flex;align-items:center}
+.weight .tag{width:84px;align-self:stretch;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px}
+.weight .bar{flex:1;margin:0 16px;height:20px;border:3px solid var(--ink);background:#fff;position:relative}
+.weight .bar i{position:absolute;left:0;top:0;bottom:0;background:var(--blue)}
+.weight .bar i::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 9px,rgba(255,255,255,.55) 9px 11px)}
+.weight b{font-size:24px}
+.eq{position:absolute;top:800px;display:flex;gap:16px;left:210px}
+.team{position:absolute;left:214px;top:790px;display:flex;gap:16px}
+.tab{width:84px;height:66px;background:#fff;overflow:hidden;position:relative}
+.tab.on{background:var(--yellow)}
+.tab em{position:absolute;left:6px;top:0;font-size:20px}
+.tab .w{position:absolute;left:50%;top:6px;transform:translateX(-50%)}
+
+/* tiles */
+.tile{width:88px;height:88px;background:#fff;position:relative;border-color:var(--ink)}
+.tile>.un{position:absolute;inset:0}
+.tile .art{position:absolute;inset:6px 4px 20px;display:flex;align-items:center;justify-content:center}
+.tile .art img{max-width:100%;max-height:100%;object-fit:contain}
+.tile .lv{position:absolute;right:0;bottom:0;padding:1px 8px 0;background:var(--ink);color:#fff;font-size:16px}
+.tile .pos{position:absolute;left:0;bottom:0;padding:1px 8px 0;background:var(--yellow);color:var(--ink);font-size:16px}
+.tile.max .lv{background:var(--orange)}
+.tile.sel{background:var(--yellow)}
+
+/* item card */
+.card{position:absolute;left:800px;top:120px;width:716px;height:330px;padding:16px 60px 14px 26px}
+.card h2{font-size:46px;line-height:1}
+.card .sub{display:flex;align-items:center;gap:14px;margin-top:6px;font-weight:700;font-size:17px;color:var(--mute)}
+.dots{display:flex;gap:7px}
+.dots i{width:16px;height:16px;border-radius:50%;border:3px solid var(--ink);background:#fff}
+.dots i.a{background:var(--violet)} .dots i.b{background:var(--orange)} .dots i.c{background:var(--red)} .dots i.d{background:var(--ink)}
+.pill{display:inline-block;background:var(--orange);color:#fff;padding:2px 12px;font-size:20px;margin-top:8px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:6px 30px;margin-top:12px}
+.st{display:flex;align-items:center;gap:10px;height:34px;border-bottom:3px solid var(--grid)}
+.st .mask{width:24px;height:24px;color:var(--ink)}
+.st span{font-size:17px;font-weight:600;color:var(--mute);flex:1}
+.st b{font-size:22px}
+.st.up b{color:var(--green)}
+.upgrade{position:absolute;right:-16px;top:-16px;width:88px;height:88px;background:var(--orange);display:flex;align-items:center;justify-content:center;color:#fff}
+.upgrade .mask{width:44px;height:44px}
+
+/* inventory */
+.inv{position:absolute;left:776px;top:478px;width:736px;height:392px;padding:14px 18px 14px 26px;display:flex;gap:18px}
+.grid{display:grid;grid-template-columns:repeat(6,88px);grid-auto-rows:88px;gap:14px;align-content:start;margin-top:26px}
+.scroll{width:38px;display:flex;flex-direction:column;gap:8px;align-items:center}
+.scroll b{width:34px;height:34px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px}
+.scroll i{flex:1;width:14px;background:var(--grid);border:3px solid var(--ink);position:relative}
+.scroll i::after{content:"";position:absolute;left:0;right:0;top:8%;height:34%;background:var(--blue)}
+.filter{position:absolute;left:0;top:-4px;padding:2px 16px;font-size:20px;background:var(--yellow)}
+</style></head>
+<body>
+<div class="stage">
+  <div class="cut"></div>
+  <div class="bigword disp">Build</div>
+
+  <div class="top">
+    <div class="back skew"><i class="mask un" style="--i:url(assets/icons/interface_battle_singlePlayer.png);display:none"></i><div class="un" style="font-size:40px;font-weight:900;line-height:1">&#9664;</div></div>
+    <div class="ttl plate skew"><span class="disp un">Workshop</span></div>
+    <div class="chips">
+      <div class="chip plate skew"><div class="un" style="display:flex;align-items:center;gap:12px;width:100%"><img src="assets/icons/icon_gold.png" alt=""><b class="num">23,390</b></div><div class="plus"><span class="un">+</span></div></div>
+      <div class="chip plate skew"><div class="un" style="display:flex;align-items:center;gap:12px;width:100%"><img src="assets/icons/interface_gift.png" alt="" style="filter:invert(1)"><b class="num">14</b></div><div class="plus"><span class="un">+</span></div></div>
+    </div>
+  </div>
+
+  <div class="rail">
+    <div class="rb plate skew on"><i class="mask un" style="--i:url(assets/icons/interface_mech.png)"></i><small class="disp un">Mech</small></div>
+    <div class="rb plate skew"><i class="mask un" style="--i:url(assets/icons/action_movement.png)"></i><small class="disp un">Legs</small></div>
+    <div class="rb plate skew"><i class="mask un" style="--i:url(assets/icons/icon_damage.png)"></i><small class="disp un">Guns</small></div>
+    <div class="rb plate skew"><i class="mask un" style="--i:url(assets/icons/icon_energy.png)"></i><small class="disp un">Mods</small></div>
+    <div class="rb plate skew"><i class="mask un" style="--i:url(assets/icons/action_charge.png)"></i><small class="disp un">Extras</small></div>
+  </div>
+
+  <div class="mechname disp"><small>TEAM 1 · SLOT 3</small><b>Nemesis</b></div>
+  <div class="pad"></div>
+  <div id="mech"></div>
+  <div class="arrow plate skew" style="left:168px"><span class="un disp">&#9664;</span></div>
+  <div class="arrow plate skew" style="left:650px"><span class="un disp">&#9654;</span></div>
+
+  <div class="weight plate skew"><div class="tag disp un" style="transform:none;font-size:22px;padding:0">KG</div><div class="bar"><i style="width:99.2%"></i></div><b class="num un">992 / 1000</b></div>
+  <div class="team">
+    <div class="tab plate skew on"><em class="disp un">1</em><div class="w un" id="t1"></div></div>
+    <div class="tab plate skew"><em class="disp un">2</em><div class="w un" id="t2"></div></div>
+    <div class="tab plate skew"><em class="disp un">3</em><div class="w un" id="t3"></div></div>
+  </div>
+
+  <div class="card plate skew"><div class="un" style="position:relative;height:100%">
+    <h2 class="disp">Brutality</h2>
+    <div class="sub"><span class="disp" style="font-size:19px;color:var(--ink)">Transform range</span><div class="dots"><i class="a"></i><i class="b"></i><i class="c"></i><i class="d"></i></div></div>
+    <span class="pill disp">Power level: Maxed</span>
+    <div class="stats">
+      <div class="st"><i class="mask" style="--i:url(assets/icons/icon_power.png)"></i><span>Weight</span><b class="num">341</b></div>
+      <div class="st"><i class="mask" style="--i:url(assets/icons/icon_HP.png)"></i><span>Hit points</span><b class="num">1,070</b></div>
+      <div class="st"><i class="mask" style="--i:url(assets/icons/icon_energy.png)"></i><span>Energy</span><b class="num">225</b></div>
+      <div class="st"><i class="mask" style="--i:url(assets/icons/icon_energyRegeneration.png)"></i><span>Regeneration</span><b class="num">64</b></div>
+      <div class="st"><i class="mask" style="--i:url(assets/icons/icon_heat.png)"></i><span>Heat</span><b class="num">298</b></div>
+      <div class="st"><i class="mask" style="--i:url(assets/icons/icon_heatCooling.png)"></i><span>Cooling</span><b class="num">88</b></div>
+      <div class="st"><i class="mask" style="--i:url(assets/icons/icon_resist_physical.png)"></i><span>Phys resist</span><b class="num">22</b></div>
+      <div class="st"><i class="mask" style="--i:url(assets/icons/icon_resist_explosive.png)"></i><span>Exp resist</span><b class="num">16</b></div>
+    </div>
+    <div class="upgrade"><i class="mask" style="--i:url(assets/icons/interface_fusion.png)"></i></div>
+  </div></div>
+
+  <div class="inv plate skew"><div class="un" style="display:flex;gap:18px;width:100%;position:relative">
+    <div class="filter plate disp">All items</div>
+    <div class="grid" id="grid"></div>
+    <div class="scroll"><b>&#9650;</b><i></i><b>&#9660;</b></div>
+  </div></div>
+</div>
+<script src="assets/mech.js"></script>
+<script>
+fitStage();
+function place(id,key,h){const w=document.getElementById(id);const i=document.createElement('div');buildMech(i,key,h);w.appendChild(i);w.style.width=i.dataset.w+'px';w.style.height=i.dataset.h+'px';}
+place('mech','target',480);
+place('t1','target',56);place('t2','m2',56);place('t3','m3',56);
+const T=[['torso52','max','3',1,'#ff6a13'],['topMachineGun1B_heat','40','1',0],['topLaser2C_phys','24','2',0],['sideDistanceCloser1E','20','1',0],['leg73D_phys','1','3',0],['cannon3C','1','',0],
+ ['sideSuperRocketLauncher2D','1','',0],['topBlaster3E','1','',0],['leg76E_elec','1','',0],['sideRifle1E','1','',0],['topBeam2E_phys','1','',0],['cannon1A_elec','1','',0],
+ ['rocketLauncher22A_phys','1','',0],['leg67D_phys','1','',0],['sideRifle2E','1','',0],['topLaser2B_phys','1','',0],['sideMegaBlaster1E','1','',0],['cannon8C2','1','',0]];
+const g=document.getElementById('grid');
+T.forEach((t,i)=>{const d=document.createElement('div');d.className='tile plate skew'+(i===0?' sel':'')+(t[1]==='max'?' max':'');
+ d.innerHTML='<div class="un"><div class="art"><img src="assets/mechs/'+t[0]+'.png" alt=""></div>'+(t[2]?'<span class="pos disp">'+t[2]+'</span>':'')+'<span class="lv num">'+(t[1]==='max'?'MAX':t[1])+'</span></div>';
+ g.appendChild(d);});
+</script>
+</body></html>
