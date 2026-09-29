@@ -284,6 +284,16 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
 .slot:nth-child(1),.slot:nth-child(6){height:172px!important}
 .slot:nth-child(1) .mask,.slot:nth-child(6) .mask{width:70px!important;height:70px!important}
 .slot:nth-child(1) span,.slot:nth-child(6) span{font-size:24px!important}
+
+/* seams v2: one slope (1:4) on every diagonal, face cut 7px inside the frame so the rim is even */
+.slot:nth-child(1){clip-path:polygon(0 0,calc(100% - 43px) 0,100% 100%,0 100%)!important}
+.slot:nth-child(1)>.fc{clip-path:polygon(0 0,calc(100% - 42.5px) 0,calc(100% - 9.5px) 100%,0 100%)!important;padding-right:40px!important}
+.slot:nth-child(2){clip-path:polygon(0 0,100% 0,100% 100%,34.5px 100%)!important;margin-left:-32.5px!important}
+.slot:nth-child(2)>.fc{clip-path:polygon(9.5px 0,100% 0,100% 100%,41px 100%)!important;padding-left:40px!important}
+.slot:nth-child(5){clip-path:polygon(0 0,100% 0,calc(100% - 34.5px) 100%,0 100%)!important}
+.slot:nth-child(5)>.fc{clip-path:polygon(0 0,calc(100% - 9.5px) 0,calc(100% - 41px) 100%,0 100%)!important;padding-right:40px!important}
+.slot:nth-child(6){clip-path:polygon(43px 0,100% 0,100% 100%,0 100%)!important;margin-left:-32.5px!important}
+.slot:nth-child(6)>.fc{clip-path:polygon(42.5px 0,100% 0,100% 100%,9.5px 100%)!important;padding-left:40px!important}
 </style></head>
 <body>
 <div class="stage">
