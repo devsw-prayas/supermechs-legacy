@@ -58,6 +58,44 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
 .gear .mask{width:30px;height:30px}
 .dot{position:absolute;z-index:3;width:10px;height:10px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 3px var(--ink),0 0 10px var(--amber)}
 
+
+/* ---- tasks: button + checklist drawer ---- */
+.tasksBtn{left:34px;top:124px;width:236px;height:66px;cursor:pointer;z-index:11}
+.tasksBtn .in{display:flex;align-items:center;gap:14px;padding:0 16px}
+.tasksBtn .ico{width:30px;height:30px;position:relative;flex:none}
+.tasksBtn .ico i{position:absolute;left:11px;width:19px;height:6px;background:#cbd6e4}
+.tasksBtn .ico b{position:absolute;left:0;width:7px;height:7px;background:#5b6a80}
+.tasksBtn .ico b:first-of-type{background:var(--green)}
+.tasksBtn .ico :nth-child(1),.tasksBtn .ico :nth-child(2){top:1px}.tasksBtn .ico :nth-child(3),.tasksBtn .ico :nth-child(4){top:12px}.tasksBtn .ico :nth-child(5),.tasksBtn .ico :nth-child(6){top:23px}
+.tasksBtn .t{font:800 24px var(--f-head);letter-spacing:.06em;flex:1}
+.tasksBtn .cnt{min-width:34px;height:30px;padding:0 8px;background:var(--amber);color:#1d0e00;font:800 18px var(--f-num);display:flex;align-items:center;justify-content:center;clip-path:polygon(6px 0,100% 0,100% calc(100% - 6px),calc(100% - 6px) 100%,0 100%,0 6px)}
+.tasksBtn.open .in{background:linear-gradient(180deg,#3a4556,#2e3746)}
+.veil{position:absolute;inset:0;z-index:9;background:rgba(3,5,8,.55);display:none}
+.drawer{left:34px;top:204px;width:470px;height:auto;display:none;z-index:10}
+.drawer>.in{height:auto}
+.stage.tasks-open .veil,.stage.tasks-open .drawer{display:block}
+.drawer .in{padding:18px 22px 16px 24px}
+.dh{display:flex;align-items:center;justify-content:space-between;padding-bottom:10px;border-bottom:3px solid var(--ink);margin-bottom:4px}
+.dh .head{font-size:24px;font-weight:800}
+.dh .lbl{font-size:11px;color:var(--mute)}
+.x{width:34px;height:34px;background:#141a22;position:relative;clip-path:polygon(7px 0,100% 0,100% calc(100% - 7px),calc(100% - 7px) 100%,0 100%,0 7px);cursor:pointer}
+.x::before,.x::after{content:"";position:absolute;left:50%;top:50%;width:18px;height:4px;background:#cbd6e4;transform:translate(-50%,-50%) rotate(45deg)}
+.x::after{transform:translate(-50%,-50%) rotate(-45deg)}
+.task{display:grid;grid-template-columns:34px 1fr auto;gap:4px 14px;align-items:center;padding:12px 0;border-bottom:2px solid #1b2330}
+.task:last-child{border-bottom:0}
+.box{width:30px;height:30px;grid-row:span 2;background:#0b0f15;box-shadow:inset 0 0 0 3px var(--ink),inset 0 0 0 5px #3a4a60;position:relative;clip-path:polygon(6px 0,100% 0,100% calc(100% - 6px),calc(100% - 6px) 100%,0 100%,0 6px)}
+.task.done .box{background:var(--green);box-shadow:inset 0 0 0 3px var(--ink)}
+.task.done .box::after{content:"";position:absolute;left:9px;top:5px;width:8px;height:14px;border:solid var(--ink);border-width:0 4px 4px 0;transform:rotate(45deg)}
+.task .t{font-size:18px;font-weight:600;letter-spacing:.02em}
+.task.done .t{color:var(--mute)}
+.task .v{font-size:13px;color:var(--mute)}
+.task .seg{grid-column:2 / 3;height:8px;border-width:1px}
+.task .seg::after{background:repeating-linear-gradient(90deg,transparent 0 5px,rgba(0,0,0,.6) 5px 7px)}
+.task.done .seg i{background:var(--green)}
+.claimBtn{grid-row:span 2;align-self:center;height:36px;padding:0 16px;background:var(--green);color:#04170b;font:800 15px var(--f-head);letter-spacing:.08em;display:flex;align-items:center;clip-path:polygon(7px 0,100% 0,100% calc(100% - 7px),calc(100% - 7px) 100%,0 100%,0 7px)}
+.rew{grid-row:span 2;display:flex;align-items:center;gap:6px;font-size:14px;color:var(--mute)}
+.rew svg{width:18px;height:18px}
+
 /* ---- side panels ---- */
 .ops{left:34px;top:124px;width:410px;height:252px}
 .ops .in,.unit .in{padding:16px 22px 14px 24px}
@@ -202,13 +240,18 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
   <div class="plate chip" style="left:1246px"><div class="in"><svg viewBox="0 0 34 34"><path d="M11 3h12l8 8v12l-8 8H11l-8-8V11z" fill="#c2261a" stroke="#3a0a04" stroke-width="2"/><path d="M11 11h12v4h-4v10h-4V15h-4z" fill="#ffe6df"/></svg><b class="num">14</b><div class="add" aria-label="Add"></div></div></div>
   <div class="plate gear"><div class="in"><i class="mask" style="--i:url(assets/icons/interface_options.png)"></i></div><div class="dot" style="right:6px;top:-6px"></div></div>
 
-  <!-- operations -->
-  <div class="plate ops"><div class="in">
-    <div class="ph"><span class="head">Operations</span><span class="lbl">1 ready</span></div>
-    <div class="q"><div class="st"></div><span class="t">Boost 15 items</span><span class="v num">6/15</span><div class="seg"><i style="width:40%"></i></div></div>
-    <div class="q claim"><div class="st done"></div><span class="t">Clear 3 campaign missions</span><span class="v lbl">Claim</span><div class="seg"><i style="width:100%"></i></div></div>
-    <div class="q"><div class="st"></div><span class="t">Field a 2,000 HP mech</span><span class="v num">1,778</span><div class="seg"><i style="width:88.9%"></i></div></div>
-  </div><div class="notch"></div></div>
+
+  <!-- tasks -->
+  <div class="plate tasksBtn" id="tasksBtn"><div class="in"><div class="ico"><b></b><i></i><b></b><i></i><b></b><i></i></div><span class="t">TASKS</span><span class="cnt">1</span></div><div class="notch"></div></div>
+  <div class="veil" id="veil"></div>
+  <div class="plate drawer" id="drawer"><div class="in">
+    <div class="dh"><div><div class="head">Tasks</div><div class="lbl">Daily · resets in 14:22:05</div></div><div class="x" id="closeTasks"></div></div>
+    <div class="task done"><div class="box"></div><span class="t">Clear 3 campaign missions</span><div class="claimBtn">Claim</div><span class="v num">3 / 3</span><div class="seg"><i style="width:100%"></i></div></div>
+    <div class="task"><div class="box"></div><span class="t">Boost 15 items</span><div class="rew"><svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="15" fill="#6a4004"/><circle cx="17" cy="17" r="12.5" fill="#f2b233"/></svg><span class="num">1,800</span></div><span class="v num">6 / 15</span><div class="seg"><i style="width:40%"></i></div></div>
+    <div class="task"><div class="box"></div><span class="t">Field a 2,000 HP mech</span><div class="rew"><svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="15" fill="#6a4004"/><circle cx="17" cy="17" r="12.5" fill="#f2b233"/></svg><span class="num">3,000</span></div><span class="v num">1,778</span><div class="seg"><i style="width:89%"></i></div></div>
+    <div class="task"><div class="box"></div><span class="t">Destroy 20 structures</span><div class="rew"><svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="15" fill="#6a4004"/><circle cx="17" cy="17" r="12.5" fill="#f2b233"/></svg><span class="num">1,200</span></div><span class="v num">12 / 20</span><div class="seg"><i style="width:60%"></i></div></div>
+    <div class="task"><div class="box"></div><span class="t">Win a battle without shutdown</span><div class="rew"><svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="15" fill="#6a4004"/><circle cx="17" cy="17" r="12.5" fill="#f2b233"/></svg><span class="num">2,000</span></div><span class="v num">0 / 1</span><div class="seg"><i style="width:0%"></i></div></div>
+  </div></div>
 
   <!-- unit -->
   <div class="plate unit"><div class="in">
@@ -333,5 +376,13 @@ function frame(){ fx.clearRect(0,0,1600,900); for(const p of motes){ if(!reduce)
   fx.fillStyle=`rgba(255,236,200,${p.a})`; fx.beginPath(); fx.arc(p.x,p.y,p.r,0,7); fx.fill(); } if(!reduce) requestAnimationFrame(frame); }
 frame();
 if(!reduce){ let o=0; const sc=document.getElementById('scan'); (function spin(){ o-=.6; sc.setAttribute('stroke-dashoffset',o); requestAnimationFrame(spin); })(); }
+
+/* tasks drawer: click to open; #tasks in the URL opens it */
+{ const st=document.querySelector('.stage'), b=document.getElementById('tasksBtn');
+  const set=o=>{st.classList.toggle('tasks-open',o); b.classList.toggle('open',o);};
+  b.onclick=()=>set(!st.classList.contains('tasks-open'));
+  document.getElementById('closeTasks').onclick=()=>set(false);
+  document.getElementById('veil').onclick=()=>set(false);
+  const fromHash=()=>set(location.hash==='#tasks'); addEventListener('hashchange',fromHash); fromHash(); }
 </script>
 </body></html>
