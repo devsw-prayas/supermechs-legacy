@@ -91,7 +91,8 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
 .tm.on span{color:var(--amber)}
 
 /* ---- mech ---- */
-#mech{position:absolute;z-index:5;filter:drop-shadow(0 18px 18px rgba(0,0,0,.7))}
+#mech{position:absolute;z-index:5;filter:brightness(.84) contrast(1.06) saturate(.85) drop-shadow(2px 0 0 #05080c) drop-shadow(-2px 0 0 #05080c) drop-shadow(0 2px 0 #05080c) drop-shadow(0 -2px 0 #05080c) drop-shadow(0 -2px 0 rgba(255,214,160,.35)) drop-shadow(0 16px 14px rgba(0,0,0,.55))}
+#shade{position:absolute;z-index:6;pointer-events:none;mix-blend-mode:multiply;opacity:.42}
 #refl{position:absolute;z-index:3;transform:scaleY(-1);opacity:.2;filter:blur(1.5px) saturate(.7);-webkit-mask:linear-gradient(0deg,#000,transparent 55%);mask:linear-gradient(0deg,#000,transparent 55%)}
 #ped{position:absolute;left:0;top:0;z-index:4;pointer-events:none}
 #side1,#side2{position:absolute;z-index:2;filter:brightness(.2) contrast(1.15) saturate(.4) drop-shadow(0 0 1.5px rgba(95,212,255,.45)) drop-shadow(0 0 18px rgba(0,0,0,.9))}
@@ -141,6 +142,7 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
     <path d="M984.8 725.4 L876.5 744.3 L723.5 744.3 L615.2 725.4 L615.2 698.6 L723.5 679.7 L876.5 679.7 L984.8 698.6 Z" fill="url(#hex)" stroke="#05080c" stroke-width="3"/>
     <path d="M938.6 721.9 L857.4 736.0 L742.6 736.0 L661.4 721.9 L661.4 702.1 L742.6 688.0 L857.4 688.0 L938.6 702.1 Z" fill="none" stroke="#ffae2b" stroke-width="4"/>
     <path d="M944.1 722.5 L859.7 737.4 L740.3 737.4 L655.9 722.5 L655.9 701.5 L740.3 686.6 L859.7 686.6 L944.1 701.5 Z" fill="none" stroke="#05080c" stroke-width="2"/>
+    <ellipse id="contact" cx="818" cy="716" rx="150" ry="15" fill="#000" opacity=".5"/>
     <rect x="1010.9" y="724.2" width="9" height="6" fill="#56697f" stroke="#05080c" stroke-width="2"/>
     <rect x="884.7" y="745.6" width="9" height="6" fill="#56697f" stroke="#05080c" stroke-width="2"/>
     <rect x="706.3" y="745.6" width="9" height="6" fill="#56697f" stroke="#05080c" stroke-width="2"/>
@@ -151,6 +153,7 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
     <rect x="1010.9" y="693.8" width="9" height="6" fill="#56697f" stroke="#05080c" stroke-width="2"/>
   </svg>
   <div id="mech"></div>
+  <div id="shade"></div>
   <canvas id="fx" width="1600" height="900"></canvas>
 
   <!-- HUD -->
@@ -180,7 +183,7 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
   </div><div class="notch"></div></div>
 
   <!-- dock -->
-  <div class="foot lbl">Bay 07 · Night shift</div>
+  
   <div class="plate nb" style="left:34px"><div class="in"><i class="mask" style="--i:url(assets/icons/interface_hanger.png)"></i><span class="lbl">Workshop</span></div><div class="dot"></div></div>
   <div class="plate nb" style="left:166px"><div class="in"><i class="mask" style="--i:url(assets/icons/interface_fusion.png)"></i><span class="lbl">Upgrade</span></div></div>
   <div class="plate nb" style="left:298px"><div class="in"><i class="mask" style="--i:url(assets/icons/interface_mech.png)"></i><span class="lbl">Teams</span></div></div>
@@ -208,13 +211,6 @@ g.fillStyle='#080b10'; g.fillRect(0,0,1600,900);
 // wall panels (three rows), flat chamfered plates
 const rows=[[62,190],[256,212],[472,178]];
 for(const [y,h] of rows){ for(let x=-40;x<1600;x+=156){ block(x+3,y+3,150,h-6,14,'#1d2530','#161c25'); bolt(x+18,y+18); bolt(x+140,y+h-18); } }
-
-// high windows
-for(const x of [96,1224]){ block(x-8,102,296,136,16,'#1a212b','#10151c');
-  cham(x,110,280,120,10); g.fillStyle=lin(0,110,0,230,[[0,'#35607f'],[1,'#1b3650']]); g.fill();
-  g.fillStyle=OUT; for(let i=1;i<4;i++) g.fillRect(x+i*70-3,110,6,120); g.fillRect(x,168,280,6);
-  g.fillStyle='rgba(180,220,255,.18)'; g.beginPath(); g.moveTo(x+14,116); g.lineTo(x+60,116); g.lineTo(x+22,160); g.lineTo(x+14,160); g.fill();
-  g.lineWidth=4; g.strokeStyle=OUT; cham(x,110,280,120,10); g.stroke(); }
 
 // pipes: flat two-tone cylinders with fat outline and bracket blocks
 function pipe(x0,x1,y,r){ g.fillStyle='#2a3544'; g.fillRect(x0,y-r,x1-x0,2*r); g.fillStyle='#46566b'; g.fillRect(x0,y-r,x1-x0,r*.7); g.fillStyle='#1a222c'; g.fillRect(x0,y+r*.35,x1-x0,r*.65);
@@ -261,15 +257,11 @@ g.fillStyle=OUT; g.fillRect(0,656,1600,8);
 // painted bay lines, flat
 g.fillStyle='rgba(232,178,26,.75)';
 for(const [x0,x1] of [[472,300],[1128,1300]]){ g.beginPath(); g.moveTo(x0-5,666); g.lineTo(x0+5,666); g.lineTo(x1+(x1>800?9:9),900); g.lineTo(x1-9,900); g.fill(); }
-g.save(); g.globalAlpha=.35; g.fillStyle='#e8b21a'; g.font='800 70px "Oxanium"'; g.textAlign='center'; g.setTransform(2,0,0,2*.42,0,0); g.fillText('07',800,2060); g.restore(); g.setTransform(2,0,0,2,0,0);
 
 // light: crisp spot cone and window beams (lightly softened), warm pool under pedestal
 g.save(); g.globalCompositeOperation='lighter'; g.filter='blur(3px)';
 g.fillStyle=lin(0,52,0,760,[[0,'rgba(255,236,200,.26)'],[.7,'rgba(255,226,180,.07)'],[1,'rgba(255,220,170,0)']]);
 g.beginPath(); g.moveTo(748,52); g.lineTo(852,52); g.lineTo(1070,760); g.lineTo(530,760); g.fill();
-g.fillStyle=lin(0,230,0,700,[[0,'rgba(120,180,240,.12)'],[1,'rgba(120,180,240,0)']]);
-g.beginPath(); g.moveTo(120,230); g.lineTo(360,230); g.lineTo(640,720); g.lineTo(430,720); g.fill();
-g.beginPath(); g.moveTo(1240,230); g.lineTo(1480,230); g.lineTo(1170,720); g.lineTo(960,720); g.fill();
 g.filter='blur(26px)'; g.fillStyle='rgba(255,170,70,.30)'; g.beginPath(); g.ellipse(800,730,300,40,0,0,7); g.fill();
 g.restore();
 // side bay pads: flat outlined discs
@@ -284,6 +276,12 @@ let seed=7; const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
 function place(id,key,h,left,top){const w=document.getElementById(id);const i=document.createElement('div');buildMech(i,key,h);w.appendChild(i);w.style.width=i.dataset.w+'px';w.style.height=i.dataset.h+'px';if(left!=null){w.style.left=left+'px';w.style.top=top+'px';}return w;}
 const H=520, m=window.MECHS.target, W=m.w*H/m.h, L=800-W/2, T=716-H;
 place('mech','target',H,L,T); place('refl','target',H,L,716-6);
+{ const sh=document.getElementById('shade'); sh.style.left=L+'px'; sh.style.top=T+'px'; sh.style.width=W+'px'; sh.style.height=H+'px';
+  const src=[...document.querySelectorAll('#mech img')];
+  /* a mech-shaped mask: stack the same parts, then paint a gradient through it */
+  const holder=document.createElement('div'); buildMech(holder,'target',H); sh.appendChild(holder);
+  holder.querySelectorAll('img').forEach(i=>{i.style.filter='brightness(0) invert(1)';});
+  const grad=document.createElement('div'); grad.style.cssText='position:absolute;inset:0;mix-blend-mode:multiply;background:linear-gradient(180deg,rgba(255,236,210,1) 0%,rgba(150,175,215,1) 55%,rgba(70,90,130,1) 100%)'; sh.appendChild(grad); sh.style.isolation='isolate'; }
 place('side1','m2',250,160,452); place('side2','m3',230,1290,470);
 place('t1','target',48);place('t2','m2',48);place('t3','m3',48);
 
