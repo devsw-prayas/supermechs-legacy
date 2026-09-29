@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Direction A — Blueprint</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<style>
+:root{--ink:#0b1020;--blue:#1d4dff;--blue2:#0f36c9;--paper:#eceff4;--grid:#d6dbe6;--orange:#ff6a13;--yellow:#ffd400;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#0b1020;overflow:hidden}
+.stage{position:absolute;width:1600px;height:900px;transform-origin:0 0;overflow:hidden;background:var(--paper);
+ background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:50px 50px;
+ font-family:'Barlow',system-ui,sans-serif;color:var(--ink)}
+.disp{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-style:italic;font-weight:800;text-transform:uppercase;letter-spacing:.01em}
+.num{font-family:'JetBrains Mono',ui-monospace,monospace;font-weight:800}
+
+/* diagonal blue field */
+.cut{position:absolute;inset:0;background:var(--blue);clip-path:polygon(880px 0,1600px 0,1600px 900px,640px 900px);}
+.cut::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.06) 0 2px,transparent 2px 26px)}
+.cut::after{content:"";position:absolute;left:0;top:0;width:100%;height:100%;background:linear-gradient(115deg,transparent 0 49%,rgba(0,0,0,.18) 49.2% 52%,transparent 52.2%)}
+.bigword{position:absolute;left:700px;top:120px;font-size:280px;line-height:.8;color:transparent;-webkit-text-stroke:3px rgba(255,255,255,.32);pointer-events:none;white-space:nowrap}
+.edge{position:absolute;left:0;top:0;width:1600px;height:900px;pointer-events:none}
+
+/* plates */
+.plate{background:#fff;border:4px solid var(--ink);box-shadow:7px 7px 0 var(--ink)}
+.skew{transform:skewX(-14deg)}
+.skew>.un{transform:skewX(14deg)}
+
+/* HUD */
+.hud{position:absolute;left:36px;top:28px;right:36px;height:74px;display:flex;justify-content:space-between;align-items:flex-start}
+.lvl{display:flex;align-items:stretch;height:70px}
+.lvl .tag{background:var(--ink);color:#fff;padding:0 18px 0 22px;display:flex;flex-direction:column;justify-content:center;width:132px}
+.lvl .tag small{font-size:15px;letter-spacing:.2em;color:#9fb2ff}
+.lvl .tag b{font-size:44px;line-height:.9}
+.lvl .bar{width:330px;padding:12px 16px;display:flex;flex-direction:column;justify-content:center;gap:6px;background:#fff}
+.lvl .bar .row{display:flex;justify-content:space-between;font-size:15px;letter-spacing:.06em}
+.meter{height:20px;border:3px solid var(--ink);background:#fff;position:relative}
+.meter i{position:absolute;left:0;top:0;bottom:0;background:var(--blue)}
+.meter i::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 9px,rgba(255,255,255,.55) 9px 11px)}
+.cur{display:flex;gap:26px}
+.chip{height:62px;display:flex;align-items:center;gap:12px;padding:0 0 0 16px;min-width:230px}
+.chip .ico{width:38px;height:38px;flex:none;background-size:contain;background-repeat:no-repeat;background-position:center}
+.chip b{font-size:32px;flex:1}
+.chip .plus{width:58px;align-self:stretch;background:var(--orange);color:#fff;display:flex;align-items:center;justify-content:center;font-size:40px;border-left:4px solid var(--ink)}
+.gear{width:66px;height:66px;display:flex;align-items:center;justify-content:center}
+.mask{display:inline-block;background:currentColor;-webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat}
+
+/* quests */
+.quests{position:absolute;left:36px;top:146px;width:470px}
+.qh{display:flex;align-items:center;gap:14px;background:var(--ink);color:#fff;height:50px;padding:0 20px;width:330px;margin-bottom:20px}
+.qh .mask{width:30px;height:30px;color:var(--yellow)}
+.qh span{font-size:30px}
+.q{margin-bottom:16px;padding:8px 18px 12px;position:relative}
+.q .t{font-size:17px;font-weight:700;letter-spacing:.02em;display:flex;justify-content:space-between}
+.q .n{font-size:24px;line-height:1;margin-bottom:3px;display:block}
+.q .meter{margin-top:8px}
+.q.done .meter i{background:var(--orange)}
+.claim{position:absolute;right:-22px;top:-14px;background:var(--orange);color:#fff;border:4px solid var(--ink);padding:2px 14px;font-size:20px}
+
+/* team tabs */
+.team{position:absolute;left:44px;top:626px;display:flex;gap:16px}
+.tab{width:80px;height:80px;position:relative;overflow:hidden;background:#fff}
+.tab.on{background:var(--yellow)}
+.tab .w{position:absolute;left:50%;top:5px;transform:translateX(-50%)}
+.tab em{position:absolute;left:6px;top:2px;font-style:italic;font-size:22px}
+.teamlbl{position:absolute;left:44px;top:584px;font-size:20px;letter-spacing:.18em}
+
+/* mech + pad */
+.pad{position:absolute;left:700px;top:640px;width:640px;height:58px;background:repeating-linear-gradient(-55deg,var(--yellow) 0 22px,var(--ink) 22px 44px);border:4px solid var(--ink);transform:skewX(-30deg);box-shadow:8px 10px 0 var(--ink)}
+.pad::after{content:"";position:absolute;left:0;right:0;top:0;height:16px;background:var(--ink)}
+.shadow{position:absolute;left:800px;top:648px;width:440px;height:30px;border-radius:50%;background:rgba(11,16,32,.35);filter:blur(6px)}
+#mech{position:absolute;left:800px;top:104px;filter:drop-shadow(10px 12px 0 rgba(11,16,32,.28))}
+
+/* callouts */
+.co{position:absolute;color:#fff;display:flex;align-items:baseline;gap:10px;white-space:nowrap}
+.co .l{font-size:20px;letter-spacing:.18em;opacity:.85}
+.co b{font-size:40px;line-height:1}
+.co.dark{color:var(--ink)}
+svg.lines{position:absolute;inset:0;width:1600px;height:900px;pointer-events:none}
+svg.lines line{stroke:#fff;stroke-width:2.5;stroke-dasharray:2 7;stroke-linecap:round}
+svg.lines circle{fill:#fff;stroke:var(--ink);stroke-width:3}
+
+/* nav */
+.nav{position:absolute;left:36px;right:36px;bottom:36px;height:132px;display:flex;gap:22px;align-items:flex-end}
+.btn{position:relative;height:104px;padding:0;flex:1;background:#fff;cursor:pointer;display:block}
+.btn .un{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:6px}
+.btn .mask{width:52px;height:52px}
+.btn span{font-size:28px;line-height:1}
+.btn.go{flex:1.9;height:132px;background:var(--orange);color:#fff}
+.btn.go .un{flex-direction:row;gap:22px;justify-content:flex-start;padding-left:44px}
+.btn.go .mask{width:84px;height:84px}
+.btn.go small{display:block;font-size:20px;letter-spacing:.16em;opacity:.9;font-style:normal;font-family:'Barlow';font-weight:700}
+.btn.go span{font-size:58px}
+.btn.go .arrow{margin-left:auto;margin-right:38px;width:62px;height:62px;background:var(--ink);color:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:40px;transform:none}
+.badge{position:absolute;left:10px;top:-16px;min-width:38px;height:38px;background:var(--yellow);border:4px solid var(--ink);font-size:22px;display:flex;align-items:center;justify-content:center;z-index:3}
+.btn:hover{transform:skewX(-14deg) translate(-3px,-3px);box-shadow:10px 10px 0 var(--ink)}
+.tag-a{position:absolute;right:36px;top:118px;font-size:16px;letter-spacing:.2em;color:#fff;opacity:.8}
+</style></head>
+<body>
+<div class="stage">
+  <div class="cut"></div>
+  <div class="bigword disp">Hangar</div>
+
+  <!-- HUD -->
+  <div class="hud">
+    <div class="lvl plate skew"><div class="tag un"><small class="disp">LEVEL</small><b class="num">157</b></div>
+      <div class="bar un"><div class="row disp"><span>XP</span><span class="num" style="font-style:normal">46.3%</span></div><div class="meter"><i style="width:46.3%"></i></div></div></div>
+    <div class="cur">
+      <div class="chip plate skew"><div class="un" style="display:flex;align-items:center;gap:12px;width:100%;height:100%"><div class="ico" style="background-image:url(assets/icons/icon_gold.png)"></div><b class="num">23,390</b></div><div class="plus"><span class="un" style="margin-left:0">+</span></div></div>
+      <div class="chip plate skew"><div class="un" style="display:flex;align-items:center;gap:12px;width:100%;height:100%"><div class="ico" style="width:44px;height:44px;background:var(--orange);clip-path:polygon(30% 0,70% 0,100% 30%,100% 70%,70% 100%,30% 100%,0 70%,0 30%);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:26px" ><span class="num">T</span></div><b class="num">14</b></div><div class="plus"><span class="un">+</span></div></div>
+      <div class="gear plate skew" style="background:var(--ink);color:#fff"><div class="un"><i class="mask" style="--i:url(assets/icons/interface_options.png);width:38px;height:38px"></i></div></div>
+    </div>
+  </div>
+
+  <!-- quests -->
+  <div class="quests">
+    <div class="qh skew"><div class="un" style="display:flex;align-items:center;gap:14px"><i class="mask" style="--i:url(assets/icons/interface_achievements.png)"></i><span class="disp">Quests</span></div></div>
+    <div class="q plate skew"><div class="un"><span class="n disp">Engineer</span><div class="t"><span>Boost using 15 items</span><span class="num">6/15</span></div><div class="meter"><i style="width:40%"></i></div></div></div>
+    <div class="q plate skew done"><div class="un"><span class="n disp">Conqueror</span><div class="t"><span>Finish 3 campaign missions</span><span class="num">3/3</span></div><div class="meter"><i style="width:100%"></i></div></div><div class="claim disp un" style="transform:skewX(0)">Claim</div></div>
+    <div class="q plate skew"><div class="un"><span class="n disp">Iron Frame</span><div class="t"><span>Build a mech with 2,000 HP</span><span class="num">1,778/2,000</span></div><div class="meter"><i style="width:88.9%"></i></div></div></div>
+  </div>
+
+  <!-- team -->
+  <div class="teamlbl disp">Team</div>
+  <div class="team">
+    <div class="tab plate skew on"><div class="un"><em class="disp">1</em><div class="w" id="t1"></div></div></div>
+    <div class="tab plate skew"><div class="un"><em class="disp">2</em><div class="w" id="t2"></div></div></div>
+    <div class="tab plate skew"><div class="un"><em class="disp">3</em><div class="w" id="t3"></div></div></div>
+  </div>
+
+  <!-- mech -->
+  <div class="pad"></div>
+  <div class="shadow"></div>
+  <div id="mech"></div>
+
+  <!-- callouts -->
+  <svg class="lines" viewBox="0 0 1600 900">
+    <line x1="1000" y1="232" x2="1320" y2="232"/><circle cx="1000" cy="232" r="9"/>
+    <line x1="1085" y1="318" x2="1320" y2="318"/><circle cx="1085" cy="318" r="9"/>
+    <line x1="1030" y1="410" x2="1320" y2="410"/><circle cx="1030" cy="410" r="9"/>
+    <line x1="975" y1="540" x2="1320" y2="540"/><circle cx="975" cy="540" r="9"/>
+  </svg>
+  <div class="co disp" style="left:1330px;top:194px"><div><div class="l">HIT POINTS</div><b class="num" style="font-style:normal">1,778</b></div></div>
+  <div class="co disp" style="left:1330px;top:280px"><div><div class="l">ENERGY</div><b class="num" style="font-style:normal">406</b></div></div>
+  <div class="co disp" style="left:1330px;top:372px"><div><div class="l">HEAT CAP</div><b class="num" style="font-style:normal">552</b></div></div>
+  <div class="co disp" style="left:1330px;top:502px"><div><div class="l">COOLING</div><b class="num" style="font-style:normal">202</b></div></div>
+  <div class="tag-a disp" style="right:36px;top:120px;display:none">NEMESIS</div>
+
+  <!-- nav -->
+  <div class="nav">
+    <div class="btn plate skew"><div class="un"><i class="mask" style="--i:url(assets/icons/interface_hanger.png)"></i><span class="disp">Workshop</span></div></div>
+    <div class="btn plate skew"><div class="un"><i class="mask" style="--i:url(assets/icons/interface_fusion.png)"></i><span class="disp">Upgrade</span></div></div>
+    <div class="btn plate skew"><div class="badge disp un" style="transform:none">2</div><div class="un"><i class="mask" style="--i:url(assets/icons/interface_shop.png)"></i><span class="disp">Shop</span></div></div>
+    <div class="btn go plate skew"><div class="un"><i class="mask" style="--i:url(assets/icons/interface_battle_singlePlayer.png)"></i><div><small>SINGLE PLAYER</small><span class="disp">Campaign</span></div><div class="arrow num">▶</div></div></div>
+  </div>
+</div>
+<script src="assets/mech.js"></script>
+<script>
+fitStage();
+function place(id,key,h){const w=document.getElementById(id);const i=document.createElement('div');buildMech(i,key,h);w.appendChild(i);w.style.width=i.dataset.w+'px';w.style.height=i.dataset.h+'px';}
+place('mech','m1',540);
+place('t1','m1',64);place('t2','m2',64);place('t3','m3',64);
+</script>
+</body></html>

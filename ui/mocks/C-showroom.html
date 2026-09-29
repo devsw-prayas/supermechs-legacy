@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Direction C — Showroom</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<style>
+:root{--navy:#0d1b4c;--blue:#2c62ff;--blue2:#1237d6;--cyan:#3fd6ff;--snow:#f5f7fb;--mist:#e2e8f3;--orange:#ff7a1a;--green:#22c55e;--ink:#0d1b4c}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#0d1b4c;overflow:hidden}
+.stage{position:absolute;width:1600px;height:900px;transform-origin:0 0;overflow:hidden;font-family:'Barlow',system-ui,sans-serif;color:var(--navy);
+ background:radial-gradient(900px 600px at 25% 20%,#ffffff,transparent 70%),linear-gradient(115deg,#f7f9fc 0%,#e7ecf5 48%,#d6deec 100%)}
+.stage::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(13,27,76,.018) 0 2px,transparent 2px 5px)}
+.ex{font-family:'Exo 2','Barlow',sans-serif;font-style:italic;font-weight:900;text-transform:uppercase;letter-spacing:-.01em}
+.n{font-family:'Exo 2','Barlow',sans-serif;font-weight:700;font-variant-numeric:tabular-nums}
+
+/* blue wedge */
+.wedge{position:absolute;left:0;top:0;width:1600px;height:900px;pointer-events:none}
+.w1{position:absolute;inset:0;clip-path:polygon(840px 0,1600px 0,1600px 900px,560px 900px);background:linear-gradient(160deg,#3d74ff 0%,#1a45ec 55%,#0d2ab5 100%)}
+.w2{position:absolute;inset:0;clip-path:polygon(800px 0,830px 0,550px 900px,520px 900px);background:linear-gradient(180deg,var(--cyan),#7fe7ff);opacity:.9}
+.w3{position:absolute;inset:0;clip-path:polygon(1120px 0,1600px 0,1600px 320px);background:rgba(255,255,255,.10)}
+.w1::after{content:"";position:absolute;inset:0;background:radial-gradient(520px 420px at 1080px 430px,rgba(255,255,255,.34),transparent 70%)}
+
+/* headline */
+.head{position:absolute;left:52px;top:120px;line-height:.84;pointer-events:none}
+.head div{font-size:104px;color:var(--navy)}
+.head div:nth-child(2){color:transparent;-webkit-text-stroke:3px var(--navy)}
+.head div:nth-child(3){color:var(--blue)}
+.head small{display:block;font-family:'Barlow';font-weight:700;font-size:17px;letter-spacing:.34em;color:#5b6a94;margin-top:16px;font-style:normal}
+
+/* white sticker card */
+.card{background:#fff;border:6px solid #fff;border-radius:24px;box-shadow:0 0 0 3px var(--navy),0 18px 34px rgba(13,27,76,.22)}
+.pill{background:#fff;border-radius:999px;border:5px solid #fff;box-shadow:0 0 0 3px var(--navy),0 10px 22px rgba(13,27,76,.28)}
+
+/* HUD */
+.ring{position:absolute;left:44px;top:26px;width:108px;height:108px}
+.ring svg{position:absolute;inset:0}
+.ring .c{position:absolute;inset:14px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:.9}
+.ring .c small{font-size:11px;letter-spacing:.3em;font-weight:700;color:#5b6a94}
+.ring .c b{font-size:38px;color:var(--navy)}
+.cur{position:absolute;right:36px;top:34px;display:flex;gap:16px;align-items:center}
+.chip{height:62px;padding:0 6px 0 16px;display:flex;align-items:center;gap:12px;min-width:232px}
+.chip img,.chip .g{width:36px;height:36px;object-fit:contain}
+.chip b{font-size:30px;flex:1;color:var(--navy)}
+.chip .add{width:46px;height:46px;border-radius:50%;background:linear-gradient(180deg,#38d977,#16a34a);color:#fff;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:800;box-shadow:inset 0 -3px 0 rgba(0,0,0,.18)}
+.gear{width:64px;height:64px;display:flex;align-items:center;justify-content:center;color:var(--navy)}
+.mask{display:inline-block;background:currentColor;-webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat}
+
+/* quests */
+.qs{position:absolute;left:52px;top:508px;width:400px}
+.qs h3{font-size:20px;letter-spacing:.06em;margin-bottom:10px;display:flex;align-items:center;gap:10px;color:var(--navy)}
+.qs h3 .mask{width:24px;height:24px;color:var(--orange)}
+.q{padding:10px 16px 12px;margin-bottom:10px;position:relative}
+.q .l{display:flex;justify-content:space-between;align-items:baseline;font-weight:700;font-size:16px}
+.q .l b{font-size:15px;color:#5b6a94}
+.q .m{height:12px;border-radius:99px;background:var(--mist);margin-top:7px;overflow:hidden;box-shadow:inset 0 0 0 2px #d0d9ea}
+.q .m i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--blue),var(--cyan))}
+.q.ok .m i{background:linear-gradient(90deg,#16a34a,#5eea94)}
+.q .claim{position:absolute;right:-8px;top:-10px;background:var(--orange);color:#fff;font-size:14px;padding:3px 12px;border-radius:99px;border:3px solid #fff;box-shadow:0 0 0 2px var(--navy)}
+.q .t{font-size:12px;letter-spacing:.18em;color:#7a89b0;font-weight:700}
+
+/* mech + parts */
+#mech{position:absolute;filter:drop-shadow(0 22px 20px rgba(9,20,80,.45));z-index:5}
+.floor{position:absolute;left:820px;top:660px;width:520px;height:46px;border-radius:50%;background:radial-gradient(ellipse,rgba(6,14,62,.55),transparent 70%);z-index:4}
+.part{position:absolute;z-index:6;filter:drop-shadow(0 14px 12px rgba(6,14,62,.42))}
+.tagd{position:absolute;z-index:7;background:#fff;border-radius:99px;padding:5px 14px 5px 10px;font-weight:700;font-size:13px;letter-spacing:.16em;display:flex;align-items:center;gap:8px;box-shadow:0 0 0 2px var(--navy),0 8px 14px rgba(6,14,62,.3);text-transform:uppercase}
+.tagd i{width:12px;height:12px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 3px rgba(255,122,26,.25)}
+svg.conn{position:absolute;inset:0;width:1600px;height:900px;z-index:6;pointer-events:none}
+svg.conn path{fill:none;stroke:#fff;stroke-width:2.5;stroke-dasharray:1 7;stroke-linecap:round}
+
+/* dock */
+.dock{position:absolute;left:50%;transform:translateX(-50%);bottom:30px;height:118px;display:flex;align-items:center;gap:14px;padding:0 16px;width:1140px}
+.ni{flex:1;height:82px;border-radius:22px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;position:relative;background:linear-gradient(180deg,#f3f6fc,#dfe6f4);box-shadow:inset 0 0 0 2px #cfd8ec,inset 0 -4px 0 rgba(13,27,76,.08);color:var(--navy)}
+.ni .mask{width:36px;height:36px}
+.ni span{font-size:14px;letter-spacing:.12em;font-weight:800;text-transform:uppercase;font-family:'Exo 2';font-style:italic}
+.ni.go{flex:2.4;height:96px;background:linear-gradient(180deg,#4a7fff,#1a45ec 60%,#1237d6);color:#fff;flex-direction:row;gap:20px;box-shadow:0 0 0 3px var(--navy),0 12px 22px rgba(18,55,214,.55),inset 0 3px 0 rgba(255,255,255,.45);border-radius:26px}
+.ni.go .mask{width:56px;height:56px}
+.ni.go span{font-size:40px;letter-spacing:.02em}
+.ni.go small{display:block;font-family:'Barlow';font-style:normal;font-weight:700;font-size:13px;letter-spacing:.3em;opacity:.85;margin-bottom:2px}
+.ni.go .arr{width:50px;height:50px;border-radius:50%;background:#fff;color:var(--blue2);display:flex;align-items:center;justify-content:center;font-size:22px;margin-left:8px}
+.ni .bd{position:absolute;right:8px;top:-8px;background:var(--orange);color:#fff;font-weight:800;font-size:14px;min-width:26px;height:26px;border-radius:99px;display:flex;align-items:center;justify-content:center;border:3px solid #fff;box-shadow:0 0 0 2px var(--navy)}
+.team{position:absolute;left:1240px;top:770px;display:none}
+.tm{position:absolute;right:36px;top:150px;display:flex;flex-direction:column;gap:12px;z-index:8}
+.tm .t{width:92px;height:92px;position:relative;overflow:hidden;border-radius:20px;background:#fff;border:5px solid #fff;box-shadow:0 0 0 3px var(--navy),0 10px 18px rgba(6,14,62,.3)}
+.tm .t.on{background:linear-gradient(180deg,#dbe6ff,#b9ceff);box-shadow:0 0 0 3px var(--orange),0 10px 18px rgba(6,14,62,.3)}
+.tm .t em{position:absolute;left:8px;top:4px;font-size:16px;font-weight:900;font-style:italic;font-family:'Exo 2';z-index:2}
+.tm .t .w{position:absolute;left:50%;top:14px;transform:translateX(-50%)}
+</style></head>
+<body>
+<div class="stage">
+  <div class="wedge"><div class="w1"></div><div class="w2"></div><div class="w3"></div></div>
+
+  <div class="head ex"><div>Build.</div><div>Fight.</div><div>Prevail.</div><small>HANGAR · TEAM 1</small></div>
+
+  <!-- HUD -->
+  <div class="ring">
+    <svg viewBox="0 0 108 108"><circle cx="54" cy="54" r="48" fill="#fff" stroke="#0d1b4c" stroke-width="3"/><circle cx="54" cy="54" r="42" fill="none" stroke="#dfe6f4" stroke-width="9"/><circle cx="54" cy="54" r="42" fill="none" stroke="#2c62ff" stroke-width="9" stroke-linecap="round" stroke-dasharray="122.2 264" transform="rotate(-90 54 54)"/></svg>
+    <div class="c"><small class="ex">LVL</small><b class="ex">157</b></div>
+  </div>
+  <div class="cur">
+    <div class="pill chip"><img src="assets/icons/icon_gold.png" alt=""><b class="n">23,390</b><div class="add">+</div></div>
+    <div class="pill chip"><div class="g" style="background:linear-gradient(160deg,#ff6a5a,#c31d12);clip-path:polygon(28% 0,72% 0,100% 28%,100% 72%,72% 100%,28% 100%,0 72%,0 28%);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:22px">T</div><b class="n">14</b><div class="add">+</div></div>
+    <div class="pill gear"><i class="mask" style="--i:url(assets/icons/interface_options.png);width:32px;height:32px"></i></div>
+  </div>
+
+  <!-- quests -->
+  <div class="qs">
+    <h3 class="ex"><i class="mask" style="--i:url(assets/icons/interface_achievements.png)"></i>Daily quests</h3>
+    <div class="card q"><div class="t">ENGINEER</div><div class="l"><span>Boost using 15 items</span><b class="n">6 / 15</b></div><div class="m"><i style="width:40%"></i></div></div>
+    <div class="card q ok"><div class="claim ex">Claim</div><div class="t">CONQUEROR</div><div class="l"><span>Finish 3 campaign missions</span><b class="n">3 / 3</b></div><div class="m"><i style="width:100%"></i></div></div>
+  </div>
+
+  <!-- team -->
+  <div class="tm"><div class="t on"><em>1</em><div class="w" id="t1"></div></div><div class="t"><em>2</em><div class="w" id="t2"></div></div><div class="t"><em>3</em><div class="w" id="t3"></div></div></div>
+
+  <!-- mech + exploded parts -->
+  <div class="floor"></div>
+  <div id="mech"></div>
+  <img class="part" src="assets/parts/topBlaster3E.png" style="left:700px;top:150px;width:250px;transform:rotate(-16deg)" alt="">
+  <img class="part" src="assets/parts/cannon1A_elec.png" style="left:1210px;top:300px;width:200px;transform:rotate(14deg)" alt="">
+  <img class="part" src="assets/parts/rocketLauncher22A_phys.png" style="left:1300px;top:520px;width:150px;transform:rotate(-24deg)" alt="">
+  <img class="part" src="assets/parts/topMachineGun1B_heat.png" style="left:640px;top:520px;width:210px;transform:rotate(-28deg)" alt="">
+  <svg class="conn" viewBox="0 0 1600 900">
+    <path d="M900 250 C 980 250, 1000 300, 1040 340"/>
+    <path d="M1230 340 C 1180 340, 1150 370, 1110 400"/>
+    <path d="M1310 540 C 1240 540, 1180 520, 1120 490"/>
+    <path d="M800 560 C 860 560, 900 540, 960 510"/>
+  </svg>
+  <div class="tagd" style="left:700px;top:118px"><i></i>Top blaster</div>
+  <div class="tagd" style="left:1190px;top:262px"><i></i>Top cannon · electric</div>
+  <div class="tagd" style="left:1300px;top:610px"><i></i>Rocket launcher</div>
+  <div class="tagd" style="left:620px;top:592px"><i></i>Machine gun · heat</div>
+
+  <!-- dock -->
+  <div class="pill dock">
+    <div class="ni"><i class="mask" style="--i:url(assets/icons/interface_hanger.png)"></i><span>Workshop</span></div>
+    <div class="ni"><i class="mask" style="--i:url(assets/icons/interface_fusion.png)"></i><span>Upgrade</span></div>
+    <div class="ni go"><i class="mask" style="--i:url(assets/icons/interface_battle_singlePlayer.png)"></i><div><small>SINGLE PLAYER</small><span class="ex">Campaign</span></div><div class="arr">▶</div></div>
+    <div class="ni"><div class="bd">2</div><i class="mask" style="--i:url(assets/icons/interface_shop.png)"></i><span>Shop</span></div>
+    <div class="ni"><i class="mask" style="--i:url(assets/icons/interface_mech.png)"></i><span>Teams</span></div>
+  </div>
+</div>
+<script src="assets/mech.js"></script>
+<script>
+fitStage();
+function place(id,key,h,x,y){const w=document.getElementById(id);const i=document.createElement('div');buildMech(i,key,h);w.appendChild(i);w.style.width=i.dataset.w+'px';w.style.height=i.dataset.h+'px';if(x!=null){w.style.left=x+'px';w.style.top=y+'px';}}
+place('mech','m1',560,800,110);
+place('t1','m1',62);place('t2','m2',62);place('t3','m3',62);
+</script>
+</body></html>

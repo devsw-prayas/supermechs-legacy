@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Direction B — Night Shift</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<style>
+:root{--bg:#090c11;--steel1:#a7b2c4;--steel2:#5b657c;--steel3:#38405a;--panel:#10151e;--panel2:#171e2b;--amber:#ffb21a;--amber2:#ff8a00;--cyan:#39d3ff;--red:#ff4a3a;--txt:#e9eef7;--dim:#8d99b0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#000;overflow:hidden}
+.stage{position:absolute;width:1600px;height:900px;transform-origin:0 0;overflow:hidden;background:var(--bg);font-family:'Oxanium','Rajdhani',system-ui,sans-serif;color:var(--txt);text-transform:uppercase;letter-spacing:.04em}
+.stage::before{content:"";position:absolute;inset:0;background:
+ radial-gradient(ellipse 620px 520px at 800px 420px,rgba(255,196,110,.20),transparent 70%),
+ repeating-linear-gradient(90deg,transparent 0 158px,rgba(255,255,255,.028) 158px 160px),
+ linear-gradient(180deg,#0d121b,#080a0f 60%,#0b0f16)}
+.cone{position:absolute;left:560px;top:-40px;width:480px;height:760px;background:linear-gradient(180deg,rgba(255,235,190,.22),rgba(255,235,190,0) 85%);clip-path:polygon(38% 0,62% 0,100% 100%,0 100%);filter:blur(10px)}
+.girder{position:absolute;top:0;bottom:0;width:70px;background:linear-gradient(90deg,#0b0e14,#161c28 50%,#0b0e14);opacity:.9}
+.hazard{position:absolute;left:0;right:0;height:12px;background:repeating-linear-gradient(-45deg,var(--amber) 0 16px,#0b0e14 16px 32px);opacity:.9}
+
+/* chamfered steel panel */
+.pnl{--c:20px;position:relative;padding:5px;background:linear-gradient(155deg,var(--steel1),var(--steel2) 40%,var(--steel3) 60%,#7e8aa2);
+ clip-path:polygon(var(--c) 0,100% 0,100% calc(100% - var(--c)),calc(100% - var(--c)) 100%,0 100%,0 var(--c))}
+.pnl>.in{--c:15px;background:linear-gradient(180deg,var(--panel2),var(--panel));height:100%;
+ clip-path:polygon(var(--c) 0,100% 0,100% calc(100% - var(--c)),calc(100% - var(--c)) 100%,0 100%,0 var(--c))}
+.pnl.r{clip-path:polygon(0 0,calc(100% - var(--c)) 0,100% var(--c),100% 100%,var(--c) 100%,0 calc(100% - var(--c)))}
+.pnl.r>.in{clip-path:polygon(0 0,calc(100% - var(--c)) 0,100% var(--c),100% 100%,var(--c) 100%,0 calc(100% - var(--c)))}
+.h{font-weight:800;letter-spacing:.14em}
+.mask{display:inline-block;background:currentColor;-webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat}
+
+/* HUD */
+.hud{position:absolute;left:30px;right:30px;top:30px;display:flex;justify-content:space-between;align-items:flex-start}
+.lv{width:440px;height:80px}
+.lv .in{display:flex;align-items:center;gap:18px;padding:0 22px 0 18px}
+.lv .n{font-size:52px;font-weight:800;line-height:1;color:var(--amber);min-width:96px}
+.lv .n small{display:block;font-size:12px;letter-spacing:.3em;color:var(--dim);font-weight:700;margin-bottom:2px}
+.seg{flex:1;height:22px;background:#06080c;border:2px solid #2a3348;position:relative;transform:skewX(-20deg);overflow:hidden}
+.seg i{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(180deg,#ffd27a,var(--amber2))}
+.seg::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 11px,rgba(0,0,0,.55) 11px 13px)}
+.pct{font-size:16px;font-weight:700;color:var(--dim)}
+.cur{display:flex;gap:18px}
+.chip{width:270px;height:66px}
+.chip .in{display:flex;align-items:center;padding:0 0 0 16px;gap:14px}
+.chip .ico{width:40px;height:40px;background-size:contain;background-repeat:no-repeat;flex:none}
+.chip b{font-size:32px;font-weight:800;flex:1;letter-spacing:.06em}
+.chip .add{width:60px;height:100%;background:linear-gradient(180deg,#63d66a,#2e9a3a);display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:800;color:#0a1a0c;clip-path:polygon(18px 0,100% 0,100% 100%,0 100%)}
+.gear{width:66px;height:66px;color:var(--txt)}
+.gear .in{display:flex;align-items:center;justify-content:center}
+
+/* left quests */
+.qs{position:absolute;left:30px;top:138px;width:430px}
+.qs .cap{display:flex;align-items:center;gap:12px;height:44px;padding:0 16px;background:linear-gradient(90deg,var(--amber),var(--amber2));color:#1a1100;clip-path:polygon(0 0,100% 0,calc(100% - 18px) 100%,0 100%);width:300px;margin-bottom:10px}
+.qs .cap .mask{width:26px;height:26px}
+.qs .cap b{font-size:22px;font-weight:800;letter-spacing:.16em}
+.q{margin-bottom:12px;height:104px}
+.q .in{padding:12px 20px 0 22px;position:relative}
+.q .in::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:5px;background:var(--amber)}
+.q .t{font-size:13px;letter-spacing:.14em;color:var(--dim)}
+.q .d{font-size:21px;font-weight:700;letter-spacing:.04em;margin:2px 0 8px;text-transform:none}
+.q .bar{display:flex;align-items:center;gap:12px}
+.q .bar .seg{height:16px}
+.q .bar .seg i{background:linear-gradient(180deg,#8be3ff,var(--cyan))}
+.q .bar b{font-size:16px;min-width:74px;text-align:right}
+.q.ok .bar .seg i{background:linear-gradient(180deg,#8ff08f,#36b53f)}
+.q .go{position:absolute;right:16px;top:12px;font-size:12px;font-weight:800;letter-spacing:.14em;background:#36b53f;color:#04160a;padding:4px 12px;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+
+/* right stats */
+.st{position:absolute;right:30px;top:138px;width:360px}
+.st .in{padding:16px 20px 12px}
+.st .top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
+.st .top b{font-size:22px;letter-spacing:.16em;font-weight:800}
+.st .top span{font-size:13px;color:var(--dim);letter-spacing:.2em}
+.row{display:grid;grid-template-columns:34px 1fr 74px;gap:12px;align-items:center;margin:12px 0}
+.row .mask{width:30px;height:30px}
+.row .nm{font-size:13px;letter-spacing:.2em;color:var(--dim)}
+.row .seg{height:12px;margin-top:5px;border-width:2px}
+.row b{font-size:26px;font-weight:800;text-align:right}
+.tabs{display:flex;gap:10px;margin-top:6px}
+.tb{flex:1;height:78px;position:relative}
+.tb .in{display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.tb.on{filter:drop-shadow(0 0 10px rgba(255,178,26,.55))}
+.tb.on{background:linear-gradient(155deg,#ffe4a0,var(--amber2))}
+.tb .num{position:absolute;left:10px;top:4px;font-size:16px;font-weight:800;z-index:2;color:var(--dim)}
+.tb.on .num{color:var(--amber)}
+.tb .w{margin-bottom:2px}
+
+/* mech stage */
+#mech{position:absolute;left:0;top:0;z-index:5;filter:drop-shadow(0 26px 22px rgba(0,0,0,.65))}
+.pf{position:absolute;left:520px;top:644px;width:560px;height:96px;border-radius:50%;background:radial-gradient(ellipse at 50% 40%,#3a4358,#141925 70%);border:5px solid #6a7590;box-shadow:0 0 0 6px #0c0f16,0 0 60px rgba(255,178,26,.32),inset 0 0 40px rgba(0,0,0,.6)}
+.pf::before{content:"";position:absolute;inset:16px 34px;border-radius:50%;border:3px solid var(--amber);opacity:.9;box-shadow:0 0 18px var(--amber),inset 0 0 14px rgba(255,178,26,.5)}
+.pf::after{content:"";position:absolute;inset:34px 84px;border-radius:50%;border:2px dashed rgba(255,178,26,.55)}
+.name{position:absolute;left:520px;width:560px;top:78px;text-align:center;z-index:6;pointer-events:none}
+.name small{display:block;font-size:14px;letter-spacing:.42em;color:var(--dim)}
+.name b{display:block;font-size:34px;font-weight:800;letter-spacing:.22em}
+
+/* dock */
+.dock{position:absolute;left:30px;right:30px;bottom:24px;height:168px}
+.dockbg{position:absolute;inset:0;background:linear-gradient(155deg,var(--steel1),var(--steel2) 40%,var(--steel3) 60%,#7e8aa2);clip-path:polygon(0 34px,34px 0,calc(100% - 34px) 0,100% 34px,100% 100%,0 100%)}
+.dockbg::before{content:"";position:absolute;inset:5px;background:linear-gradient(180deg,#141a26,#0c1018);clip-path:polygon(0 30px,30px 0,calc(100% - 30px) 0,100% 30px,100% 100%,0 100%)}
+.btns{position:absolute;inset:22px 34px 18px;display:flex;gap:16px;align-items:flex-end}
+.nb{--c:16px;flex:1;height:118px;position:relative;padding:4px;background:linear-gradient(155deg,#8e9ab0,#4a546c 50%,#77839b);clip-path:polygon(var(--c) 0,100% 0,calc(100% - var(--c)) 100%,0 100%)}
+.nb>.in{height:100%;clip-path:polygon(calc(var(--c) - 3px) 0,100% 0,calc(100% - var(--c) + 3px) 100%,0 100%);background:linear-gradient(180deg,#232c3f,#131925);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--txt)}
+.nb .mask{width:48px;height:48px;color:#cfd8e8}
+.nb span{font-size:20px;font-weight:800;letter-spacing:.16em}
+.nb.go{flex:2.2;height:146px;margin-bottom:-2px;--c:24px;background:linear-gradient(155deg,#ffe7a8,var(--amber) 40%,var(--amber2));filter:drop-shadow(0 0 22px rgba(255,160,20,.5))}
+.nb.go>.in{background:linear-gradient(180deg,#ffbd2e,#f27a00);color:#1c1000;flex-direction:row;gap:26px}
+.nb.go .mask{width:76px;height:76px;color:#1c1000}
+.nb.go span{font-size:50px;letter-spacing:.14em}
+.nb.go small{display:block;font-size:14px;letter-spacing:.34em;font-weight:700;margin-bottom:2px;opacity:.75}
+.nb .bd{position:absolute;right:14px;top:8px;background:var(--red);color:#fff;font-size:15px;font-weight:800;padding:2px 9px;z-index:3;clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%)}
+</style></head>
+<body>
+<div class="stage">
+  <div class="girder" style="left:0"></div><div class="girder" style="left:250px;opacity:.5"></div><div class="girder" style="right:250px;opacity:.5"></div><div class="girder" style="right:0"></div>
+  <div class="cone"></div>
+  <div class="hazard" style="top:0"></div>
+
+  <div class="hud">
+    <div class="pnl lv"><div class="in"><div class="n h"><small>LEVEL</small>157</div><div class="seg"><i style="width:46.3%"></i></div><div class="pct">46.3%</div></div></div>
+    <div class="cur">
+      <div class="pnl r chip"><div class="in"><div class="ico" style="background-image:url(assets/icons/icon_gold.png)"></div><b>23,390</b><div class="add">+</div></div></div>
+      <div class="pnl r chip"><div class="in"><div class="ico" style="background:linear-gradient(160deg,#ff6a5a,#c31d12);clip-path:polygon(28% 0,72% 0,100% 28%,100% 72%,72% 100%,28% 100%,0 72%,0 28%);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:24px;color:#fff">T</div><b>14</b><div class="add">+</div></div></div>
+      <div class="pnl gear"><div class="in"><i class="mask" style="--i:url(assets/icons/interface_options.png);width:36px;height:36px"></i></div></div>
+    </div>
+  </div>
+
+  <div class="qs">
+    <div class="cap"><i class="mask" style="--i:url(assets/icons/interface_achievements.png)"></i><b>QUESTS</b></div>
+    <div class="pnl q"><div class="in"><div class="t">ENGINEER</div><div class="d">Boost using 15 items</div><div class="bar"><div class="seg"><i style="width:40%"></i></div><b>6 / 15</b></div></div></div>
+    <div class="pnl q ok"><div class="in"><div class="go">CLAIM</div><div class="t">CONQUEROR</div><div class="d">Finish 3 campaign missions</div><div class="bar"><div class="seg"><i style="width:100%"></i></div><b>3 / 3</b></div></div></div>
+    <div class="pnl q"><div class="in"><div class="t">IRON FRAME</div><div class="d">Build a mech with 2,000 HP</div><div class="bar"><div class="seg"><i style="width:88.9%"></i></div><b>1,778</b></div></div></div>
+  </div>
+
+  <div class="pnl st"><div class="in">
+    <div class="top"><b>MECH STATS</b><span>NEMESIS</span></div>
+    <div class="row"><i class="mask" style="--i:url(assets/icons/icon_HP.png);color:#ffb21a"></i><div><div class="nm">HIT POINTS</div><div class="seg"><i style="width:100%;background:linear-gradient(180deg,#ffd27a,#ff8a00)"></i></div></div><b>1,778</b></div>
+    <div class="row"><i class="mask" style="--i:url(assets/icons/icon_energy.png);color:#39d3ff"></i><div><div class="nm">ENERGY</div><div class="seg"><i style="width:74%;background:linear-gradient(180deg,#8be3ff,#1bb0ee)"></i></div></div><b>406</b></div>
+    <div class="row"><i class="mask" style="--i:url(assets/icons/icon_heat.png);color:#ff6a3a"></i><div><div class="nm">HEAT CAP</div><div class="seg"><i style="width:82%;background:linear-gradient(180deg,#ff9a6a,#e5391a)"></i></div></div><b>552</b></div>
+    <div class="row"><i class="mask" style="--i:url(assets/icons/icon_heatCooling.png);color:#bfe6ff"></i><div><div class="nm">COOLING</div><div class="seg"><i style="width:46%;background:linear-gradient(180deg,#f2fbff,#9ed0ee)"></i></div></div><b>202</b></div>
+    <div class="row"><i class="mask" style="--i:url(assets/icons/icon_energyRegeneration.png);color:#39d3ff"></i><div><div class="nm">REGEN</div><div class="seg"><i style="width:24%;background:linear-gradient(180deg,#8be3ff,#1bb0ee)"></i></div></div><b>98</b></div>
+    <div class="tabs">
+      <div class="pnl tb on" style="padding:4px"><div class="in"><span class="num">1</span><div class="w" id="t1"></div></div></div>
+      <div class="pnl tb"><div class="in"><span class="num">2</span><div class="w" id="t2"></div></div></div>
+      <div class="pnl tb"><div class="in"><span class="num">3</span><div class="w" id="t3"></div></div></div>
+    </div>
+  </div></div>
+
+  <div class="name"><small>TEAM 1 · TORSO 52</small><b>NEMESIS</b></div>
+  <div class="pf"></div>
+  <div id="mech"></div>
+
+  <div class="dock"><div class="dockbg"></div>
+    <div class="btns">
+      <div class="nb"><div class="in"><i class="mask" style="--i:url(assets/icons/interface_hanger.png)"></i><span>WORKSHOP</span></div></div>
+      <div class="nb"><div class="in"><i class="mask" style="--i:url(assets/icons/interface_fusion.png)"></i><span>UPGRADE</span></div></div>
+      <div class="nb go"><div class="in"><i class="mask" style="--i:url(assets/icons/interface_battle_singlePlayer.png)"></i><div><small>SINGLE PLAYER</small><span>CAMPAIGN</span></div></div></div>
+      <div class="nb"><div class="bd">2</div><div class="in"><i class="mask" style="--i:url(assets/icons/interface_shop.png)"></i><span>SHOP</span></div></div>
+      <div class="nb"><div class="in"><i class="mask" style="--i:url(assets/icons/interface_mech.png)"></i><span>TEAMS</span></div></div>
+    </div>
+  </div>
+  <div class="hazard" style="bottom:0;height:10px"></div>
+</div>
+<script src="assets/mech.js"></script>
+<script>
+fitStage();
+function place(id,key,h,x,y){const w=document.getElementById(id);const i=document.createElement('div');buildMech(i,key,h);w.appendChild(i);w.style.width=i.dataset.w+'px';w.style.height=i.dataset.h+'px';if(x!=null){w.style.left=x+'px';w.style.top=y+'px';}}
+place('mech','m1',520,586,116);
+place('t1','m1',58);place('t2','m2',58);place('t3','m3',58);
+</script>
+</body></html>
