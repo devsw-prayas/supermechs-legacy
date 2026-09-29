@@ -30,3 +30,5 @@
 - 2026-09-28: **Paint system comes later** (Reloaded-style mech paint that tints the `mcColor` layer). Until then, items use their Reloaded looks as they are, including the white `E` Mythical looks.
 - **2026-09-29: Resistance can go below zero.** Negative resistance increases the damage taken (e.g. drain physical resistance, then a maxed Falcon lands ~2,000). Drain-then-burst combos are intended. Exact formula for the combat phase.
 - **2026-09-29: Backfire at Ultimate.** The data has no backfire past Mythical. Rule: backfire follows the data up to Mythical, then grows at **half the damage's growth rate** through Ultimate (e.g. Lazy Falcon 490 at Mythical → ~583 at Ult 1 → ~737 at Ult 100). Applies to all backfire items.
+
+- 2026-09-29: UI direction locked to **Direction E (Mech Bay)**, `ui/mocks/E-bay.html`. New screens reuse its background, plate component, palette and type; refine it, don't start new directions. The user wants something new inspired by the original hangar, not a copy of it.
