@@ -16,6 +16,7 @@ Reloaded-era client, taken from the user's own account (2026-09-29). Reference o
 | shop-unclaimed.png | Shop: Unclaimed Boxes (empty state) |
 | upgrade-empty.png | Upgrade, nothing selected |
 | upgrade-maxed-item.png | Upgrade, maxed item selected |
+| upgrade-transform.png | Upgrade, Transform mode (selected item at level cap, Mythical target, 5 empty material slots, Transform button with gold cost, locked tile in grid) |
 
 Still to come: workshop editor, item detail, battle HUD, others as sent.
 Open question: meaning of the mech glyph + number on item tiles ("/50" looks like a cap, MAX replaces it).
