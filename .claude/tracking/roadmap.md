@@ -18,6 +18,7 @@ Files extracted, sprites exported (idle, layers, anchors), item packs found, Leg
 5. ⬜ Economy: credits, tokens, drop tables, transform and upgrade costs, tuning upkeep, divine cost
 6. ⬜ Enemy gear curve by zone and format; Ultimate mode tuning and divine frequency
 7. ⬜ Events and loot boxes (unique items)
+9. ⬜ **Test Lab (sandbox mode):** build any mech from every item in the game (all tiers, max level) and fight any bot or boss. Open questions: unlocked from the start or after a zone; which bots are listed (all enemies and bosses met so far, or everything); stat readouts (damage log, DPS, heat/energy over turns); save and share test builds; no rewards and no effect on progress.
 8. ⬜ **Balance check: stacked combined modules and stacked resistance** (incl. Heavy Enhanced Protectors vs 1,200+ scope hits) vs a normal mech, once Ultimate weapon damage and energy/heat costs exist. Decide on an equip limit (see Plans/Modules/Module Decisions.md).
 
 ## Phase 4: Build (only after the plan is agreed)
@@ -28,3 +29,4 @@ Files extracted, sprites exported (idle, layers, anchors), item packs found, Leg
 5. Campaign map, missions, huntdowns
 6. Upgrades, transformation, tuning, divining
 7. Ultimate mode, events, polish
+8. Test Lab: sandbox builder over the full roster + bot picker, reusing the mech builder and battle engine
