@@ -99,6 +99,7 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
 #shade{position:absolute;z-index:6;pointer-events:none;mix-blend-mode:multiply;opacity:.42}
 #refl{position:absolute;z-index:3;transform:scaleY(-1);opacity:.2;filter:blur(1.5px) saturate(.7);-webkit-mask:linear-gradient(0deg,#000,transparent 55%);mask:linear-gradient(0deg,#000,transparent 55%)}
 #ped{position:absolute;left:0;top:0;z-index:4;pointer-events:none}
+#pedSide{position:absolute;left:0;top:0;z-index:1;pointer-events:none;filter:brightness(.5) saturate(.6)}
 #side1,#side2{position:absolute;z-index:2;filter:brightness(.2) contrast(1.15) saturate(.4) drop-shadow(0 0 1.5px rgba(95,212,255,.45)) drop-shadow(0 0 18px rgba(0,0,0,.9))}
 
 /* ---- dock ---- */
@@ -121,6 +122,10 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
 <div class="stage">
   <canvas id="bg" width="3200" height="1800"></canvas>
 
+  <svg id="pedSide" width="1600" height="900" viewBox="0 0 1600 900">
+    <use href="#pedMain" transform="translate(282 702) scale(0.5) translate(-800 -712)"/>
+    <use href="#pedMain" transform="translate(1410 700) scale(0.5) translate(-800 -712)"/>
+  </svg>
   <div id="side1"></div><div id="side2"></div>
   <div id="refl"></div>
   <svg id="ped" width="1600" height="900" viewBox="0 0 1600 900">
@@ -137,6 +142,7 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
       <linearGradient id="pf7" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a4758"/><stop offset="1" stop-color="#232c36"/></linearGradient>
       <linearGradient id="pf8" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2d3846"/><stop offset="1" stop-color="#1b222b"/></linearGradient>
     </defs>
+    <g id="pedMain">
     <ellipse cx="800" cy="856" rx="336" ry="46" fill="#000" opacity=".45"/>
     <ellipse id="scan" cx="800" cy="810" rx="366" ry="68" fill="none" stroke="#5fd4ff" stroke-width="3" stroke-dasharray="26 18" opacity=".55"/>
     <path d="M1082.7 789.0 L917.1 821.4 L917.1 871.4 L1082.7 839.0 Z" fill="url(#pf2)" stroke="#05080c" stroke-width="4" stroke-linejoin="round"/>
@@ -178,6 +184,7 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
     <rect x="709.6" y="674.0" width="9" height="6" fill="#56697f" stroke="#05080c" stroke-width="2"/>
     <rect x="881.4" y="674.0" width="9" height="6" fill="#56697f" stroke="#05080c" stroke-width="2"/>
     <rect x="1002.9" y="694.5" width="9" height="6" fill="#56697f" stroke="#05080c" stroke-width="2"/>
+    </g>
   </svg>
   <div id="mech"></div>
   <div id="shade"></div>
@@ -291,9 +298,6 @@ g.fillStyle=lin(0,52,0,760,[[0,'rgba(255,236,200,.26)'],[.7,'rgba(255,226,180,.0
 g.beginPath(); g.moveTo(748,52); g.lineTo(852,52); g.lineTo(1070,760); g.lineTo(530,760); g.fill();
 g.filter='blur(26px)'; g.fillStyle='rgba(255,170,70,.30)'; g.beginPath(); g.ellipse(800,730,300,40,0,0,7); g.fill();
 g.restore();
-// side bay pads: flat outlined discs
-for(const x of [230,1370]){ g.beginPath(); g.ellipse(x,704,134,24,0,0,7); g.fillStyle='#141a22'; g.fill(); g.lineWidth=4; g.strokeStyle=OUT; g.stroke();
-  g.beginPath(); g.ellipse(x,704,100,17,0,0,7); g.lineWidth=2; g.strokeStyle='rgba(95,212,255,.35)'; g.stroke(); }
 // soft vignette only
 const vg=g.createRadialGradient(800,430,380,800,430,1000); vg.addColorStop(0,'rgba(0,0,0,0)'); vg.addColorStop(1,'rgba(0,0,0,.6)'); g.fillStyle=vg; g.fillRect(0,0,1600,900);
 }
