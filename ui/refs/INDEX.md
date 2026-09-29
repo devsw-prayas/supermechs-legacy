@@ -28,6 +28,7 @@ Reloaded-era client, taken from the user's own account (2026-09-29). Reference o
 | campaign-map-danger-zone.webp | Zone name banner reference: blue ribbon with cream outline, swallow-tail ends, white heavy title ("THE DANGER ZONE"), shown at the top of the map on zone entry. Also a mid-zone map view. Windows Snipping Tool popup in the corner is not part of the game UI |
 | campaign-mission-select.webp | Mission panel over the map: Normal / Hard / Insane difficulty tabs with star medallions, Rewards list (gold, box, XP), green Battle button with energy cost, orange "Watch ad" banner below |
 | battle.png | Live battle screen: top HUD strip (gold, tokens, level + XP bar, star rank badge), STATS panel top-left (HP bar, energy, regen, heat, cooling), red X (leave) / x1 (battle speed) / play (auto-play) buttons bottom-left, grid arena with walls and crates on the right |
+| battle-tile-select.png | Same battle screen a moment after clicking a floor square: the tile flashes solid green (move target). Speed button now reads x2 |
 | upgrade-transform.png | Upgrade, Transform mode (selected item at level cap, Mythical target, 5 empty material slots, Transform button with gold cost, locked tile in grid) |
 
 Still to come: item detail, manual-mode action bar (weapons, movement, turn UI) if it exists separately from auto-play, others as sent.
