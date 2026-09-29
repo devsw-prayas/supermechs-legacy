@@ -1,5 +1,7 @@
 """Dump each exported sprite SVG's viewBox and the placement of its named clips into data/sprite_bounds.json.
 
+Format note (checked on real exports): JPEXS SVGs carry width/height and an outer frame matrix, not a viewBox.
+
 Why: the mech-attachment anchors (mcLeg1, mcSide1, mcTop1, mcTorso, ...) are placements inside the sprite's own
 symbol space, but the PNGs we render start at the art's bounds. To place parts exactly we need, per sprite, the
 viewBox origin (what the PNG's top-left corresponds to) and where the `itemGfx` art clip sits.
@@ -32,6 +34,11 @@ for era in ("legacy", "reloaded"):
         m = VIEWBOX.search(head)
         if m:
             rec["viewBox"] = [float(x) for x in re.split(r"[ ,]+", m.group(1).strip())]
+        # JPEXS frame exports have no viewBox: the whole drawing sits in one outer <g transform="matrix(...)">
+        # whose translation is what puts the art's top-left at the PNG's (0,0). split_layers.py ignored it.
+        g = re.search(r"<g\s+transform=\"matrix\(([^)]*)\)\"", s[len(head):])
+        if g:
+            rec["frame"] = [float(x) for x in g.group(1).split(",")]
         for k in ("width", "height"):
             m = ATTR(k).search(head)
             if m:
