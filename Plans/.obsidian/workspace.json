@@ -1,0 +1,232 @@
+{
+  "main": {
+    "id": "6f9db7943dd487ab",
+    "type": "split",
+    "children": [
+      {
+        "id": "d2fa1061a59e1f9b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8d95f37d38a668ac",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "bd9db26a25402a5e",
+    "type": "split",
+    "children": [
+      {
+        "id": "3a720324c91a6caa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "77db0e20ce4a3a29",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "5b816f6a98580370",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "a9501dad3ab898c8",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 417.5
+  },
+  "right": {
+    "id": "9c408e1708e96b96",
+    "type": "split",
+    "children": [
+      {
+        "id": "91edc723a5676b9f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f6336f0f63706556",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "9399e110826a1bb0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "b2fa32929ac2c770",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "909dec889a92b083",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "29eade78cd621bb0",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "8d95f37d38a668ac",
+  "lastOpenFiles": [
+    "Legs/sprites/leg74A_heat.png",
+    "Drones/Drone Sheet.md",
+    "Drones/_archive/Drone Sheet (full, old).md",
+    "Drones/_archive/unused-sprites",
+    "Drones/_archive",
+    "Drones/Drone Decisions.md",
+    "Drones/sprites/drone26A.png",
+    "Legs/Leg Decisions.md",
+    "Drones/sprites/superDroneTypeDamage3E.png",
+    "Drones/sprites/superDroneTypeDamage3D.png",
+    "Drones/sprites/superDroneTypeDamage2E.png",
+    "Drones/sprites/superDroneTypeDamage2D.png",
+    "Drones/sprites/superDroneTypeDamage1E.png",
+    "Drones/sprites/superDroneTypeDamage1D.png",
+    "Drones/sprites/superDroneBasic3E.png",
+    "Drones/sprites/superDroneBasic3D.png",
+    "Drones/sprites",
+    "Drones",
+    "Legs/Leg Sheet.md",
+    "Legs/_archive/Leg Sheet (full, old).md",
+    "Legs/_archive/unused-sprites",
+    "Legs/_archive/dropped",
+    "Legs/_archive",
+    "Legs/sprites",
+    "Legs",
+    "Kits/_archive",
+    "Torsos/_archive/Torso Sheet (full, old).md",
+    "Torsos/Unplanned Torsos.md",
+    "Torsos/Torso Sheet.md",
+    "Torsos/Torso Decisions.md",
+    "Top Weapons/Unmarked Top Weapons.md",
+    "Top Weapons/_archive/old-sprite-lists.md",
+    "Top Weapons/Top Weapon Decisions.md",
+    "Zones/Art Prompts.md",
+    "Zones/Zone 08 - The Junkyard.md",
+    "Zones/Zones.md",
+    "Side Weapons/Starter Decisions.md",
+    "Side Weapons/Side Weapons.md",
+    "Side Weapons/Shotgun Decisions.md",
+    "Side Weapons/Rocket Decisions.md",
+    "Side Weapons/Rifle Decisions.md",
+    "Side Weapons/Resistance Breaker Decisions.md",
+    "Side Weapons/Plasma Cannon Decisions.md",
+    "Side Weapons/Melee Decisions.md",
+    "Side Weapons/Machine Gun Decisions.md"
+  ]
+}

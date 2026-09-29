@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zone Map Viewer</title>
+<style>
+  :root { --bg:#14121a; --panel:#1e1b26; --line:#2f2a3a; --text:#e8e4f0; --muted:#9a93aa;
+          --mission:#4fc3f7; --boss:#ff5252; --hunt:#ffb74d; --sel:#fff; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:14px/1.4 system-ui, sans-serif; height:100vh; display:flex; flex-direction:column; }
+  header { display:flex; gap:12px; align-items:center; flex-wrap:wrap; padding:8px 12px; background:var(--panel); border-bottom:1px solid var(--line); }
+  header b { margin-right:8px; }
+  .seg { display:flex; border:1px solid var(--line); border-radius:6px; overflow:hidden; }
+  .seg button { background:none; color:var(--text); border:0; padding:6px 10px; cursor:pointer; }
+  .seg button.on { background:#3a3350; }
+  .tool[data-t=mission].on { box-shadow: inset 0 -3px var(--mission); }
+  .tool[data-t=boss].on { box-shadow: inset 0 -3px var(--boss); }
+  .tool[data-t=huntdown].on { box-shadow: inset 0 -3px var(--hunt); }
+  .status { margin-left:auto; color:var(--muted); font-size:13px; }
+  #wrap { flex:1; overflow-x:auto; overflow-y:hidden; position:relative; cursor:crosshair; }
+  #strip { position:relative; height:100%; display:flex; }
+  .zone { position:relative; height:100%; flex:none; }
+  .zone img { height:100%; display:block; user-select:none; -webkit-user-drag:none; }
+  .zone .label { position:absolute; top:8px; left:8px; background:rgba(0,0,0,.6); padding:2px 8px; border-radius:4px; font-size:12px; pointer-events:none; }
+  .node { position:absolute; width:26px; height:26px; margin:-13px 0 0 -13px; border-radius:50%; border:3px solid #fff;
+          display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; cursor:grab; box-shadow:0 2px 6px rgba(0,0,0,.6); }
+  .node.mission { background:var(--mission); }
+  .node.boss { background:var(--boss); width:36px; height:36px; margin:-18px 0 0 -18px; color:#fff; }
+  .node.huntdown { background:var(--hunt); border-radius:4px; }
+  .node.sel { outline:3px solid var(--sel); outline-offset:2px; }
+  footer { padding:6px 12px; background:var(--panel); border-top:1px solid var(--line); color:var(--muted); font-size:12px; }
+  kbd { background:#2f2a3a; padding:0 5px; border-radius:3px; }
+</style>
+</head>
+<body>
+<header>
+  <b>Zone Map Viewer</b>
+  <div class="seg" id="maps"></div>
+  <div class="seg">
+    <button class="tool on" data-t="mission">Mission</button>
+    <button class="tool" data-t="boss">Boss</button>
+    <button class="tool" data-t="huntdown">Huntdown</button>
+  </div>
+  <span class="status" id="status">loading…</span>
+</header>
+<div id="wrap"><div id="strip"></div></div>
+<footer>Click to place a node (numbered per zone) · drag to move · select + <kbd>Del</kbd> to remove · scroll wheel pans · nodes are shared by all three maps and saved to <code>Plans/Zones/nodes.json</code></footer>
+<script>
+let maps = {}, cur = "1v1", tool = "mission", nodes = [], sel = null, saveTimer = null;
+const strip = document.getElementById("strip"), wrap = document.getElementById("wrap"), status = document.getElementById("status");
+
+async function init() {
+  maps = await (await fetch("/api/maps")).json();
+  nodes = await (await fetch("/api/nodes")).json();
+  const seg = document.getElementById("maps");
+  for (const k of Object.keys(maps)) {
+    const b = document.createElement("button"); b.textContent = k; b.onclick = () => { cur = k; render(); };
+    seg.appendChild(b);
+  }
+  render();
+}
+
+function render() {
+  document.querySelectorAll("#maps button").forEach(b => b.classList.toggle("on", b.textContent === cur));
+  // remember which zone is at the left of the view, and how far into it
+  let keep = null;
+  for (const zd of strip.querySelectorAll(".zone")) {
+    if (zd.offsetLeft + zd.offsetWidth > wrap.scrollLeft) { keep = { z: zd.dataset.z, f: (wrap.scrollLeft - zd.offsetLeft) / zd.offsetWidth }; break; }
+  }
+  strip.innerHTML = "";
+  let pending = maps[cur].zones.length;
+  const m = maps[cur];
+  m.zones.forEach(file => {
+    const z = parseInt(file.slice(4, 6), 10);
+    const div = document.createElement("div"); div.className = "zone"; div.dataset.z = z;
+    const img = document.createElement("img"); img.src = `/zones/${m.folder}/zones-960/${file}`; img.draggable = false;
+    img.onload = () => {
+      if (--pending > 0) return;
+      drawNodes();
+      if (keep) { const zd = strip.querySelector(`.zone[data-z="${keep.z}"]`); if (zd) wrap.scrollLeft = zd.offsetLeft + keep.f * zd.offsetWidth; }
+    };
+    const lab = document.createElement("div"); lab.className = "label"; lab.textContent = `Zone ${z}`;
+    div.append(img, lab); strip.appendChild(div);
+  });
+  updateStatus();
+}
+
+function drawNodes() {
+  document.querySelectorAll(".node").forEach(n => n.remove());
+  for (const n of nodes) {
+    const zd = strip.querySelector(`.zone[data-z="${n.zone}"]`); if (!zd) continue;
+    const el = document.createElement("div"); el.className = `node ${n.type}` + (n === sel ? " sel" : "");
+    el.style.left = (n.x * 100) + "%"; el.style.top = (n.y * 100) + "%";
+    el.textContent = n.type === "boss" ? "B" : n.type === "huntdown" ? "H" : numberOf(n);
+    el.onmousedown = e => startDrag(e, n, zd);
+    zd.appendChild(el);
+  }
+}
+
+function numberOf(n) {
+  const list = nodes.filter(m => m.zone === n.zone && m.type === "mission").sort((a, b) => a.order - b.order);
+  return list.indexOf(n) + 1;
+}
+
+wrap.addEventListener("click", e => {
+  if (e.target.classList.contains("node")) return;
+  const zd = e.target.closest(".zone"); if (!zd) return;
+  const r = zd.getBoundingClientRect();
+  const n = { zone: +zd.dataset.z, type: tool, x: (e.clientX - r.left) / r.width, y: (e.clientY - r.top) / r.height, order: Date.now() };
+  nodes.push(n); sel = n; drawNodes(); save();
+});
+
+function startDrag(e, n, zd) {
+  e.preventDefault(); e.stopPropagation(); sel = n; drawNodes();
+  const r = zd.getBoundingClientRect();
+  const move = ev => { n.x = Math.min(1, Math.max(0, (ev.clientX - r.left) / r.width)); n.y = Math.min(1, Math.max(0, (ev.clientY - r.top) / r.height)); drawNodes(); };
+  const up = () => { removeEventListener("mousemove", move); removeEventListener("mouseup", up); save(); };
+  addEventListener("mousemove", move); addEventListener("mouseup", up);
+}
+
+addEventListener("keydown", e => {
+  if ((e.key === "Delete" || e.key === "Backspace") && sel) { nodes = nodes.filter(n => n !== sel); sel = null; drawNodes(); save(); }
+});
+
+wrap.addEventListener("wheel", e => { if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) { wrap.scrollLeft += e.deltaY; e.preventDefault(); } }, { passive: false });
+
+document.querySelectorAll(".tool").forEach(b => b.onclick = () => {
+  tool = b.dataset.t; document.querySelectorAll(".tool").forEach(x => x.classList.toggle("on", x === b));
+});
+
+function save() {
+  status.textContent = "saving…"; clearTimeout(saveTimer);
+  saveTimer = setTimeout(async () => {
+    try { await fetch("/api/nodes", { method: "POST", body: JSON.stringify(nodes) }); updateStatus(); }
+    catch { status.textContent = "save failed — is the server running?"; }
+  }, 300);
+}
+
+function updateStatus() {
+  const c = t => nodes.filter(n => n.type === t).length;
+  status.textContent = `${cur} · ${c("mission")} missions · ${c("boss")} bosses · ${c("huntdown")} huntdowns · saved`;
+}
+
+init();
+</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "map-viewer", "runtimeExecutable": "python", "runtimeArgs": ["tools/map_viewer/server.py"], "port": 8765 }
+  ]
+}

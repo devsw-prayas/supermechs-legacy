@@ -1,0 +1,1 @@
+cut canvas from 2v2 full map: zone15 0..500, zone16 500..1705, zone17 1705..2205

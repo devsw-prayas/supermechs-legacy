@@ -1,0 +1,2884 @@
+{
+ "_note": "Slot fixes checked against the item data type (2026-09-27/28). Family prefix -> slot. Applied by tools/build_selected.py.",
+ "blaster15": "top_weapons",
+ "sideMegaBlaster": "top_weapons",
+ "sideDistanceCloser": "top_weapons",
+ "cannon11": "side_weapons",
+ "_drop": [
+  "cannon10B",
+  "cannon10B2",
+  "cannon10B3",
+  "cannon10C",
+  "cannon10C2",
+  "cannon10C3",
+  "grenadeLauncher2A",
+  "grenadeLauncher2A2",
+  "grenadeLauncher2A3",
+  "grenadeLauncher2B",
+  "grenadeLauncher2B2",
+  "grenadeLauncher2B3",
+  "laser1000",
+  "laser42A",
+  "laser42B",
+  "laser48A2_legacy",
+  "laser48A3_legacy",
+  "laser48A_legacy",
+  "laser48B2_legacy",
+  "laser48B3_legacy",
+  "laser48B_legacy",
+  "laser48C2_legacy",
+  "laser48C3_legacy",
+  "laser48C_legacy",
+  "machineGun8A_legacy",
+  "machineGun8B_legacy",
+  "rocketLauncher16A_legacy",
+  "rocketLauncher16B_legacy",
+  "rocketLauncher16C_legacy",
+  "rocketLauncher17A_legacy",
+  "rocketLauncher17B_legacy",
+  "rocketLauncher17C_legacy",
+  "sideVulcanB1C",
+  "topSniper1D",
+  "topSniper1E",
+  "topPhysicalBombD",
+  "topPhysicalBombE",
+  "blaster13A",
+  "blaster13B",
+  "blaster14A",
+  "blaster14B",
+  "blaster15A",
+  "blaster15B",
+  "torso1000",
+  "leg27A",
+  "leg27B",
+  "leg27C",
+  "leg2",
+  "leg7"
+ ],
+ "_drop_note": "Sprites removed from the roster after review (user, 2026-09-28).",
+ "_add": [
+  "cannon3C",
+  "cannon8A",
+  "cannon8A2",
+  "cannon8A3",
+  "cannon8B",
+  "cannon8B2",
+  "cannon8B3",
+  "cannon8C",
+  "cannon8C2",
+  "cannon8C3",
+  "flameThrower1",
+  "flameThrower1A",
+  "flameThrower2",
+  "flameThrower2A",
+  "flameThrower7B",
+  "flameThrower7B2",
+  "laser48A",
+  "laser48A2",
+  "laser48A3",
+  "laser48B",
+  "laser48B2",
+  "laser48B3",
+  "laser48C",
+  "laser48C2",
+  "laser48C3",
+  "rocketLauncher16A",
+  "rocketLauncher16B",
+  "rocketLauncher16C",
+  "rocketLauncher17A",
+  "rocketLauncher17B",
+  "rocketLauncher17C",
+  "sideBlaster2A",
+  "sideBlaster2B",
+  "sideBlaster2C",
+  "sideBlaster3A",
+  "sideBlaster3B",
+  "sideBlaster3C",
+  "sideBulletCannon1B",
+  "sideBulletCannon1C",
+  "sideFlameThrower2A",
+  "sideFlameThrower2B",
+  "sideFlameThrower2C",
+  "sideFlameThrower3A",
+  "sideFlameThrower3B",
+  "sideFlameThrower3C",
+  "sideMachineGun1A",
+  "sideMachineGun1B",
+  "sideRifle1D",
+  "sideRifle1E",
+  "sideRifle2D",
+  "sideRifle2E",
+  "sideRocketLauncher2B",
+  "sideRocketLauncher2C",
+  "sideSword1A",
+  "sideSword1B",
+  "sideSword1C",
+  "sideSword2A",
+  "sideSword2B",
+  "sideSword2C",
+  "sideSword3A",
+  "sideSword3B",
+  "sideSword3C",
+  "laser40A",
+  "laser40A2",
+  "laser40A3",
+  "laser40B",
+  "laser40B2",
+  "laser40B3",
+  "cannon5A",
+  "cannon5B",
+  "topLaser2B",
+  "topLaser3B",
+  "topMachineGun1B",
+  "topLaser2C",
+  "topLaser3C",
+  "topMachineGun1C",
+  "torso70C",
+  "torso70E"
+ ],
+ "_add_note": "Sprites added to the roster outside the review (user, 2026-09-28).",
+ "_extra": [
+  {
+   "id": "wand1C",
+   "slot": "side_weapons",
+   "family": "Lightning Eclipse",
+   "sprite": "Plans/Side Weapons/sprites/wand1C.png",
+   "era": "new",
+   "names": [
+    "Lightning Eclipse"
+   ]
+  },
+  {
+   "id": "wand1B",
+   "slot": "side_weapons",
+   "family": "Solar Eclipse",
+   "sprite": "Plans/Side Weapons/sprites/wand1B.png",
+   "era": "new",
+   "names": [
+    "Solar Eclipse"
+   ]
+  },
+  {
+   "id": "sideGrenadeLauncher2C",
+   "slot": "side_weapons",
+   "family": "Grave Nuke",
+   "sprite": "Plans/Side Weapons/sprites/sideGrenadeLauncher2C.png",
+   "era": "new",
+   "names": [
+    "Grave Nuke"
+   ]
+  },
+  {
+   "id": "sideGrenadeLauncher2D",
+   "slot": "side_weapons",
+   "family": "Grave Nuke",
+   "sprite": "Plans/Side Weapons/sprites/sideGrenadeLauncher2D.png",
+   "era": "new",
+   "names": [
+    "Grave Nuke"
+   ]
+  },
+  {
+   "id": "sideGrenadeLauncher2E",
+   "slot": "side_weapons",
+   "family": "Grave Nuke",
+   "sprite": "Plans/Side Weapons/sprites/sideGrenadeLauncher2E.png",
+   "era": "new",
+   "names": [
+    "Grave Nuke"
+   ]
+  },
+  {
+   "id": "sideLaser1C",
+   "slot": "side_weapons",
+   "family": "SandStorm",
+   "sprite": "Plans/Side Weapons/sprites/sideLaser1C.png",
+   "era": "new",
+   "names": [
+    "SandStorm"
+   ]
+  },
+  {
+   "id": "sideLaser1D",
+   "slot": "side_weapons",
+   "family": "SandStorm",
+   "sprite": "Plans/Side Weapons/sprites/sideLaser1D.png",
+   "era": "new",
+   "names": [
+    "SandStorm"
+   ]
+  },
+  {
+   "id": "sideLaser1E",
+   "slot": "side_weapons",
+   "family": "SandStorm",
+   "sprite": "Plans/Side Weapons/sprites/sideLaser1E.png",
+   "era": "new",
+   "names": [
+    "SandStorm"
+   ]
+  },
+  {
+   "id": "sideVulcan2C",
+   "slot": "side_weapons",
+   "family": "Blood Moon",
+   "sprite": "Plans/Side Weapons/sprites/sideVulcan2C.png",
+   "era": "new",
+   "names": [
+    "Blood Moon"
+   ]
+  },
+  {
+   "id": "sideVulcan2D",
+   "slot": "side_weapons",
+   "family": "Blood Moon",
+   "sprite": "Plans/Side Weapons/sprites/sideVulcan2D.png",
+   "era": "new",
+   "names": [
+    "Blood Moon"
+   ]
+  },
+  {
+   "id": "sideVulcan2E",
+   "slot": "side_weapons",
+   "family": "Blood Moon",
+   "sprite": "Plans/Side Weapons/sprites/sideVulcan2E.png",
+   "era": "new",
+   "names": [
+    "Blood Moon"
+   ]
+  },
+  {
+   "id": "sideVulcanB2D",
+   "slot": "side_weapons",
+   "family": "Last Inferno",
+   "sprite": "Plans/Side Weapons/sprites/sideVulcanB2D.png",
+   "era": "new",
+   "names": [
+    "Last Inferno"
+   ]
+  },
+  {
+   "id": "sideVulcanB2E",
+   "slot": "side_weapons",
+   "family": "Last Inferno",
+   "sprite": "Plans/Side Weapons/sprites/sideVulcanB2E.png",
+   "era": "new",
+   "names": [
+    "Last Inferno"
+   ]
+  },
+  {
+   "id": "sideVulcanB3D",
+   "slot": "side_weapons",
+   "family": "Last Surge",
+   "sprite": "Plans/Side Weapons/sprites/sideVulcanB3D.png",
+   "era": "new",
+   "names": [
+    "Last Surge"
+   ]
+  },
+  {
+   "id": "sideVulcanB3E",
+   "slot": "side_weapons",
+   "family": "Last Surge",
+   "sprite": "Plans/Side Weapons/sprites/sideVulcanB3E.png",
+   "era": "new",
+   "names": [
+    "Last Surge"
+   ]
+  },
+  {
+   "id": "sideVulcan3C",
+   "slot": "side_weapons",
+   "family": "Night Storm",
+   "sprite": "Plans/Side Weapons/sprites/sideVulcan3C.png",
+   "era": "new",
+   "names": [
+    "Night Storm"
+   ]
+  },
+  {
+   "id": "sideVulcan3D",
+   "slot": "side_weapons",
+   "family": "Night Storm",
+   "sprite": "Plans/Side Weapons/sprites/sideVulcan3D.png",
+   "era": "new",
+   "names": [
+    "Night Storm"
+   ]
+  },
+  {
+   "id": "sideVulcan3E",
+   "slot": "side_weapons",
+   "family": "Night Storm",
+   "sprite": "Plans/Side Weapons/sprites/sideVulcan3E.png",
+   "era": "new",
+   "names": [
+    "Night Storm"
+   ]
+  },
+  {
+   "id": "cannon3A2",
+   "slot": "side_weapons",
+   "family": "Boom Stick",
+   "sprite": "Plans/Side Weapons/sprites/cannon3A2.png",
+   "era": "new",
+   "names": [
+    "Boom Stick"
+   ]
+  },
+  {
+   "id": "cannon3B2",
+   "slot": "side_weapons",
+   "family": "Boom Stick",
+   "sprite": "Plans/Side Weapons/sprites/cannon3B2.png",
+   "era": "new",
+   "names": [
+    "Boom Stick"
+   ]
+  },
+  {
+   "id": "cannon3C2",
+   "slot": "side_weapons",
+   "family": "Boom Stick",
+   "sprite": "Plans/Side Weapons/sprites/cannon3C2.png",
+   "era": "new",
+   "names": [
+    "Boom Stick"
+   ]
+  },
+  {
+   "id": "cannon3A3",
+   "slot": "side_weapons",
+   "family": "Plasma Popper",
+   "sprite": "Plans/Side Weapons/sprites/cannon3A3.png",
+   "era": "new",
+   "names": [
+    "Plasma Popper"
+   ]
+  },
+  {
+   "id": "cannon3B3",
+   "slot": "side_weapons",
+   "family": "Plasma Popper",
+   "sprite": "Plans/Side Weapons/sprites/cannon3B3.png",
+   "era": "new",
+   "names": [
+    "Plasma Popper"
+   ]
+  },
+  {
+   "id": "cannon3C3",
+   "slot": "side_weapons",
+   "family": "Plasma Popper",
+   "sprite": "Plans/Side Weapons/sprites/cannon3C3.png",
+   "era": "new",
+   "names": [
+    "Plasma Popper"
+   ]
+  },
+  {
+   "id": "rocketLauncher16A_1",
+   "slot": "side_weapons",
+   "family": "Booming Battery MK1",
+   "sprite": "Plans/Side Weapons/sprites/rocketLauncher16A_1.png",
+   "era": "new",
+   "names": [
+    "Booming Battery MK1"
+   ]
+  },
+  {
+   "id": "rocketLauncher16B_1",
+   "slot": "side_weapons",
+   "family": "Booming Battery MK1",
+   "sprite": "Plans/Side Weapons/sprites/rocketLauncher16B_1.png",
+   "era": "new",
+   "names": [
+    "Booming Battery MK1"
+   ]
+  },
+  {
+   "id": "rocketLauncher16C_1",
+   "slot": "side_weapons",
+   "family": "Booming Battery MK1",
+   "sprite": "Plans/Side Weapons/sprites/rocketLauncher16C_1.png",
+   "era": "new",
+   "names": [
+    "Booming Battery MK1"
+   ]
+  },
+  {
+   "id": "rocketLauncher17A_1",
+   "slot": "side_weapons",
+   "family": "Booming Battery MK2",
+   "sprite": "Plans/Side Weapons/sprites/rocketLauncher17A_1.png",
+   "era": "new",
+   "names": [
+    "Booming Battery MK2"
+   ]
+  },
+  {
+   "id": "rocketLauncher17B_1",
+   "slot": "side_weapons",
+   "family": "Booming Battery MK2",
+   "sprite": "Plans/Side Weapons/sprites/rocketLauncher17B_1.png",
+   "era": "new",
+   "names": [
+    "Booming Battery MK2"
+   ]
+  },
+  {
+   "id": "rocketLauncher17C_1",
+   "slot": "side_weapons",
+   "family": "Booming Battery MK2",
+   "sprite": "Plans/Side Weapons/sprites/rocketLauncher17C_1.png",
+   "era": "new",
+   "names": [
+    "Booming Battery MK2"
+   ]
+  },
+  {
+   "id": "sideSuperRocketLauncher1D",
+   "slot": "side_weapons",
+   "family": "Grimstone",
+   "sprite": "Plans/Side Weapons/sprites/sideSuperRocketLauncher1D.png",
+   "era": "new",
+   "names": [
+    "Grimstone"
+   ]
+  },
+  {
+   "id": "sideSuperRocketLauncher1E",
+   "slot": "side_weapons",
+   "family": "Grimstone",
+   "sprite": "Plans/Side Weapons/sprites/sideSuperRocketLauncher1E.png",
+   "era": "new",
+   "names": [
+    "Grimstone"
+   ]
+  },
+  {
+   "id": "sideRPG1D",
+   "slot": "side_weapons",
+   "family": "ICBM",
+   "sprite": "Plans/Side Weapons/sprites/sideRPG1D.png",
+   "era": "new",
+   "names": [
+    "ICBM"
+   ]
+  },
+  {
+   "id": "sideRPG1E",
+   "slot": "side_weapons",
+   "family": "ICBM",
+   "sprite": "Plans/Side Weapons/sprites/sideRPG1E.png",
+   "era": "new",
+   "names": [
+    "ICBM"
+   ]
+  },
+  {
+   "id": "rocketLauncher16A_3",
+   "slot": "side_weapons",
+   "family": "Sparking Battery MK1",
+   "sprite": "Plans/Side Weapons/sprites/rocketLauncher16A_3.png",
+   "era": "new",
+   "names": [
+    "Sparking Battery MK1"
+   ]
+  },
+  {
+   "id": "rocketLauncher16B_3",
+   "slot": "side_weapons",
+   "family": "Sparking Battery MK1",
+   "sprite": "Plans/Side Weapons/sprites/rocketLauncher16B_3.png",
+   "era": "new",
+   "names": [
+    "Sparking Battery MK1"
+   ]
+  },
+  {
+   "id": "rocketLauncher16C_3",
+   "slot": "side_weapons",
+   "family": "Sparking Battery MK1",
+   "sprite": "Plans/Side Weapons/sprites/rocketLauncher16C_3.png",
+   "era": "new",
+   "names": [
+    "Sparking Battery MK1"
+   ]
+  },
+  {
+   "id": "rocketLauncher17A_3",
+   "slot": "side_weapons",
+   "family": "Sparking Battery MK2",
+   "sprite": "Plans/Side Weapons/sprites/rocketLauncher17A_3.png",
+   "era": "new",
+   "names": [
+    "Sparking Battery MK2"
+   ]
+  },
+  {
+   "id": "rocketLauncher17B_3",
+   "slot": "side_weapons",
+   "family": "Sparking Battery MK2",
+   "sprite": "Plans/Side Weapons/sprites/rocketLauncher17B_3.png",
+   "era": "new",
+   "names": [
+    "Sparking Battery MK2"
+   ]
+  },
+  {
+   "id": "rocketLauncher17C_3",
+   "slot": "side_weapons",
+   "family": "Sparking Battery MK2",
+   "sprite": "Plans/Side Weapons/sprites/rocketLauncher17C_3.png",
+   "era": "new",
+   "names": [
+    "Sparking Battery MK2"
+   ]
+  },
+  {
+   "id": "sideSuperRocketLauncher3D",
+   "slot": "side_weapons",
+   "family": "Stormbreaker",
+   "sprite": "Plans/Side Weapons/sprites/sideSuperRocketLauncher3D.png",
+   "era": "new",
+   "names": [
+    "Stormbreaker"
+   ]
+  },
+  {
+   "id": "sideSuperRocketLauncher3E",
+   "slot": "side_weapons",
+   "family": "Stormbreaker",
+   "sprite": "Plans/Side Weapons/sprites/sideSuperRocketLauncher3E.png",
+   "era": "new",
+   "names": [
+    "Stormbreaker"
+   ]
+  },
+  {
+   "id": "cannon1A_heat",
+   "slot": "top_weapons",
+   "family": "Molten Hail",
+   "sprite": "Plans/Top Weapons/sprites/cannon1A_heat.png",
+   "era": "new",
+   "names": [
+    "Molten Hail"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "cannon1A_elec",
+   "slot": "top_weapons",
+   "family": "Electrocution",
+   "sprite": "Plans/Top Weapons/sprites/cannon1A_elec.png",
+   "era": "new",
+   "names": [
+    "Electrocution"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "cannon1B_heat",
+   "slot": "top_weapons",
+   "family": "Molten Hail",
+   "sprite": "Plans/Top Weapons/sprites/cannon1B_heat.png",
+   "era": "new",
+   "names": [
+    "Molten Hail"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "cannon1B_elec",
+   "slot": "top_weapons",
+   "family": "Electrocution",
+   "sprite": "Plans/Top Weapons/sprites/cannon1B_elec.png",
+   "era": "new",
+   "names": [
+    "Electrocution"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "cannon1C_heat",
+   "slot": "top_weapons",
+   "family": "Molten Hail",
+   "sprite": "Plans/Top Weapons/sprites/cannon1C_heat.png",
+   "era": "new",
+   "names": [
+    "Molten Hail"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "cannon1C_elec",
+   "slot": "top_weapons",
+   "family": "Electrocution",
+   "sprite": "Plans/Top Weapons/sprites/cannon1C_elec.png",
+   "era": "new",
+   "names": [
+    "Electrocution"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "topBlaster2C_phys",
+   "slot": "top_weapons",
+   "family": "Storm Rage",
+   "sprite": "Plans/Top Weapons/sprites/topBlaster2C_phys.png",
+   "era": "new",
+   "names": [
+    "Storm Rage"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "topBlaster2D_phys",
+   "slot": "top_weapons",
+   "family": "Storm Rage",
+   "sprite": "Plans/Top Weapons/sprites/topBlaster2D_phys.png",
+   "era": "new",
+   "names": [
+    "Storm Rage"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "topBlaster2E_phys",
+   "slot": "top_weapons",
+   "family": "Storm Rage",
+   "sprite": "Plans/Top Weapons/sprites/topBlaster2E_phys.png",
+   "era": "new",
+   "names": [
+    "Storm Rage"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "topSniper1D_heat",
+   "slot": "top_weapons",
+   "family": "Desert Fury",
+   "sprite": "Plans/Top Weapons/sprites/topSniper1D_heat.png",
+   "era": "new",
+   "names": [
+    "Desert Fury"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "topSniper1E_heat",
+   "slot": "top_weapons",
+   "family": "Desert Fury",
+   "sprite": "Plans/Top Weapons/sprites/topSniper1E_heat.png",
+   "era": "new",
+   "names": [
+    "Desert Fury"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "topGrenadeLauncher1C_heat",
+   "slot": "top_weapons",
+   "family": "Red Mamba",
+   "sprite": "Plans/Top Weapons/sprites/topGrenadeLauncher1C_heat.png",
+   "era": "new",
+   "names": [
+    "Red Mamba"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "topGrenadeLauncher1D_heat",
+   "slot": "top_weapons",
+   "family": "Red Mamba",
+   "sprite": "Plans/Top Weapons/sprites/topGrenadeLauncher1D_heat.png",
+   "era": "new",
+   "names": [
+    "Red Mamba"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "topGrenadeLauncher1E_heat",
+   "slot": "top_weapons",
+   "family": "Red Mamba",
+   "sprite": "Plans/Top Weapons/sprites/topGrenadeLauncher1E_heat.png",
+   "era": "new",
+   "names": [
+    "Red Mamba"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "topSuperRocketLauncher2C_elec",
+   "slot": "top_weapons",
+   "family": "Supreme Arc",
+   "sprite": "Plans/Top Weapons/sprites/topSuperRocketLauncher2C_elec.png",
+   "era": "new",
+   "names": [
+    "Supreme Arc"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "topSuperRocketLauncher2D_elec",
+   "slot": "top_weapons",
+   "family": "Supreme Arc",
+   "sprite": "Plans/Top Weapons/sprites/topSuperRocketLauncher2D_elec.png",
+   "era": "new",
+   "names": [
+    "Supreme Arc"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "topSuperRocketLauncher2E_elec",
+   "slot": "top_weapons",
+   "family": "Supreme Arc",
+   "sprite": "Plans/Top Weapons/sprites/topSuperRocketLauncher2E_elec.png",
+   "era": "new",
+   "names": [
+    "Supreme Arc"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "topDiagonalRocketLauncher2D_elec",
+   "slot": "top_weapons",
+   "family": "Static Shower",
+   "sprite": "Plans/Top Weapons/sprites/topDiagonalRocketLauncher2D_elec.png",
+   "era": "new",
+   "names": [
+    "Static Shower"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "topDiagonalRocketLauncherB2D_elec",
+   "slot": "top_weapons",
+   "family": "Blue Rain",
+   "sprite": "Plans/Top Weapons/sprites/topDiagonalRocketLauncherB2D_elec.png",
+   "era": "new",
+   "names": [
+    "Blue Rain"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "topDiagonalRocketLauncher2E_elec",
+   "slot": "top_weapons",
+   "family": "Static Shower",
+   "sprite": "Plans/Top Weapons/sprites/topDiagonalRocketLauncher2E_elec.png",
+   "era": "new",
+   "names": [
+    "Static Shower"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "topDiagonalRocketLauncherB2E_elec",
+   "slot": "top_weapons",
+   "family": "Blue Rain",
+   "sprite": "Plans/Top Weapons/sprites/topDiagonalRocketLauncherB2E_elec.png",
+   "era": "new",
+   "names": [
+    "Blue Rain"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "topSuperMachineGun1D_heat",
+   "slot": "top_weapons",
+   "family": "Spartan Inferno",
+   "sprite": "Plans/Top Weapons/sprites/topSuperMachineGun1D_heat.png",
+   "era": "new",
+   "names": [
+    "Spartan Inferno"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "topSuperMachineGun1D_elec",
+   "slot": "top_weapons",
+   "family": "Spartan Voltage",
+   "sprite": "Plans/Top Weapons/sprites/topSuperMachineGun1D_elec.png",
+   "era": "new",
+   "names": [
+    "Spartan Voltage"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "topSuperMachineGun1E_heat",
+   "slot": "top_weapons",
+   "family": "Spartan Inferno",
+   "sprite": "Plans/Top Weapons/sprites/topSuperMachineGun1E_heat.png",
+   "era": "new",
+   "names": [
+    "Spartan Inferno"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "topSuperMachineGun1E_elec",
+   "slot": "top_weapons",
+   "family": "Spartan Voltage",
+   "sprite": "Plans/Top Weapons/sprites/topSuperMachineGun1E_elec.png",
+   "era": "new",
+   "names": [
+    "Spartan Voltage"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "rocketLauncher22A_phys",
+   "slot": "top_weapons",
+   "family": "Shrapnel Launcher",
+   "sprite": "Plans/Top Weapons/sprites/rocketLauncher22A_phys.png",
+   "era": "new",
+   "names": [
+    "Shrapnel Launcher"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "rocketLauncher22A_elec",
+   "slot": "top_weapons",
+   "family": "Arc Launcher",
+   "sprite": "Plans/Top Weapons/sprites/rocketLauncher22A_elec.png",
+   "era": "new",
+   "names": [
+    "Arc Launcher"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "rocketLauncher22A_heat",
+   "slot": "top_weapons",
+   "family": "Missile Launcher",
+   "sprite": "Plans/Top Weapons/sprites/rocketLauncher22A_heat.png",
+   "era": "new",
+   "names": [
+    "Missile Launcher"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "rocketLauncher22B_phys",
+   "slot": "top_weapons",
+   "family": "Shrapnel Launcher",
+   "sprite": "Plans/Top Weapons/sprites/rocketLauncher22B_phys.png",
+   "era": "new",
+   "names": [
+    "Shrapnel Launcher"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "rocketLauncher22B_elec",
+   "slot": "top_weapons",
+   "family": "Arc Launcher",
+   "sprite": "Plans/Top Weapons/sprites/rocketLauncher22B_elec.png",
+   "era": "new",
+   "names": [
+    "Arc Launcher"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "rocketLauncher22B_heat",
+   "slot": "top_weapons",
+   "family": "Missile Launcher",
+   "sprite": "Plans/Top Weapons/sprites/rocketLauncher22B_heat.png",
+   "era": "new",
+   "names": [
+    "Missile Launcher"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "rocketLauncher22C_phys",
+   "slot": "top_weapons",
+   "family": "Shrapnel Launcher",
+   "sprite": "Plans/Top Weapons/sprites/rocketLauncher22C_phys.png",
+   "era": "new",
+   "names": [
+    "Shrapnel Launcher"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "rocketLauncher22C_elec",
+   "slot": "top_weapons",
+   "family": "Arc Launcher",
+   "sprite": "Plans/Top Weapons/sprites/rocketLauncher22C_elec.png",
+   "era": "new",
+   "names": [
+    "Arc Launcher"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "rocketLauncher22C_heat",
+   "slot": "top_weapons",
+   "family": "Missile Launcher",
+   "sprite": "Plans/Top Weapons/sprites/rocketLauncher22C_heat.png",
+   "era": "new",
+   "names": [
+    "Missile Launcher"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "rocketLauncher22D_phys",
+   "slot": "top_weapons",
+   "family": "Shrapnel Launcher",
+   "sprite": "Plans/Top Weapons/sprites/rocketLauncher22D_phys.png",
+   "era": "new",
+   "names": [
+    "Shrapnel Launcher"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "rocketLauncher22D_elec",
+   "slot": "top_weapons",
+   "family": "Arc Launcher",
+   "sprite": "Plans/Top Weapons/sprites/rocketLauncher22D_elec.png",
+   "era": "new",
+   "names": [
+    "Arc Launcher"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "rocketLauncher22D_heat",
+   "slot": "top_weapons",
+   "family": "Missile Launcher",
+   "sprite": "Plans/Top Weapons/sprites/rocketLauncher22D_heat.png",
+   "era": "new",
+   "names": [
+    "Missile Launcher"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "cannon5A_heat",
+   "slot": "top_weapons",
+   "family": "Scorch Shot",
+   "sprite": "Plans/Top Weapons/sprites/cannon5A_heat.png",
+   "era": "new",
+   "names": [
+    "Scorch Shot"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "cannon5B_heat",
+   "slot": "top_weapons",
+   "family": "Scorch Shot",
+   "sprite": "Plans/Top Weapons/sprites/cannon5B_heat.png",
+   "era": "new",
+   "names": [
+    "Scorch Shot"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "cannon5A_elec",
+   "slot": "top_weapons",
+   "family": "Arc Shot",
+   "sprite": "Plans/Top Weapons/sprites/cannon5A_elec.png",
+   "era": "new",
+   "names": [
+    "Arc Shot"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "cannon5B_elec",
+   "slot": "top_weapons",
+   "family": "Arc Shot",
+   "sprite": "Plans/Top Weapons/sprites/cannon5B_elec.png",
+   "era": "new",
+   "names": [
+    "Arc Shot"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "topLaser2B_phys",
+   "slot": "top_weapons",
+   "family": "Amber Laser",
+   "sprite": "Plans/Top Weapons/sprites/topLaser2B_phys.png",
+   "era": "new",
+   "names": [
+    "Amber Laser"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "topMachineGun1B_heat",
+   "slot": "top_weapons",
+   "family": "Flame Repeater",
+   "sprite": "Plans/Top Weapons/sprites/topMachineGun1B_heat.png",
+   "era": "new",
+   "names": [
+    "Flame Repeater"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "topMachineGun1B_elec",
+   "slot": "top_weapons",
+   "family": "Arc Repeater",
+   "sprite": "Plans/Top Weapons/sprites/topMachineGun1B_elec.png",
+   "era": "new",
+   "names": [
+    "Arc Repeater"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "topLaser2C_phys",
+   "slot": "top_weapons",
+   "family": "Amber Laser",
+   "sprite": "Plans/Top Weapons/sprites/topLaser2C_phys.png",
+   "era": "new",
+   "names": [
+    "Amber Laser"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "topMachineGun1C_heat",
+   "slot": "top_weapons",
+   "family": "Flame Repeater",
+   "sprite": "Plans/Top Weapons/sprites/topMachineGun1C_heat.png",
+   "era": "new",
+   "names": [
+    "Flame Repeater"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "topMachineGun1C_elec",
+   "slot": "top_weapons",
+   "family": "Arc Repeater",
+   "sprite": "Plans/Top Weapons/sprites/topMachineGun1C_elec.png",
+   "era": "new",
+   "names": [
+    "Arc Repeater"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "topBeam2C_phys",
+   "slot": "top_weapons",
+   "family": "Ultra Nova",
+   "sprite": "Plans/Top Weapons/sprites/topBeam2C_phys.png",
+   "era": "new",
+   "names": [
+    "Ultra Nova"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "topBeam2D_phys",
+   "slot": "top_weapons",
+   "family": "Ultra Nova",
+   "sprite": "Plans/Top Weapons/sprites/topBeam2D_phys.png",
+   "era": "new",
+   "names": [
+    "Ultra Nova"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "topBeam2E_phys",
+   "slot": "top_weapons",
+   "family": "Ultra Nova",
+   "sprite": "Plans/Top Weapons/sprites/topBeam2E_phys.png",
+   "era": "new",
+   "names": [
+    "Ultra Nova"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "torso85B_heat",
+   "slot": "torsos",
+   "family": "Cinder Bastion",
+   "sprite": "Plans/Torsos/sprites/torso85B_heat.png",
+   "era": "new",
+   "names": [
+    "Cinder Bastion"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "torso85B_elec",
+   "slot": "torsos",
+   "family": "Arc Bastion",
+   "sprite": "Plans/Torsos/sprites/torso85B_elec.png",
+   "era": "new",
+   "names": [
+    "Arc Bastion"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "torso85C_heat",
+   "slot": "torsos",
+   "family": "Cinder Bastion",
+   "sprite": "Plans/Torsos/sprites/torso85C_heat.png",
+   "era": "new",
+   "names": [
+    "Cinder Bastion"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "torso85C_elec",
+   "slot": "torsos",
+   "family": "Arc Bastion",
+   "sprite": "Plans/Torsos/sprites/torso85C_elec.png",
+   "era": "new",
+   "names": [
+    "Arc Bastion"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "torso92C_heat",
+   "slot": "torsos",
+   "family": "Flame Sentinel",
+   "sprite": "Plans/Torsos/sprites/torso92C_heat.png",
+   "era": "new",
+   "names": [
+    "Flame Sentinel"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "torso92C_phys",
+   "slot": "torsos",
+   "family": "Iron Sentinel",
+   "sprite": "Plans/Torsos/sprites/torso92C_phys.png",
+   "era": "new",
+   "names": [
+    "Iron Sentinel"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "torso92D_heat",
+   "slot": "torsos",
+   "family": "Flame Sentinel",
+   "sprite": "Plans/Torsos/sprites/torso92D_heat.png",
+   "era": "new",
+   "names": [
+    "Flame Sentinel"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "torso92D_phys",
+   "slot": "torsos",
+   "family": "Iron Sentinel",
+   "sprite": "Plans/Torsos/sprites/torso92D_phys.png",
+   "era": "new",
+   "names": [
+    "Iron Sentinel"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "torso92E_heat",
+   "slot": "torsos",
+   "family": "Flame Sentinel",
+   "sprite": "Plans/Torsos/sprites/torso92E_heat.png",
+   "era": "new",
+   "names": [
+    "Flame Sentinel"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "torso92E_phys",
+   "slot": "torsos",
+   "family": "Iron Sentinel",
+   "sprite": "Plans/Torsos/sprites/torso92E_phys.png",
+   "era": "new",
+   "names": [
+    "Iron Sentinel"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "torso96D_heat",
+   "slot": "torsos",
+   "family": "Furnace Armor",
+   "sprite": "Plans/Torsos/sprites/torso96D_heat.png",
+   "era": "new",
+   "names": [
+    "Furnace Armor"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "torso96D_elec",
+   "slot": "torsos",
+   "family": "Heat Free Armor",
+   "sprite": "Plans/Torsos/sprites/torso96D_elec.png",
+   "era": "new",
+   "names": [
+    "Heat Free Armor"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "torso96E_heat",
+   "slot": "torsos",
+   "family": "Furnace Armor",
+   "sprite": "Plans/Torsos/sprites/torso96E_heat.png",
+   "era": "new",
+   "names": [
+    "Furnace Armor"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "torso96E_elec",
+   "slot": "torsos",
+   "family": "Heat Free Armor",
+   "sprite": "Plans/Torsos/sprites/torso96E_elec.png",
+   "era": "new",
+   "names": [
+    "Heat Free Armor"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "torso15_phys",
+   "slot": "torsos",
+   "family": "Gold Guardian",
+   "sprite": "Plans/Torsos/sprites/torso15_phys.png",
+   "era": "new",
+   "names": [
+    "Gold Guardian"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "torso15B_phys",
+   "slot": "torsos",
+   "family": "Gold Guardian",
+   "sprite": "Plans/Torsos/sprites/torso15B_phys.png",
+   "era": "new",
+   "names": [
+    "Gold Guardian"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "torso70C_heat",
+   "slot": "torsos",
+   "family": "CinderLens",
+   "sprite": "Plans/Torsos/sprites/torso70C_heat.png",
+   "era": "new",
+   "names": [
+    "CinderLens"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "torso47_heat",
+   "slot": "torsos",
+   "family": "CinderLens",
+   "sprite": "Plans/Torsos/sprites/torso47_heat.png",
+   "era": "new",
+   "names": [
+    "CinderLens"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "torso70C_phys",
+   "slot": "torsos",
+   "family": "IronLens",
+   "sprite": "Plans/Torsos/sprites/torso70C_phys.png",
+   "era": "new",
+   "names": [
+    "IronLens"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "torso47_phys",
+   "slot": "torsos",
+   "family": "IronLens",
+   "sprite": "Plans/Torsos/sprites/torso47_phys.png",
+   "era": "new",
+   "names": [
+    "IronLens"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "torso70E_heat",
+   "slot": "torsos",
+   "family": "Hellfire",
+   "sprite": "Plans/Torsos/sprites/torso70E_heat.png",
+   "era": "new",
+   "names": [
+    "Hellfire"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "torso46_heat",
+   "slot": "torsos",
+   "family": "Hellfire",
+   "sprite": "Plans/Torsos/sprites/torso46_heat.png",
+   "era": "new",
+   "names": [
+    "Hellfire"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "torso70E_phys",
+   "slot": "torsos",
+   "family": "Solarfire",
+   "sprite": "Plans/Torsos/sprites/torso70E_phys.png",
+   "era": "new",
+   "names": [
+    "Solarfire"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "torso46_phys",
+   "slot": "torsos",
+   "family": "Solarfire",
+   "sprite": "Plans/Torsos/sprites/torso46_phys.png",
+   "era": "new",
+   "names": [
+    "Solarfire"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "torso82C_heat",
+   "slot": "torsos",
+   "family": "Betrayer",
+   "sprite": "Plans/Torsos/sprites/torso82C_heat.png",
+   "era": "new",
+   "names": [
+    "Betrayer"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "torso82C_elec",
+   "slot": "torsos",
+   "family": "Pacifist",
+   "sprite": "Plans/Torsos/sprites/torso82C_elec.png",
+   "era": "new",
+   "names": [
+    "Pacifist"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "torso83C_heat",
+   "slot": "torsos",
+   "family": "Windigo",
+   "sprite": "Plans/Torsos/sprites/torso83C_heat.png",
+   "era": "new",
+   "names": [
+    "Windigo"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "torso83C_elec",
+   "slot": "torsos",
+   "family": "Shipper",
+   "sprite": "Plans/Torsos/sprites/torso83C_elec.png",
+   "era": "new",
+   "names": [
+    "Shipper"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "torso84C_phys",
+   "slot": "torsos",
+   "family": "Blast Furnace",
+   "sprite": "Plans/Torsos/sprites/torso84C_phys.png",
+   "era": "new",
+   "names": [
+    "Blast Furnace"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "torso84C_elec",
+   "slot": "torsos",
+   "family": "Arc Furnace",
+   "sprite": "Plans/Torsos/sprites/torso84C_elec.png",
+   "era": "new",
+   "names": [
+    "Arc Furnace"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "torso82D_heat",
+   "slot": "torsos",
+   "family": "Betrayer",
+   "sprite": "Plans/Torsos/sprites/torso82D_heat.png",
+   "era": "new",
+   "names": [
+    "Betrayer"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "torso82D_elec",
+   "slot": "torsos",
+   "family": "Pacifist",
+   "sprite": "Plans/Torsos/sprites/torso82D_elec.png",
+   "era": "new",
+   "names": [
+    "Pacifist"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "torso83D_heat",
+   "slot": "torsos",
+   "family": "Windigo",
+   "sprite": "Plans/Torsos/sprites/torso83D_heat.png",
+   "era": "new",
+   "names": [
+    "Windigo"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "torso83D_elec",
+   "slot": "torsos",
+   "family": "Shipper",
+   "sprite": "Plans/Torsos/sprites/torso83D_elec.png",
+   "era": "new",
+   "names": [
+    "Shipper"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "torso84D_phys",
+   "slot": "torsos",
+   "family": "Blast Furnace",
+   "sprite": "Plans/Torsos/sprites/torso84D_phys.png",
+   "era": "new",
+   "names": [
+    "Blast Furnace"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "torso84D_elec",
+   "slot": "torsos",
+   "family": "Arc Furnace",
+   "sprite": "Plans/Torsos/sprites/torso84D_elec.png",
+   "era": "new",
+   "names": [
+    "Arc Furnace"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "torso82E_heat",
+   "slot": "torsos",
+   "family": "Betrayer",
+   "sprite": "Plans/Torsos/sprites/torso82E_heat.png",
+   "era": "new",
+   "names": [
+    "Betrayer"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "torso82E_elec",
+   "slot": "torsos",
+   "family": "Pacifist",
+   "sprite": "Plans/Torsos/sprites/torso82E_elec.png",
+   "era": "new",
+   "names": [
+    "Pacifist"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "torso83E_heat",
+   "slot": "torsos",
+   "family": "Windigo",
+   "sprite": "Plans/Torsos/sprites/torso83E_heat.png",
+   "era": "new",
+   "names": [
+    "Windigo"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "torso83E_elec",
+   "slot": "torsos",
+   "family": "Shipper",
+   "sprite": "Plans/Torsos/sprites/torso83E_elec.png",
+   "era": "new",
+   "names": [
+    "Shipper"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "torso84E_phys",
+   "slot": "torsos",
+   "family": "Blast Furnace",
+   "sprite": "Plans/Torsos/sprites/torso84E_phys.png",
+   "era": "new",
+   "names": [
+    "Blast Furnace"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "torso84E_elec",
+   "slot": "torsos",
+   "family": "Arc Furnace",
+   "sprite": "Plans/Torsos/sprites/torso84E_elec.png",
+   "era": "new",
+   "names": [
+    "Arc Furnace"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "torso52_elec",
+   "slot": "torsos",
+   "family": "Violence",
+   "sprite": "Plans/Torsos/sprites/torso52_elec.png",
+   "era": "new",
+   "names": [
+    "Violence"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "torso52_phys",
+   "slot": "torsos",
+   "family": "Genocide",
+   "sprite": "Plans/Torsos/sprites/torso52_phys.png",
+   "era": "new",
+   "names": [
+    "Genocide"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "torso56A_elec",
+   "slot": "torsos",
+   "family": "Sapphire Shell",
+   "sprite": "Plans/Torsos/sprites/torso56A_elec.png",
+   "era": "new",
+   "names": [
+    "Sapphire Shell"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "torso56A_phys",
+   "slot": "torsos",
+   "family": "Topaz Shell",
+   "sprite": "Plans/Torsos/sprites/torso56A_phys.png",
+   "era": "new",
+   "names": [
+    "Topaz Shell"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "torso78C_heat",
+   "slot": "torsos",
+   "family": "Cerberus",
+   "sprite": "Plans/Torsos/sprites/torso78C_heat.png",
+   "era": "new",
+   "names": [
+    "Cerberus"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "torso78C_phys",
+   "slot": "torsos",
+   "family": "Hydra",
+   "sprite": "Plans/Torsos/sprites/torso78C_phys.png",
+   "era": "new",
+   "names": [
+    "Hydra"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "torso78D_heat",
+   "slot": "torsos",
+   "family": "Cerberus",
+   "sprite": "Plans/Torsos/sprites/torso78D_heat.png",
+   "era": "new",
+   "names": [
+    "Cerberus"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "torso78D_phys",
+   "slot": "torsos",
+   "family": "Hydra",
+   "sprite": "Plans/Torsos/sprites/torso78D_phys.png",
+   "era": "new",
+   "names": [
+    "Hydra"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "torso78E_heat",
+   "slot": "torsos",
+   "family": "Cerberus",
+   "sprite": "Plans/Torsos/sprites/torso78E_heat.png",
+   "era": "new",
+   "names": [
+    "Cerberus"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "torso78E_phys",
+   "slot": "torsos",
+   "family": "Hydra",
+   "sprite": "Plans/Torsos/sprites/torso78E_phys.png",
+   "era": "new",
+   "names": [
+    "Hydra"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "torso67D_heat",
+   "slot": "torsos",
+   "family": "Rock Barrier",
+   "sprite": "Plans/Torsos/sprites/torso67D_heat.png",
+   "era": "new",
+   "names": [
+    "Rock Barrier"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "torso67D_elec",
+   "slot": "torsos",
+   "family": "Storm Barrier",
+   "sprite": "Plans/Torsos/sprites/torso67D_elec.png",
+   "era": "new",
+   "names": [
+    "Storm Barrier"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "torso67E_heat",
+   "slot": "torsos",
+   "family": "Rock Barrier",
+   "sprite": "Plans/Torsos/sprites/torso67E_heat.png",
+   "era": "new",
+   "names": [
+    "Rock Barrier"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "torso67E_elec",
+   "slot": "torsos",
+   "family": "Storm Barrier",
+   "sprite": "Plans/Torsos/sprites/torso67E_elec.png",
+   "era": "new",
+   "names": [
+    "Storm Barrier"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "torso88_elec",
+   "slot": "torsos",
+   "family": "Arctic Fox",
+   "sprite": "Plans/Torsos/sprites/torso88_elec.png",
+   "era": "new",
+   "names": [
+    "Arctic Fox"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "wheels66D_heat",
+   "slot": "legs",
+   "family": "Molten Runners",
+   "sprite": "Plans/Legs/sprites/wheels66D_heat.png",
+   "era": "new",
+   "names": [
+    "Molten Runners"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "wheels66D_phys",
+   "slot": "legs",
+   "family": "Granite Runners",
+   "sprite": "Plans/Legs/sprites/wheels66D_phys.png",
+   "era": "new",
+   "names": [
+    "Granite Runners"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "wheels66E_heat",
+   "slot": "legs",
+   "family": "Molten Runners",
+   "sprite": "Plans/Legs/sprites/wheels66E_heat.png",
+   "era": "new",
+   "names": [
+    "Molten Runners"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "wheels66E_phys",
+   "slot": "legs",
+   "family": "Granite Runners",
+   "sprite": "Plans/Legs/sprites/wheels66E_phys.png",
+   "era": "new",
+   "names": [
+    "Granite Runners"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "leg67B_heat",
+   "slot": "legs",
+   "family": "Blazing Stompers",
+   "sprite": "Plans/Legs/sprites/leg67B_heat.png",
+   "era": "new",
+   "names": [
+    "Blazing Stompers"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "leg67B_phys",
+   "slot": "legs",
+   "family": "Boulder Stompers",
+   "sprite": "Plans/Legs/sprites/leg67B_phys.png",
+   "era": "new",
+   "names": [
+    "Boulder Stompers"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "leg67C_heat",
+   "slot": "legs",
+   "family": "Blazing Stompers",
+   "sprite": "Plans/Legs/sprites/leg67C_heat.png",
+   "era": "new",
+   "names": [
+    "Blazing Stompers"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "leg67C_phys",
+   "slot": "legs",
+   "family": "Boulder Stompers",
+   "sprite": "Plans/Legs/sprites/leg67C_phys.png",
+   "era": "new",
+   "names": [
+    "Boulder Stompers"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "leg67D_heat",
+   "slot": "legs",
+   "family": "Blazing Stompers",
+   "sprite": "Plans/Legs/sprites/leg67D_heat.png",
+   "era": "new",
+   "names": [
+    "Blazing Stompers"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "leg67D_phys",
+   "slot": "legs",
+   "family": "Boulder Stompers",
+   "sprite": "Plans/Legs/sprites/leg67D_phys.png",
+   "era": "new",
+   "names": [
+    "Boulder Stompers"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "leg67E_heat",
+   "slot": "legs",
+   "family": "Blazing Stompers",
+   "sprite": "Plans/Legs/sprites/leg67E_heat.png",
+   "era": "new",
+   "names": [
+    "Blazing Stompers"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "leg67E_phys",
+   "slot": "legs",
+   "family": "Boulder Stompers",
+   "sprite": "Plans/Legs/sprites/leg67E_phys.png",
+   "era": "new",
+   "names": [
+    "Boulder Stompers"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "leg73C_heat",
+   "slot": "legs",
+   "family": "Magma Supporters",
+   "sprite": "Plans/Legs/sprites/leg73C_heat.png",
+   "era": "new",
+   "names": [
+    "Magma Supporters"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "leg73C_phys",
+   "slot": "legs",
+   "family": "Stalactite Supporters",
+   "sprite": "Plans/Legs/sprites/leg73C_phys.png",
+   "era": "new",
+   "names": [
+    "Stalactite Supporters"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "leg73D_heat",
+   "slot": "legs",
+   "family": "Magma Supporters",
+   "sprite": "Plans/Legs/sprites/leg73D_heat.png",
+   "era": "new",
+   "names": [
+    "Magma Supporters"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "leg73D_phys",
+   "slot": "legs",
+   "family": "Stalactite Supporters",
+   "sprite": "Plans/Legs/sprites/leg73D_phys.png",
+   "era": "new",
+   "names": [
+    "Stalactite Supporters"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "leg73E_heat",
+   "slot": "legs",
+   "family": "Magma Supporters",
+   "sprite": "Plans/Legs/sprites/leg73E_heat.png",
+   "era": "new",
+   "names": [
+    "Magma Supporters"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "leg73E_phys",
+   "slot": "legs",
+   "family": "Stalactite Supporters",
+   "sprite": "Plans/Legs/sprites/leg73E_phys.png",
+   "era": "new",
+   "names": [
+    "Stalactite Supporters"
+   ],
+   "element": "PHYSICAL"
+  },
+  {
+   "id": "leg74A_heat",
+   "slot": "legs",
+   "family": "Flare Striders",
+   "sprite": "Plans/Legs/sprites/leg74A_heat.png",
+   "era": "new",
+   "names": [
+    "Flare Striders"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "leg74A_elec",
+   "slot": "legs",
+   "family": "Static Striders",
+   "sprite": "Plans/Legs/sprites/leg74A_elec.png",
+   "era": "new",
+   "names": [
+    "Static Striders"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "leg74B_heat",
+   "slot": "legs",
+   "family": "Flare Striders",
+   "sprite": "Plans/Legs/sprites/leg74B_heat.png",
+   "era": "new",
+   "names": [
+    "Flare Striders"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "leg74B_elec",
+   "slot": "legs",
+   "family": "Static Striders",
+   "sprite": "Plans/Legs/sprites/leg74B_elec.png",
+   "era": "new",
+   "names": [
+    "Static Striders"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "leg74C_heat",
+   "slot": "legs",
+   "family": "Flare Striders",
+   "sprite": "Plans/Legs/sprites/leg74C_heat.png",
+   "era": "new",
+   "names": [
+    "Flare Striders"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "leg74C_elec",
+   "slot": "legs",
+   "family": "Static Striders",
+   "sprite": "Plans/Legs/sprites/leg74C_elec.png",
+   "era": "new",
+   "names": [
+    "Static Striders"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "leg74D_heat",
+   "slot": "legs",
+   "family": "Flare Striders",
+   "sprite": "Plans/Legs/sprites/leg74D_heat.png",
+   "era": "new",
+   "names": [
+    "Flare Striders"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "leg74D_elec",
+   "slot": "legs",
+   "family": "Static Striders",
+   "sprite": "Plans/Legs/sprites/leg74D_elec.png",
+   "era": "new",
+   "names": [
+    "Static Striders"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "leg76B_heat",
+   "slot": "legs",
+   "family": "Pyre Diggers",
+   "sprite": "Plans/Legs/sprites/leg76B_heat.png",
+   "era": "new",
+   "names": [
+    "Pyre Diggers"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "leg76B_elec",
+   "slot": "legs",
+   "family": "Wraith Diggers",
+   "sprite": "Plans/Legs/sprites/leg76B_elec.png",
+   "era": "new",
+   "names": [
+    "Wraith Diggers"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "leg76C_heat",
+   "slot": "legs",
+   "family": "Pyre Diggers",
+   "sprite": "Plans/Legs/sprites/leg76C_heat.png",
+   "era": "new",
+   "names": [
+    "Pyre Diggers"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "leg76C_elec",
+   "slot": "legs",
+   "family": "Wraith Diggers",
+   "sprite": "Plans/Legs/sprites/leg76C_elec.png",
+   "era": "new",
+   "names": [
+    "Wraith Diggers"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "leg76D_heat",
+   "slot": "legs",
+   "family": "Pyre Diggers",
+   "sprite": "Plans/Legs/sprites/leg76D_heat.png",
+   "era": "new",
+   "names": [
+    "Pyre Diggers"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "leg76D_elec",
+   "slot": "legs",
+   "family": "Wraith Diggers",
+   "sprite": "Plans/Legs/sprites/leg76D_elec.png",
+   "era": "new",
+   "names": [
+    "Wraith Diggers"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "leg76E_heat",
+   "slot": "legs",
+   "family": "Pyre Diggers",
+   "sprite": "Plans/Legs/sprites/leg76E_heat.png",
+   "era": "new",
+   "names": [
+    "Pyre Diggers"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "leg76E_elec",
+   "slot": "legs",
+   "family": "Wraith Diggers",
+   "sprite": "Plans/Legs/sprites/leg76E_elec.png",
+   "era": "new",
+   "names": [
+    "Wraith Diggers"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "leg77D_heat",
+   "slot": "legs",
+   "family": "The Pincer",
+   "sprite": "Plans/Legs/sprites/leg77D_heat.png",
+   "era": "new",
+   "names": [
+    "The Pincer"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "leg77D_elec",
+   "slot": "legs",
+   "family": "The Fang",
+   "sprite": "Plans/Legs/sprites/leg77D_elec.png",
+   "era": "new",
+   "names": [
+    "The Fang"
+   ],
+   "element": "ELECTRIC"
+  },
+  {
+   "id": "leg77E_heat",
+   "slot": "legs",
+   "family": "The Pincer",
+   "sprite": "Plans/Legs/sprites/leg77E_heat.png",
+   "era": "new",
+   "names": [
+    "The Pincer"
+   ],
+   "element": "EXPLOSIVE"
+  },
+  {
+   "id": "leg77E_elec",
+   "slot": "legs",
+   "family": "The Fang",
+   "sprite": "Plans/Legs/sprites/leg77E_elec.png",
+   "era": "new",
+   "names": [
+    "The Fang"
+   ],
+   "element": "ELECTRIC"
+  }
+ ],
+ "_extra_note": "New recolour sprites (not in items_raw). Sprite paths are in the Obsidian vault.",
+ "_element": {
+  "cannon7A": "EXPLOSIVE",
+  "cannon7B": "EXPLOSIVE",
+  "cannon7C": "EXPLOSIVE",
+  "cannon7A2": "PHYSICAL",
+  "cannon7B2": "PHYSICAL",
+  "cannon7C2": "PHYSICAL",
+  "cannon7A3": "ELECTRIC",
+  "cannon7B3": "ELECTRIC",
+  "cannon7C3": "ELECTRIC",
+  "topBlasterB1C": "PHYSICAL",
+  "topBlasterB1D": "PHYSICAL",
+  "topBlasterB1E": "PHYSICAL",
+  "topBlasterB2C": "EXPLOSIVE",
+  "topBlasterB2D": "EXPLOSIVE",
+  "topBlasterB2E": "EXPLOSIVE",
+  "topBlasterB3C": "ELECTRIC",
+  "topBlasterB3D": "ELECTRIC",
+  "topBlasterB3E": "ELECTRIC",
+  "topBlaster3C": "ELECTRIC",
+  "topBlaster3D": "ELECTRIC",
+  "topBlaster3E": "ELECTRIC",
+  "topSniper1D_heat": "EXPLOSIVE",
+  "topSniper1E_heat": "EXPLOSIVE",
+  "topGrenadeLauncher1C_heat": "EXPLOSIVE",
+  "topGrenadeLauncher1C": "PHYSICAL",
+  "topGrenadeLauncher3C": "ELECTRIC",
+  "topGrenadeLauncher1D_heat": "EXPLOSIVE",
+  "topGrenadeLauncher1D": "PHYSICAL",
+  "topGrenadeLauncher3D": "ELECTRIC",
+  "topGrenadeLauncher1E_heat": "EXPLOSIVE",
+  "topGrenadeLauncher1E": "PHYSICAL",
+  "topGrenadeLauncher3E": "ELECTRIC",
+  "topSuperRocketLauncher2C_elec": "ELECTRIC",
+  "topSuperRocketLauncher2C": "EXPLOSIVE",
+  "topSuperRocketLauncher2D_elec": "ELECTRIC",
+  "topSuperRocketLauncher2D": "EXPLOSIVE",
+  "topSuperRocketLauncher2E_elec": "ELECTRIC",
+  "topSuperRocketLauncher2E": "EXPLOSIVE",
+  "topSuperLaser2D": "EXPLOSIVE",
+  "topSuperLaser3D": "ELECTRIC",
+  "topSuperLaser2E": "EXPLOSIVE",
+  "topSuperLaser3E": "ELECTRIC",
+  "topArtillery2C": "EXPLOSIVE",
+  "topArtillery2D": "EXPLOSIVE",
+  "topArtillery2E": "EXPLOSIVE",
+  "topDiagonalRocketLauncher2D": "EXPLOSIVE",
+  "topDiagonalRocketLauncherB2D": "EXPLOSIVE",
+  "topDiagonalRocketLauncher2D_elec": "ELECTRIC",
+  "topDiagonalRocketLauncherB2D_elec": "ELECTRIC",
+  "topDiagonalRocketLauncher2E": "EXPLOSIVE",
+  "topDiagonalRocketLauncherB2E": "EXPLOSIVE",
+  "topDiagonalRocketLauncher2E_elec": "ELECTRIC",
+  "topDiagonalRocketLauncherB2E_elec": "ELECTRIC",
+  "topSuperMachineGun1D": "PHYSICAL",
+  "topSuperMachineGun1D_heat": "EXPLOSIVE",
+  "topSuperMachineGun1D_elec": "ELECTRIC",
+  "topSuperMachineGun1E": "PHYSICAL",
+  "topSuperMachineGun1E_heat": "EXPLOSIVE",
+  "topSuperMachineGun1E_elec": "ELECTRIC",
+  "topEMPD": "ELECTRIC",
+  "topHeatBombD": "EXPLOSIVE",
+  "topEMPE": "ELECTRIC",
+  "topHeatBombE": "EXPLOSIVE",
+  "sideDistanceCloser1C": "PHYSICAL",
+  "sideDistanceCloser1D": "PHYSICAL",
+  "sideDistanceCloser1E": "PHYSICAL",
+  "sideDistanceCloser2C": "EXPLOSIVE",
+  "sideDistanceCloser2D": "EXPLOSIVE",
+  "sideDistanceCloser2E": "EXPLOSIVE",
+  "sideDistanceCloser3C": "ELECTRIC",
+  "sideDistanceCloser3D": "ELECTRIC",
+  "sideDistanceCloser3E": "ELECTRIC",
+  "laser40A": "PHYSICAL",
+  "laser40A2": "EXPLOSIVE",
+  "laser40A3": "ELECTRIC",
+  "laser40B": "PHYSICAL",
+  "laser40B2": "EXPLOSIVE",
+  "laser40B3": "ELECTRIC",
+  "rocketLauncher22A_phys": "PHYSICAL",
+  "rocketLauncher22A_elec": "ELECTRIC",
+  "rocketLauncher22A_heat": "EXPLOSIVE",
+  "rocketLauncher22B_phys": "PHYSICAL",
+  "rocketLauncher22B_elec": "ELECTRIC",
+  "rocketLauncher22B_heat": "EXPLOSIVE",
+  "rocketLauncher22C_phys": "PHYSICAL",
+  "rocketLauncher22C_elec": "ELECTRIC",
+  "rocketLauncher22C_heat": "EXPLOSIVE",
+  "rocketLauncher22D_phys": "PHYSICAL",
+  "rocketLauncher22D_elec": "ELECTRIC",
+  "rocketLauncher22D_heat": "EXPLOSIVE",
+  "cannon5A": "PHYSICAL",
+  "cannon5B": "PHYSICAL",
+  "cannon5A_heat": "EXPLOSIVE",
+  "cannon5B_heat": "EXPLOSIVE",
+  "cannon5A_elec": "ELECTRIC",
+  "cannon5B_elec": "ELECTRIC",
+  "topLaser2B": "EXPLOSIVE",
+  "topLaser3B": "ELECTRIC",
+  "topLaser2B_phys": "PHYSICAL",
+  "topMachineGun1B": "PHYSICAL",
+  "topMachineGun1B_heat": "EXPLOSIVE",
+  "topMachineGun1B_elec": "ELECTRIC",
+  "topLaser2C": "EXPLOSIVE",
+  "topLaser3C": "ELECTRIC",
+  "topLaser2C_phys": "PHYSICAL",
+  "topMachineGun1C": "PHYSICAL",
+  "topMachineGun1C_heat": "EXPLOSIVE",
+  "topMachineGun1C_elec": "ELECTRIC",
+  "topBeam2C": "EXPLOSIVE",
+  "topBeam3C": "ELECTRIC",
+  "topBeam2C_phys": "PHYSICAL",
+  "topBeam2D": "EXPLOSIVE",
+  "topBeam3D": "ELECTRIC",
+  "topBeam2D_phys": "PHYSICAL",
+  "topBeam2E": "EXPLOSIVE",
+  "topBeam3E": "ELECTRIC",
+  "topBeam2E_phys": "PHYSICAL",
+  "torso60A": "ELECTRIC",
+  "torso60B": "ELECTRIC",
+  "torso60C": "ELECTRIC",
+  "torso60D": "ELECTRIC",
+  "torso60E": "ELECTRIC",
+  "torso61A": "EXPLOSIVE",
+  "torso61B": "EXPLOSIVE",
+  "torso61C": "EXPLOSIVE",
+  "torso61D": "EXPLOSIVE",
+  "torso61E": "EXPLOSIVE",
+  "torso62A": "PHYSICAL",
+  "torso62B": "PHYSICAL",
+  "torso62C": "PHYSICAL",
+  "torso62D": "PHYSICAL",
+  "torso62E": "PHYSICAL",
+  "torso7": "OTHER",
+  "torso7B": "OTHER",
+  "torso75C": "EXPLOSIVE",
+  "torso75D": "EXPLOSIVE",
+  "torso85B": "PHYSICAL",
+  "torso85B_heat": "EXPLOSIVE",
+  "torso85B_elec": "ELECTRIC",
+  "torso85C": "PHYSICAL",
+  "torso85C_heat": "EXPLOSIVE",
+  "torso85C_elec": "ELECTRIC",
+  "torso92C": "ELECTRIC",
+  "torso92C_heat": "EXPLOSIVE",
+  "torso92C_phys": "PHYSICAL",
+  "torso92D": "ELECTRIC",
+  "torso92D_heat": "EXPLOSIVE",
+  "torso92D_phys": "PHYSICAL",
+  "torso92E": "ELECTRIC",
+  "torso92E_heat": "EXPLOSIVE",
+  "torso92E_phys": "PHYSICAL",
+  "torso93C": "ELECTRIC",
+  "torso93D": "ELECTRIC",
+  "torso93E": "ELECTRIC",
+  "torso94C": "PHYSICAL",
+  "torso94D": "PHYSICAL",
+  "torso94E": "PHYSICAL",
+  "torso95C": "EXPLOSIVE",
+  "torso95D": "EXPLOSIVE",
+  "torso95E": "EXPLOSIVE",
+  "torso89D": "ELECTRIC",
+  "torso89E": "ELECTRIC",
+  "torso90D": "PHYSICAL",
+  "torso90E": "PHYSICAL",
+  "torso91D": "EXPLOSIVE",
+  "torso91E": "EXPLOSIVE",
+  "torso97E": "PHYSICAL",
+  "torso98E": "EXPLOSIVE",
+  "torso99E": "ELECTRIC",
+  "torso96D": "PHYSICAL",
+  "torso96D_heat": "EXPLOSIVE",
+  "torso96D_elec": "ELECTRIC",
+  "torso96E": "PHYSICAL",
+  "torso96E_heat": "EXPLOSIVE",
+  "torso96E_elec": "ELECTRIC",
+  "torso86D": "EXPLOSIVE",
+  "torso86E": "EXPLOSIVE",
+  "torso87D": "ELECTRIC",
+  "torso87E": "ELECTRIC",
+  "torso87D2": "PHYSICAL",
+  "torso87E2": "PHYSICAL",
+  "torso15": "EXPLOSIVE",
+  "torso15B": "EXPLOSIVE",
+  "torso16": "ELECTRIC",
+  "torso16B": "ELECTRIC",
+  "torso15_phys": "PHYSICAL",
+  "torso15B_phys": "PHYSICAL",
+  "torso42B": "PHYSICAL",
+  "torso42A": "EXPLOSIVE",
+  "torso42C": "ELECTRIC",
+  "torso47": "ELECTRIC",
+  "torso46_heat": "EXPLOSIVE",
+  "torso47_phys": "PHYSICAL",
+  "torso70C": "ELECTRIC",
+  "torso70C_heat": "EXPLOSIVE",
+  "torso47_heat": "EXPLOSIVE",
+  "torso70C_phys": "PHYSICAL",
+  "torso70E": "ELECTRIC",
+  "torso46": "ELECTRIC",
+  "torso70E_heat": "EXPLOSIVE",
+  "torso70E_phys": "PHYSICAL",
+  "torso46_phys": "PHYSICAL",
+  "torso82C": "PHYSICAL",
+  "torso82C_heat": "EXPLOSIVE",
+  "torso82C_elec": "ELECTRIC",
+  "torso83C": "PHYSICAL",
+  "torso83C_heat": "EXPLOSIVE",
+  "torso83C_elec": "ELECTRIC",
+  "torso84C": "EXPLOSIVE",
+  "torso84C_phys": "PHYSICAL",
+  "torso84C_elec": "ELECTRIC",
+  "torso82D": "PHYSICAL",
+  "torso82D_heat": "EXPLOSIVE",
+  "torso82D_elec": "ELECTRIC",
+  "torso83D": "PHYSICAL",
+  "torso83D_heat": "EXPLOSIVE",
+  "torso83D_elec": "ELECTRIC",
+  "torso84D": "EXPLOSIVE",
+  "torso84D_phys": "PHYSICAL",
+  "torso84D_elec": "ELECTRIC",
+  "torso82E": "PHYSICAL",
+  "torso82E_heat": "EXPLOSIVE",
+  "torso82E_elec": "ELECTRIC",
+  "torso83E": "PHYSICAL",
+  "torso83E_heat": "EXPLOSIVE",
+  "torso83E_elec": "ELECTRIC",
+  "torso84E": "EXPLOSIVE",
+  "torso84E_phys": "PHYSICAL",
+  "torso84E_elec": "ELECTRIC",
+  "torso52": "EXPLOSIVE",
+  "torso52_elec": "ELECTRIC",
+  "torso52_phys": "PHYSICAL",
+  "torso56A": "EXPLOSIVE",
+  "torso56A_elec": "ELECTRIC",
+  "torso56A_phys": "PHYSICAL",
+  "torso78C": "ELECTRIC",
+  "torso78C_heat": "EXPLOSIVE",
+  "torso78C_phys": "PHYSICAL",
+  "torso78D": "ELECTRIC",
+  "torso78D_heat": "EXPLOSIVE",
+  "torso78D_phys": "PHYSICAL",
+  "torso78E": "ELECTRIC",
+  "torso78E_heat": "EXPLOSIVE",
+  "torso78E_phys": "PHYSICAL",
+  "torso67D": "PHYSICAL",
+  "torso67D_heat": "EXPLOSIVE",
+  "torso67D_elec": "ELECTRIC",
+  "torso67E": "PHYSICAL",
+  "torso67E_heat": "EXPLOSIVE",
+  "torso67E_elec": "ELECTRIC",
+  "torso88": "EXPLOSIVE",
+  "torso88_elec": "ELECTRIC",
+  "wheels66D": "ELECTRIC",
+  "wheels66D_heat": "EXPLOSIVE",
+  "wheels66D_phys": "PHYSICAL",
+  "wheels66E": "ELECTRIC",
+  "wheels66E_heat": "EXPLOSIVE",
+  "wheels66E_phys": "PHYSICAL",
+  "leg60A": "EXPLOSIVE",
+  "leg60B": "EXPLOSIVE",
+  "leg60C": "EXPLOSIVE",
+  "leg60D": "EXPLOSIVE",
+  "leg60E": "EXPLOSIVE",
+  "leg61A": "PHYSICAL",
+  "leg61B": "PHYSICAL",
+  "leg61C": "PHYSICAL",
+  "leg61D": "PHYSICAL",
+  "leg61E": "PHYSICAL",
+  "leg62A": "ELECTRIC",
+  "leg62B": "ELECTRIC",
+  "leg62C": "ELECTRIC",
+  "leg62D": "ELECTRIC",
+  "leg62E": "ELECTRIC",
+  "leg67B": "ELECTRIC",
+  "leg67B_heat": "EXPLOSIVE",
+  "leg67B_phys": "PHYSICAL",
+  "leg67C": "ELECTRIC",
+  "leg67C_heat": "EXPLOSIVE",
+  "leg67C_phys": "PHYSICAL",
+  "leg67D": "ELECTRIC",
+  "leg67D_heat": "EXPLOSIVE",
+  "leg67D_phys": "PHYSICAL",
+  "leg67E": "ELECTRIC",
+  "leg67E_heat": "EXPLOSIVE",
+  "leg67E_phys": "PHYSICAL",
+  "leg73C": "ELECTRIC",
+  "leg73C_heat": "EXPLOSIVE",
+  "leg73C_phys": "PHYSICAL",
+  "leg73D": "ELECTRIC",
+  "leg73D_heat": "EXPLOSIVE",
+  "leg73D_phys": "PHYSICAL",
+  "leg73E": "ELECTRIC",
+  "leg73E_heat": "EXPLOSIVE",
+  "leg73E_phys": "PHYSICAL",
+  "leg74A": "PHYSICAL",
+  "leg74A_heat": "EXPLOSIVE",
+  "leg74A_elec": "ELECTRIC",
+  "leg74B": "PHYSICAL",
+  "leg74B_heat": "EXPLOSIVE",
+  "leg74B_elec": "ELECTRIC",
+  "leg74C": "PHYSICAL",
+  "leg74C_heat": "EXPLOSIVE",
+  "leg74C_elec": "ELECTRIC",
+  "leg74D": "PHYSICAL",
+  "leg74D_heat": "EXPLOSIVE",
+  "leg74D_elec": "ELECTRIC",
+  "leg76B": "PHYSICAL",
+  "leg76B_heat": "EXPLOSIVE",
+  "leg76B_elec": "ELECTRIC",
+  "leg76C": "PHYSICAL",
+  "leg76C_heat": "EXPLOSIVE",
+  "leg76C_elec": "ELECTRIC",
+  "leg76D": "PHYSICAL",
+  "leg76D_heat": "EXPLOSIVE",
+  "leg76D_elec": "ELECTRIC",
+  "leg76E": "PHYSICAL",
+  "leg76E_heat": "EXPLOSIVE",
+  "leg76E_elec": "ELECTRIC",
+  "leg77D": "PHYSICAL",
+  "leg77D_heat": "EXPLOSIVE",
+  "leg77D_elec": "ELECTRIC",
+  "leg77E": "PHYSICAL",
+  "leg77E_heat": "EXPLOSIVE",
+  "leg77E_elec": "ELECTRIC",
+  "leg78C": "EXPLOSIVE",
+  "leg78D": "EXPLOSIVE",
+  "leg78E": "EXPLOSIVE",
+  "wheels69D": "PHYSICAL",
+  "wheels69E": "PHYSICAL",
+  "leg79C": "ELECTRIC",
+  "leg79D": "ELECTRIC",
+  "leg79E": "ELECTRIC",
+  "droneBasic1A": "PHYSICAL",
+  "droneBasic1B": "PHYSICAL",
+  "droneBasic2A": "EXPLOSIVE",
+  "droneBasic2B": "EXPLOSIVE",
+  "droneBasic3A": "ELECTRIC",
+  "droneBasic3B": "ELECTRIC",
+  "droneCapacityDamage1C": "PHYSICAL",
+  "droneCapacityDamage1D": "PHYSICAL",
+  "droneCapacityDamage1E": "PHYSICAL",
+  "droneCapacityDamage2C": "EXPLOSIVE",
+  "droneCapacityDamage2D": "EXPLOSIVE",
+  "droneCapacityDamage2E": "EXPLOSIVE",
+  "droneCapacityDamage3C": "ELECTRIC",
+  "droneCapacityDamage3D": "ELECTRIC",
+  "droneCapacityDamage3E": "ELECTRIC",
+  "droneDamageSelf1C": "PHYSICAL",
+  "droneDamageSelf1D": "PHYSICAL",
+  "droneDamageSelf1E": "PHYSICAL",
+  "droneDamageSelf2C": "EXPLOSIVE",
+  "droneDamageSelf2D": "EXPLOSIVE",
+  "droneDamageSelf2E": "EXPLOSIVE",
+  "droneDamageSelf3C": "ELECTRIC",
+  "droneDamageSelf3D": "ELECTRIC",
+  "droneDamageSelf3E": "ELECTRIC",
+  "droneDamageSelfB1C": "PHYSICAL",
+  "droneDamageSelfB1D": "PHYSICAL",
+  "droneDamageSelfB1E": "PHYSICAL",
+  "droneDamageSelfB2C": "EXPLOSIVE",
+  "droneDamageSelfB2D": "EXPLOSIVE",
+  "droneDamageSelfB2E": "EXPLOSIVE",
+  "droneDamageSelfB3C": "ELECTRIC",
+  "droneDamageSelfB3D": "ELECTRIC",
+  "droneDamageSelfB3E": "ELECTRIC",
+  "droneHighDamage2C": "EXPLOSIVE",
+  "droneHighDamage2D": "EXPLOSIVE",
+  "droneHighDamage2E": "EXPLOSIVE",
+  "droneHighDamage3C": "ELECTRIC",
+  "droneHighDamage3D": "ELECTRIC",
+  "droneHighDamage3E": "ELECTRIC",
+  "droneTypeDamage1B": "PHYSICAL",
+  "droneTypeDamage1C": "PHYSICAL",
+  "droneTypeDamage2B": "EXPLOSIVE",
+  "droneTypeDamage2C": "EXPLOSIVE",
+  "droneTypeDamage3B": "ELECTRIC",
+  "droneTypeDamage3C": "ELECTRIC",
+  "superDroneTypeDamage1D": "PHYSICAL",
+  "superDroneTypeDamage1E": "PHYSICAL",
+  "superDroneTypeDamage2D": "EXPLOSIVE",
+  "superDroneTypeDamage2E": "EXPLOSIVE",
+  "superDroneTypeDamage3D": "ELECTRIC",
+  "superDroneTypeDamage3E": "ELECTRIC",
+  "superDroneBasic1C": "PHYSICAL",
+  "superDroneBasic1D": "PHYSICAL",
+  "superDroneBasic1E": "PHYSICAL",
+  "superDroneBasic2C": "EXPLOSIVE",
+  "superDroneBasic2D": "EXPLOSIVE",
+  "superDroneBasic2E": "EXPLOSIVE",
+  "superDroneBasic3C": "ELECTRIC",
+  "superDroneBasic3D": "ELECTRIC",
+  "superDroneBasic3E": "ELECTRIC",
+  "droneRegenDamage1D": "PHYSICAL",
+  "droneRegenDamage1E": "PHYSICAL",
+  "droneRegenDamage2D": "EXPLOSIVE",
+  "droneRegenDamage2E": "EXPLOSIVE",
+  "droneRegenDamage3D": "ELECTRIC",
+  "droneRegenDamage3E": "ELECTRIC",
+  "dronePull1D": "PHYSICAL",
+  "dronePull1E": "PHYSICAL",
+  "dronePush2D": "EXPLOSIVE",
+  "dronePush2E": "EXPLOSIVE",
+  "dronePush3D": "ELECTRIC",
+  "dronePush3E": "ELECTRIC",
+  "droneRanged1C": "PHYSICAL",
+  "droneRanged1D": "PHYSICAL",
+  "droneRanged1E": "PHYSICAL",
+  "droneRanged2C": "EXPLOSIVE",
+  "droneRanged2D": "EXPLOSIVE",
+  "droneRanged2E": "EXPLOSIVE",
+  "droneRanged3C": "ELECTRIC",
+  "droneRanged3D": "ELECTRIC",
+  "droneRanged3E": "ELECTRIC",
+  "droneRangedB1C": "PHYSICAL",
+  "droneRangedB1D": "PHYSICAL",
+  "droneRangedB1E": "PHYSICAL",
+  "droneRangedB2C": "EXPLOSIVE",
+  "droneRangedB2D": "EXPLOSIVE",
+  "droneRangedB2E": "EXPLOSIVE",
+  "droneRangedB3C": "ELECTRIC",
+  "droneRangedB3D": "ELECTRIC",
+  "droneRangedB3E": "ELECTRIC"
+ },
+ "_element_note": "Element fixes by sprite colour (user, 2026-09-29): Frantic cannon7 red = heat, orange = physical, blue = electric.",
+ "_names": {
+  "topBlasterB1C": "Iron Hornet",
+  "topBlasterB1D": "Iron Hornet",
+  "topBlasterB1E": "Iron Hornet",
+  "topBlasterB2C": "Ember Hornet",
+  "topBlasterB2D": "Ember Hornet",
+  "topBlasterB2E": "Ember Hornet",
+  "topBlasterB3C": "Storm Hornet",
+  "topBlasterB3D": "Storm Hornet",
+  "topBlasterB3E": "Storm Hornet",
+  "topBlaster3C": "Thunder Rage",
+  "topBlaster2C": "Vandal Rage",
+  "topBlaster3D": "Thunder Rage",
+  "topBlaster2D": "Vandal Rage",
+  "topBlaster3E": "Thunder Rage",
+  "topBlaster2E": "Vandal Rage",
+  "topGrenadeLauncher1C": "Night Eagle",
+  "topGrenadeLauncher3C": "Grim Cobra",
+  "topGrenadeLauncher1D": "Night Eagle",
+  "topGrenadeLauncher3D": "Grim Cobra",
+  "topGrenadeLauncher1E": "Night Eagle",
+  "topGrenadeLauncher3E": "Grim Cobra",
+  "topSuperRocketLauncher2C": "Supreme Cannon",
+  "topSuperRocketLauncher2D": "Supreme Cannon",
+  "topSuperRocketLauncher2E": "Supreme Cannon",
+  "topSuperLaser2D": "Iron Frenzy",
+  "topSuperLaser3D": "Delerium",
+  "topSuperLaser2E": "Iron Frenzy",
+  "topSuperLaser3E": "Delerium",
+  "topArtillery2C": "Desolation",
+  "topArtillery2D": "Desolation",
+  "topArtillery2E": "Desolation",
+  "topDiagonalRocketLauncher2D": "Burning Shower",
+  "topDiagonalRocketLauncherB2D": "Red Rain",
+  "topDiagonalRocketLauncher2E": "Burning Shower",
+  "topDiagonalRocketLauncherB2E": "Red Rain",
+  "topSuperMachineGun1D": "Spartan Carnage",
+  "topSuperMachineGun1E": "Spartan Carnage",
+  "topEMPD": "Overloaded EMP",
+  "topHeatBombD": "Overheated Heat Bomb",
+  "topEMPE": "Overloaded EMP",
+  "topHeatBombE": "Overheated Heat Bomb",
+  "sideDistanceCloser1C": "Distance Shredder",
+  "sideDistanceCloser1D": "Distance Shredder",
+  "sideDistanceCloser1E": "Distance Shredder",
+  "sideDistanceCloser2C": "Space Invader",
+  "sideDistanceCloser2D": "Space Invader",
+  "sideDistanceCloser2E": "Space Invader",
+  "sideDistanceCloser3C": "Party Crasher",
+  "sideDistanceCloser3D": "Party Crasher",
+  "sideDistanceCloser3E": "Party Crasher",
+  "laser40A": "Penetrator",
+  "laser40A2": "Heat Penetrator",
+  "laser40A3": "Energy Penetrator",
+  "laser40B": "Penetrator",
+  "laser40B2": "Heat Penetrator",
+  "laser40B3": "Energy Penetrator",
+  "cannon5A": "Straight Shot",
+  "cannon5B": "Straight Shot",
+  "topLaser2B": "Ember Laser",
+  "topLaser3B": "Ion Laser",
+  "topMachineGun1B": "Repeater",
+  "topLaser2C": "Ember Laser",
+  "topLaser3C": "Ion Laser",
+  "topMachineGun1C": "Repeater",
+  "topBeam2C": "Infernova",
+  "topBeam3C": "Super Nova",
+  "topBeam2D": "Infernova",
+  "topBeam3D": "Super Nova",
+  "topBeam2E": "Infernova",
+  "topBeam3E": "Super Nova",
+  "torso60A": "Sith",
+  "torso60B": "Sith",
+  "torso60C": "Sith",
+  "torso60D": "Sith",
+  "torso60E": "Sith",
+  "torso61A": "Nightmare",
+  "torso61B": "Nightmare",
+  "torso61C": "Nightmare",
+  "torso61D": "Nightmare",
+  "torso61E": "Nightmare",
+  "torso62A": "Interceptor",
+  "torso62B": "Interceptor",
+  "torso62C": "Interceptor",
+  "torso62D": "Interceptor",
+  "torso62E": "Interceptor",
+  "torso7": "Ember",
+  "torso7B": "Ember",
+  "torso75C": "Boiler",
+  "torso75D": "Boiler",
+  "torso85B": "Bastion",
+  "torso85C": "Bastion",
+  "torso92C": "Arc Sentinel",
+  "torso92D": "Arc Sentinel",
+  "torso92E": "Arc Sentinel",
+  "torso93C": "Energy Battery Armor",
+  "torso93D": "Energy Battery Armor",
+  "torso93E": "Energy Battery Armor",
+  "torso94C": "Battery Armor",
+  "torso94D": "Battery Armor",
+  "torso94E": "Battery Armor",
+  "torso95C": "Heat Battery Armor",
+  "torso95D": "Heat Battery Armor",
+  "torso95E": "Heat Battery Armor",
+  "torso89D": "Rusty Energy Armor",
+  "torso89E": "Rusty Energy Armor",
+  "torso90D": "Hollow Spectral Armor",
+  "torso90E": "Hollow Spectral Armor",
+  "torso91D": "Fractured Heat Armor",
+  "torso91E": "Fractured Heat Armor",
+  "torso97E": "Hollow Cyber Armor",
+  "torso98E": "Fractured Cyber Armor",
+  "torso99E": "Rusty Cyber Armor",
+  "torso96D": "Energy Free Armor",
+  "torso96E": "Energy Free Armor",
+  "torso86D": "Molten Platinum Vest",
+  "torso86E": "Molten Platinum Vest",
+  "torso87D": "Lightning Platinum Vest",
+  "torso87E": "Lightning Platinum Vest",
+  "torso87D2": "Hardened Platinum Vest",
+  "torso87E2": "Hardened Platinum Vest",
+  "torso15": "Fire Guardian",
+  "torso15B": "Fire Guardian",
+  "torso16": "Electric Guardian",
+  "torso16B": "Electric Guardian",
+  "torso42B": "Galaxus Model A",
+  "torso42A": "Galaxus Model B",
+  "torso42C": "Galaxus Model C",
+  "torso47": "MetroLens",
+  "torso70C": "MetroLens",
+  "torso70E": "Stormfire",
+  "torso46": "Stormfire",
+  "torso82C": "Avenger",
+  "torso83C": "Hauler",
+  "torso84C": "Zarkares",
+  "torso82D": "Avenger",
+  "torso83D": "Hauler",
+  "torso84D": "Zarkares",
+  "torso82E": "Avenger",
+  "torso83E": "Hauler",
+  "torso84E": "Zarkares",
+  "torso52": "Brutality",
+  "torso56A": "Diamond Shell",
+  "torso78C": "Naga",
+  "torso78D": "Naga",
+  "torso78E": "Naga",
+  "torso67D": "Archimonde",
+  "torso67E": "Archimonde",
+  "torso88": "Sabertooth",
+  "wheels66D": "Sparked Runners",
+  "wheels66E": "Sparked Runners",
+  "leg60A": "Scorching Feet",
+  "leg60B": "Scorching Feet",
+  "leg60C": "Scorching Feet",
+  "leg60D": "Scorching Feet",
+  "leg60E": "Scorching Feet",
+  "leg61A": "Iron Boots",
+  "leg61B": "Iron Boots",
+  "leg61C": "Iron Boots",
+  "leg61D": "Iron Boots",
+  "leg61E": "Iron Boots",
+  "leg62A": "Charged Walkers",
+  "leg62B": "Charged Walkers",
+  "leg62C": "Charged Walkers",
+  "leg62D": "Charged Walkers",
+  "leg62E": "Charged Walkers",
+  "leg67B": "Dynamic Stompers",
+  "leg67C": "Dynamic Stompers",
+  "leg67D": "Dynamic Stompers",
+  "leg67E": "Dynamic Stompers",
+  "leg73C": "Lightning Supporters",
+  "leg73D": "Lightning Supporters",
+  "leg73E": "Lightning Supporters",
+  "leg74A": "Scrap Striders",
+  "leg74B": "Scrap Striders",
+  "leg74C": "Scrap Striders",
+  "leg74D": "Scrap Striders",
+  "leg76B": "Grave Diggers",
+  "leg76C": "Grave Diggers",
+  "leg76D": "Grave Diggers",
+  "leg76E": "Grave Diggers",
+  "leg77D": "The Claw",
+  "leg77E": "The Claw",
+  "leg78C": "Dynamite Boots",
+  "leg78D": "Dynamite Boots",
+  "leg78E": "Dynamite Boots",
+  "wheels69D": "Rolling Beasts",
+  "wheels69E": "Rolling Beasts",
+  "leg79C": "Recoil Stompers",
+  "leg79D": "Recoil Stompers",
+  "leg79E": "Recoil Stompers",
+  "droneBasic1A": "Scout",
+  "droneBasic1B": "Scout",
+  "droneBasic2A": "Flare",
+  "droneBasic2B": "Flare",
+  "droneBasic3A": "Zapper",
+  "droneBasic3B": "Zapper",
+  "droneCapacityDamage1C": "HurlBat",
+  "droneCapacityDamage1D": "HurlBat",
+  "droneCapacityDamage1E": "HurlBat",
+  "droneCapacityDamage2C": "Nemo",
+  "droneCapacityDamage2D": "Nemo",
+  "droneCapacityDamage2E": "Nemo",
+  "droneCapacityDamage3C": "Torment",
+  "droneCapacityDamage3D": "Torment",
+  "droneCapacityDamage3E": "Torment",
+  "droneDamageSelf1C": "Selfish Protector",
+  "droneDamageSelf1D": "Selfish Protector",
+  "droneDamageSelf1E": "Selfish Protector",
+  "droneDamageSelf2C": "Backstabbing Protector",
+  "droneDamageSelf2D": "Backstabbing Protector",
+  "droneDamageSelf2E": "Backstabbing Protector",
+  "droneDamageSelf3C": "Unreliable Protector",
+  "droneDamageSelf3D": "Unreliable Protector",
+  "droneDamageSelf3E": "Unreliable Protector",
+  "droneDamageSelfB1C": "Selfish Guardian",
+  "droneDamageSelfB1D": "Selfish Guardian",
+  "droneDamageSelfB1E": "Selfish Guardian",
+  "droneDamageSelfB2C": "Backstabbing Guardian",
+  "droneDamageSelfB2D": "Backstabbing Guardian",
+  "droneDamageSelfB2E": "Backstabbing Guardian",
+  "droneDamageSelfB3C": "Unreliable Guardian",
+  "droneDamageSelfB3D": "Unreliable Guardian",
+  "droneDamageSelfB3E": "Unreliable Guardian",
+  "droneHighDamage2C": "HeatPoint",
+  "droneHighDamage2D": "HeatPoint",
+  "droneHighDamage2E": "HeatPoint",
+  "droneHighDamage3C": "Face Shocker",
+  "droneHighDamage3D": "Face Shocker",
+  "droneHighDamage3E": "Face Shocker",
+  "droneTypeDamage1B": "Sentry",
+  "droneTypeDamage1C": "Sentry",
+  "droneTypeDamage2B": "Brand",
+  "droneTypeDamage2C": "Brand",
+  "droneTypeDamage3B": "Volt",
+  "droneTypeDamage3C": "Volt",
+  "superDroneTypeDamage1D": "Greedy",
+  "superDroneTypeDamage1E": "Greedy",
+  "superDroneTypeDamage2D": "Swoop",
+  "superDroneTypeDamage2E": "Swoop",
+  "superDroneTypeDamage3D": "WindForge",
+  "superDroneTypeDamage3E": "WindForge",
+  "superDroneBasic1C": "Void",
+  "superDroneBasic1D": "Void",
+  "superDroneBasic1E": "Void",
+  "superDroneBasic2C": "Clash",
+  "superDroneBasic2D": "Clash",
+  "superDroneBasic2E": "Clash",
+  "superDroneBasic3C": "Snack",
+  "superDroneBasic3D": "Snack",
+  "superDroneBasic3E": "Snack",
+  "droneRegenDamage1D": "DustMaker",
+  "droneRegenDamage1E": "DustMaker",
+  "droneRegenDamage2D": "Murmur",
+  "droneRegenDamage2E": "Murmur",
+  "droneRegenDamage3D": "Anguish",
+  "droneRegenDamage3E": "Anguish",
+  "dronePull1D": "Backstabber",
+  "dronePull1E": "Backstabber",
+  "dronePush2D": "FlameWave",
+  "dronePush2E": "FlameWave",
+  "dronePush3D": "Electrowave",
+  "dronePush3E": "Electrowave",
+  "droneRanged1C": "Tonto",
+  "droneRanged1D": "Tonto",
+  "droneRanged1E": "Tonto",
+  "droneRanged2C": "FireFly",
+  "droneRanged2D": "FireFly",
+  "droneRanged2E": "FireFly",
+  "droneRanged3C": "Electrolyte",
+  "droneRanged3D": "Electrolyte",
+  "droneRanged3E": "Electrolyte",
+  "droneRangedB1C": "Solar Torch",
+  "droneRangedB1D": "Solar Torch",
+  "droneRangedB1E": "Solar Torch",
+  "droneRangedB2C": "Flame Spear",
+  "droneRangedB2D": "Flame Spear",
+  "droneRangedB2E": "Flame Spear",
+  "droneRangedB3C": "Lightning Strike",
+  "droneRangedB3D": "Lightning Strike",
+  "droneRangedB3E": "Lightning Strike"
+ },
+ "_enemy_only": [
+  "leg1001",
+  "leg1002",
+  "leg1002_2",
+  "leg1002_3",
+  "leg1002_legacy",
+  "leg1003",
+  "leg1003_2",
+  "leg1003_3",
+  "leg1003_legacy",
+  "torso1001",
+  "torso1002",
+  "torso1002_2",
+  "torso1002_3",
+  "torso1003",
+  "torso1003_2",
+  "torso1003_3"
+ ],
+ "_enemy_only_note": "Kept for enemies and bosses, never dropped (user, 2026-09-29). Legacy stats as they are."
+}

@@ -1,0 +1,7858 @@
+[
+ {
+  "n": 1,
+  "family": "torso1000",
+  "slot": "torsos",
+  "sprites": [
+   "torso1000",
+   "torso52"
+  ],
+  "names": [
+   "Brutality",
+   "GOD MODE",
+   "God Mode"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 2,
+  "family": "torso1001",
+  "slot": "torsos",
+  "sprites": [
+   "torso1001"
+  ],
+  "names": [
+   "ARMOR TANK"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 3,
+  "family": "torso1002",
+  "slot": "torsos",
+  "sprites": [
+   "torso1002",
+   "torso1002_2",
+   "torso1002_3"
+  ],
+  "names": [
+   "Jeep",
+   "JeepEnergyTorso",
+   "JeepHeatTorso"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 4,
+  "family": "torso1003",
+  "slot": "torsos",
+  "sprites": [
+   "torso1003",
+   "torso1003_2",
+   "torso1003_3"
+  ],
+  "names": [
+   "Tank",
+   "TankEnergyTorso",
+   "TankHeatTorso"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 5,
+  "family": "torso14",
+  "slot": "torsos",
+  "sprites": [
+   "torso14"
+  ],
+  "names": [
+   "Golden Eye"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 6,
+  "family": "torso15",
+  "slot": "torsos",
+  "sprites": [
+   "torso15",
+   "torso15B"
+  ],
+  "names": [
+   "Fire Guardian",
+   "Ruby"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 7,
+  "family": "torso16",
+  "slot": "torsos",
+  "sprites": [
+   "torso16",
+   "torso16B"
+  ],
+  "names": [
+   "Electric Guardian",
+   "Emerald"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 8,
+  "family": "torso18",
+  "slot": "torsos",
+  "sprites": [
+   "torso18B"
+  ],
+  "names": [
+   "Vulcano"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 9,
+  "family": "torso21",
+  "slot": "torsos",
+  "sprites": [
+   "torso21",
+   "torso21B"
+  ],
+  "names": [
+   "Twin Turbine"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 10,
+  "family": "torso23",
+  "slot": "torsos",
+  "sprites": [
+   "torso23",
+   "torso23B"
+  ],
+  "names": [
+   "Spider",
+   "Threetop"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 11,
+  "family": "torso30",
+  "slot": "torsos",
+  "sprites": [
+   "torso30"
+  ],
+  "names": [
+   "Ultra Gladiator"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 12,
+  "family": "torso31",
+  "slot": "torsos",
+  "sprites": [
+   "torso31"
+  ],
+  "names": [
+   "HAL"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 13,
+  "family": "torso34",
+  "slot": "torsos",
+  "sprites": [
+   "torso34"
+  ],
+  "names": [
+   "Mamut"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 14,
+  "family": "torso37",
+  "slot": "torsos",
+  "sprites": [
+   "torso37"
+  ],
+  "names": [
+   "Mega Gladiator"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 15,
+  "family": "torso42A",
+  "slot": "torsos",
+  "sprites": [
+   "torso42A",
+   "torso42B",
+   "torso42C"
+  ],
+  "names": [
+   "Galaxus Model A",
+   "Galaxus Model B",
+   "Galaxus Model C"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 16,
+  "family": "torso44",
+  "slot": "torsos",
+  "sprites": [
+   "torso44"
+  ],
+  "names": [
+   "Electron Defence"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 17,
+  "family": "torso45",
+  "slot": "torsos",
+  "sprites": [
+   "torso45"
+  ],
+  "names": [
+   "Ultraspade"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 18,
+  "family": "torso46",
+  "slot": "torsos",
+  "sprites": [
+   "torso46"
+  ],
+  "names": [
+   "HellFire Armor"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 19,
+  "family": "torso47",
+  "slot": "torsos",
+  "sprites": [
+   "torso47"
+  ],
+  "names": [
+   "Metrolens"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 20,
+  "family": "torso48",
+  "slot": "torsos",
+  "sprites": [
+   "torso48"
+  ],
+  "names": [
+   "Lava Scope"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 21,
+  "family": "torso56A",
+  "slot": "torsos",
+  "sprites": [
+   "torso56A"
+  ],
+  "names": [
+   "Diamond Shell"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 22,
+  "family": "torso57A",
+  "slot": "torsos",
+  "sprites": [
+   "torso57A",
+   "torso57B"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 23,
+  "family": "torso60A",
+  "slot": "torsos",
+  "sprites": [
+   "torso60A",
+   "torso60B",
+   "torso60C",
+   "torso60D",
+   "torso60E"
+  ],
+  "names": [
+   "Sith"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 24,
+  "family": "torso61A",
+  "slot": "torsos",
+  "sprites": [
+   "torso61A",
+   "torso61B",
+   "torso61C",
+   "torso61D",
+   "torso61E"
+  ],
+  "names": [
+   "Nightmare"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 25,
+  "family": "torso62A",
+  "slot": "torsos",
+  "sprites": [
+   "torso62A",
+   "torso62B",
+   "torso62C",
+   "torso62D",
+   "torso62E"
+  ],
+  "names": [
+   "Interceptor"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 26,
+  "family": "torso65B",
+  "slot": "torsos",
+  "sprites": [
+   "torso65B",
+   "torso65C"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 27,
+  "family": "torso67D",
+  "slot": "torsos",
+  "sprites": [
+   "torso67D",
+   "torso67E"
+  ],
+  "names": [
+   "Archimonde"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 28,
+  "family": "torso7",
+  "slot": "torsos",
+  "sprites": [
+   "torso7",
+   "torso7B"
+  ],
+  "names": [
+   "Ember",
+   "Two Head"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 29,
+  "family": "torso75C",
+  "slot": "torsos",
+  "sprites": [
+   "torso75C",
+   "torso75D"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 30,
+  "family": "torso76B",
+  "slot": "torsos",
+  "sprites": [
+   "torso76B",
+   "torso76C",
+   "torso76D"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok",
+   "outdated"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 31,
+  "family": "torso78C",
+  "slot": "torsos",
+  "sprites": [
+   "torso78C",
+   "torso78D",
+   "torso78E"
+  ],
+  "names": [
+   "Naga"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 32,
+  "family": "torso81C",
+  "slot": "torsos",
+  "sprites": [
+   "torso81C",
+   "torso81D"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 33,
+  "family": "torso82C",
+  "slot": "torsos",
+  "sprites": [
+   "torso82C",
+   "torso82D",
+   "torso82E"
+  ],
+  "names": [
+   "Avenger"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 34,
+  "family": "torso83C",
+  "slot": "torsos",
+  "sprites": [
+   "torso83C",
+   "torso83D",
+   "torso83E"
+  ],
+  "names": [
+   "Windigo"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 35,
+  "family": "torso84C",
+  "slot": "torsos",
+  "sprites": [
+   "torso84C",
+   "torso84D",
+   "torso84E"
+  ],
+  "names": [
+   "Zarkares"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 36,
+  "family": "torso85B",
+  "slot": "torsos",
+  "sprites": [
+   "torso85B",
+   "torso85C"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 37,
+  "family": "torso86D",
+  "slot": "torsos",
+  "sprites": [
+   "torso86D",
+   "torso86E"
+  ],
+  "names": [
+   "Molten Platinum Vest"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 38,
+  "family": "torso87D",
+  "slot": "torsos",
+  "sprites": [
+   "torso87D",
+   "torso87D2",
+   "torso87E",
+   "torso87E2"
+  ],
+  "names": [
+   "Hardened Platinum Vest",
+   "Lightning Platinum Vest"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 39,
+  "family": "torso88",
+  "slot": "torsos",
+  "sprites": [
+   "torso88"
+  ],
+  "names": [
+   "Sabretooth"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "EXPLOSIVE",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 40,
+  "family": "torso89D",
+  "slot": "torsos",
+  "sprites": [
+   "torso89D",
+   "torso89E"
+  ],
+  "names": [
+   "Rusty Energy Armor"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 41,
+  "family": "torso9",
+  "slot": "torsos",
+  "sprites": [
+   "torso9",
+   "torso9B"
+  ],
+  "names": [
+   "Alien",
+   "Apollo"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "ok",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 42,
+  "family": "torso90D",
+  "slot": "torsos",
+  "sprites": [
+   "torso90D",
+   "torso90E"
+  ],
+  "names": [
+   "Hollow Spectral Armor"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 43,
+  "family": "torso91D",
+  "slot": "torsos",
+  "sprites": [
+   "torso91D",
+   "torso91E"
+  ],
+  "names": [
+   "Fractured Heat Armor"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 44,
+  "family": "torso92C",
+  "slot": "torsos",
+  "sprites": [
+   "torso92C",
+   "torso92D",
+   "torso92E"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 45,
+  "family": "torso93C",
+  "slot": "torsos",
+  "sprites": [
+   "torso93C",
+   "torso93D",
+   "torso93E"
+  ],
+  "names": [
+   "Energy Battery Armor"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 46,
+  "family": "torso94C",
+  "slot": "torsos",
+  "sprites": [
+   "torso94C",
+   "torso94D",
+   "torso94E"
+  ],
+  "names": [
+   "Battery Armor"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 47,
+  "family": "torso95C",
+  "slot": "torsos",
+  "sprites": [
+   "torso95C",
+   "torso95D",
+   "torso95E"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 48,
+  "family": "torso96D",
+  "slot": "torsos",
+  "sprites": [
+   "torso96D",
+   "torso96E"
+  ],
+  "names": [
+   "Energy Free Armor"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 49,
+  "family": "torso97E",
+  "slot": "torsos",
+  "sprites": [
+   "torso97E"
+  ],
+  "names": [
+   "Hollow Cyber Armor"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 50,
+  "family": "torso98E",
+  "slot": "torsos",
+  "sprites": [
+   "torso98E"
+  ],
+  "names": [
+   "Fractured Cyber Armor"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "EXPLOSIVE",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 51,
+  "family": "torso99E",
+  "slot": "torsos",
+  "sprites": [
+   "torso99E"
+  ],
+  "names": [
+   "Rusty Cyber Armor"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "ELECTRIC",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 52,
+  "family": "leg1000",
+  "slot": "legs",
+  "sprites": [
+   "leg1000"
+  ],
+  "names": [
+   "GOD MODE"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 53,
+  "family": "leg1001",
+  "slot": "legs",
+  "sprites": [
+   "leg1001"
+  ],
+  "names": [
+   "ARMOR TANK"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 54,
+  "family": "leg1002",
+  "slot": "legs",
+  "sprites": [
+   "leg1002",
+   "leg1002_2",
+   "leg1002_3",
+   "leg1002_legacy"
+  ],
+  "names": [
+   "Jeep wheels",
+   "JeepEnergyLeg",
+   "JeepHeatLeg"
+  ],
+  "era": [
+   "legacy",
+   "reloaded"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 55,
+  "family": "leg1003",
+  "slot": "legs",
+  "sprites": [
+   "leg1003",
+   "leg1003_2",
+   "leg1003_3",
+   "leg1003_legacy"
+  ],
+  "names": [
+   "Tank wheels",
+   "TankEnergyLeg",
+   "TankHeatLeg"
+  ],
+  "era": [
+   "legacy",
+   "reloaded"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 56,
+  "family": "leg2",
+  "slot": "legs",
+  "sprites": [
+   "leg2"
+  ],
+  "names": [
+   "Steel Walkers"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 57,
+  "family": "leg27A",
+  "slot": "legs",
+  "sprites": [
+   "leg27A",
+   "leg27B",
+   "leg27C"
+  ],
+  "names": [
+   "Fire Stampede",
+   "Steel Stampede",
+   "Thunder Stampede"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 58,
+  "family": "leg30A",
+  "slot": "legs",
+  "sprites": [
+   "leg30A",
+   "leg30B",
+   "leg30C"
+  ],
+  "names": [
+   "Flame Boots",
+   "Rino Boots",
+   "Thunder Boots"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 59,
+  "family": "leg32",
+  "slot": "legs",
+  "sprites": [
+   "leg32",
+   "leg32B",
+   "leg32C"
+  ],
+  "names": [
+   "Devouring Paws",
+   "Electric Mass",
+   "Magma Barrier",
+   "Steel Barricade"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "ELECTRIC",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 60,
+  "family": "leg60A",
+  "slot": "legs",
+  "sprites": [
+   "leg60A",
+   "leg60B",
+   "leg60C",
+   "leg60D",
+   "leg60E"
+  ],
+  "names": [
+   "Scorching Feet"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 61,
+  "family": "leg61A",
+  "slot": "legs",
+  "sprites": [
+   "leg61A",
+   "leg61B",
+   "leg61C",
+   "leg61D",
+   "leg61E"
+  ],
+  "names": [
+   "Iron Boots"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 62,
+  "family": "leg62A",
+  "slot": "legs",
+  "sprites": [
+   "leg62A",
+   "leg62B",
+   "leg62C",
+   "leg62D",
+   "leg62E"
+  ],
+  "names": [
+   "Charged Walkers"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 63,
+  "family": "leg67B",
+  "slot": "legs",
+  "sprites": [
+   "leg67B",
+   "leg67C",
+   "leg67D",
+   "leg67E"
+  ],
+  "names": [
+   "Dynamic Stompers"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 64,
+  "family": "leg7",
+  "slot": "legs",
+  "sprites": [
+   "leg7"
+  ],
+  "names": [
+   "Fort Wall"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 65,
+  "family": "leg73C",
+  "slot": "legs",
+  "sprites": [
+   "leg73C",
+   "leg73D",
+   "leg73E"
+  ],
+  "names": [
+   "Lightning Supporters"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": [
+   "To be redone for heat and physical"
+  ]
+ },
+ {
+  "n": 66,
+  "family": "leg74A",
+  "slot": "legs",
+  "sprites": [
+   "leg74A",
+   "leg74B",
+   "leg74C",
+   "leg74D"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 67,
+  "family": "leg76B",
+  "slot": "legs",
+  "sprites": [
+   "leg76B",
+   "leg76C",
+   "leg76D",
+   "leg76E"
+  ],
+  "names": [
+   "Grave Diggers"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 68,
+  "family": "leg77D",
+  "slot": "legs",
+  "sprites": [
+   "leg77D",
+   "leg77E"
+  ],
+  "names": [
+   "The Claw"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 69,
+  "family": "leg78C",
+  "slot": "legs",
+  "sprites": [
+   "leg78C",
+   "leg78D",
+   "leg78E"
+  ],
+  "names": [
+   "Dynamite Boots"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 70,
+  "family": "leg79C",
+  "slot": "legs",
+  "sprites": [
+   "leg79C",
+   "leg79D",
+   "leg79E"
+  ],
+  "names": [
+   "Recoil Stompers"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 71,
+  "family": "leg80C",
+  "slot": "legs",
+  "sprites": [
+   "leg80C",
+   "leg80D",
+   "leg80E"
+  ],
+  "names": [
+   "Massive Stone Feet"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 72,
+  "family": "leg81C",
+  "slot": "legs",
+  "sprites": [
+   "leg81C",
+   "leg81D",
+   "leg81E"
+  ],
+  "names": [
+   "Massive Lava Feet"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 73,
+  "family": "leg82C",
+  "slot": "legs",
+  "sprites": [
+   "leg82C",
+   "leg82D",
+   "leg82E"
+  ],
+  "names": [
+   "Massive Shocker Feet"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 74,
+  "family": "wheels66D",
+  "slot": "legs",
+  "sprites": [
+   "wheels66D",
+   "wheels66E"
+  ],
+  "names": [
+   "Sparked Runners"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 75,
+  "family": "wheels69D",
+  "slot": "legs",
+  "sprites": [
+   "wheels69D",
+   "wheels69E"
+  ],
+  "names": [
+   "Rolling Beasts"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 76,
+  "family": "wheels8A",
+  "slot": "legs",
+  "sprites": [
+   "wheels8A",
+   "wheels8B",
+   "wheels8C"
+  ],
+  "names": [
+   "Burning Tractors",
+   "Lightning Tractors",
+   "Steel Tractors"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 77,
+  "family": "axe1A",
+  "slot": "side_weapons",
+  "sprites": [
+   "axe1A",
+   "axe1B",
+   "axe1C"
+  ],
+  "names": [
+   "Electric Axe",
+   "Infernal Axe",
+   "Platinum Axe"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "EXPLOSIVE",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 78,
+  "family": "blaster15A",
+  "slot": "side_weapons",
+  "sprites": [
+   "blaster15A",
+   "blaster15B"
+  ],
+  "names": [
+   "A-ray",
+   "Resistance drainer"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 79,
+  "family": "blaster3A",
+  "slot": "side_weapons",
+  "sprites": [
+   "blaster3A",
+   "blaster3B",
+   "blaster3C"
+  ],
+  "names": [
+   "Blue Shredder beam",
+   "Yellow Shredder beam"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "ELECTRIC",
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 80,
+  "family": "blaster4A",
+  "slot": "side_weapons",
+  "sprites": [
+   "blaster4A",
+   "blaster4B"
+  ],
+  "names": [
+   "Double Red Watch Guard",
+   "Red Lookout"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "EXPLOSIVE",
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 81,
+  "family": "blaster5A",
+  "slot": "side_weapons",
+  "sprites": [
+   "blaster5A",
+   "blaster5B"
+  ],
+  "names": [
+   "Blue Lookout",
+   "Double Blue Watch Guard"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "ELECTRIC",
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 82,
+  "family": "cannon10A",
+  "slot": "side_weapons",
+  "sprites": [
+   "cannon10A",
+   "cannon10A2",
+   "cannon10A3",
+   "cannon10B",
+   "cannon10B2",
+   "cannon10B3",
+   "cannon10C",
+   "cannon10C2",
+   "cannon10C3"
+  ],
+  "names": [
+   "Armor Breaker Mark I",
+   "Armor Breaker Mark II",
+   "Cooldown Blocker Mark I",
+   "Cooldown Blocker Mark II",
+   "Regeneration Blocker Mark I",
+   "Regeneration Blocker Mark II"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "borderline",
+   "ok",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 83,
+  "family": "cannon3A",
+  "slot": "side_weapons",
+  "sprites": [
+   "cannon3A",
+   "cannon3B",
+   "cannon3B_legacy"
+  ],
+  "names": [
+   "Dino Rifle",
+   "Saurus Rifle"
+  ],
+  "era": [
+   "both",
+   "legacy",
+   "reloaded"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 84,
+  "family": "flameThrower8A",
+  "slot": "side_weapons",
+  "sprites": [
+   "flameThrower8A2",
+   "flameThrower8A_legacy",
+   "flameThrower8B",
+   "flameThrower8B2"
+  ],
+  "names": [
+   "Inferno Mark I",
+   "Inferno Mark II",
+   "Overcooking Oven",
+   "Unstable Power Cell"
+  ],
+  "era": [
+   "legacy",
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 85,
+  "family": "flameThrower9A1",
+  "slot": "side_weapons",
+  "sprites": [
+   "flameThrower9A1",
+   "flameThrower9A2",
+   "flameThrower9B1",
+   "flameThrower9B2"
+  ],
+  "names": [
+   "Ash Creator",
+   "ColdFire Mark I",
+   "ColdFire Mark II",
+   "Crimson Rapture",
+   "Lava Spray Mark I",
+   "Lava Spray Mark II"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "EXPLOSIVE",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 86,
+  "family": "grenadeLauncher2A",
+  "slot": "side_weapons",
+  "sprites": [
+   "grenadeLauncher2A",
+   "grenadeLauncher2A2",
+   "grenadeLauncher2A3",
+   "grenadeLauncher2B",
+   "grenadeLauncher2B2",
+   "grenadeLauncher2B3"
+  ],
+  "names": [
+   "Grenade launcher Mark III"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "EXPLOSIVE",
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 87,
+  "family": "hammer1A",
+  "slot": "side_weapons",
+  "sprites": [
+   "hammer1A",
+   "hammer1B",
+   "hammer1C"
+  ],
+  "names": [
+   "Lightning Hammer",
+   "Meltdown Hammer",
+   "Steel Hammer"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "EXPLOSIVE",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 88,
+  "family": "laser1000",
+  "slot": "side_weapons",
+  "sprites": [
+   "laser1000"
+  ],
+  "names": [
+   "GOD MODE"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "EXPLOSIVE",
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 89,
+  "family": "laser30A",
+  "slot": "side_weapons",
+  "sprites": [
+   "laser30A",
+   "laser30B",
+   "laser30C"
+  ],
+  "names": [
+   "Corrupt Light",
+   "Red Rein",
+   "Termination Heat",
+   "Twin Termination R"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "EXPLOSIVE",
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 90,
+  "family": "laser32A",
+  "slot": "side_weapons",
+  "sprites": [
+   "laser32A",
+   "laser32B",
+   "laser32C"
+  ],
+  "names": [
+   "Blue Rein",
+   "Malice Beam",
+   "Termination Electro",
+   "Twin Termination B"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "ELECTRIC",
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 91,
+  "family": "laser42A",
+  "slot": "side_weapons",
+  "sprites": [
+   "laser42A",
+   "laser42B"
+  ],
+  "names": [
+   "Rail Gun",
+   "Umpfifier"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 92,
+  "family": "machineGun8A",
+  "slot": "side_weapons",
+  "sprites": [
+   "machineGun8A",
+   "machineGun8A2",
+   "machineGun8A3",
+   "machineGun8A_legacy",
+   "machineGun8B",
+   "machineGun8B2",
+   "machineGun8B3",
+   "machineGun8B_legacy"
+  ],
+  "names": [
+   "Disintegration",
+   "Iron Shredder"
+  ],
+  "era": [
+   "legacy",
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 93,
+  "family": "pushSelfShotgun1C",
+  "slot": "side_weapons",
+  "sprites": [
+   "pushSelfShotgun1C",
+   "pushSelfShotgun1D",
+   "pushSelfShotgun1E"
+  ],
+  "names": [
+   "Rock Recoiler"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 94,
+  "family": "pushSelfShotgun2C",
+  "slot": "side_weapons",
+  "sprites": [
+   "pushSelfShotgun2C",
+   "pushSelfShotgun2D",
+   "pushSelfShotgun2E"
+  ],
+  "names": [
+   "Magma Recoiler"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 95,
+  "family": "pushSelfShotgun3C",
+  "slot": "side_weapons",
+  "sprites": [
+   "pushSelfShotgun3C",
+   "pushSelfShotgun3D",
+   "pushSelfShotgun3E"
+  ],
+  "names": [
+   "Lightning Recoiler"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 96,
+  "family": "rocketLauncher29A1",
+  "slot": "side_weapons",
+  "sprites": [
+   "rocketLauncher29A1",
+   "rocketLauncher29A1_legacy",
+   "rocketLauncher29A2",
+   "rocketLauncher29A2_legacy",
+   "rocketLauncher29A3",
+   "rocketLauncher29A3_legacy",
+   "rocketLauncher29B1",
+   "rocketLauncher29B1_legacy",
+   "rocketLauncher29B2",
+   "rocketLauncher29B2_legacy",
+   "rocketLauncher29B3",
+   "rocketLauncher29B3_legacy",
+   "rocketLauncher29C1",
+   "rocketLauncher29C1_legacy",
+   "rocketLauncher29C2",
+   "rocketLauncher29C2_legacy",
+   "rocketLauncher29C3",
+   "rocketLauncher29C3_legacy"
+  ],
+  "names": [
+   "Devastation Swarm Mark I",
+   "Devastation Swarm Mark II",
+   "Electric Storm Mark I",
+   "Electric Storm Mark II",
+   "Evac Spark",
+   "Explosive Retreat",
+   "Metal Shredder Mark I",
+   "Metal Shredder Mark II"
+  ],
+  "era": [
+   "legacy",
+   "reloaded"
+  ],
+  "element": "EXPLOSIVE",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 97,
+  "family": "shotgun1A",
+  "slot": "side_weapons",
+  "sprites": [
+   "shotgun2A",
+   "shotgun2A2",
+   "shotgun2A3",
+   "shotgun2B",
+   "shotgun2B2",
+   "shotgun2B3"
+  ],
+  "names": [
+   "BullDog",
+   "Electro Piercing Shotgun",
+   "Magma Peircing Shotgun",
+   "Mercy",
+   "Piercing Shotgun Mark I",
+   "Piercing Shotgun Mark II",
+   "Piercing Shotgun Mark III",
+   "Reckoning",
+   "Shotgun X Mark II"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "ELECTRIC",
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 98,
+  "family": "sideAxe1D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideAxe1D",
+   "sideAxe1E"
+  ],
+  "names": [
+   "BackBreaker"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 99,
+  "family": "sideAxe2D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideAxe2D",
+   "sideAxe2E"
+  ],
+  "names": [
+   "TerrorBlade"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 100,
+  "family": "sideAxe3D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideAxe3D",
+   "sideAxe3E"
+  ],
+  "names": [
+   "StormWeaver"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 101,
+  "family": "sideBackfireResBreaker1C",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideBackfireResBreaker1C",
+   "sideBackfireResBreaker1D",
+   "sideBackfireResBreaker1E"
+  ],
+  "names": [
+   "Damaged Armor Dissolver"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 102,
+  "family": "sideBackfireResBreaker2C",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideBackfireResBreaker2C",
+   "sideBackfireResBreaker2D",
+   "sideBackfireResBreaker2E"
+  ],
+  "names": [
+   "Fractured Basalt Dissolver"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 103,
+  "family": "sideBackfireResBreaker3C",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideBackfireResBreaker3C",
+   "sideBackfireResBreaker3D",
+   "sideBackfireResBreaker3E"
+  ],
+  "names": [
+   "Broken Blizzard Dissolver"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 104,
+  "family": "sideBeamCannon1D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideBeamCannon1D",
+   "sideBeamCannon1E"
+  ],
+  "names": [
+   "Malfunctioning Blaster"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 105,
+  "family": "sideBeamCannon2D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideBeamCannon2D",
+   "sideBeamCannon2E"
+  ],
+  "names": [
+   "Rusty Heat Blaster"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 106,
+  "family": "sideBeamCannon3D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideBeamCannon3D",
+   "sideBeamCannon3E"
+  ],
+  "names": [
+   "Scrapped Energy Blaster"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 107,
+  "family": "sideBulletSprayer1D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideBulletSprayer1D",
+   "sideBulletSprayer1E"
+  ],
+  "names": [
+   "Sweetie"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 108,
+  "family": "sideDistanceCloser1C",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideDistanceCloser1C",
+   "sideDistanceCloser1D",
+   "sideDistanceCloser1E"
+  ],
+  "names": [
+   "Distance Shredder"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 109,
+  "family": "sideDistanceCloser2C",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideDistanceCloser2C",
+   "sideDistanceCloser2D",
+   "sideDistanceCloser2E"
+  ],
+  "names": [
+   "Space Invader"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 110,
+  "family": "sideDistanceCloser3C",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideDistanceCloser3C",
+   "sideDistanceCloser3D",
+   "sideDistanceCloser3E"
+  ],
+  "names": [
+   "Party Crasher"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 111,
+  "family": "sideEnergyBomb3C",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideEnergyBomb3C",
+   "sideEnergyBomb3D",
+   "sideEnergyBomb3E"
+  ],
+  "names": [
+   "EMP"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 112,
+  "family": "sideEnergyHeatBlaster2B",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideEnergyHeatBlaster2B",
+   "sideEnergyHeatBlaster2C",
+   "sideEnergyHeatBlaster2D",
+   "sideEnergyHeatBlaster2E"
+  ],
+  "names": [
+   "Flaminator"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 113,
+  "family": "sideEnergyHeatBlaster3B",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideEnergyHeatBlaster3B",
+   "sideEnergyHeatBlaster3C",
+   "sideEnergyHeatBlaster3D",
+   "sideEnergyHeatBlaster3E"
+  ],
+  "names": [
+   "Hot Flash"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 114,
+  "family": "sideEnergyHeatBlasterB2D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideEnergyHeatBlasterB2D",
+   "sideEnergyHeatBlasterB2E"
+  ],
+  "names": [
+   "Hybrid Heat Cannon"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 115,
+  "family": "sideEnergyHeatBlasterB3D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideEnergyHeatBlasterB3D",
+   "sideEnergyHeatBlasterB3E"
+  ],
+  "names": [
+   "Hybrid Energy Cannon"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 116,
+  "family": "sideGrenadeLauncher1C",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideGrenadeLauncher1C",
+   "sideGrenadeLauncher1D",
+   "sideGrenadeLauncher1E"
+  ],
+  "names": [
+   "Terror Cry"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 117,
+  "family": "sideGrenadeLauncher3C",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideGrenadeLauncher3C",
+   "sideGrenadeLauncher3D",
+   "sideGrenadeLauncher3E"
+  ],
+  "names": [
+   "Last Words"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 118,
+  "family": "sideGrinder1D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideGrinder1D",
+   "sideGrinder1E"
+  ],
+  "names": [
+   "Rock Polisher"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 119,
+  "family": "sideGrinder2D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideGrinder2D",
+   "sideGrinder2E"
+  ],
+  "names": [
+   "Basalt Polisher"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "EXPLOSIVE",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 120,
+  "family": "sideGrinder3D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideGrinder3D",
+   "sideGrinder3E"
+  ],
+  "names": [
+   "Lightning Cutter"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "ELECTRIC",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 121,
+  "family": "sideHammer1C",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideHammer1C",
+   "sideHammer1D",
+   "sideHammer1E"
+  ],
+  "names": [
+   "War Hammer"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 122,
+  "family": "sideHammer2C",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideHammer2C",
+   "sideHammer2D",
+   "sideHammer2E"
+  ],
+  "names": [
+   "Flaming Hammer"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 123,
+  "family": "sideHammer3C",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideHammer3C",
+   "sideHammer3D",
+   "sideHammer3E"
+  ],
+  "names": [
+   "Viking Hammer"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 124,
+  "family": "sideHeatBomb2C",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideHeatBomb2C",
+   "sideHeatBomb2D",
+   "sideHeatBomb2E"
+  ],
+  "names": [
+   "Heat Bomb"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 125,
+  "family": "sideLaser2C",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideLaser2C",
+   "sideLaser2D",
+   "sideLaser2E"
+  ],
+  "names": [
+   "DawnBlaze"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 126,
+  "family": "sideLaser3C",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideLaser3C",
+   "sideLaser3D",
+   "sideLaser3E"
+  ],
+  "names": [
+   "UltraBright"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 127,
+  "family": "sideLongRangeShotgun1C",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideLongRangeShotgun1C",
+   "sideLongRangeShotgun1D",
+   "sideLongRangeShotgun1E"
+  ],
+  "names": [
+   "Dark Eagle"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 128,
+  "family": "sideLongRangeShotgun2C",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideLongRangeShotgun2C",
+   "sideLongRangeShotgun2D",
+   "sideLongRangeShotgun2E"
+  ],
+  "names": [
+   "Shadow Wolf"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 129,
+  "family": "sideLongRangeShotgun3C",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideLongRangeShotgun3C",
+   "sideLongRangeShotgun3D",
+   "sideLongRangeShotgun3E"
+  ],
+  "names": [
+   "Piercing Fox"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 130,
+  "family": "sideMegaBlaster1C",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideMegaBlaster1C",
+   "sideMegaBlaster1D",
+   "sideMegaBlaster1E"
+  ],
+  "names": [
+   "Lazy Falcon"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 131,
+  "family": "sideMegaBlaster2C",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideMegaBlaster2C",
+   "sideMegaBlaster2D",
+   "sideMegaBlaster2E"
+  ],
+  "names": [
+   "Half Burnt Scope"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 132,
+  "family": "sideMegaBlaster3C",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideMegaBlaster3C",
+   "sideMegaBlaster3D",
+   "sideMegaBlaster3E"
+  ],
+  "names": [
+   "Electrocuted Scope"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 133,
+  "family": "sideRPG2D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideRPG2D",
+   "sideRPG2E"
+  ],
+  "names": [
+   "Magma Blast"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 134,
+  "family": "sideRPG3D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideRPG3D",
+   "sideRPG3E"
+  ],
+  "names": [
+   "Bunker Shell"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 135,
+  "family": "sideResistanceBreaker1B",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideResistanceBreaker1B",
+   "sideResistanceBreaker1C"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 136,
+  "family": "sideResistanceBreaker2B",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideResistanceBreaker2B",
+   "sideResistanceBreaker2C"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 137,
+  "family": "sideResistanceBreaker3B",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideResistanceBreaker3B",
+   "sideResistanceBreaker3C"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 138,
+  "family": "sideRifle3D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideRifle3D",
+   "sideRifle3E"
+  ],
+  "names": [
+   "Mortal Bullet"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 139,
+  "family": "sideShotgun1A",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideShotgun1A",
+   "sideShotgun1B",
+   "sideShotgun1C"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 140,
+  "family": "sideShotgun2A",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideShotgun2A",
+   "sideShotgun2B",
+   "sideShotgun2C"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 141,
+  "family": "sideShotgun3A",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideShotgun3A",
+   "sideShotgun3B",
+   "sideShotgun3C"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 142,
+  "family": "sideSuperBackfireResBreaker1D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideSuperBackfireResBreaker1D",
+   "sideSuperBackfireResBreaker1E"
+  ],
+  "names": [
+   "Damaged Armor Annihilator"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 143,
+  "family": "sideSuperBackfireResBreaker2D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideSuperBackfireResBreaker2D",
+   "sideSuperBackfireResBreaker2E"
+  ],
+  "names": [
+   "Fractured Basalt Annihilator"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 144,
+  "family": "sideSuperBackfireResBreaker3D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideSuperBackfireResBreaker3D",
+   "sideSuperBackfireResBreaker3E"
+  ],
+  "names": [
+   "Broken Blizzard Annihilator"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 145,
+  "family": "sideSuperBlaster2D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideSuperBlaster2D",
+   "sideSuperBlaster2E"
+  ],
+  "names": [
+   "Chaos Bringer"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 146,
+  "family": "sideSuperBlaster3D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideSuperBlaster3D",
+   "sideSuperBlaster3E"
+  ],
+  "names": [
+   "BigDaddy"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 147,
+  "family": "sideSuperBulletCannon1D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideSuperBulletCannon1D",
+   "sideSuperBulletCannon1E"
+  ],
+  "names": [
+   "BloodWeep"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 148,
+  "family": "sideSuperMachineGun1C",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideSuperMachineGun1C",
+   "sideSuperMachineGun1D",
+   "sideSuperMachineGun1E"
+  ],
+  "names": [
+   "Annihilation"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 149,
+  "family": "sideSuperResistanceBreaker1D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideSuperResistanceBreaker1D",
+   "sideSuperResistanceBreaker1E"
+  ],
+  "names": [
+   "Armor Annihilator"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 150,
+  "family": "sideSuperResistanceBreaker2D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideSuperResistanceBreaker2D",
+   "sideSuperResistanceBreaker2E"
+  ],
+  "names": [
+   "Basalt Dissolver"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 151,
+  "family": "sideSuperResistanceBreaker3D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideSuperResistanceBreaker3D",
+   "sideSuperResistanceBreaker3E"
+  ],
+  "names": [
+   "Blizzard Dissolver"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 152,
+  "family": "sideSuperRocketLauncher2D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideSuperRocketLauncher2D",
+   "sideSuperRocketLauncher2E"
+  ],
+  "names": [
+   "Abomination"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": [
+   "need heat and energy"
+  ]
+ },
+ {
+  "n": 153,
+  "family": "sideSuperSword1D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideSuperSword1D",
+   "sideSuperSword1E"
+  ],
+  "names": [
+   "SeraphBlade"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 154,
+  "family": "sideSuperSword2D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideSuperSword2D",
+   "sideSuperSword2E"
+  ],
+  "names": [
+   "HeronMark"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 155,
+  "family": "sideSuperSword3D",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideSuperSword3D",
+   "sideSuperSword3E"
+  ],
+  "names": [
+   "BrightRoar"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 156,
+  "family": "sideVulcan1C",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideVulcan1C",
+   "sideVulcan1D",
+   "sideVulcan1E"
+  ],
+  "names": [
+   "NightFall"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": [
+   "need heat and energy"
+  ]
+ },
+ {
+  "n": 157,
+  "family": "sideVulcanB1C",
+  "slot": "side_weapons",
+  "sprites": [
+   "sideVulcanB1C",
+   "sideVulcanB1D",
+   "sideVulcanB1E"
+  ],
+  "names": [
+   "Last Resort Vulcan"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 158,
+  "family": "sword1A",
+  "slot": "side_weapons",
+  "sprites": [
+   "sword1A",
+   "sword1B",
+   "sword1C",
+   "sword1D"
+  ],
+  "names": [
+   "Bad yellow sword",
+   "Beheader",
+   "Joyeuse",
+   "Kusanagi"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 159,
+  "family": "sword2A",
+  "slot": "side_weapons",
+  "sprites": [
+   "sword2A",
+   "sword2B",
+   "sword2C",
+   "sword2D"
+  ],
+  "names": [
+   "Butter knife",
+   "Durendal",
+   "Electric chain saw",
+   "Skull crusher"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 160,
+  "family": "sword3A",
+  "slot": "side_weapons",
+  "sprites": [
+   "sword3A",
+   "sword3B",
+   "sword3C",
+   "sword3D"
+  ],
+  "names": [
+   "Blue blood spiller",
+   "Hauteclere",
+   "Paladins sword",
+   "Vorpal sword"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 161,
+  "family": "sword4A",
+  "slot": "side_weapons",
+  "sprites": [
+   "sword4A",
+   "sword4B",
+   "sword4C",
+   "sword4D"
+  ],
+  "names": [
+   "Almace",
+   "Bone crusher",
+   "Electric butcher",
+   "Golden sword"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 162,
+  "family": "sword5A",
+  "slot": "side_weapons",
+  "sprites": [
+   "sword5A",
+   "sword5B",
+   "sword5C",
+   "sword5D"
+  ],
+  "names": [
+   "Crystal sword",
+   "Dismantler",
+   "Inferno sword",
+   "Shockwave"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 163,
+  "family": "sword6A",
+  "slot": "side_weapons",
+  "sprites": [
+   "sword6A",
+   "sword6B",
+   "sword6C",
+   "sword6D",
+   "sword7A",
+   "sword7B",
+   "sword7C",
+   "sword7D"
+  ],
+  "names": [
+   "Call Of Lightning",
+   "Devastator",
+   "Hell Force",
+   "Mass Deflector",
+   "Meltdown",
+   "Meteor",
+   "Sparks"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "ok",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 164,
+  "family": "wand1A",
+  "slot": "side_weapons",
+  "sprites": [
+   "wand1A"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 165,
+  "family": "blaster13A",
+  "slot": "top_weapons",
+  "sprites": [
+   "blaster13A",
+   "blaster13B",
+   "blaster18A",
+   "blaster18B"
+  ],
+  "names": [
+   "Adv. Electric Orb Cannon",
+   "Electric Orb Cannon",
+   "SpineFall",
+   "Xray"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 166,
+  "family": "blaster14A",
+  "slot": "top_weapons",
+  "sprites": [
+   "blaster14A",
+   "blaster14B"
+  ],
+  "names": [
+   "B-ray"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 167,
+  "family": "blaster19A",
+  "slot": "top_weapons",
+  "sprites": [
+   "blaster19A",
+   "blaster19B"
+  ],
+  "names": [
+   "Adv. Physical Orb Cannon",
+   "Mighty Cannon",
+   "Physical Orb Cannon"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 168,
+  "family": "blaster20A",
+  "slot": "top_weapons",
+  "sprites": [
+   "blaster20A",
+   "blaster20B"
+  ],
+  "names": [
+   "Adv. Heat Orb Cannon",
+   "Desert Snake",
+   "Heat Orb Cannon"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "EXPLOSIVE",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 169,
+  "family": "blaster22A",
+  "slot": "top_weapons",
+  "sprites": [
+   "blaster22A",
+   "blaster22B",
+   "blaster22C"
+  ],
+  "names": [
+   "FireWatch Mark I",
+   "FireWatch Mark II"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "EXPLOSIVE",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 170,
+  "family": "blaster23A",
+  "slot": "top_weapons",
+  "sprites": [
+   "blaster23A",
+   "blaster23B",
+   "blaster23C"
+  ],
+  "names": [
+   "Metal Bender Mark I",
+   "Metal Bender Mark II"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 171,
+  "family": "blaster24A",
+  "slot": "top_weapons",
+  "sprites": [
+   "blaster24A",
+   "blaster24B",
+   "blaster24C"
+  ],
+  "names": [
+   "ElectroCop Mark I",
+   "ElectroCop Mark II"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "ELECTRIC",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 172,
+  "family": "cannon11A1",
+  "slot": "top_weapons",
+  "sprites": [
+   "cannon11A1",
+   "cannon11A1_legacy",
+   "cannon11A2",
+   "cannon11A2_legacy",
+   "cannon11A3",
+   "cannon11A3_legacy",
+   "cannon11B1",
+   "cannon11B1_legacy",
+   "cannon11B2",
+   "cannon11B2_legacy",
+   "cannon11B3",
+   "cannon11B3_legacy",
+   "cannon11C1",
+   "cannon11C2",
+   "cannon11C2_legacy",
+   "cannon11C3",
+   "cannon11C3_legacy"
+  ],
+  "names": [
+   "Cracked Plasma Cannon",
+   "Electric Discharger Mark I",
+   "Electric Discharger Mark II",
+   "Engine Breaker Mark I",
+   "Engine Breaker Mark II",
+   "Generator Breaker Mark I",
+   "Generator Breaker Mark II",
+   "Obsolete Energy Cannon",
+   "Unrepaired Laser Cannon"
+  ],
+  "era": [
+   "both",
+   "legacy",
+   "reloaded"
+  ],
+  "element": "EXPLOSIVE",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 173,
+  "family": "cannon1A",
+  "slot": "top_weapons",
+  "sprites": [
+   "cannon1A",
+   "cannon1B",
+   "cannon1C"
+  ],
+  "names": [
+   "Apocalypse Mark I",
+   "Apocalypse Mark II",
+   "Apocalypse Mark III"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": [
+   "need heat and energy"
+  ]
+ },
+ {
+  "n": 174,
+  "family": "cannon7A",
+  "slot": "top_weapons",
+  "sprites": [
+   "cannon7A",
+   "cannon7A2",
+   "cannon7A3",
+   "cannon7B",
+   "cannon7B2",
+   "cannon7B3",
+   "cannon7C",
+   "cannon7C2",
+   "cannon7C3"
+  ],
+  "names": [
+   "Frantic Brute",
+   "Frantic Flame",
+   "Frantic Lightning",
+   "Wipeout Mark I",
+   "Wipeout Mark II",
+   "Wipeout Mark III"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "borderline",
+   "ok",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": [
+   "need heat and energy forms"
+  ]
+ },
+ {
+  "n": 175,
+  "family": "grenadeLauncher1A",
+  "slot": "top_weapons",
+  "sprites": [
+   "grenadeLauncher1A",
+   "grenadeLauncher1A2",
+   "grenadeLauncher1A3",
+   "grenadeLauncher1B",
+   "grenadeLauncher1B2",
+   "grenadeLauncher1B3"
+  ],
+  "names": [
+   "Rear Hit Electro Mark",
+   "Rear Hit Heat Mark",
+   "Rear Hit Mega Mark"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 176,
+  "family": "topArtillery2C",
+  "slot": "top_weapons",
+  "sprites": [
+   "topArtillery2C",
+   "topArtillery2D",
+   "topArtillery2E"
+  ],
+  "names": [
+   "Desolation"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 177,
+  "family": "topBeam2C",
+  "slot": "top_weapons",
+  "sprites": [
+   "topBeam2C",
+   "topBeam2D",
+   "topBeam2E"
+  ],
+  "names": [
+   "Savagery"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 178,
+  "family": "topBeam3C",
+  "slot": "top_weapons",
+  "sprites": [
+   "topBeam3C",
+   "topBeam3D",
+   "topBeam3E"
+  ],
+  "names": [
+   "Hysteria"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 179,
+  "family": "topBlaster2C",
+  "slot": "top_weapons",
+  "sprites": [
+   "topBlaster2C",
+   "topBlaster2D",
+   "topBlaster2E"
+  ],
+  "names": [
+   "Vandal Rage"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 180,
+  "family": "topBlaster3C",
+  "slot": "top_weapons",
+  "sprites": [
+   "topBlaster3C",
+   "topBlaster3D",
+   "topBlaster3E"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok",
+   "outdated"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 181,
+  "family": "topBlasterB1C",
+  "slot": "top_weapons",
+  "sprites": [
+   "topBlasterB1C",
+   "topBlasterB1D",
+   "topBlasterB1E"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 182,
+  "family": "topBlasterB2C",
+  "slot": "top_weapons",
+  "sprites": [
+   "topBlasterB2C",
+   "topBlasterB2D",
+   "topBlasterB2E"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 183,
+  "family": "topBlasterB3C",
+  "slot": "top_weapons",
+  "sprites": [
+   "topBlasterB3C",
+   "topBlasterB3D",
+   "topBlasterB3E"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 184,
+  "family": "topDiagonalRocketLauncher2D",
+  "slot": "top_weapons",
+  "sprites": [
+   "topDiagonalRocketLauncher2D",
+   "topDiagonalRocketLauncher2E"
+  ],
+  "names": [
+   "Burning Shower"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 185,
+  "family": "topDiagonalRocketLauncherB2D",
+  "slot": "top_weapons",
+  "sprites": [
+   "topDiagonalRocketLauncherB2D",
+   "topDiagonalRocketLauncherB2E"
+  ],
+  "names": [
+   "Red Rain"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 186,
+  "family": "topEMPD",
+  "slot": "top_weapons",
+  "sprites": [
+   "topEMPD"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 187,
+  "family": "topEMPE",
+  "slot": "top_weapons",
+  "sprites": [
+   "topEMPE"
+  ],
+  "names": [
+   "Overloaded EMP"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "ELECTRIC",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 188,
+  "family": "topGrenadeLauncher1C",
+  "slot": "top_weapons",
+  "sprites": [
+   "topGrenadeLauncher1C",
+   "topGrenadeLauncher1D",
+   "topGrenadeLauncher1E"
+  ],
+  "names": [
+   "Night Eagle"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 189,
+  "family": "topGrenadeLauncher3C",
+  "slot": "top_weapons",
+  "sprites": [
+   "topGrenadeLauncher3C",
+   "topGrenadeLauncher3D",
+   "topGrenadeLauncher3E"
+  ],
+  "names": [
+   "Grim Cobra"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 190,
+  "family": "topHeatBombD",
+  "slot": "top_weapons",
+  "sprites": [
+   "topHeatBombD",
+   "topHeatBombE"
+  ],
+  "names": [
+   "Overheated Heat Bomb"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 191,
+  "family": "topMegaSniper1D",
+  "slot": "top_weapons",
+  "sprites": [
+   "topMegaSniper1D",
+   "topMegaSniper1E"
+  ],
+  "names": [
+   "Falcon"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 192,
+  "family": "topMegaSniper2D",
+  "slot": "top_weapons",
+  "sprites": [
+   "topMegaSniper2D",
+   "topMegaSniper2E"
+  ],
+  "names": [
+   "Flaming Scope"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 193,
+  "family": "topMegaSniper3D",
+  "slot": "top_weapons",
+  "sprites": [
+   "topMegaSniper3D",
+   "topMegaSniper3E"
+  ],
+  "names": [
+   "Lightning Scope"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 194,
+  "family": "topMegaSniperB1C",
+  "slot": "top_weapons",
+  "sprites": [
+   "topMegaSniperB1C",
+   "topMegaSniperB1D",
+   "topMegaSniperB1E"
+  ],
+  "names": [
+   "Cockpit Piercer"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 195,
+  "family": "topMegaSniperB2C",
+  "slot": "top_weapons",
+  "sprites": [
+   "topMegaSniperB2C",
+   "topMegaSniperB2D",
+   "topMegaSniperB2E"
+  ],
+  "names": [
+   "Cockpit Burner"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 196,
+  "family": "topMegaSniperB3C",
+  "slot": "top_weapons",
+  "sprites": [
+   "topMegaSniperB3C",
+   "topMegaSniperB3D",
+   "topMegaSniperB3E"
+  ],
+  "names": [
+   "Cockpit Electrocuter"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 197,
+  "family": "topPhysicalBombD",
+  "slot": "top_weapons",
+  "sprites": [
+   "topPhysicalBombD",
+   "topPhysicalBombE"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 198,
+  "family": "topSniper1D",
+  "slot": "top_weapons",
+  "sprites": [
+   "topSniper1D",
+   "topSniper1E"
+  ],
+  "names": [
+   "Desert Fury"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": [
+   "Need a heat version"
+  ]
+ },
+ {
+  "n": 199,
+  "family": "topSniper3D",
+  "slot": "top_weapons",
+  "sprites": [
+   "topSniper3D",
+   "topSniper3E"
+  ],
+  "names": [
+   "Valiant Sniper"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 200,
+  "family": "topSuperLaser2D",
+  "slot": "top_weapons",
+  "sprites": [
+   "topSuperLaser2D",
+   "topSuperLaser2E"
+  ],
+  "names": [
+   "Iron Frenzy"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 201,
+  "family": "topSuperLaser3D",
+  "slot": "top_weapons",
+  "sprites": [
+   "topSuperLaser3D",
+   "topSuperLaser3E"
+  ],
+  "names": [
+   "Delerium"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 202,
+  "family": "topSuperMachineGun1D",
+  "slot": "top_weapons",
+  "sprites": [
+   "topSuperMachineGun1D",
+   "topSuperMachineGun1E"
+  ],
+  "names": [
+   "Spartan Carnage"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": [
+   "need energy and heat versions"
+  ]
+ },
+ {
+  "n": 203,
+  "family": "topSuperRocketLauncher2C",
+  "slot": "top_weapons",
+  "sprites": [
+   "topSuperRocketLauncher2C",
+   "topSuperRocketLauncher2D",
+   "topSuperRocketLauncher2E"
+  ],
+  "names": [
+   "Supreme Cannon"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 204,
+  "family": "drone26A",
+  "slot": "drones",
+  "sprites": [
+   "drone26A",
+   "drone26B",
+   "drone26C"
+  ],
+  "names": [
+   "Electric pointer",
+   "Kinetic pointer",
+   "Laser pointer"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 205,
+  "family": "drone27A",
+  "slot": "drones",
+  "sprites": [
+   "drone27A",
+   "drone27B",
+   "drone27C"
+  ],
+  "names": [
+   "Triple electric pointer",
+   "Triple kinetic pointer",
+   "Triple laser pointer"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 206,
+  "family": "droneBasic1A",
+  "slot": "drones",
+  "sprites": [
+   "droneBasic1A",
+   "droneBasic1B"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 207,
+  "family": "droneBasic2A",
+  "slot": "drones",
+  "sprites": [
+   "droneBasic2A",
+   "droneBasic2B"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 208,
+  "family": "droneBasic3A",
+  "slot": "drones",
+  "sprites": [
+   "droneBasic3A",
+   "droneBasic3B"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 209,
+  "family": "droneCapacityDamage1C",
+  "slot": "drones",
+  "sprites": [
+   "droneCapacityDamage1C",
+   "droneCapacityDamage1D",
+   "droneCapacityDamage1E"
+  ],
+  "names": [
+   "HurlBat"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 210,
+  "family": "droneCapacityDamage2C",
+  "slot": "drones",
+  "sprites": [
+   "droneCapacityDamage2C",
+   "droneCapacityDamage2D",
+   "droneCapacityDamage2E"
+  ],
+  "names": [
+   "Nemo"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 211,
+  "family": "droneCapacityDamage3C",
+  "slot": "drones",
+  "sprites": [
+   "droneCapacityDamage3C",
+   "droneCapacityDamage3D",
+   "droneCapacityDamage3E"
+  ],
+  "names": [
+   "Torment"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 212,
+  "family": "droneDamageSelf1C",
+  "slot": "drones",
+  "sprites": [
+   "droneDamageSelf1C",
+   "droneDamageSelf1D",
+   "droneDamageSelf1E"
+  ],
+  "names": [
+   "Selfish Protector"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 213,
+  "family": "droneDamageSelf2C",
+  "slot": "drones",
+  "sprites": [
+   "droneDamageSelf2C",
+   "droneDamageSelf2D",
+   "droneDamageSelf2E"
+  ],
+  "names": [
+   "Backstabbing Protector"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 214,
+  "family": "droneDamageSelf3C",
+  "slot": "drones",
+  "sprites": [
+   "droneDamageSelf3C",
+   "droneDamageSelf3D",
+   "droneDamageSelf3E"
+  ],
+  "names": [
+   "Unreliable Protector"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 215,
+  "family": "droneDamageSelfB1C",
+  "slot": "drones",
+  "sprites": [
+   "droneDamageSelfB1C",
+   "droneDamageSelfB1D",
+   "droneDamageSelfB1E"
+  ],
+  "names": [
+   "Selfish Guardian"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 216,
+  "family": "droneDamageSelfB2C",
+  "slot": "drones",
+  "sprites": [
+   "droneDamageSelfB2C",
+   "droneDamageSelfB2D",
+   "droneDamageSelfB2E"
+  ],
+  "names": [
+   "Backstabbing Guardian"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 217,
+  "family": "droneDamageSelfB3C",
+  "slot": "drones",
+  "sprites": [
+   "droneDamageSelfB3C",
+   "droneDamageSelfB3D",
+   "droneDamageSelfB3E"
+  ],
+  "names": [
+   "Unreliable Guardian"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 218,
+  "family": "droneHighDamage2C",
+  "slot": "drones",
+  "sprites": [
+   "droneHighDamage2C",
+   "droneHighDamage2D",
+   "droneHighDamage2E"
+  ],
+  "names": [
+   "HeatPoint"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 219,
+  "family": "droneHighDamage3C",
+  "slot": "drones",
+  "sprites": [
+   "droneHighDamage3C",
+   "droneHighDamage3D",
+   "droneHighDamage3E"
+  ],
+  "names": [
+   "Face Shocker"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 220,
+  "family": "dronePull1D",
+  "slot": "drones",
+  "sprites": [
+   "dronePull1D",
+   "dronePull1E"
+  ],
+  "names": [
+   "Backstabber"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 221,
+  "family": "dronePush2D",
+  "slot": "drones",
+  "sprites": [
+   "dronePush2D",
+   "dronePush2E"
+  ],
+  "names": [
+   "FlameWave"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 222,
+  "family": "dronePush3D",
+  "slot": "drones",
+  "sprites": [
+   "dronePush3D",
+   "dronePush3E"
+  ],
+  "names": [
+   "Shockwave"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 223,
+  "family": "droneRanged1C",
+  "slot": "drones",
+  "sprites": [
+   "droneRanged1C",
+   "droneRanged1D",
+   "droneRanged1E"
+  ],
+  "names": [
+   "Tonto"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 224,
+  "family": "droneRanged2C",
+  "slot": "drones",
+  "sprites": [
+   "droneRanged2C",
+   "droneRanged2D",
+   "droneRanged2E"
+  ],
+  "names": [
+   "FireFly"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 225,
+  "family": "droneRanged3C",
+  "slot": "drones",
+  "sprites": [
+   "droneRanged3C",
+   "droneRanged3D",
+   "droneRanged3E"
+  ],
+  "names": [
+   "Electrolyte"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 226,
+  "family": "droneRangedB1C",
+  "slot": "drones",
+  "sprites": [
+   "droneRangedB1C",
+   "droneRangedB1D",
+   "droneRangedB1E"
+  ],
+  "names": [
+   "Solar Torch"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 227,
+  "family": "droneRangedB2C",
+  "slot": "drones",
+  "sprites": [
+   "droneRangedB2C",
+   "droneRangedB2D",
+   "droneRangedB2E"
+  ],
+  "names": [
+   "Flame Spear"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 228,
+  "family": "droneRangedB3C",
+  "slot": "drones",
+  "sprites": [
+   "droneRangedB3C",
+   "droneRangedB3D",
+   "droneRangedB3E"
+  ],
+  "names": [
+   "Rail Gun"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 229,
+  "family": "droneRegenDamage1D",
+  "slot": "drones",
+  "sprites": [
+   "droneRegenDamage1D",
+   "droneRegenDamage1E"
+  ],
+  "names": [
+   "DustMaker"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 230,
+  "family": "droneRegenDamage2D",
+  "slot": "drones",
+  "sprites": [
+   "droneRegenDamage2D",
+   "droneRegenDamage2E"
+  ],
+  "names": [
+   "Murmur"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 231,
+  "family": "droneRegenDamage3D",
+  "slot": "drones",
+  "sprites": [
+   "droneRegenDamage3D",
+   "droneRegenDamage3E"
+  ],
+  "names": [
+   "Anguish"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 232,
+  "family": "droneTypeDamage1B",
+  "slot": "drones",
+  "sprites": [
+   "droneTypeDamage1B",
+   "droneTypeDamage1C"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 233,
+  "family": "droneTypeDamage2B",
+  "slot": "drones",
+  "sprites": [
+   "droneTypeDamage2B",
+   "droneTypeDamage2C"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 234,
+  "family": "droneTypeDamage3B",
+  "slot": "drones",
+  "sprites": [
+   "droneTypeDamage3B",
+   "droneTypeDamage3C"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 235,
+  "family": "superDroneBasic1C",
+  "slot": "drones",
+  "sprites": [
+   "superDroneBasic1C",
+   "superDroneBasic1D",
+   "superDroneBasic1E"
+  ],
+  "names": [
+   "Void"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 236,
+  "family": "superDroneBasic2C",
+  "slot": "drones",
+  "sprites": [
+   "superDroneBasic2C",
+   "superDroneBasic2D",
+   "superDroneBasic2E"
+  ],
+  "names": [
+   "Clash"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 237,
+  "family": "superDroneBasic3C",
+  "slot": "drones",
+  "sprites": [
+   "superDroneBasic3C",
+   "superDroneBasic3D",
+   "superDroneBasic3E"
+  ],
+  "names": [
+   "Snack"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 238,
+  "family": "superDroneTypeDamage1D",
+  "slot": "drones",
+  "sprites": [
+   "superDroneTypeDamage1D",
+   "superDroneTypeDamage1E"
+  ],
+  "names": [
+   "Greedy"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 239,
+  "family": "superDroneTypeDamage2D",
+  "slot": "drones",
+  "sprites": [
+   "superDroneTypeDamage2D",
+   "superDroneTypeDamage2E"
+  ],
+  "names": [
+   "Swoop"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 240,
+  "family": "superDroneTypeDamage3D",
+  "slot": "drones",
+  "sprites": [
+   "superDroneTypeDamage3D",
+   "superDroneTypeDamage3E"
+  ],
+  "names": [
+   "WindForge"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 241,
+  "family": "module_HP1",
+  "slot": "modules",
+  "sprites": [
+   "module_HP1",
+   "module_HP10",
+   "module_HP2",
+   "module_HP3",
+   "module_HP4",
+   "module_HP5",
+   "module_HP6",
+   "module_HP7",
+   "module_HP8",
+   "module_HP9"
+  ],
+  "names": [
+   "Adv. Armor Plating 1",
+   "Adv. Armor Plating 2",
+   "Adv. Armor Plating 3",
+   "Adv. Armor Plating 4",
+   "Adv. Armor Plating 5",
+   "Armor Plating 1",
+   "Armor Plating 10",
+   "Armor Plating 2",
+   "Armor Plating 3",
+   "Armor Plating 4",
+   "Armor Plating 5",
+   "Armor Plating 6",
+   "Armor Plating 7",
+   "Armor Plating 8",
+   "Armor Plating 9",
+   "Iron Plating",
+   "Platinum Plating"
+  ],
+  "era": [
+   "both",
+   "reloaded"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "borderline",
+   "ok",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 242,
+  "family": "module_HP11",
+  "slot": "modules",
+  "sprites": [
+   "module_HP11"
+  ],
+  "names": [
+   "Titanium Skeleton I"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 243,
+  "family": "module_HP12",
+  "slot": "modules",
+  "sprites": [
+   "module_HP12"
+  ],
+  "names": [
+   "Platinum Skeleton II"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 244,
+  "family": "module_HP13",
+  "slot": "modules",
+  "sprites": [
+   "module_HP13"
+  ],
+  "names": [
+   "Platinum Skeleton III"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 245,
+  "family": "module_HP14",
+  "slot": "modules",
+  "sprites": [
+   "module_HP14"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 246,
+  "family": "module_HP15",
+  "slot": "modules",
+  "sprites": [
+   "module_HP15"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 247,
+  "family": "module_energy1",
+  "slot": "modules",
+  "sprites": [
+   "module_energy13",
+   "module_energy3",
+   "module_energy4",
+   "module_energy5"
+  ],
+  "names": [
+   "Energy Engine",
+   "Energy Generator III",
+   "Energy Module 13",
+   "Energy Module 3",
+   "Energy Module 4",
+   "Energy module 5"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 248,
+  "family": "module_energy101",
+  "slot": "modules",
+  "sprites": [
+   "module_energy101"
+  ],
+  "names": [
+   "Electron Field Mark I"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 249,
+  "family": "module_energy102",
+  "slot": "modules",
+  "sprites": [
+   "module_energy102"
+  ],
+  "names": [
+   "Electron Field Mark II"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 250,
+  "family": "module_energy103",
+  "slot": "modules",
+  "sprites": [
+   "module_energy103"
+  ],
+  "names": [
+   "Electron Field III"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 251,
+  "family": "module_energy104",
+  "slot": "modules",
+  "sprites": [
+   "module_energy104"
+  ],
+  "names": [
+   "Electron Field IV"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 252,
+  "family": "module_energy105",
+  "slot": "modules",
+  "sprites": [
+   "module_energy105"
+  ],
+  "names": [
+   "Energy Mass Booster"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "ELECTRIC",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 253,
+  "family": "module_energy11",
+  "slot": "modules",
+  "sprites": [
+   "module_energy11"
+  ],
+  "names": [
+   "Energy Generator I"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 254,
+  "family": "module_energy12",
+  "slot": "modules",
+  "sprites": [
+   "module_energy12"
+  ],
+  "names": [
+   "Energy Generator II"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 255,
+  "family": "module_energy14",
+  "slot": "modules",
+  "sprites": [
+   "module_energy14"
+  ],
+  "names": [
+   "Energy Generator IV",
+   "Energy Storage Unit"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "ELECTRIC",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 256,
+  "family": "module_heat1",
+  "slot": "modules",
+  "sprites": [
+   "module_heat2",
+   "module_heat3",
+   "module_heat4",
+   "module_heat5"
+  ],
+  "names": [
+   "Heat Engine",
+   "Heat Module 1",
+   "Heat Module 3",
+   "Heat module 4",
+   "Heat module 5"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "borderline",
+   "ok",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 257,
+  "family": "module_heat101",
+  "slot": "modules",
+  "sprites": [
+   "module_heat101"
+  ],
+  "names": [
+   "Heat Control Mark I"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 258,
+  "family": "module_heat102",
+  "slot": "modules",
+  "sprites": [
+   "module_heat102"
+  ],
+  "names": [
+   "Heat Control Mark II"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 259,
+  "family": "module_heat103",
+  "slot": "modules",
+  "sprites": [
+   "module_heat103"
+  ],
+  "names": [
+   "Heat Control Mark III"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 260,
+  "family": "module_heat104",
+  "slot": "modules",
+  "sprites": [
+   "module_heat104"
+  ],
+  "names": [
+   "Heat Control Mark IV"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 261,
+  "family": "module_heat105",
+  "slot": "modules",
+  "sprites": [
+   "module_heat105"
+  ],
+  "names": [
+   "Cooling Mass Booster"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "EXPLOSIVE",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 262,
+  "family": "module_heat12",
+  "slot": "modules",
+  "sprites": [
+   "module_heat12"
+  ],
+  "names": [
+   "Engine Booster I"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 263,
+  "family": "module_heat13",
+  "slot": "modules",
+  "sprites": [
+   "module_heat13"
+  ],
+  "names": [
+   "Engine Booster II"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 264,
+  "family": "module_heat14",
+  "slot": "modules",
+  "sprites": [
+   "module_heat14"
+  ],
+  "names": [
+   "Engine Booster III",
+   "Heat Storage Unit"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "EXPLOSIVE",
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 265,
+  "family": "module_regularEnergyHeatCap3",
+  "slot": "modules",
+  "sprites": [
+   "module_regularEnergyHeatCap3"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 266,
+  "family": "module_regularEnergyHeatCap4",
+  "slot": "modules",
+  "sprites": [
+   "module_regularEnergyHeatCap4"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 267,
+  "family": "module_regularEnergyHeatCap5",
+  "slot": "modules",
+  "sprites": [
+   "module_regularEnergyHeatCap5"
+  ],
+  "names": [
+   "Combined Storage Unit"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "COMBINED",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 268,
+  "family": "module_resistanceAll1",
+  "slot": "modules",
+  "sprites": [
+   "module_resistanceAll10",
+   "module_resistanceAll12",
+   "module_resistanceAll2",
+   "module_resistanceAll3",
+   "module_resistanceAll4",
+   "module_resistanceAll5",
+   "module_resistanceAll6",
+   "module_resistanceAll7",
+   "module_resistanceAll8",
+   "module_resistanceAll9"
+  ],
+  "names": [
+   "Invulnerability Mark II",
+   "Maximum Protector",
+   "Multi Resistance Module",
+   "Savior Resistance"
+  ],
+  "era": [
+   "both",
+   "reloaded"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 269,
+  "family": "module_resistanceAll11",
+  "slot": "modules",
+  "sprites": [
+   "module_resistanceAll11"
+  ],
+  "names": [
+   "Invulnerability Mark I"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 270,
+  "family": "module_resistanceAll13",
+  "slot": "modules",
+  "sprites": [
+   "module_resistanceAll13"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 271,
+  "family": "module_resistanceAll14",
+  "slot": "modules",
+  "sprites": [
+   "module_resistanceAll14"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 272,
+  "family": "module_resistanceAll15",
+  "slot": "modules",
+  "sprites": [
+   "module_resistanceAll15"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 273,
+  "family": "module_resistanceAll16",
+  "slot": "modules",
+  "sprites": [
+   "module_resistanceAll16"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 274,
+  "family": "module_resistanceAll17",
+  "slot": "modules",
+  "sprites": [
+   "module_resistanceAll17"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 275,
+  "family": "module_resistanceAll18",
+  "slot": "modules",
+  "sprites": [
+   "module_resistanceAll18"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 276,
+  "family": "module_resistanceAllHP4",
+  "slot": "modules",
+  "sprites": [
+   "module_resistanceAllHP4"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 277,
+  "family": "module_resistanceAllHP5",
+  "slot": "modules",
+  "sprites": [
+   "module_resistanceAllHP5"
+  ],
+  "names": [
+   "Defence Matrix"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "COMBINED",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 278,
+  "family": "module_resistanceElectric1",
+  "slot": "modules",
+  "sprites": [
+   "module_resistanceElectric10",
+   "module_resistanceElectric11",
+   "module_resistanceElectric12",
+   "module_resistanceElectric13",
+   "module_resistanceElectric14",
+   "module_resistanceElectric15",
+   "module_resistanceElectric2",
+   "module_resistanceElectric3",
+   "module_resistanceElectric4",
+   "module_resistanceElectric5",
+   "module_resistanceElectric6",
+   "module_resistanceElectric7",
+   "module_resistanceElectric8",
+   "module_resistanceElectric9"
+  ],
+  "names": [
+   "Electric Resistance Module 10",
+   "Electric Resistance Module 11",
+   "Electric Resistance Module 12",
+   "Electric Resistance Module 13",
+   "Electric Resistance Module 14",
+   "Electric Resistance Module 15",
+   "Electric Resistance Module 2",
+   "Electric Resistance Module 3",
+   "Electric Resistance Module 4",
+   "Electric Resistance Module 5",
+   "Electric Resistance Module 6",
+   "Electric Resistance Module 7",
+   "Electric Resistance Module 8",
+   "Electric Resistance Module 9",
+   "Energy Protector",
+   "SuperCharge Protector"
+  ],
+  "era": [
+   "both",
+   "reloaded"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 279,
+  "family": "module_resistanceElectric16",
+  "slot": "modules",
+  "sprites": [
+   "module_resistanceElectric16"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 280,
+  "family": "module_resistanceElectric17",
+  "slot": "modules",
+  "sprites": [
+   "module_resistanceElectric17"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 281,
+  "family": "module_resistanceElectric18",
+  "slot": "modules",
+  "sprites": [
+   "module_resistanceElectric18"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 282,
+  "family": "module_resistanceElectricHP4",
+  "slot": "modules",
+  "sprites": [
+   "module_resistanceElectricHP4"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 283,
+  "family": "module_resistanceElectricHP5",
+  "slot": "modules",
+  "sprites": [
+   "module_resistanceElectricHP5"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 284,
+  "family": "module_resistanceExplosive1",
+  "slot": "modules",
+  "sprites": [
+   "module_resistanceExplosive10",
+   "module_resistanceExplosive11",
+   "module_resistanceExplosive12",
+   "module_resistanceExplosive13",
+   "module_resistanceExplosive14",
+   "module_resistanceExplosive15",
+   "module_resistanceExplosive2",
+   "module_resistanceExplosive3",
+   "module_resistanceExplosive4",
+   "module_resistanceExplosive5",
+   "module_resistanceExplosive6",
+   "module_resistanceExplosive7",
+   "module_resistanceExplosive8",
+   "module_resistanceExplosive9"
+  ],
+  "names": [
+   "Explosive Resistance Module 10",
+   "Explosive Resistance Module 11",
+   "Explosive Resistance Module 12",
+   "Explosive Resistance Module 13",
+   "Explosive Resistance Module 14",
+   "Explosive Resistance Module 15",
+   "Explosive Resistance Module 2",
+   "Explosive Resistance Module 3",
+   "Explosive Resistance Module 4",
+   "Explosive Resistance Module 5",
+   "Explosive Resistance Module 6",
+   "Explosive Resistance Module 7",
+   "Explosive Resistance Module 8",
+   "Explosive Resistance Module 9",
+   "Heat Protector",
+   "Ultrahot Protector"
+  ],
+  "era": [
+   "both",
+   "reloaded"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 285,
+  "family": "module_resistanceExplosive16",
+  "slot": "modules",
+  "sprites": [
+   "module_resistanceExplosive16"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 286,
+  "family": "module_resistanceExplosive17",
+  "slot": "modules",
+  "sprites": [
+   "module_resistanceExplosive17"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 287,
+  "family": "module_resistanceExplosive18",
+  "slot": "modules",
+  "sprites": [
+   "module_resistanceExplosive18"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 288,
+  "family": "module_resistanceExplosiveHP4",
+  "slot": "modules",
+  "sprites": [
+   "module_resistanceExplosiveHP4"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 289,
+  "family": "module_resistanceExplosiveHP5",
+  "slot": "modules",
+  "sprites": [
+   "module_resistanceExplosiveHP5"
+  ],
+  "names": [
+   "Plasma Fortress"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "EXPLOSIVE",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 290,
+  "family": "module_resistancePhysical1",
+  "slot": "modules",
+  "sprites": [
+   "module_resistancePhysical10",
+   "module_resistancePhysical11",
+   "module_resistancePhysical12",
+   "module_resistancePhysical13",
+   "module_resistancePhysical14",
+   "module_resistancePhysical15",
+   "module_resistancePhysical2",
+   "module_resistancePhysical3",
+   "module_resistancePhysical4",
+   "module_resistancePhysical5",
+   "module_resistancePhysical6",
+   "module_resistancePhysical7",
+   "module_resistancePhysical8",
+   "module_resistancePhysical9"
+  ],
+  "names": [
+   "Mighty Protector",
+   "Physical Protector",
+   "Physical Resistance Module 10",
+   "Physical Resistance Module 11",
+   "Physical Resistance Module 12",
+   "Physical Resistance Module 13",
+   "Physical Resistance Module 14",
+   "Physical Resistance Module 15",
+   "Physical Resistance Module 2",
+   "Physical Resistance Module 3",
+   "Physical Resistance Module 4",
+   "Physical Resistance Module 5",
+   "Physical Resistance Module 6",
+   "Physical Resistance Module 7",
+   "Physical Resistance Module 8",
+   "Physical Resistance Module 9"
+  ],
+  "era": [
+   "both",
+   "reloaded"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 291,
+  "family": "module_resistancePhysical16",
+  "slot": "modules",
+  "sprites": [
+   "module_resistancePhysical16"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 292,
+  "family": "module_resistancePhysical17",
+  "slot": "modules",
+  "sprites": [
+   "module_resistancePhysical17"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 293,
+  "family": "module_resistancePhysical18",
+  "slot": "modules",
+  "sprites": [
+   "module_resistancePhysical18"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "borderline"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 294,
+  "family": "module_resistancePhysicalHP4",
+  "slot": "modules",
+  "sprites": [
+   "module_resistancePhysicalHP4"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 295,
+  "family": "module_resistancePhysicalHP5",
+  "slot": "modules",
+  "sprites": [
+   "module_resistancePhysicalHP5"
+  ],
+  "names": [
+   "Platinum Fortress"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 296,
+  "family": "module_superEnergyHeatCap4",
+  "slot": "modules",
+  "sprites": [
+   "module_superEnergyHeatCap4"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 297,
+  "family": "module_superEnergyHeatCap5",
+  "slot": "modules",
+  "sprites": [
+   "module_superEnergyHeatCap5"
+  ],
+  "names": [
+   "Combined Engine Unit"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "COMBINED",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 298,
+  "family": "module_superEnergyHeatCapReg4",
+  "slot": "modules",
+  "sprites": [
+   "module_superEnergyHeatCapReg4"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 299,
+  "family": "module_superEnergyHeatCapReg5",
+  "slot": "modules",
+  "sprites": [
+   "module_superEnergyHeatCapReg5"
+  ],
+  "names": [
+   "Quad Core Booster"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "COMBINED",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 300,
+  "family": "module_superEnergyHeatReg4",
+  "slot": "modules",
+  "sprites": [
+   "module_superEnergyHeatReg4"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 301,
+  "family": "module_superEnergyHeatReg5",
+  "slot": "modules",
+  "sprites": [
+   "module_superEnergyHeatReg5"
+  ],
+  "names": [
+   "Overload Preventor"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "COMBINED",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 302,
+  "family": "shield1A",
+  "slot": "shields",
+  "sprites": [
+   "shield1A",
+   "shield1B",
+   "shield2A",
+   "shield2B",
+   "shield3A",
+   "shield3B",
+   "shield4A",
+   "shield4B",
+   "shield5A",
+   "shield5B",
+   "shield6A",
+   "shield6B",
+   "shield7A",
+   "shield7B",
+   "shield8A",
+   "shield8B",
+   "shield9A",
+   "shield9B"
+  ],
+  "names": [
+   "Adv. Energy Shield Mark 1",
+   "Adv. Energy Shield Mark 10",
+   "Adv. Energy Shield Mark 11",
+   "Adv. Energy Shield Mark 12",
+   "Adv. Energy Shield Mark 13",
+   "Adv. Energy Shield Mark 14",
+   "Adv. Energy Shield Mark 15",
+   "Adv. Energy Shield Mark 2",
+   "Adv. Energy Shield Mark 3",
+   "Adv. Energy Shield Mark 4",
+   "Adv. Energy Shield Mark 5",
+   "Adv. Energy Shield Mark 6",
+   "Adv. Energy Shield Mark 7",
+   "Adv. Energy Shield Mark 8",
+   "Adv. Energy Shield Mark 9",
+   "Adv. Heat Shield Mark 1",
+   "Adv. Heat Shield Mark 10",
+   "Adv. Heat Shield Mark 11",
+   "Adv. Heat Shield Mark 12",
+   "Adv. Heat Shield Mark 13",
+   "Adv. Heat Shield Mark 14",
+   "Adv. Heat Shield Mark 15",
+   "Adv. Heat Shield Mark 2",
+   "Adv. Heat Shield Mark 3",
+   "Adv. Heat Shield Mark 4",
+   "Adv. Heat Shield Mark 5",
+   "Adv. Heat Shield Mark 6",
+   "Adv. Heat Shield Mark 7",
+   "Adv. Heat Shield Mark 8",
+   "Adv. Heat Shield Mark 9",
+   "Energy Shield Mark 1",
+   "Energy Shield Mark 2",
+   "Energy Shield Mark 3",
+   "Energy Shield Mark 4",
+   "Energy Shield Mark 5",
+   "Energy Shield Mark 6",
+   "Heat Shield Mark 1",
+   "Heat Shield Mark 2",
+   "Heat Shield Mark 3",
+   "Heat Shield Mark 4",
+   "Heat Shield Mark 5",
+   "Heat Shield Mark 6"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "borderline",
+   "ok",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 303,
+  "family": "superTeleportBase3D",
+  "slot": "teleporters",
+  "sprites": [
+   "superTeleportBase3D",
+   "superTeleportBase3E"
+  ],
+  "names": [
+   "Advanced Teleporter"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 304,
+  "family": "teleport1",
+  "slot": "teleporters",
+  "sprites": [
+   "teleport1",
+   "teleport2",
+   "teleport3",
+   "teleport4",
+   "teleport5",
+   "teleport6",
+   "teleport7",
+   "teleport8"
+  ],
+  "names": [
+   "Adv. Teleport Mark 1",
+   "Adv. Teleport Mark 2",
+   "Adv. Teleport Mark 3",
+   "Adv. Teleport Mark 4",
+   "Adv. Teleport Mark 5",
+   "Adv. Teleport Mark 6",
+   "Adv. Teleport Mark 7",
+   "Lightning Gate Mark I",
+   "Teleport Mark 1",
+   "Teleport Mark 2",
+   "Teleport Mark 3",
+   "Teleport Mark 4",
+   "Teleport Mark 5",
+   "Teleport Mark 6",
+   "Teleport Mark 7",
+   "Teleport Mark 8",
+   "Teleport Mark 9"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "ok",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 305,
+  "family": "teleport9",
+  "slot": "teleporters",
+  "sprites": [
+   "teleport9"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 306,
+  "family": "teleportBase3A",
+  "slot": "teleporters",
+  "sprites": [
+   "teleportBase3A",
+   "teleportBase3B",
+   "teleportBase3C"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok",
+   "outdated"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 307,
+  "family": "teleportDamageSelfD",
+  "slot": "teleporters",
+  "sprites": [
+   "teleportDamageSelfD"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 308,
+  "family": "teleportTwoUsesD",
+  "slot": "teleporters",
+  "sprites": [
+   "teleportTwoUsesD"
+  ],
+  "names": [
+   "Double Teleporter"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": "ELECTRIC",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 309,
+  "family": "charge1",
+  "slot": "charge_engines",
+  "sprites": [
+   "charge1",
+   "charge2",
+   "charge2_legacy",
+   "charge3",
+   "charge3_legacy",
+   "charge4",
+   "charge4_legacy",
+   "charge5",
+   "charge6",
+   "charge7",
+   "charge8"
+  ],
+  "names": [
+   "Adv. Charge Mark 1",
+   "Adv. Charge Mark 2",
+   "Adv. Charge Mark 3",
+   "Adv. Charge Mark 4",
+   "Adv. Charge Mark 5",
+   "Adv. Charge Mark 6",
+   "Adv. Charge Mark 7",
+   "Charge Engine",
+   "Charge Mark 1",
+   "Charge Mark 2",
+   "Charge Mark 3",
+   "Charge Mark 4",
+   "Charge Mark 5",
+   "Charge Mark 6",
+   "Charge Mark 7",
+   "Charge Mark 8",
+   "Charge Mark 9",
+   "Fire Tail Mark I"
+  ],
+  "era": [
+   "both",
+   "legacy",
+   "reloaded"
+  ],
+  "element": "PHYSICAL",
+  "quality": [
+   "borderline",
+   "ok",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 310,
+  "family": "chargeHighDamage1D",
+  "slot": "charge_engines",
+  "sprites": [
+   "chargeHighDamage1D",
+   "chargeHighDamage1E"
+  ],
+  "names": [
+   "Superb Charge Engine"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 311,
+  "family": "harpoonBase1B",
+  "slot": "hooks",
+  "sprites": [
+   "harpoonBase1B",
+   "harpoonBase1C"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok",
+   "outdated"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 312,
+  "family": "harpoonBase2B",
+  "slot": "hooks",
+  "sprites": [
+   "harpoonBase2B",
+   "harpoonBase2C"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 313,
+  "family": "harpoonBase3B",
+  "slot": "hooks",
+  "sprites": [
+   "harpoonBase3B",
+   "harpoonBase3C"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok",
+   "outdated"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 314,
+  "family": "superHarpoonBase1D",
+  "slot": "hooks",
+  "sprites": [
+   "superHarpoonBase1D",
+   "superHarpoonBase1E"
+  ],
+  "names": [
+   "Platinum Grappling Hook"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 315,
+  "family": "superHarpoonBase2D",
+  "slot": "hooks",
+  "sprites": [
+   "superHarpoonBase2D",
+   "superHarpoonBase2E"
+  ],
+  "names": [
+   "Flaming Grappling Hook"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok",
+   "outdated"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 316,
+  "family": "superHarpoonBase3D",
+  "slot": "hooks",
+  "sprites": [
+   "superHarpoonBase3D",
+   "superHarpoonBase3E"
+  ],
+  "names": [
+   "Shocking Grappling Hook"
+  ],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 317,
+  "family": "kit_power10",
+  "slot": "kits",
+  "sprites": [
+   "kit_power10"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 318,
+  "family": "kit_power11",
+  "slot": "kits",
+  "sprites": [
+   "kit_power11"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 319,
+  "family": "kit_power12",
+  "slot": "kits",
+  "sprites": [
+   "kit_power12"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 320,
+  "family": "kit_power13",
+  "slot": "kits",
+  "sprites": [
+   "kit_power13"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 321,
+  "family": "kit_power14",
+  "slot": "kits",
+  "sprites": [
+   "kit_power14"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 322,
+  "family": "kit_power2",
+  "slot": "kits",
+  "sprites": [
+   "kit_power2"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 323,
+  "family": "kit_power3",
+  "slot": "kits",
+  "sprites": [
+   "kit_power3"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 324,
+  "family": "kit_power4",
+  "slot": "kits",
+  "sprites": [
+   "kit_power4"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 325,
+  "family": "kit_power5",
+  "slot": "kits",
+  "sprites": [
+   "kit_power5"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 326,
+  "family": "kit_power6",
+  "slot": "kits",
+  "sprites": [
+   "kit_power6"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 327,
+  "family": "kit_power7",
+  "slot": "kits",
+  "sprites": [
+   "kit_power7"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 328,
+  "family": "kit_power8",
+  "slot": "kits",
+  "sprites": [
+   "kit_power8"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 329,
+  "family": "kit_power9",
+  "slot": "kits",
+  "sprites": [
+   "kit_power9"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 330,
+  "family": "kit_powerB1",
+  "slot": "kits",
+  "sprites": [
+   "kit_powerB1"
+  ],
+  "names": [
+   "Power Kit"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 331,
+  "family": "kit_powerB10",
+  "slot": "kits",
+  "sprites": [
+   "kit_powerB10"
+  ],
+  "names": [
+   "Ultra Power Kit I"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 332,
+  "family": "kit_powerB11",
+  "slot": "kits",
+  "sprites": [
+   "kit_powerB11"
+  ],
+  "names": [
+   "Ultra Power Kit II"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 333,
+  "family": "kit_powerB12",
+  "slot": "kits",
+  "sprites": [
+   "kit_powerB12"
+  ],
+  "names": [
+   "Ultra Power Kit III"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 334,
+  "family": "kit_powerB13",
+  "slot": "kits",
+  "sprites": [
+   "kit_powerB13"
+  ],
+  "names": [
+   "Ultra Power Kit IV"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 335,
+  "family": "kit_powerB14",
+  "slot": "kits",
+  "sprites": [
+   "kit_powerB14"
+  ],
+  "names": [
+   "Ultra Power Kit V"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 336,
+  "family": "kit_powerB15",
+  "slot": "kits",
+  "sprites": [
+   "kit_powerB15"
+  ],
+  "names": [
+   "Ultra Power Kit"
+  ],
+  "era": [
+   "both"
+  ],
+  "element": "OTHER",
+  "quality": [
+   "ok"
+  ],
+  "has_stats": true,
+  "notes": []
+ },
+ {
+  "n": 337,
+  "family": "kit_powerB2",
+  "slot": "kits",
+  "sprites": [
+   "kit_powerB2"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 338,
+  "family": "kit_powerB3",
+  "slot": "kits",
+  "sprites": [
+   "kit_powerB3"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 339,
+  "family": "kit_powerB4",
+  "slot": "kits",
+  "sprites": [
+   "kit_powerB4"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 340,
+  "family": "kit_powerB5",
+  "slot": "kits",
+  "sprites": [
+   "kit_powerB5"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 341,
+  "family": "kit_powerB6",
+  "slot": "kits",
+  "sprites": [
+   "kit_powerB6"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 342,
+  "family": "kit_powerB7",
+  "slot": "kits",
+  "sprites": [
+   "kit_powerB7"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 343,
+  "family": "kit_powerB8",
+  "slot": "kits",
+  "sprites": [
+   "kit_powerB8"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 344,
+  "family": "kit_powerB9",
+  "slot": "kits",
+  "sprites": [
+   "kit_powerB9"
+  ],
+  "names": [],
+  "era": [
+   "both"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 345,
+  "family": "legBoss4A",
+  "slot": "bosses",
+  "sprites": [
+   "legBoss4A",
+   "legBoss4B",
+   "legBoss4C"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 346,
+  "family": "legBoss5A",
+  "slot": "bosses",
+  "sprites": [
+   "legBoss5A",
+   "legBoss5B",
+   "legBoss5C"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 347,
+  "family": "sideBoss2A",
+  "slot": "bosses",
+  "sprites": [
+   "sideBoss2A",
+   "sideBoss2B",
+   "sideBoss2C"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 348,
+  "family": "sideBoss3A",
+  "slot": "bosses",
+  "sprites": [
+   "sideBoss3A",
+   "sideBoss3B",
+   "sideBoss3C"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 349,
+  "family": "sideBoss4A",
+  "slot": "bosses",
+  "sprites": [
+   "sideBoss4A",
+   "sideBoss4B",
+   "sideBoss4C"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 350,
+  "family": "torsoBoss3A",
+  "slot": "bosses",
+  "sprites": [
+   "torsoBoss3A",
+   "torsoBoss3B",
+   "torsoBoss3C"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 351,
+  "family": "torsoBoss4A",
+  "slot": "bosses",
+  "sprites": [
+   "torsoBoss4A",
+   "torsoBoss4B",
+   "torsoBoss4C"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "ok"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 352,
+  "family": "torsoBoss5A",
+  "slot": "bosses",
+  "sprites": [
+   "torsoBoss5A",
+   "torsoBoss5B",
+   "torsoBoss5C"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "outdated"
+  ],
+  "has_stats": false,
+  "notes": []
+ },
+ {
+  "n": 353,
+  "family": "torsoBoss6A",
+  "slot": "bosses",
+  "sprites": [
+   "torsoBoss6A",
+   "torsoBoss6B",
+   "torsoBoss6C"
+  ],
+  "names": [],
+  "era": [
+   "reloaded"
+  ],
+  "element": null,
+  "quality": [
+   "borderline",
+   "outdated"
+  ],
+  "has_stats": false,
+  "notes": []
+ }
+]

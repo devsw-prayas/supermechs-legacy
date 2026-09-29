@@ -1,0 +1,1060 @@
+{
+ "multi_name": [
+  [
+   "charge2",
+   "charge_engines",
+   [
+    "Adv. Charge Mark 1",
+    "Charge Mark 2"
+   ],
+   [
+    "charge"
+   ]
+  ],
+  [
+   "charge2_legacy",
+   "charge_engines",
+   [
+    "Adv. Charge Mark 1",
+    "Charge Mark 2"
+   ],
+   [
+    "charge"
+   ]
+  ],
+  [
+   "charge3",
+   "charge_engines",
+   [
+    "Adv. Charge Mark 2",
+    "Charge Mark 4",
+    "Charge Mark 5"
+   ],
+   [
+    "charge"
+   ]
+  ],
+  [
+   "charge3_legacy",
+   "charge_engines",
+   [
+    "Adv. Charge Mark 2",
+    "Charge Mark 4",
+    "Charge Mark 5"
+   ],
+   [
+    "charge"
+   ]
+  ],
+  [
+   "charge4",
+   "charge_engines",
+   [
+    "Charge Engine",
+    "Charge Mark 3"
+   ],
+   [
+    "charge"
+   ]
+  ],
+  [
+   "charge4_legacy",
+   "charge_engines",
+   [
+    "Charge Engine",
+    "Charge Mark 3"
+   ],
+   [
+    "charge"
+   ]
+  ],
+  [
+   "charge5",
+   "charge_engines",
+   [
+    "Adv. Charge Mark 3",
+    "Charge Mark 6",
+    "Charge Mark 7"
+   ],
+   [
+    "charge"
+   ]
+  ],
+  [
+   "charge6",
+   "charge_engines",
+   [
+    "Adv. Charge Mark 4",
+    "Adv. Charge Mark 5",
+    "Charge Mark 8"
+   ],
+   [
+    "charge"
+   ]
+  ],
+  [
+   "charge7",
+   "charge_engines",
+   [
+    "Adv. Charge Mark 6",
+    "Charge Mark 9"
+   ],
+   [
+    "charge"
+   ]
+  ],
+  [
+   "charge8",
+   "charge_engines",
+   [
+    "Adv. Charge Mark 7",
+    "Fire Tail Mark I"
+   ],
+   [
+    "charge"
+   ]
+  ],
+  [
+   "leg27B",
+   "legs",
+   [
+    "Fire Stampede",
+    "Steel Stampede"
+   ],
+   [
+    "legs"
+   ]
+  ],
+  [
+   "leg32B",
+   "legs",
+   [
+    "Devouring Paws",
+    "Magma Barrier"
+   ],
+   [
+    "legs"
+   ]
+  ],
+  [
+   "module_HP10",
+   "modules",
+   [
+    "Adv. Armor Plating 5",
+    "Armor Plating 10"
+   ],
+   [
+    "module"
+   ]
+  ],
+  [
+   "module_HP2",
+   "modules",
+   [
+    "Adv. Armor Plating 1",
+    "Armor Plating 2"
+   ],
+   [
+    "module"
+   ]
+  ],
+  [
+   "module_HP3",
+   "modules",
+   [
+    "Armor Plating 3",
+    "Iron Plating"
+   ],
+   [
+    "module"
+   ]
+  ],
+  [
+   "module_HP4",
+   "modules",
+   [
+    "Adv. Armor Plating 2",
+    "Armor Plating 4"
+   ],
+   [
+    "module"
+   ]
+  ],
+  [
+   "module_HP5",
+   "modules",
+   [
+    "Armor Plating 5",
+    "Platinum Plating"
+   ],
+   [
+    "module"
+   ]
+  ],
+  [
+   "module_HP6",
+   "modules",
+   [
+    "Adv. Armor Plating 3",
+    "Armor Plating 6"
+   ],
+   [
+    "module"
+   ]
+  ],
+  [
+   "module_HP8",
+   "modules",
+   [
+    "Adv. Armor Plating 4",
+    "Armor Plating 8"
+   ],
+   [
+    "module"
+   ]
+  ],
+  [
+   "module_energy13",
+   "modules",
+   [
+    "Energy Generator III",
+    "Energy Module 13"
+   ],
+   [
+    "module"
+   ]
+  ],
+  [
+   "module_energy5",
+   "modules",
+   [
+    "Energy Engine",
+    "Energy module 5"
+   ],
+   [
+    "module"
+   ]
+  ],
+  [
+   "module_energy14",
+   "modules",
+   [
+    "Energy Generator IV",
+    "Energy Storage Unit"
+   ],
+   [
+    "module"
+   ]
+  ],
+  [
+   "module_heat5",
+   "modules",
+   [
+    "Heat Engine",
+    "Heat module 5"
+   ],
+   [
+    "module"
+   ]
+  ],
+  [
+   "module_heat14",
+   "modules",
+   [
+    "Engine Booster III",
+    "Heat Storage Unit"
+   ],
+   [
+    "module"
+   ]
+  ],
+  [
+   "module_resistanceAll12",
+   "modules",
+   [
+    "Invulnerability Mark II",
+    "Multi Resistance Module"
+   ],
+   [
+    "module"
+   ]
+  ],
+  [
+   "module_resistanceAll3",
+   "modules",
+   [
+    "Multi Resistance Module",
+    "Savior Resistance"
+   ],
+   [
+    "module"
+   ]
+  ],
+  [
+   "module_resistanceAll5",
+   "modules",
+   [
+    "Maximum Protector",
+    "Multi Resistance Module"
+   ],
+   [
+    "module"
+   ]
+  ],
+  [
+   "module_resistanceElectric2",
+   "modules",
+   [
+    "Electric Resistance Module 2",
+    "Energy Protector"
+   ],
+   [
+    "module"
+   ]
+  ],
+  [
+   "module_resistanceElectric5",
+   "modules",
+   [
+    "Electric Resistance Module 5",
+    "SuperCharge Protector"
+   ],
+   [
+    "module"
+   ]
+  ],
+  [
+   "module_resistanceExplosive3",
+   "modules",
+   [
+    "Explosive Resistance Module 3",
+    "Heat Protector"
+   ],
+   [
+    "module"
+   ]
+  ],
+  [
+   "module_resistanceExplosive5",
+   "modules",
+   [
+    "Explosive Resistance Module 5",
+    "Ultrahot Protector"
+   ],
+   [
+    "module"
+   ]
+  ],
+  [
+   "module_resistancePhysical3",
+   "modules",
+   [
+    "Physical Protector",
+    "Physical Resistance Module 3"
+   ],
+   [
+    "module"
+   ]
+  ],
+  [
+   "module_resistancePhysical5",
+   "modules",
+   [
+    "Mighty Protector",
+    "Physical Resistance Module 5"
+   ],
+   [
+    "module"
+   ]
+  ],
+  [
+   "shield1A",
+   "shields",
+   [
+    "Adv. Energy Shield Mark 1",
+    "Adv. Energy Shield Mark 2",
+    "Energy Shield Mark 1"
+   ],
+   [
+    "shield"
+   ]
+  ],
+  [
+   "shield1B",
+   "shields",
+   [
+    "Adv. Heat Shield Mark 1",
+    "Adv. Heat Shield Mark 2",
+    "Heat Shield Mark 1"
+   ],
+   [
+    "shield"
+   ]
+  ],
+  [
+   "shield2A",
+   "shields",
+   [
+    "Adv. Energy Shield Mark 3",
+    "Adv. Energy Shield Mark 4",
+    "Energy Shield Mark 2"
+   ],
+   [
+    "shield"
+   ]
+  ],
+  [
+   "shield2B",
+   "shields",
+   [
+    "Adv. Heat Shield Mark 3",
+    "Adv. Heat Shield Mark 4",
+    "Heat Shield Mark 2"
+   ],
+   [
+    "shield"
+   ]
+  ],
+  [
+   "shield3A",
+   "shields",
+   [
+    "Adv. Energy Shield Mark 5",
+    "Adv. Energy Shield Mark 6",
+    "Energy Shield Mark 3"
+   ],
+   [
+    "shield"
+   ]
+  ],
+  [
+   "shield3B",
+   "shields",
+   [
+    "Adv. Heat Shield Mark 5",
+    "Adv. Heat Shield Mark 6",
+    "Heat Shield Mark 3"
+   ],
+   [
+    "shield"
+   ]
+  ],
+  [
+   "shield4A",
+   "shields",
+   [
+    "Adv. Energy Shield Mark 7",
+    "Adv. Energy Shield Mark 8",
+    "Energy Shield Mark 4",
+    "Energy Shield Mark 5"
+   ],
+   [
+    "shield"
+   ]
+  ],
+  [
+   "shield4B",
+   "shields",
+   [
+    "Adv. Heat Shield Mark 7",
+    "Adv. Heat Shield Mark 8",
+    "Heat Shield Mark 4"
+   ],
+   [
+    "shield"
+   ]
+  ],
+  [
+   "shield5A",
+   "shields",
+   [
+    "Adv. Energy Shield Mark 10",
+    "Adv. Energy Shield Mark 9"
+   ],
+   [
+    "shield"
+   ]
+  ],
+  [
+   "shield5B",
+   "shields",
+   [
+    "Adv. Heat Shield Mark 10",
+    "Adv. Heat Shield Mark 9",
+    "Heat Shield Mark 5"
+   ],
+   [
+    "shield"
+   ]
+  ],
+  [
+   "shield6A",
+   "shields",
+   [
+    "Adv. Energy Shield Mark 11",
+    "Energy Shield Mark 6"
+   ],
+   [
+    "shield"
+   ]
+  ],
+  [
+   "shield6B",
+   "shields",
+   [
+    "Adv. Heat Shield Mark 11",
+    "Heat Shield Mark 6"
+   ],
+   [
+    "shield"
+   ]
+  ],
+  [
+   "shield7A",
+   "shields",
+   [
+    "Adv. Energy Shield Mark 12",
+    "Adv. Energy Shield Mark 13"
+   ],
+   [
+    "shield"
+   ]
+  ],
+  [
+   "shield7B",
+   "shields",
+   [
+    "Adv. Heat Shield Mark 12",
+    "Adv. Heat Shield Mark 13"
+   ],
+   [
+    "shield"
+   ]
+  ],
+  [
+   "blaster15A",
+   "side_weapons",
+   [
+    "A-ray",
+    "Resistance drainer"
+   ],
+   [
+    "side",
+    "top"
+   ]
+  ],
+  [
+   "blaster15B",
+   "side_weapons",
+   [
+    "A-ray",
+    "Resistance drainer"
+   ],
+   [
+    "side",
+    "top"
+   ]
+  ],
+  [
+   "flameThrower8B",
+   "side_weapons",
+   [
+    "Inferno Mark II",
+    "Overcooking Oven"
+   ],
+   [
+    "side"
+   ]
+  ],
+  [
+   "flameThrower9A2",
+   "side_weapons",
+   [
+    "Crimson Rapture",
+    "Lava Spray Mark II"
+   ],
+   [
+    "side"
+   ]
+  ],
+  [
+   "flameThrower9B2",
+   "side_weapons",
+   [
+    "Ash Creator",
+    "ColdFire Mark II"
+   ],
+   [
+    "side"
+   ]
+  ],
+  [
+   "laser30C",
+   "side_weapons",
+   [
+    "Corrupt Light",
+    "Twin Termination R"
+   ],
+   [
+    "side"
+   ]
+  ],
+  [
+   "laser32C",
+   "side_weapons",
+   [
+    "Malice Beam",
+    "Twin Termination B"
+   ],
+   [
+    "side"
+   ]
+  ],
+  [
+   "machineGun8B",
+   "side_weapons",
+   [
+    "Disintegration",
+    "Iron Shredder"
+   ],
+   [
+    "side"
+   ]
+  ],
+  [
+   "machineGun8B_legacy",
+   "side_weapons",
+   [
+    "Disintegration",
+    "Iron Shredder"
+   ],
+   [
+    "side"
+   ]
+  ],
+  [
+   "shotgun2B",
+   "side_weapons",
+   [
+    "BullDog",
+    "Electro Piercing Shotgun"
+   ],
+   [
+    "side"
+   ]
+  ],
+  [
+   "shotgun2B2",
+   "side_weapons",
+   [
+    "Magma Peircing Shotgun",
+    "Reckoning",
+    "Shotgun X Mark II"
+   ],
+   [
+    "side"
+   ]
+  ],
+  [
+   "sword7D",
+   "side_weapons",
+   [
+    "Mass Deflector",
+    "Meteor"
+   ],
+   [
+    "side"
+   ]
+  ],
+  [
+   "teleport1",
+   "teleporters",
+   [
+    "Adv. Teleport Mark 1",
+    "Teleport Mark 1"
+   ],
+   [
+    "teleporter"
+   ]
+  ],
+  [
+   "teleport3",
+   "teleporters",
+   [
+    "Adv. Teleport Mark 2",
+    "Teleport Mark 3"
+   ],
+   [
+    "teleporter"
+   ]
+  ],
+  [
+   "teleport4",
+   "teleporters",
+   [
+    "Adv. Teleport Mark 3",
+    "Teleport Mark 4",
+    "Teleport Mark 5",
+    "Teleport Mark 6"
+   ],
+   [
+    "teleporter"
+   ]
+  ],
+  [
+   "teleport5",
+   "teleporters",
+   [
+    "Adv. Teleport Mark 4",
+    "Teleport Mark 7"
+   ],
+   [
+    "teleporter"
+   ]
+  ],
+  [
+   "teleport6",
+   "teleporters",
+   [
+    "Adv. Teleport Mark 5",
+    "Teleport Mark 8"
+   ],
+   [
+    "teleporter"
+   ]
+  ],
+  [
+   "teleport7",
+   "teleporters",
+   [
+    "Adv. Teleport Mark 6",
+    "Teleport Mark 9"
+   ],
+   [
+    "teleporter"
+   ]
+  ],
+  [
+   "teleport8",
+   "teleporters",
+   [
+    "Adv. Teleport Mark 7",
+    "Lightning Gate Mark I"
+   ],
+   [
+    "teleporter"
+   ]
+  ],
+  [
+   "blaster18A",
+   "top_weapons",
+   [
+    "Electric Orb Cannon",
+    "Xray"
+   ],
+   [
+    "top"
+   ]
+  ],
+  [
+   "blaster18B",
+   "top_weapons",
+   [
+    "Adv. Electric Orb Cannon",
+    "SpineFall"
+   ],
+   [
+    "top"
+   ]
+  ],
+  [
+   "blaster19B",
+   "top_weapons",
+   [
+    "Adv. Physical Orb Cannon",
+    "Mighty Cannon"
+   ],
+   [
+    "top"
+   ]
+  ],
+  [
+   "blaster20B",
+   "top_weapons",
+   [
+    "Adv. Heat Orb Cannon",
+    "Desert Snake"
+   ],
+   [
+    "top"
+   ]
+  ],
+  [
+   "cannon11B2",
+   "top_weapons",
+   [
+    "Engine Breaker Mark II",
+    "Generator Breaker Mark II"
+   ],
+   [
+    "top"
+   ]
+  ],
+  [
+   "cannon11B2_legacy",
+   "top_weapons",
+   [
+    "Engine Breaker Mark II",
+    "Generator Breaker Mark II"
+   ],
+   [
+    "top"
+   ]
+  ],
+  [
+   "cannon7C2",
+   "top_weapons",
+   [
+    "Frantic Brute",
+    "Wipeout Mark III"
+   ],
+   [
+    "top"
+   ]
+  ],
+  [
+   "torso52",
+   "torsos",
+   [
+    "Brutality",
+    "God Mode"
+   ],
+   [
+    "torso"
+   ]
+  ]
+ ],
+ "cross_slot": [
+  [
+   "blaster15A",
+   "side_weapons",
+   [
+    "A-ray",
+    "Resistance drainer"
+   ],
+   [
+    "side",
+    "top"
+   ]
+  ],
+  [
+   "blaster15B",
+   "side_weapons",
+   [
+    "A-ray",
+    "Resistance drainer"
+   ],
+   [
+    "side",
+    "top"
+   ]
+  ]
+ ],
+ "legacy_pairs": [
+  "charge2_legacy",
+  "charge3_legacy",
+  "charge4_legacy",
+  "leg1002_legacy",
+  "leg1003_legacy",
+  "cannon3B_legacy",
+  "machineGun8A_legacy",
+  "machineGun8B_legacy",
+  "rocketLauncher29A1_legacy",
+  "rocketLauncher29A2_legacy",
+  "rocketLauncher29A3_legacy",
+  "rocketLauncher29B1_legacy",
+  "rocketLauncher29B2_legacy",
+  "rocketLauncher29B3_legacy",
+  "rocketLauncher29C1_legacy",
+  "rocketLauncher29C2_legacy",
+  "rocketLauncher29C3_legacy",
+  "cannon11A1_legacy",
+  "cannon11A2_legacy",
+  "cannon11A3_legacy",
+  "cannon11B1_legacy",
+  "cannon11B2_legacy",
+  "cannon11B3_legacy",
+  "cannon11C2_legacy",
+  "cannon11C3_legacy"
+ ],
+ "aliases": [
+  [
+   "charge2",
+   [
+    "chargeBase1C"
+   ]
+  ],
+  [
+   "charge3",
+   [
+    "chargeBase1D"
+   ]
+  ],
+  [
+   "charge4",
+   [
+    "chargeBase1E"
+   ]
+  ],
+  [
+   "leg1001",
+   [
+    "leg33",
+    "leg33"
+   ]
+  ],
+  [
+   "leg1002",
+   [
+    "leg1002_1"
+   ]
+  ],
+  [
+   "leg1003",
+   [
+    "leg1003_1"
+   ]
+  ],
+  [
+   "module_energy3",
+   [
+    "module_energyHeat3"
+   ]
+  ],
+  [
+   "flameThrower9A1",
+   [
+    "sideSuperFlameThrower2D"
+   ]
+  ],
+  [
+   "flameThrower9A2",
+   [
+    "sideSuperFlameThrower2E"
+   ]
+  ],
+  [
+   "flameThrower9B1",
+   [
+    "sideSuperFlameThrower3D"
+   ]
+  ],
+  [
+   "flameThrower9B2",
+   [
+    "sideSuperFlameThrower3E"
+   ]
+  ],
+  [
+   "shotgun2A",
+   [
+    "sideSuperShotgun3D"
+   ]
+  ],
+  [
+   "shotgun2A2",
+   [
+    "sideSuperShotgun2D"
+   ]
+  ],
+  [
+   "shotgun2A3",
+   [
+    "sideSuperShotgun1D"
+   ]
+  ],
+  [
+   "shotgun2B",
+   [
+    "sideSuperShotgun3E"
+   ]
+  ],
+  [
+   "shotgun2B2",
+   [
+    "sideSuperShotgun2E"
+   ]
+  ],
+  [
+   "shotgun2B3",
+   [
+    "sideSuperShotgun1E"
+   ]
+  ],
+  [
+   "torso1001",
+   [
+    "torso53",
+    "torso53"
+   ]
+  ],
+  [
+   "torso1002",
+   [
+    "torso1002_1"
+   ]
+  ],
+  [
+   "torso1003",
+   [
+    "torso1003_1"
+   ]
+  ]
+ ],
+ "same_name": {
+  "Shockwave": [
+   [
+    "dronePush3D",
+    "dronePush3E"
+   ],
+   [
+    "sword5A",
+    "sword5D"
+   ]
+  ],
+  "Rail Gun": [
+   [
+    "droneRangedB3C",
+    "droneRangedB3E"
+   ],
+   [
+    "laser42A",
+    "laser42B"
+   ]
+  ],
+  "GOD MODE": [
+   [
+    "laser1000",
+    "laser1000"
+   ],
+   [
+    "leg1000",
+    "leg1000"
+   ],
+   [
+    "torso1000",
+    "torso1000"
+   ]
+  ],
+  "ARMOR TANK": [
+   [
+    "leg1001",
+    "leg1001"
+   ],
+   [
+    "torso1001",
+    "torso1001"
+   ]
+  ]
+ }
+}
