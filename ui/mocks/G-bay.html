@@ -424,6 +424,63 @@ g.setTransform(2,0,0,2*.45,0,0); g.fillStyle='#e8b21a';
 for(let k=0;k<4;k++){ const x=1140+k*44; g.beginPath(); g.moveTo(x,1800); g.lineTo(x+26,1800); g.lineTo(x+48,1840); g.lineTo(x+26,1880); g.lineTo(x,1880); g.lineTo(x+22,1840); g.fill(); }
 g.setTransform(2,0,0,2,0,0); g.restore();
 
+// ---- G: props (flat, outlined, same language as the walls) ----
+(function props(){
+  const O='#05080c';
+  const poly=(pts,fill,lw=4)=>{g.beginPath();pts.forEach(([x,y],i)=>i?g.lineTo(x,y):g.moveTo(x,y));g.closePath();g.fillStyle=fill;g.fill();if(lw){g.lineWidth=lw;g.strokeStyle=O;g.lineJoin='round';g.stroke();}};
+  const rect=(x,y,w,h,fill,lw=4)=>poly([[x,y],[x+w,y],[x+w,y+h],[x,y+h]],fill,lw);
+  const circ=(x,y,r,fill,lw=4)=>{g.beginPath();g.arc(x,y,r,0,7);g.fillStyle=fill;g.fill();if(lw){g.lineWidth=lw;g.strokeStyle=O;g.stroke();}};
+
+  // sagging cables along the gantry
+  g.lineCap='round';
+  for(const [x0,x1,sag,c] of [[40,420,70,'#1a2029'],[120,400,40,'#2a1f14'],[1180,1560,80,'#1a2029'],[1220,1500,44,'#232b36']]){
+    g.lineWidth=9;g.strokeStyle=O;g.beginPath();g.moveTo(x0,56);g.quadraticCurveTo((x0+x1)/2,56+sag*2,x1,56);g.stroke();
+    g.lineWidth=5;g.strokeStyle=c;g.beginPath();g.moveTo(x0,56);g.quadraticCurveTo((x0+x1)/2,56+sag*2,x1,56);g.stroke(); }
+  g.lineCap='butt';
+
+  // cage lamps hanging from the gantry
+  for(const x of [372,1186]){
+    g.lineWidth=3;g.strokeStyle=O;g.beginPath();g.moveTo(x,54);g.lineTo(x,110);g.stroke();
+    poly([[x-22,110],[x+22,110],[x+32,136],[x-32,136]],'#3a4658');
+    const r=g.createRadialGradient(x,142,0,x,142,120);r.addColorStop(0,'rgba(255,214,140,.35)');r.addColorStop(1,'rgba(255,214,140,0)');g.fillStyle=r;g.fillRect(x-120,90,240,200);
+    poly([[x-26,136],[x+26,136],[x+18,156],[x-18,156]],'#ffd88a',3);
+    g.lineWidth=3;g.strokeStyle=O;for(const dx of [-12,0,12]){g.beginPath();g.moveTo(x+dx,136);g.lineTo(x+dx*.7,156);g.stroke();}
+  }
+
+  // wall fan (left wall, above the pipes)
+  { const x=360,y=218,R=38; rect(x-R-10,y-R-10,2*R+20,2*R+20,'#222a35');
+    circ(x,y,R,'#10151c'); g.save(); g.translate(x,y); g.rotate(.3);
+    for(let k=0;k<5;k++){ g.rotate(Math.PI*2/5); poly([[4,-6],[R-6,-14],[R-4,6],[6,6]],'#3a4658',2.5); } g.restore();
+    circ(x,y,8,'#56697f',3);
+    g.lineWidth=3;g.strokeStyle=O;for(let k=-3;k<=3;k++){g.beginPath();g.moveTo(x-R,y+k*10);g.lineTo(x+R,y+k*10);g.globalAlpha=.55;g.stroke();g.globalAlpha=1;} }
+
+  // wall terminal with a small green screen (left wall, lower)
+  { const x=60,y=366; rect(x,y,150,92,'#2a3341'); rect(x+12,y+12,86,56,'#0d1f16',3);
+    g.fillStyle='#43d27a'; for(let i=0;i<5;i++){ g.globalAlpha=.85; g.fillRect(x+20,y+22+i*9,20+((i*37)%50),3); } g.globalAlpha=1;
+    for(const [by,c] of [[y+18,'#e5392a'],[y+40,'#f2c21b'],[y+62,'#39c45f']]) circ(x+124,by,7,c,3);
+    rect(x+30,y+92,14,70,'#1a212b',3); rect(x+70,y+92,8,70,'#2a1f14',3); }
+
+  // fire extinguisher by the right post
+  { const x=1206,y=520; rect(x+2,y-16,20,12,'#3a4658',3); poly([[x-4,y],[x+28,y],[x+28,y+86],[x-4,y+86]],'#d8392b');
+    g.fillStyle='rgba(255,255,255,.25)';g.fillRect(x+2,y+6,6,74); rect(x-2,y+36,28,18,'#f2e6d0',3);
+    g.lineWidth=5;g.strokeStyle=O;g.beginPath();g.moveTo(x+22,y-10);g.quadraticCurveTo(x+46,y+10,x+34,y+50);g.stroke(); }
+
+  // barrels (far left)
+  for(const [x,y,c] of [[14,590,'#2e5aa8'],[76,604,'#c7511c']]){
+    rect(x,y,56,96,c); g.fillStyle='rgba(0,0,0,.28)'; g.fillRect(x+36,y+2,18,92);
+    g.fillStyle=O; g.fillRect(x,y+24,56,5); g.fillRect(x,y+66,56,5);
+    g.beginPath(); g.ellipse(x+28,y,28,7,0,0,7); g.fillStyle='#56697f'; g.fill(); g.lineWidth=4; g.strokeStyle=O; g.stroke(); }
+  // stacked crates (far right)
+  for(const [x,y,w,h] of [[1508,610,92,92],[1530,540,70,70]]){
+    rect(x,y,w,h,'#5a4630'); g.lineWidth=3; g.strokeStyle='rgba(0,0,0,.55)';
+    g.beginPath(); g.moveTo(x+6,y+6); g.lineTo(x+w-6,y+h-6); g.moveTo(x+w-6,y+6); g.lineTo(x+6,y+h-6); g.stroke();
+    g.fillStyle='rgba(255,230,190,.14)'; g.fillRect(x+4,y+4,w-8,4); }
+
+  // power cable from the right wall to the pedestal
+  g.lineCap='round'; g.lineWidth=14; g.strokeStyle=O; g.beginPath(); g.moveTo(1600,690); g.bezierCurveTo(1420,720,1260,700,1080,760); g.stroke();
+  g.lineWidth=8; g.strokeStyle='#1c2430'; g.stroke(); g.lineWidth=2; g.strokeStyle='rgba(160,185,215,.25)'; g.beginPath(); g.moveTo(1600,687); g.bezierCurveTo(1420,717,1260,697,1080,757); g.stroke(); g.lineCap='butt';
+})();
+
 // light: crisp spot cone and window beams (lightly softened), warm pool under pedestal
 g.save(); g.globalCompositeOperation='lighter'; g.filter='blur(3px)';
 g.fillStyle=lin(0,52,0,760,[[0,'rgba(255,236,200,.26)'],[.7,'rgba(255,226,180,.07)'],[1,'rgba(255,220,170,0)']]);
