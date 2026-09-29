@@ -19,3 +19,8 @@ Reloaded-era client, taken from the user's own account (2026-09-29). Reference o
 
 Still to come: workshop editor, item detail, battle HUD, others as sent.
 Open question: meaning of the mech glyph + number on item tiles ("/50" looks like a cap, MAX replaces it).
+
+## Seen in chat, no file saved (push to ui/refs/ if you want them kept)
+- upgrade-mass-select: Upgrade with Mass Select open. Rarity checkboxes (Common / Rare / Epic), Element checkboxes (Physical / Explosive / Electric), Item type icon grid (7 types with checkmarks). Selected item shows in the machine slot with a row of chosen items below, "LEVEL 23 / 50", XP bar "92,366/95,320 +2", stat lines with +N gains, Boost button with gold cost 24,026.
+- upgrade-result-mission-toast: Result screen after a boost. Red ribbon "Level 26 / 50", stat list (weight, HP, Pys Dmg, Resist drain, Range, Knockback, Walking, Jumping), item art with glow and name, XP bar, blue "SWEET!" button. A "Mission completed" toast (checklist icon + green tick, orange title, white mission text) slides in at the top.
+- Confirmed: "/50" on item tiles is the level cap (LEVEL 23 / 50). The small number beside the mech glyph is still unexplained.
