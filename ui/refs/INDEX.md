@@ -37,9 +37,10 @@ Reloaded-era client, taken from the user's own account (2026-09-29). Reference o
 | battle-hover-shutdown.webp | Hovering the chevrons icon on the action bar: green label bar above the bar reads "Shut engine down", the icon slot outlines green, a green card on the left shows -202 heat |
 | battle-hover-stomp.webp | Hovering the flame/claw icon: label "Stomp", green MYTHICAL card on the left, red stat card on the right (knockback 1, energy drain 71, resist 5, damage 134-203), enemy tinted red with red beams |
 | battle-out-of-range.webp | Weapons sub-menu of the action bar (back arrow, then item icons): hovering Grappling hook shows a red "OUT OF RANGE" banner with crossed-out range icons over the arena, label bar reads "Grappling hook", green card left (+11 heat), red card right (13, 7, damage 34-43), red beams on the enemy, the last slot dimmed |
+| battle-movement-menu.webp | Movement sub-menu of the action bar, shown zoomed out: back arrow, then jump-left (curved arrow), walk-left (arrow with speed dashes), walk-right (dimmed, with a crossed-out range icon), jump-right (curved arrow) |
 | upgrade-transform.png | Upgrade, Transform mode (selected item at level cap, Mythical target, 5 empty material slots, Transform button with gold cost, locked tile in grid) |
 
-Still to come: item detail, others as sent. Battle action bar: chevrons = Shut engine down, flame/claw = Stomp; move, target, shield and the empty slot still unconfirmed.
+Still to come: item detail, others as sent. Battle action bar: chevrons = Shut engine down, flame/claw = Stomp; move opens the movement sub-menu (jump / walk left and right); target, shield and the empty slot still unconfirmed.
 Open question: meaning of the mech glyph + number on item tiles ("/50" looks like a cap, MAX replaces it).
 
 ## Seen in chat, no file saved (push to ui/refs/ if you want them kept)
