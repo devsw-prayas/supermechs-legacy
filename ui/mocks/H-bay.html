@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Direction H — Game hangar</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<style>
+/* Night maintenance bay painted on canvas; UI is gunmetal plates with fat bevelled rims, slanted, one amber accent. */
+:root{
+  --ink:#04070b; --face:#141b24; --face2:#0c1118; --rim:#2c3a4c; --rimhi:#5b6f88; --text:#e4ecf5; --mute:#8594a8;
+  --amber:#ffae2b; --amber2:#e07a00; --cyan:#5fd4ff; --green:#4bd88a;
+  --f-head:'Oxanium','Rajdhani',sans-serif; --f-label:'Rajdhani','Barlow',sans-serif; --f-num:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#020305;overflow:hidden}
+.stage{position:absolute;width:1600px;height:900px;transform-origin:0 0;overflow:hidden;background:#06090e;color:var(--text);font-family:var(--f-label)}
+canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
+#bg{z-index:0} #fx{z-index:7;pointer-events:none;mix-blend-mode:screen}
+.lbl{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.16em}
+.head{font-family:var(--f-head);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.num{font-family:var(--f-num);font-weight:700;font-variant-numeric:tabular-nums}
+.mask{display:inline-block;background:currentColor;-webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat}
+
+/* ---- block: item-style geometry. Fat dark outline, chamfered corners, clean light-to-dark face, bright top edge, dark lip ---- */
+.plate{position:absolute;z-index:8;--c:18px;padding:4px;filter:drop-shadow(0 8px 12px rgba(0,0,0,.45))}
+.plate::before{content:"";position:absolute;inset:0;z-index:0;
+  background:#05080c;
+  clip-path:polygon(var(--c) 0,100% 0,100% calc(100% - var(--c)),calc(100% - var(--c)) 100%,0 100%,0 var(--c))}
+.plate>.in{position:relative;z-index:1;height:100%;--k:calc(var(--c) - 3px);
+  clip-path:polygon(var(--k) 0,100% 0,100% calc(100% - var(--k)),calc(100% - var(--k)) 100%,0 100%,0 var(--k));
+  background:linear-gradient(180deg,#2b3441,#232b36)}
+.plate>.in::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:rgba(200,215,235,.14);pointer-events:none}
+
+.notch{position:absolute;top:0;left:30px;width:58px;height:4px;background:var(--amber);z-index:2}
+
+/* ---- HUD ---- */
+.lv{left:34px;top:24px;width:430px;height:70px;--c:16px}
+.lv .in{display:flex;align-items:center;gap:16px;padding:0 22px 0 18px}
+.lv .n{display:flex;flex-direction:column;line-height:.9}
+.lv .n small{font-size:12px;color:var(--mute)}
+.lv .n b{font-family:var(--f-head);font-size:38px;font-weight:800;color:var(--amber);font-weight:700}
+.xp{flex:1}
+.xp .row{display:flex;justify-content:space-between;font-size:12px;color:var(--mute);margin-bottom:5px}
+.xp .row .num{color:var(--text);font-size:13px}
+.seg{height:12px;background:#05080c;border:2px solid #1f2a38;position:relative;overflow:hidden}
+.seg i{position:absolute;left:0;top:0;bottom:0;background:var(--cyan)}
+.seg::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 7px,rgba(0,0,0,.65) 7px 9px)}
+.chip{top:28px;width:236px;height:62px;--c:14px}
+.chip .in{display:flex;align-items:center;gap:12px;padding-left:16px}
+.chip svg{width:34px;height:34px;flex:none}
+.chip b{flex:1;font-size:26px}
+.chip .add{position:relative}
+.chip .add::before,.chip .add::after{content:"";position:absolute;left:50%;top:50%;background:#2a1400;transform:translate(-50%,-50%)}
+.chip .add::before{width:18px;height:5px}
+.chip .add::after{width:5px;height:18px}
+.chip .add{align-self:stretch;width:54px;background:var(--amber);border-left:4px solid var(--ink);clip-path:polygon(0 0,100% 0,100% calc(100% - 11px),calc(100% - 11px) 100%,0 100%)}
+.gear{left:1500px;top:28px;width:66px;height:62px;--c:14px}
+.gear .in{display:flex;align-items:center;justify-content:center;color:#cbd6e4}
+.gear .mask{width:30px;height:30px}
+.dot{position:absolute;z-index:3;width:10px;height:10px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 3px var(--ink),0 0 10px var(--amber)}
+
+
+
+/* ---- G: function-specific parts ---- */
+.readout{position:absolute;top:30px;height:56px;display:flex;align-items:center;gap:12px;padding:0 6px 0 14px;z-index:8;
+  background:rgba(4,7,11,.72);box-shadow:inset 0 0 0 3px #05080c,inset 0 0 0 5px #1f2733}
+.readout svg{width:32px;height:32px}
+.readout b{font:800 30px var(--f-head);letter-spacing:.04em;min-width:112px;-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 0 rgba(0,0,0,.6))}
+.readout b.gold{background-image:linear-gradient(180deg,#ffe8a0,#f2b233 55%,#c98410)}
+.readout b.tok{background-image:linear-gradient(180deg,#ff9a8c,#e2382a 55%,#a81a10)}
+.readout .plus{width:40px;height:40px;background:#39c45f;position:relative;box-shadow:inset 0 0 0 3px #05080c}
+.readout .plus::before,.readout .plus::after{content:"";position:absolute;left:50%;top:50%;background:#05180b;transform:translate(-50%,-50%)}
+.readout .plus::before{width:18px;height:5px}.readout .plus::after{width:5px;height:18px}
+.rack{position:absolute;left:34px;top:776px;width:560px;height:100px;z-index:8;padding:5px;background:#05080c;
+  clip-path:polygon(18px 0,100% 0,100% calc(100% - 18px),calc(100% - 18px) 100%,0 100%,0 18px);display:flex;gap:5px}
+.slot{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:#1c4fb4;color:#fff;position:relative}
+.slot:nth-child(odd){background:#1a48a5}
+.slot::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:rgba(170,205,255,.45)}
+.slot .mask{width:40px;height:40px;background:#fff}
+.slot span{font:700 15px var(--f-label);letter-spacing:.1em;text-transform:uppercase}
+.slot .pip{position:absolute;right:8px;top:8px;min-width:22px;height:22px;padding:0 5px;background:#ff8a1a;color:#1d0e00;font:800 13px var(--f-num);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px #05080c}
+.deploy{position:absolute;left:1180px;top:752px;width:386px;height:124px;z-index:8;padding:5px;background:#05080c;
+  clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,22px 100%,0 calc(100% - 22px))}
+.deploy .face{height:100%;display:flex;align-items:center;gap:18px;padding:0 24px 0 0;background:#3cc463;position:relative;
+  clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px))}
+.deploy .face::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:rgba(220,255,225,.55)}
+.deploy .haz{width:40px;align-self:stretch;background:repeating-linear-gradient(-45deg,#f2c21b 0 12px,#05080c 12px 24px);border-right:5px solid #05080c}
+.deploy h3{font:800 54px var(--f-head);letter-spacing:.02em;color:#062010;line-height:1}
+.deploy small{display:block;font:600 17px var(--f-label);color:#0b3a1a;margin-top:2px}
+.deploy .go2{margin-left:auto;width:62px;height:62px;background:#05080c;display:flex;align-items:center;justify-content:center}
+.deploy .go2::before{content:"";border-left:22px solid #3cc463;border-top:14px solid transparent;border-bottom:14px solid transparent;margin-left:6px}
+.tasksBtn .gi{width:32px;height:32px;background:#e8eef6;-webkit-mask:url(assets/icons/interface_achievements.png) center/contain no-repeat;mask:url(assets/icons/interface_achievements.png) center/contain no-repeat}
+
+/* ---- tasks: button + checklist drawer ---- */
+.tasksBtn{left:34px;top:124px;width:236px;height:66px;cursor:pointer;z-index:11}
+.tasksBtn .in{display:flex;align-items:center;gap:14px;padding:0 16px}
+.tasksBtn .ico{width:30px;height:30px;position:relative;flex:none}
+.tasksBtn .ico i{position:absolute;left:11px;width:19px;height:6px;background:#cbd6e4}
+.tasksBtn .ico b{position:absolute;left:0;width:7px;height:7px;background:#5b6a80}
+.tasksBtn .ico b:first-of-type{background:var(--green)}
+.tasksBtn .ico :nth-child(1),.tasksBtn .ico :nth-child(2){top:1px}.tasksBtn .ico :nth-child(3),.tasksBtn .ico :nth-child(4){top:12px}.tasksBtn .ico :nth-child(5),.tasksBtn .ico :nth-child(6){top:23px}
+.tasksBtn .t{font:800 24px var(--f-head);letter-spacing:.06em;flex:1}
+.tasksBtn .cnt{min-width:34px;height:30px;padding:0 8px;background:var(--amber);color:#1d0e00;font:800 18px var(--f-num);display:flex;align-items:center;justify-content:center;clip-path:polygon(6px 0,100% 0,100% calc(100% - 6px),calc(100% - 6px) 100%,0 100%,0 6px)}
+.tasksBtn.open .in{background:linear-gradient(180deg,#3a4556,#2e3746)}
+.veil{position:absolute;inset:0;z-index:9;background:rgba(3,5,8,.55);display:none}
+.drawer{left:34px;top:204px;width:470px;height:auto;display:none;z-index:10}
+.drawer>.in{height:auto}
+.stage.tasks-open .veil,.stage.tasks-open .drawer{display:block}
+.drawer .in{padding:18px 22px 16px 24px}
+.dh{display:flex;align-items:center;justify-content:space-between;padding-bottom:10px;border-bottom:3px solid var(--ink);margin-bottom:4px}
+.dh .head{font-size:24px;font-weight:800}
+.dh .lbl{font-size:11px;color:var(--mute)}
+.x{width:34px;height:34px;background:#141a22;position:relative;clip-path:polygon(7px 0,100% 0,100% calc(100% - 7px),calc(100% - 7px) 100%,0 100%,0 7px);cursor:pointer}
+.x::before,.x::after{content:"";position:absolute;left:50%;top:50%;width:18px;height:4px;background:#cbd6e4;transform:translate(-50%,-50%) rotate(45deg)}
+.x::after{transform:translate(-50%,-50%) rotate(-45deg)}
+.task{display:grid;grid-template-columns:34px 1fr auto;gap:4px 14px;align-items:center;padding:12px 0;border-bottom:2px solid #1b2330}
+.task:last-child{border-bottom:0}
+.box{width:30px;height:30px;grid-row:span 2;background:#0b0f15;box-shadow:inset 0 0 0 3px var(--ink),inset 0 0 0 5px #3a4a60;position:relative;clip-path:polygon(6px 0,100% 0,100% calc(100% - 6px),calc(100% - 6px) 100%,0 100%,0 6px)}
+.task.done .box{background:var(--green);box-shadow:inset 0 0 0 3px var(--ink)}
+.task.done .box::after{content:"";position:absolute;left:9px;top:5px;width:8px;height:14px;border:solid var(--ink);border-width:0 4px 4px 0;transform:rotate(45deg)}
+.task .t{font-size:18px;font-weight:600;letter-spacing:.02em}
+.task.done .t{color:var(--mute)}
+.task .v{font-size:13px;color:var(--mute)}
+.task .seg{grid-column:2 / 3;height:8px;border-width:1px}
+.task .seg::after{background:repeating-linear-gradient(90deg,transparent 0 5px,rgba(0,0,0,.6) 5px 7px)}
+.task.done .seg i{background:var(--green)}
+.claimBtn{grid-row:span 2;align-self:center;height:36px;padding:0 16px;background:var(--green);color:#04170b;font:800 15px var(--f-head);letter-spacing:.08em;display:flex;align-items:center;clip-path:polygon(7px 0,100% 0,100% calc(100% - 7px),calc(100% - 7px) 100%,0 100%,0 7px)}
+.rew{grid-row:span 2;display:flex;align-items:center;gap:6px;font-size:14px;color:var(--mute)}
+.rew svg{width:18px;height:18px}
+
+/* ---- side panels ---- */
+.ops{left:34px;top:124px;width:410px;height:252px}
+.ops .in,.unit .in{padding:14px 20px 14px 22px}
+.ph{display:flex;align-items:baseline;justify-content:space-between;border-bottom:2px solid #223040;padding-bottom:8px;margin-bottom:6px}
+.ph .head{font-size:22px;font-weight:800}
+.ph .lbl{font-size:11px;color:var(--mute)}
+.q{display:grid;grid-template-columns:26px 1fr auto;gap:4px 12px;align-items:center;padding:10px 0;border-bottom:1px solid #1b2633}
+.q:last-child{border-bottom:0}
+.q .st{width:20px;height:20px;border:2px solid #3a4a60;grid-row:span 2;transform:rotate(45deg)}
+.q .st.done{background:var(--green);border-color:var(--green);box-shadow:0 0 10px rgba(75,216,138,.6)}
+.q .t{font-size:18px;font-weight:600;letter-spacing:.02em;color:var(--text)}
+.q .v{font-size:13px;color:var(--mute)}
+.q .seg{grid-column:2 / 4;height:8px;border-width:1px}
+.q .seg::after{background:repeating-linear-gradient(90deg,transparent 0 5px,rgba(0,0,0,.6) 5px 7px)}
+.q.claim .v{color:var(--green)}
+.q.claim .seg i{background:var(--green)}
+
+.unit{left:1236px;top:118px;width:330px;height:auto}
+.unit>.in{height:auto;padding:14px!important}
+.unit .team{margin:0;gap:12px}
+.unit .code{font-size:11px;color:var(--amber)}
+.unit h2{font-family:var(--f-head);font-size:40px;line-height:1;font-weight:800;letter-spacing:.02em;text-transform:uppercase}
+.unit .sub{font-size:14px;color:var(--mute);font-weight:600;margin:2px 0 10px;letter-spacing:.03em}
+.sr{display:grid;grid-template-columns:22px 92px 1fr 78px;gap:10px;align-items:center;height:34px;border-top:1px solid #1b2633}
+.sr .mask{width:18px;height:18px;color:var(--mute)}
+.sr .lbl{font-size:12px;color:var(--mute)}
+.sr .seg{height:8px;border-width:1px}
+.sr .seg::after{background:repeating-linear-gradient(90deg,transparent 0 5px,rgba(0,0,0,.6) 5px 7px)}
+.sr b{text-align:right;font-size:17px}
+.sr.warn b{color:var(--amber)}
+.sr.warn .seg i{background:var(--amber)}
+.team{display:flex;gap:12px;margin-top:14px}
+.tb{flex:1;height:54px;position:relative;padding:4px;cursor:pointer}
+.tb::before{content:"";position:absolute;inset:0;background:var(--ink);clip-path:polygon(12px 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%,0 12px)}
+.tb .in{position:relative;height:100%;display:flex;align-items:center;justify-content:center;clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px);background:linear-gradient(180deg,#323c4b,#262e3a);font:800 22px var(--f-head);letter-spacing:.08em;color:var(--text)}
+.tb .in::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:rgba(200,215,235,.14)}
+.tb.on .in{background:var(--amber);color:#1d0e00}
+.tb.on .in::before{background:rgba(255,240,200,.5)}
+.tm{flex:1;height:60px;position:relative;overflow:hidden;background:#141a22;clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);box-shadow:inset 0 0 0 3px #05080c,inset 0 0 0 5px #2c3a4c}
+.tm.on{box-shadow:inset 0 0 0 3px #05080c,inset 0 0 0 5px var(--amber)}
+.tm .w{position:absolute;left:50%;top:6px;transform:translateX(-50%)}
+.tm span{position:absolute;left:8px;top:2px;font:700 13px var(--f-num);color:var(--mute);transform:none;z-index:2}
+.tm.on span{color:var(--amber)}
+
+/* ---- mech ---- */
+#mech{position:absolute;z-index:5;filter:brightness(.84) contrast(1.06) saturate(.85) drop-shadow(2px 0 0 #05080c) drop-shadow(-2px 0 0 #05080c) drop-shadow(0 2px 0 #05080c) drop-shadow(0 -2px 0 #05080c) drop-shadow(0 -2px 0 rgba(255,214,160,.35)) drop-shadow(0 16px 14px rgba(0,0,0,.55))}
+#shade{position:absolute;z-index:6;pointer-events:none;mix-blend-mode:multiply;opacity:.42}
+#refl{position:absolute;z-index:3;transform:scaleY(-1);opacity:.2;filter:blur(1.5px) saturate(.7);-webkit-mask:linear-gradient(0deg,#000,transparent 55%);mask:linear-gradient(0deg,#000,transparent 55%)}
+#ped{position:absolute;left:0;top:0;z-index:4;pointer-events:none}
+#pedSide{position:absolute;left:0;top:0;z-index:1;pointer-events:none;filter:brightness(.72) saturate(.8)}
+#side1,#side2{position:absolute;z-index:2;filter:brightness(.62) saturate(.75) drop-shadow(2px 0 0 #05080c) drop-shadow(-2px 0 0 #05080c) drop-shadow(0 2px 0 #05080c) drop-shadow(0 -2px 0 #05080c)}
+
+/* ---- dock ---- */
+.nb{top:778px;width:118px;height:96px;--c:14px}
+.nb .in{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:#d4deea}
+.nb .mask{width:40px;height:40px}
+.nb .lbl{font-size:13px;color:var(--text);letter-spacing:.12em}
+.nb .dot{top:-7px;right:10px}
+.go{left:1188px;top:762px;width:378px;height:112px;--c:24px;filter:drop-shadow(0 12px 18px rgba(0,0,0,.55)) drop-shadow(0 0 18px rgba(255,160,40,.22))}
+.go>.in{background:linear-gradient(180deg,#ffb43a,#f5a020)}
+.go>.in::before{background:rgba(255,240,200,.5)}
+.go .in{display:flex;align-items:center;padding:0 26px 0 30px;color:#1d0e00;gap:18px}
+.go .zone{font-size:12px;letter-spacing:.2em;opacity:.8}
+.go h3{font-family:var(--f-head);font-size:42px;line-height:1;font-weight:800;text-transform:uppercase;letter-spacing:.03em}
+.go .arr{margin-left:auto;width:58px;height:58px;background:#10151c;color:var(--amber);display:flex;align-items:center;justify-content:center;font-size:26px;clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px)}
+
+.foot{position:absolute;left:38px;top:754px;font-size:11px;color:var(--mute);z-index:9;letter-spacing:.24em}
+
+/* ---- G: metal finish. Brushed grain, one soft reflection band, bevel light/dark, corner rivets ---- */
+:root{--brush:repeating-linear-gradient(0deg,rgba(255,255,255,.035) 0 1px,rgba(0,0,0,.05) 1px 2px,transparent 2px 3px);
+  --sheen:linear-gradient(112deg,transparent 0 38%,rgba(255,255,255,.07) 44%,rgba(255,255,255,.02) 52%,transparent 58%);
+  --rivet:radial-gradient(circle at 40% 35%,#9aa9bd 0 1.5px,#4a5668 2px,#0a0e13 3.5px,transparent 4px)}
+.plate>.in{background:var(--sheen),var(--brush),linear-gradient(180deg,#3b4658 0%,#2c3543 42%,#252d39 58%,#2d3644 100%)!important;
+  box-shadow:inset 0 2px 0 rgba(215,228,245,.22),inset 0 -3px 0 rgba(0,0,0,.45),inset 2px 0 0 rgba(215,228,245,.06),inset -2px 0 0 rgba(0,0,0,.3)}
+.plate>.in::before{display:none}
+.plate>.in::after{content:"";position:absolute;inset:0;pointer-events:none;display:block;height:auto;
+  background:var(--rivet) 10px calc(100% - 10px)/8px 8px no-repeat,var(--rivet) calc(100% - 10px) 10px/8px 8px no-repeat}
+.tb .in{background:var(--sheen),var(--brush),linear-gradient(180deg,#3d485a,#2a323f 55%,#303a48)!important;box-shadow:inset 0 2px 0 rgba(215,228,245,.2),inset 0 -2px 0 rgba(0,0,0,.45)}
+.tb.on .in{background:var(--sheen),var(--brush),linear-gradient(180deg,#ffd06a,#f5a020 50%,#e08a10)!important;box-shadow:inset 0 2px 0 rgba(255,245,210,.6),inset 0 -2px 0 rgba(120,50,0,.45)}
+.tb .in::before{display:none}
+.slot{background:var(--sheen),var(--brush),linear-gradient(180deg,#3a74e0 0%,#2358c2 40%,#1c4aa6 60%,#2356b8 100%)!important;box-shadow:inset 0 3px 0 rgba(190,220,255,.45),inset 0 -3px 0 rgba(0,10,40,.5),inset 2px 0 0 rgba(190,220,255,.12),inset -2px 0 0 rgba(0,10,40,.3)}
+.slot::before{display:none}
+.slot::after{content:"";position:absolute;inset:0;pointer-events:none;background:var(--rivet) 8px 8px/8px 8px no-repeat,var(--rivet) 8px calc(100% - 8px)/8px 8px no-repeat}
+.deploy .face{background:var(--sheen),var(--brush),linear-gradient(180deg,#5fe083 0%,#3cc463 40%,#2fab52 60%,#38bb5c 100%)!important;box-shadow:inset 0 3px 0 rgba(225,255,230,.55),inset 0 -4px 0 rgba(0,40,15,.45)}
+.deploy .face::before{display:none}
+.deploy .go2{background:linear-gradient(180deg,#1c232d,#05080c);box-shadow:inset 0 2px 0 rgba(200,220,245,.18)}
+.readout{background:var(--brush),linear-gradient(180deg,rgba(26,33,43,.9),rgba(8,11,16,.9))!important}
+.readout .plus{background:linear-gradient(180deg,#63dd84,#35b85a 55%,#2a9d4b)!important;box-shadow:inset 0 0 0 3px #05080c,inset 0 5px 0 rgba(220,255,230,.35)}
+.tasksBtn .cnt{background:linear-gradient(180deg,#ffd06a,#f5a020 55%,#e08a10)}
+.lv .n b{background:linear-gradient(180deg,#ffe29a,#ffae2b 55%,#d97e00);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+.xpbar{height:30px!important;border-width:3px!important}
+.xpbar::after{opacity:.28}
+.xpbar i{background:linear-gradient(180deg,#8fe0ff,#3cb8f0 50%,#1b8cc8)!important}
+.xpbar span{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;font:800 16px var(--f-head);color:#fff;letter-spacing:.05em;
+  text-shadow:0 1px 0 #05080c,1px 0 0 #05080c,-1px 0 0 #05080c,0 -1px 0 #05080c,0 2px 3px rgba(0,0,0,.7)}
+</style></head>
+<body>
+<div class="stage">
+  <canvas id="bg" width="3200" height="1800"></canvas>
+
+  <svg id="pedSide" width="1600" height="900" viewBox="0 0 1600 900">
+    <use href="#pedMain" transform="translate(282 702) scale(0.5) translate(-800 -712)"/>
+    <use href="#pedMain" transform="translate(1410 700) scale(0.5) translate(-800 -712)"/>
+  </svg>
+  <div id="side1"></div><div id="side2"></div>
+  <div id="refl"></div>
+  <svg id="ped" width="1600" height="900" viewBox="0 0 1600 900">
+    <defs>
+      <pattern id="hex" width="24" height="14" patternUnits="userSpaceOnUse" patternTransform="scale(1,.42)">
+        <path d="M6 0h12l6 7-6 7H6L0 7z" fill="#1d2530" stroke="#0b0f15" stroke-width="2.5"/>
+      </pattern>
+      <linearGradient id="pf1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c3643"/><stop offset="1" stop-color="#1f2833"/></linearGradient>
+      <linearGradient id="pf2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#26303d"/><stop offset="1" stop-color="#171d25"/></linearGradient>
+      <linearGradient id="pf3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#333f4f"/><stop offset="1" stop-color="#1f2730"/></linearGradient>
+      <linearGradient id="pf4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#26303d"/><stop offset="1" stop-color="#171d25"/></linearGradient>
+      <linearGradient id="pf5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#465366"/><stop offset="1" stop-color="#2c3645"/></linearGradient>
+      <linearGradient id="pf6" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2d3846"/><stop offset="1" stop-color="#1b222b"/></linearGradient>
+      <linearGradient id="pf7" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a4758"/><stop offset="1" stop-color="#232c36"/></linearGradient>
+      <linearGradient id="pf8" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2d3846"/><stop offset="1" stop-color="#1b222b"/></linearGradient>
+    </defs>
+    <g id="pedMain">
+    <ellipse cx="800" cy="856" rx="336" ry="46" fill="#000" opacity=".45"/>
+    <path d="M1082.7 789.0 L917.1 821.4 L917.1 871.4 L1082.7 839.0 Z" fill="url(#pf2)" stroke="#05080c" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M1084.7 793.0 L915.1 825.4" stroke="rgba(200,220,245,.32)" stroke-width="2.5"/>
+    <path d="M1027.5 807.8 L1027.5 843.8" stroke="rgba(0,0,0,.45)" stroke-width="3"/>
+    <path d="M972.3 818.6 L972.3 854.6" stroke="rgba(0,0,0,.45)" stroke-width="3"/>
+    <path d="M917.1 821.4 L682.9 821.4 L682.9 871.4 L917.1 871.4 Z" fill="url(#pf3)" stroke="#05080c" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M919.1 825.4 L680.9 825.4" stroke="rgba(200,220,245,.32)" stroke-width="2.5"/>
+    <path d="M839.0 829.4 L839.0 865.4" stroke="rgba(0,0,0,.45)" stroke-width="3"/>
+    <path d="M761.0 829.4 L761.0 865.4" stroke="rgba(0,0,0,.45)" stroke-width="3"/>
+    <path d="M682.9 821.4 L517.3 789.0 L517.3 839.0 L682.9 871.4 Z" fill="url(#pf4)" stroke="#05080c" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M684.9 825.4 L515.3 793.0" stroke="rgba(200,220,245,.32)" stroke-width="2.5"/>
+    <path d="M627.7 818.6 L627.7 854.6" stroke="rgba(0,0,0,.45)" stroke-width="3"/>
+    <path d="M572.5 807.8 L572.5 843.8" stroke="rgba(0,0,0,.45)" stroke-width="3"/>
+    <path d="M1082.7 789.0 L917.1 821.4 L682.9 821.4 L517.3 789.0 L517.3 743.0 L682.9 710.6 L917.1 710.6 L1082.7 743.0 Z" fill="url(#pf1)" stroke="#05080c" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M1069.8 787.4 L911.7 817.7 L688.3 817.7 L530.2 787.4 L530.2 744.6 L688.3 714.3 L911.7 714.3 L1069.8 744.6 Z" fill="none" stroke="rgba(0,0,0,.45)" stroke-width="3"/>
+    <path d="M517.3 786.0 L682.9 818.4 L917.1 818.4 L1082.7 786.0" fill="none" stroke="rgba(200,220,245,.22)" stroke-width="2"/>
+    <path d="M1025.4 728.8 L893.4 752.7 L893.4 794.7 L1025.4 770.8 Z" fill="url(#pf6)" stroke="#05080c" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M1027.4 732.8 L891.4 756.7" stroke="rgba(200,220,245,.32)" stroke-width="2.5"/>
+    <path d="M1006.9 750.7 L911.9 767.8 L911.9 776.2 L1006.9 759.1 Z" fill="#ffae2b" stroke="#05080c" stroke-width="2.5"/>
+    <path d="M893.4 752.7 L706.6 752.7 L706.6 794.7 L893.4 794.7 Z" fill="url(#pf7)" stroke="#05080c" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M895.4 756.7 L704.6 756.7" stroke="rgba(200,220,245,.32)" stroke-width="2.5"/>
+    <path d="M867.2 771.1 L732.8 771.1 L732.8 779.5 L867.2 779.5 Z" fill="#ffae2b" stroke="#05080c" stroke-width="2.5"/>
+    <path d="M706.6 752.7 L574.6 728.8 L574.6 770.8 L706.6 794.7 Z" fill="url(#pf8)" stroke="#05080c" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M708.6 756.7 L572.6 732.8" stroke="rgba(200,220,245,.32)" stroke-width="2.5"/>
+    <path d="M688.1 767.8 L593.1 750.7 L593.1 759.1 L688.1 776.2 Z" fill="#ffae2b" stroke="#05080c" stroke-width="2.5"/>
+    <path d="M1025.4 728.8 L893.4 752.7 L706.6 752.7 L574.6 728.8 L574.6 695.2 L706.6 671.3 L893.4 671.3 L1025.4 695.2 Z" fill="url(#pf5)" stroke="#05080c" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M1012.5 727.3 L888.0 749.0 L712.0 749.0 L587.5 727.3 L587.5 696.7 L712.0 675.0 L888.0 675.0 L1012.5 696.7 Z" fill="none" stroke="rgba(0,0,0,.45)" stroke-width="3"/>
+    <path d="M574.6 725.8 L706.6 749.7 L893.4 749.7 L1025.4 725.8" fill="none" stroke="rgba(200,220,245,.22)" stroke-width="2"/>
+    <path d="M981.1 725.0 L875.0 743.4 L725.0 743.4 L618.9 725.0 L618.9 699.0 L725.0 680.6 L875.0 680.6 L981.1 699.0 Z" fill="url(#hex)" stroke="#05080c" stroke-width="3"/>
+    <path d="M938.6 721.9 L857.4 736.0 L742.6 736.0 L661.4 721.9 L661.4 702.1 L742.6 688.0 L857.4 688.0 L938.6 702.1 Z" fill="none" stroke="#ffae2b" stroke-width="4"/>
+    <path d="M944.1 722.5 L859.7 737.4 L740.3 737.4 L655.9 722.5 L655.9 701.5 L740.3 686.6 L859.7 686.6 L944.1 701.5 Z" fill="none" stroke="#05080c" stroke-width="2"/>
+    <ellipse id="contact" cx="818" cy="716" rx="150" ry="15" fill="#000" opacity=".5"/>
+    <rect x="1002.9" y="723.5" width="9" height="6" fill="#56697f" stroke="#05080c" stroke-width="2"/>
+    <rect x="881.4" y="744.0" width="9" height="6" fill="#56697f" stroke="#05080c" stroke-width="2"/>
+    <rect x="709.6" y="744.0" width="9" height="6" fill="#56697f" stroke="#05080c" stroke-width="2"/>
+    <rect x="588.1" y="723.5" width="9" height="6" fill="#56697f" stroke="#05080c" stroke-width="2"/>
+    <rect x="588.1" y="694.5" width="9" height="6" fill="#56697f" stroke="#05080c" stroke-width="2"/>
+    <rect x="709.6" y="674.0" width="9" height="6" fill="#56697f" stroke="#05080c" stroke-width="2"/>
+    <rect x="881.4" y="674.0" width="9" height="6" fill="#56697f" stroke="#05080c" stroke-width="2"/>
+    <rect x="1002.9" y="694.5" width="9" height="6" fill="#56697f" stroke="#05080c" stroke-width="2"/>
+    </g>
+  </svg>
+  <div id="mech"></div>
+  <div id="shade"></div>
+  <canvas id="fx" width="1600" height="900"></canvas>
+
+  <!-- HUD -->
+  <div class="plate lv"><div class="in"><div class="n"><b>157</b></div><div class="xp"><div class="seg xpbar"><i style="width:46.3%"></i><span class="num">46,288 / 100,000</span></div></div></div></div>
+  <div class="readout" style="left:1034px"><svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="15" fill="#6a4004"/><circle cx="17" cy="17" r="12.5" fill="#f2b233" stroke="#3a2200" stroke-width="1.5"/><circle cx="17" cy="17" r="8" fill="none" stroke="#9a5f08" stroke-width="2"/></svg><b class="gold">23,390</b><div class="plus" aria-label="Add"></div></div>
+  <div class="readout" style="left:1270px"><svg viewBox="0 0 34 34"><path d="M11 3h12l8 8v12l-8 8H11l-8-8V11z" fill="#c2261a" stroke="#3a0a04" stroke-width="2"/><path d="M11 11h12v4h-4v10h-4V15h-4z" fill="#ffe6df"/></svg><b class="tok" style="min-width:62px">14</b><div class="plus" aria-label="Add"></div></div>
+  <div class="plate gear"><div class="in"><i class="mask" style="--i:url(assets/icons/interface_options.png)"></i></div><div class="dot" style="right:6px;top:-6px"></div></div>
+
+
+  <!-- tasks -->
+  <div class="plate tasksBtn" id="tasksBtn"><div class="in"><div class="gi"></div><span class="t">Tasks</span><span class="cnt">1</span></div></div>
+  <div class="veil" id="veil"></div>
+  <div class="plate drawer" id="drawer"><div class="in">
+    <div class="dh"><div><div class="head">Tasks</div><div class="lbl">Daily · resets in 14:22:05</div></div><div class="x" id="closeTasks"></div></div>
+    <div class="task done"><div class="box"></div><span class="t">Clear 3 campaign missions</span><div class="claimBtn">Claim</div><span class="v num">3 / 3</span><div class="seg"><i style="width:100%"></i></div></div>
+    <div class="task"><div class="box"></div><span class="t">Boost 15 items</span><div class="rew"><svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="15" fill="#6a4004"/><circle cx="17" cy="17" r="12.5" fill="#f2b233"/></svg><span class="num">1,800</span></div><span class="v num">6 / 15</span><div class="seg"><i style="width:40%"></i></div></div>
+    <div class="task"><div class="box"></div><span class="t">Field a 2,000 HP mech</span><div class="rew"><svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="15" fill="#6a4004"/><circle cx="17" cy="17" r="12.5" fill="#f2b233"/></svg><span class="num">3,000</span></div><span class="v num">1,778</span><div class="seg"><i style="width:89%"></i></div></div>
+    <div class="task"><div class="box"></div><span class="t">Destroy 20 structures</span><div class="rew"><svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="15" fill="#6a4004"/><circle cx="17" cy="17" r="12.5" fill="#f2b233"/></svg><span class="num">1,200</span></div><span class="v num">12 / 20</span><div class="seg"><i style="width:60%"></i></div></div>
+    <div class="task"><div class="box"></div><span class="t">Win a battle without shutdown</span><div class="rew"><svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="15" fill="#6a4004"/><circle cx="17" cy="17" r="12.5" fill="#f2b233"/></svg><span class="num">2,000</span></div><span class="v num">0 / 1</span><div class="seg"><i style="width:0%"></i></div></div>
+  </div></div>
+
+  <!-- unit selector -->
+  <div class="plate unit"><div class="in">
+    <div class="team"><div class="tb on"><div class="in">01</div></div><div class="tb"><div class="in">02</div></div><div class="tb"><div class="in">03</div></div></div>
+  </div></div>
+
+  <!-- dock -->
+  
+  <div class="rack">
+    <div class="slot"><i class="mask" style="--i:url(assets/icons/interface_hanger.png)"></i><span>Workshop</span><b class="pip">!</b></div>
+    <div class="slot"><i class="mask" style="--i:url(assets/icons/interface_fusion.png)"></i><span>Upgrade</span></div>
+    <div class="slot"><i class="mask" style="--i:url(assets/icons/interface_mech.png)"></i><span>Teams</span></div>
+    <div class="slot"><i class="mask" style="--i:url(assets/icons/interface_shop.png)"></i><span>Shop</span><b class="pip">2</b></div>
+  </div>
+  <div class="deploy"><div class="face"><div class="haz"></div><h3>DEPLOY</h3><div class="go2"></div></div></div>
+</div>
+<script src="assets/mech.js"></script>
+<script>
+fitStage();
+/* ---------------- environment painting ---------------- */
+function paint(){
+const cv=document.getElementById('bg'), g=cv.getContext('2d'); g.setTransform(2,0,0,2,0,0);
+g.fillStyle='#070a10'; g.fillRect(0,0,1600,900);
+const img=new Image(); img.onload=()=>{
+  // the game's own hangar (mcBgDark from bmmClientCC.swf), scaled to cover the stage
+  const k=Math.max(1600/img.width,900/img.height), w=img.width*k, h=img.height*k;
+  g.drawImage(img,(1600-w)/2,0,w,h);
+  // spotlight on the centre bay and a warm pool under the pedestal
+  g.save(); g.globalCompositeOperation='lighter'; g.filter='blur(4px)';
+  const cone=g.createLinearGradient(0,40,0,760); cone.addColorStop(0,'rgba(255,236,200,.22)'); cone.addColorStop(.7,'rgba(255,226,180,.06)'); cone.addColorStop(1,'rgba(255,220,170,0)');
+  g.fillStyle=cone; g.beginPath(); g.moveTo(748,40); g.lineTo(852,40); g.lineTo(1070,760); g.lineTo(530,760); g.fill();
+  g.filter='blur(26px)'; g.fillStyle='rgba(255,170,70,.28)'; g.beginPath(); g.ellipse(800,730,300,40,0,0,7); g.fill(); g.restore();
+  // floor band so the pedestals have something to stand on
+  const fl=g.createLinearGradient(0,690,0,900); fl.addColorStop(0,'rgba(6,9,14,0)'); fl.addColorStop(.3,'rgba(6,9,14,.75)'); fl.addColorStop(1,'rgba(3,5,8,.95)');
+  g.fillStyle=fl; g.fillRect(0,690,1600,210);
+  const vg=g.createRadialGradient(800,430,380,800,430,1000); vg.addColorStop(0,'rgba(0,0,0,0)'); vg.addColorStop(1,'rgba(0,0,0,.55)'); g.fillStyle=vg; g.fillRect(0,0,1600,900);
+};
+img.src='assets/hangar_dark.png';
+}
+Promise.all(['800 150px "Oxanium"','800 360px "Oxanium"','700 15px "Rajdhani"'].map(f=>document.fonts.load(f))).then(paint,paint);
+let seed=7; const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+/* ---------------- mechs ---------------- */
+function place(id,key,h,left,top){const w=document.getElementById(id);const i=document.createElement('div');buildMech(i,key,h);w.appendChild(i);w.style.width=i.dataset.w+'px';w.style.height=i.dataset.h+'px';if(left!=null){w.style.left=left+'px';w.style.top=top+'px';}return w;}
+// every mech stands with its feet centred on its pedestal (standOn uses the midpoint between the legs)
+const PED={main:[800,716],left:[282,704],right:[1410,702]};
+const H=520, m=window.MECHS.target, W=m.w*H/m.h, L=PED.main[0]-m.fx*H/m.h, T=PED.main[1]-m.fy*H/m.h;
+place('mech','target',H,L,T); place('refl','target',H,L,716-6);
+{ const sh=document.getElementById('shade'); sh.style.left=L+'px'; sh.style.top=T+'px'; sh.style.width=W+'px'; sh.style.height=H+'px';
+  const src=[...document.querySelectorAll('#mech img')];
+  /* a mech-shaped mask: stack the same parts, then paint a gradient through it */
+  const holder=document.createElement('div'); buildMech(holder,'target',H); sh.appendChild(holder);
+  holder.querySelectorAll('img').forEach(i=>{i.style.filter='brightness(0) invert(1)';});
+  const grad=document.createElement('div'); grad.style.cssText='position:absolute;inset:0;mix-blend-mode:multiply;background:linear-gradient(180deg,rgba(255,236,210,1) 0%,rgba(150,175,215,1) 55%,rgba(70,90,130,1) 100%)'; sh.appendChild(grad); sh.style.isolation='isolate'; }
+place('side1','m2',250); standOn(document.getElementById('side1'),'m2',250,...PED.left);
+place('side2','m3',230); standOn(document.getElementById('side2'),'m3',230,...PED.right);
+
+
+/* ---------------- dust in the light (animated) ---------------- */
+const fx=document.getElementById('fx').getContext('2d'); const motes=[];
+for(let i=0;i<0;i++) motes.push({x:520+rnd()*560,y:60+rnd()*680,r:.6+rnd()*1.6,s:.08+rnd()*.25,a:.15+rnd()*.5});
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function frame(){ fx.clearRect(0,0,1600,900); for(const p of motes){ if(!reduce){p.y-=p.s; p.x+=Math.sin(p.y/40)*.15; if(p.y<50){p.y=740;}}
+  fx.fillStyle=`rgba(255,236,200,${p.a})`; fx.beginPath(); fx.arc(p.x,p.y,p.r,0,7); fx.fill(); } if(!reduce) requestAnimationFrame(frame); }
+frame();
+
+/* tasks drawer: click to open; #tasks in the URL opens it */
+{ const st=document.querySelector('.stage'), b=document.getElementById('tasksBtn');
+  const set=o=>{st.classList.toggle('tasks-open',o); b.classList.toggle('open',o);};
+  b.onclick=()=>set(!st.classList.contains('tasks-open'));
+  document.getElementById('closeTasks').onclick=()=>set(false);
+  document.getElementById('veil').onclick=()=>set(false);
+  const fromHash=()=>set(location.hash==='#tasks'); addEventListener('hashchange',fromHash); fromHash(); }
+</script>
+</body></html>
