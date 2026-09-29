@@ -190,6 +190,29 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
 .go .arr{margin-left:auto;width:58px;height:58px;background:#10151c;color:var(--amber);display:flex;align-items:center;justify-content:center;font-size:26px;clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px)}
 
 .foot{position:absolute;left:38px;top:754px;font-size:11px;color:var(--mute);z-index:9;letter-spacing:.24em}
+
+/* ---- G: metal finish. Brushed grain, one soft reflection band, bevel light/dark, corner rivets ---- */
+:root{--brush:repeating-linear-gradient(0deg,rgba(255,255,255,.035) 0 1px,rgba(0,0,0,.05) 1px 2px,transparent 2px 3px);
+  --sheen:linear-gradient(112deg,transparent 0 38%,rgba(255,255,255,.07) 44%,rgba(255,255,255,.02) 52%,transparent 58%);
+  --rivet:radial-gradient(circle at 40% 35%,#9aa9bd 0 1.5px,#4a5668 2px,#0a0e13 3.5px,transparent 4px)}
+.plate>.in{background:var(--sheen),var(--brush),linear-gradient(180deg,#3b4658 0%,#2c3543 42%,#252d39 58%,#2d3644 100%)!important;
+  box-shadow:inset 0 2px 0 rgba(215,228,245,.22),inset 0 -3px 0 rgba(0,0,0,.45),inset 2px 0 0 rgba(215,228,245,.06),inset -2px 0 0 rgba(0,0,0,.3)}
+.plate>.in::before{display:none}
+.plate>.in::after{content:"";position:absolute;inset:0;pointer-events:none;display:block;height:auto;
+  background:var(--rivet) 10px calc(100% - 10px)/8px 8px no-repeat,var(--rivet) calc(100% - 10px) 10px/8px 8px no-repeat}
+.tb .in{background:var(--sheen),var(--brush),linear-gradient(180deg,#3d485a,#2a323f 55%,#303a48)!important;box-shadow:inset 0 2px 0 rgba(215,228,245,.2),inset 0 -2px 0 rgba(0,0,0,.45)}
+.tb.on .in{background:var(--sheen),var(--brush),linear-gradient(180deg,#ffd06a,#f5a020 50%,#e08a10)!important;box-shadow:inset 0 2px 0 rgba(255,245,210,.6),inset 0 -2px 0 rgba(120,50,0,.45)}
+.tb .in::before{display:none}
+.slot{background:var(--sheen),var(--brush),linear-gradient(180deg,#3a74e0 0%,#2358c2 40%,#1c4aa6 60%,#2356b8 100%)!important;box-shadow:inset 0 3px 0 rgba(190,220,255,.45),inset 0 -3px 0 rgba(0,10,40,.5),inset 2px 0 0 rgba(190,220,255,.12),inset -2px 0 0 rgba(0,10,40,.3)}
+.slot::before{display:none}
+.slot::after{content:"";position:absolute;inset:0;pointer-events:none;background:var(--rivet) 8px 8px/8px 8px no-repeat,var(--rivet) 8px calc(100% - 8px)/8px 8px no-repeat}
+.deploy .face{background:var(--sheen),var(--brush),linear-gradient(180deg,#5fe083 0%,#3cc463 40%,#2fab52 60%,#38bb5c 100%)!important;box-shadow:inset 0 3px 0 rgba(225,255,230,.55),inset 0 -4px 0 rgba(0,40,15,.45)}
+.deploy .face::before{display:none}
+.deploy .go2{background:linear-gradient(180deg,#1c232d,#05080c);box-shadow:inset 0 2px 0 rgba(200,220,245,.18)}
+.readout{background:var(--brush),linear-gradient(180deg,rgba(26,33,43,.9),rgba(8,11,16,.9))!important}
+.readout .plus{background:linear-gradient(180deg,#63dd84,#35b85a 55%,#2a9d4b)!important;box-shadow:inset 0 0 0 3px #05080c,inset 0 5px 0 rgba(220,255,230,.35)}
+.tasksBtn .cnt{background:linear-gradient(180deg,#ffd06a,#f5a020 55%,#e08a10)}
+.lv .n b{background:linear-gradient(180deg,#ffe29a,#ffae2b 55%,#d97e00);-webkit-background-clip:text;background-clip:text;color:transparent}
 </style></head>
 <body>
 <div class="stage">
