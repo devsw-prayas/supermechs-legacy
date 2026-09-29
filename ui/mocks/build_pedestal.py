@@ -77,23 +77,37 @@ def tier(cy, rx, ry, h, top, lvl, strip=None, ribs=0):
 
 
 def support():
-    """Hydraulic column under the top tier, two braces and a foot plate on the floor."""
+    """Hydraulic column under the top tier, two braces and a round base flange standing on the floor."""
     s = []
-    top = TOP['cy'] + TOP['ry'] - 10          # just under the tier's front edge
-    foot = 900 + 30                             # runs past the bottom of the screen
-    s.append('<ellipse cx="%d" cy="%d" rx="230" ry="30" fill="#000" opacity=".5"/>' % (CX, foot - 60))
+    top = TOP['cy'] + TOP['ry'] - 10           # just under the tier's front edge
+    fy, frx, fry, fh = 846, 150, 22, 24          # flange: top-surface centre y, radii, side height
+    # contact shadow on the floor
+    s.append('<ellipse cx="%d" cy="%d" rx="%d" ry="%d" fill="#000" opacity=".75" filter="url(#soft)"/>' % (CX, fy + fh + 4, frx + 40, fry + 10))
+    # braces (behind the column), landing on the flange
     for sgn in (-1, 1):
-        x0, x1 = CX + sgn * 190, CX + sgn * 64
+        x0, x1 = CX + sgn * 190, CX + sgn * 92
         s.append('<path d="M%d %d L%d %d L%d %d L%d %d Z" fill="%s" stroke="%s" stroke-width="3" stroke-linejoin="round"/>'
-                 % (x0 - 14, top - 6, x0 + 14, top - 6, x1 + 10 * sgn, foot - 70, x1 - 12 * sgn, foot - 70, grad('#2e3847', '#1a212b'), OUT))
-    s.append('<path d="M%d %d L%d %d L%d %d L%d %d Z" fill="%s" stroke="%s" stroke-width="4"/>'
-             % (CX - 150, foot - 70, CX + 150, foot - 70, CX + 176, foot, CX - 176, foot, grad('#343f4f', '#1c232d'), OUT))
+                 % (x0 - 14, top - 6, x0 + 14, top - 6, x1 + 10 * sgn, fy + 2, x1 - 12 * sgn, fy + 2, grad('#2e3847', '#1a212b'), OUT))
+    # flange side band (front half of a short cylinder)
+    band = 'M%d %d A%d %d 0 0 0 %d %d L%d %d A%d %d 0 0 1 %d %d Z' % (CX - frx, fy, frx, fry, CX + frx, fy, CX + frx, fy + fh, frx, fry, CX - frx, fy + fh)
+    s.append('<path d="%s" fill="%s" stroke="%s" stroke-width="3" stroke-linejoin="round"/>' % (band, grad('#252e3a', '#0e131a'), OUT))
+    s.append('<path d="%s" fill="url(#brush)"/>' % band)
+    for k in range(-4, 5):
+        x = CX + k * frx * .22
+        dy = fry * (1 - (k * .22) ** 2) ** .5
+        s.append('<rect x="%.1f" y="%.1f" width="7" height="7" rx="1.5" fill="#56697f" stroke="%s" stroke-width="2"/>' % (x - 3.5, fy + dy + fh * .45 - 3.5, OUT))
+    # flange top surface
+    s.append('<ellipse cx="%d" cy="%d" rx="%d" ry="%d" fill="%s" stroke="%s" stroke-width="3"/>' % (CX, fy, frx, fry, grad('#3d495a', '#27303d'), OUT))
+    s.append('<ellipse cx="%d" cy="%d" rx="%d" ry="%d" fill="url(#brush)"/>' % (CX, fy, frx, fry))
+    s.append('<ellipse cx="%d" cy="%d" rx="%d" ry="%d" fill="none" stroke="rgba(0,0,0,.4)" stroke-width="3"/>' % (CX, fy, frx - 18, fry - 5))
+    # column: flat-shaded cylinder standing on the flange
     cg = 'pf%d' % (len(defs) + 1)
     defs.append('<linearGradient id="%s" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#141a22"/><stop offset=".3" stop-color="#3c4859"/><stop offset=".45" stop-color="#56667c"/><stop offset=".7" stop-color="#2a3341"/><stop offset="1" stop-color="#10151c"/></linearGradient>' % cg)
-    s.append('<rect x="%d" y="%d" width="140" height="%d" fill="url(#%s)" stroke="%s" stroke-width="4"/>' % (CX - 70, top, foot - 70 - top, cg, OUT))
+    col = 'M%d %d L%d %d L%d %d A70 11 0 0 1 %d %d Z' % (CX - 70, top, CX + 70, top, CX + 70, fy, CX - 70, fy)
+    s.append('<path d="%s" fill="url(#%s)" stroke="%s" stroke-width="3"/>' % (col, cg, OUT))
     s.append('<rect x="%d" y="%d" width="70" height="40" fill="url(#%s)" stroke="%s" stroke-width="3"/>' % (CX - 35, top - 4, cg, OUT))
-    for y in range(top + 44, foot - 70, 28):
-        s.append('<rect x="%d" y="%d" width="148" height="9" fill="#1c232d" stroke="%s" stroke-width="3"/>' % (CX - 74, y, OUT))
+    for y in range(top + 44, fy - 16, 28):
+        s.append('<rect x="%d" y="%d" width="148" height="9" rx="2" fill="#1c232d" stroke="%s" stroke-width="2.5"/>' % (CX - 74, y, OUT))
     s.append('<rect x="%d" y="%d" width="8" height="%d" fill="#ffae2b" stroke="%s" stroke-width="2"/>' % (CX + 44, top + 60, 34, OUT))
     return s
 
