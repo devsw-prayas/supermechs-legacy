@@ -1,0 +1,33 @@
+sprites checked: {'drones': 96, 'legs': 108, 'side_weapons': 354, 'top_weapons': 179, 'torsos': 166}
+assembled test mechs (one per torso): 166
+size mismatches (PNG padded or resized vs its source symbol): 28
+    ('sword1A', 'sword1A', (512, 512), (686, 306))
+    ('sword1B', 'sword1B', (512, 512), (686, 306))
+    ('sword1C', 'sword1C', (512, 512), (685, 306))
+    ('sword1D', 'sword1D', (512, 512), (686, 306))
+    ('sword2A', 'sword2A', (512, 512), (703, 320))
+    ('sword2B', 'sword2B', (512, 512), (704, 320))
+    ('sword2C', 'sword2C', (512, 512), (704, 320))
+    ('sword2D', 'sword2D', (512, 512), (704, 320))
+    ('sword3A', 'sword3A', (512, 512), (690, 318))
+    ('sword3B', 'sword3B', (512, 512), (690, 318))
+    ('sword3C', 'sword3C', (512, 512), (690, 318))
+    ('sword3D', 'sword3D', (512, 512), (690, 318))
+    ('sword4A', 'sword4A', (512, 512), (714, 304))
+    ('sword4B', 'sword4B', (512, 512), (713, 304))
+    ('sword4C', 'sword4C', (512, 512), (714, 304))
+    ('sword4D', 'sword4D', (512, 512), (713, 304))
+    ('sword5A', 'sword5A', (512, 512), (722, 343))
+    ('sword5B', 'sword5B', (512, 512), (721, 343))
+    ('sword5C', 'sword5C', (512, 512), (722, 343))
+    ('sword5D', 'sword5D', (512, 512), (722, 343))
+    ('sword6A', 'sword6A', (512, 512), (705, 327))
+    ('sword6B', 'sword6B', (512, 512), (705, 327))
+    ('sword6C', 'sword6C', (512, 512), (705, 327))
+    ('sword6D', 'sword6D', (512, 512), (705, 327))
+    ('sword7A', 'sword7A', (512, 512), (723, 366))
+    ('sword7B', 'sword7B', (512, 512), (723, 366))
+    ('sword7C', 'sword7C', (512, 512), (723, 366))
+    ('sword7D', 'sword7D', (512, 512), (723, 366))
+torsos carrying each optional slot: {'mcSide1': 166, 'mcSide2': 166, 'mcSide3': 165, 'mcSide4': 165, 'mcTop1': 165, 'mcTop2': 165, 'mcDrone': 125}
+problems: 0
