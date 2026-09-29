@@ -88,15 +88,15 @@ def assemble(loadout):
 
 
 LOADOUTS = {
-    # Brutality torso, chunky legs, two rifles and two top guns
+    # Brutality torso (torso52) on leg73 legs, checked against the game's own workshop screenshot
     "m1": {"torso": "torso52_phys", "leg1": "leg73D_phys", "leg2": "leg73D_phys",
-           "top1": "topBlaster3E", "top2": "cannon1A_elec",
-           "side1": "sideRifle2E", "side2": "sideRifle1E"},
+           "top1": "topLaser2B_phys", "top2": "topLaser2C_phys",
+           "side1": "cannon3C", "side2": "sideRifle1E"},
     "m2": {"torso": "torso46_phys", "leg1": "leg67D_phys", "leg2": "leg67D_phys",
-           "top1": "topMachineGun1B_heat", "top2": "topBeam2E_phys",
+           "top1": "topLaser2C_phys", "top2": "topBeam2E_phys",
            "side1": "sideRifle1E", "side2": "sideRifle2E"},
     "m3": {"torso": "torso47_phys", "leg1": "leg77D_heat", "leg2": "leg77D_heat",
-           "top1": "cannon1A_elec", "side1": "cannon3C", "side2": "sideRifle1E"},
+           "top1": "topLaser2B_phys", "side1": "cannon3C", "side2": "sideRifle1E"},
 }
 
 JS_TAIL = """
