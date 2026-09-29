@@ -121,26 +121,34 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
   <svg id="ped" width="1600" height="900" viewBox="0 0 1600 900">
     <defs>
       <pattern id="hex" width="24" height="14" patternUnits="userSpaceOnUse" patternTransform="scale(1,.42)">
-        <path d="M6 0h12l6 7-6 7H6L0 7z" fill="#18212c" stroke="#0a0f15" stroke-width="2"/>
+        <path d="M6 0h12l6 7-6 7H6L0 7z" fill="#1d2530" stroke="#0b0f15" stroke-width="2.5"/>
       </pattern>
-      <linearGradient id="side" x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0" stop-color="#05080c"/><stop offset=".3" stop-color="#1c2633"/><stop offset=".55" stop-color="#2b3747"/><stop offset=".8" stop-color="#121a24"/><stop offset="1" stop-color="#04060a"/>
-      </linearGradient>
-      <radialGradient id="topg" cx=".5" cy=".4" r=".6"><stop offset="0" stop-color="#26303d"/><stop offset="1" stop-color="#0d131a"/></radialGradient>
-      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <linearGradient id="ptop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3e4a5c"/><stop offset="1" stop-color="#2a3341"/></linearGradient>
+      <linearGradient id="ptop2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a3341"/><stop offset="1" stop-color="#1c232d"/></linearGradient>
     </defs>
-    <!-- base -->
-    <path d="M540 712 L540 760 A260 46 0 0 0 1060 760 L1060 712 Z" fill="url(#side)" stroke="#04060a" stroke-width="3"/>
-    <path d="M556 740 A244 40 0 0 0 1044 740" fill="none" stroke="#ffae2b" stroke-width="3" opacity=".9" filter="url(#glow)"/>
-    <g opacity=".9">
-      <rect x="770" y="752" width="10" height="14" fill="#ff5a2a"/><rect x="786" y="753" width="10" height="14" fill="#ff5a2a"/><rect x="802" y="753" width="10" height="14" fill="#ff5a2a"/><rect x="818" y="752" width="10" height="14" fill="#ff5a2a"/>
-    </g>
-    <ellipse cx="800" cy="712" rx="260" ry="46" fill="url(#topg)" stroke="#04060a" stroke-width="4"/>
-    <ellipse cx="800" cy="712" rx="244" ry="40" fill="url(#hex)" opacity=".85"/>
-    <ellipse cx="800" cy="712" rx="244" ry="40" fill="none" stroke="#3b4b60" stroke-width="2"/>
-    <ellipse cx="800" cy="712" rx="170" ry="26" fill="none" stroke="#ffae2b" stroke-width="2.5" opacity=".75" filter="url(#glow)"/>
-    <!-- scan ring -->
-    <ellipse id="scan" cx="800" cy="706" rx="300" ry="56" fill="none" stroke="#5fd4ff" stroke-width="2" stroke-dasharray="40 14 6 14" opacity=".75" filter="url(#glow)"/>
+    <ellipse id="scan" cx="800" cy="770" rx="360" ry="70" fill="none" stroke="#5fd4ff" stroke-width="3" stroke-dasharray="26 18" opacity=".55"/>
+    <path d="M1077.2 756.7 L914.8 785.9 L914.8 815.9 L1077.2 786.7 Z" fill="#1f2833" stroke="#05080c" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M914.8 785.9 L685.2 785.9 L685.2 815.9 L914.8 815.9 Z" fill="#28323f" stroke="#05080c" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M685.2 785.9 L522.8 756.7 L522.8 786.7 L685.2 815.9 Z" fill="#1a222c" stroke="#05080c" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M1077.2 756.7 L914.8 785.9 L685.2 785.9 L522.8 756.7 L522.8 715.3 L685.2 686.1 L914.8 686.1 L1077.2 715.3 Z" fill="url(#ptop2)" stroke="#05080c" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M1029.1 728.8 L894.9 752.7 L894.9 776.7 L1029.1 752.8 Z" fill="#2c3645" stroke="#05080c" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M1013.0 740.8 L911.0 758.9 L911.0 764.7 L1013.0 746.6 Z" fill="#ffae2b" stroke="#05080c" stroke-width="2.5"/>
+    <path d="M894.9 752.7 L705.1 752.7 L705.1 776.7 L894.9 776.7 Z" fill="#3a4658" stroke="#05080c" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M872.1 761.8 L727.9 761.8 L727.9 767.5 L872.1 767.5 Z" fill="#ffae2b" stroke="#05080c" stroke-width="2.5"/>
+    <path d="M705.1 752.7 L570.9 728.8 L570.9 752.8 L705.1 776.7 Z" fill="#2a3442" stroke="#05080c" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M689.0 758.9 L587.0 740.8 L587.0 746.6 L689.0 764.7 Z" fill="#ffae2b" stroke="#05080c" stroke-width="2.5"/>
+    <path d="M1029.1 728.8 L894.9 752.7 L705.1 752.7 L570.9 728.8 L570.9 695.2 L705.1 671.3 L894.9 671.3 L1029.1 695.2 Z" fill="url(#ptop)" stroke="#05080c" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M984.8 725.4 L876.5 744.3 L723.5 744.3 L615.2 725.4 L615.2 698.6 L723.5 679.7 L876.5 679.7 L984.8 698.6 Z" fill="url(#hex)" stroke="#05080c" stroke-width="3"/>
+    <path d="M938.6 721.9 L857.4 736.0 L742.6 736.0 L661.4 721.9 L661.4 702.1 L742.6 688.0 L857.4 688.0 L938.6 702.1 Z" fill="none" stroke="#ffae2b" stroke-width="4"/>
+    <path d="M944.1 722.5 L859.7 737.4 L740.3 737.4 L655.9 722.5 L655.9 701.5 L740.3 686.6 L859.7 686.6 L944.1 701.5 Z" fill="none" stroke="#05080c" stroke-width="2"/>
+    <rect x="1010.9" y="724.2" width="9" height="6" fill="#56697f" stroke="#05080c" stroke-width="2"/>
+    <rect x="884.7" y="745.6" width="9" height="6" fill="#56697f" stroke="#05080c" stroke-width="2"/>
+    <rect x="706.3" y="745.6" width="9" height="6" fill="#56697f" stroke="#05080c" stroke-width="2"/>
+    <rect x="580.1" y="724.2" width="9" height="6" fill="#56697f" stroke="#05080c" stroke-width="2"/>
+    <rect x="580.1" y="693.8" width="9" height="6" fill="#56697f" stroke="#05080c" stroke-width="2"/>
+    <rect x="706.3" y="672.4" width="9" height="6" fill="#56697f" stroke="#05080c" stroke-width="2"/>
+    <rect x="884.7" y="672.4" width="9" height="6" fill="#56697f" stroke="#05080c" stroke-width="2"/>
+    <rect x="1010.9" y="693.8" width="9" height="6" fill="#56697f" stroke="#05080c" stroke-width="2"/>
   </svg>
   <div id="mech"></div>
   <canvas id="fx" width="1600" height="900"></canvas>
