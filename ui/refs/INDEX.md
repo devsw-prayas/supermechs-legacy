@@ -25,7 +25,7 @@ Reloaded-era client, taken from the user's own account (2026-09-29). Reference o
 | quests-achievements.webp | Achievements tab: cards with star tiers, COMPLETED sash across finished ones, progress buttons |
 | select-campaign.webp | Select Campaign dialog: stacked campaign cards (1v1 / 2v2 / next below), each with map preview and stars, progress bar, Enter button, scroll arrows |
 | campaign-map-final-zone.webp | Campaign map, last zone: hex mission nodes with numbers and 3-star ratings, boss tower node, energy counter (89/79) with back button top-left, player marker with badge |
-| campaign-map-danger-zone.webp | Campaign map, mid zone with "THE DANGER ZONE" ribbon banner, path, orange side-mission nodes. Windows Snipping Tool popup in the corner (not part of the game UI) |
+| campaign-map-danger-zone.webp | Zone name banner reference: blue ribbon with cream outline, swallow-tail ends, white heavy title ("THE DANGER ZONE"), shown at the top of the map on zone entry. Also a mid-zone map view. Windows Snipping Tool popup in the corner is not part of the game UI |
 | upgrade-transform.png | Upgrade, Transform mode (selected item at level cap, Mythical target, 5 empty material slots, Transform button with gold cost, locked tile in grid) |
 
 Still to come: item detail, battle HUD, others as sent.
