@@ -267,6 +267,17 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
 .dwrap{top:708px!important;height:172px!important}
 .labBtn{top:202px!important;cursor:pointer}
 .labBtn .gi{background:#5fd4ff!important}
+
+/* ---- uniform flush row: 6 equal plates, diagonal seams at 1|2 and 5|6 ---- */
+.rack{left:34px!important;width:1532px!important;top:742px!important;height:138px!important;gap:4px!important;align-items:stretch!important}
+.slot,.slot:nth-child(1){height:auto!important;flex:1 1 0!important;min-width:0}
+.slot:nth-child(2),.slot:nth-child(6){margin-left:calc(4px - var(--d) - 4px)}
+.slot:nth-child(1) .mask{width:58px!important;height:58px!important}
+.slot:nth-child(1) span{font-size:20px!important}
+.slot:nth-child(6),.slot:nth-child(6)>.fc{clip-path:polygon(var(--d) 0,100% 0,100% 100%,0 100%)}
+.slot:nth-child(6)>.fc{padding-left:var(--d)}
+.slot.camp{background:linear-gradient(180deg,#a8c9b0,#6a9a76 30%,#3b6446 62%,#7aa885)!important}
+.slot.camp>.fc{background:var(--sheen),var(--brush),linear-gradient(180deg,#3faa5c,#2b8a45 45%,#1f6a34)!important;box-shadow:inset 0 0 0 3px #05080c,inset 0 5px 0 3px rgba(225,255,230,.3),inset 0 -8px 12px rgba(0,40,15,.45)}
 </style></head>
 <body>
 <div class="stage">
@@ -391,8 +402,8 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
     <div class="slot"><div class="fc"><i class="mask" style="--i:url(assets/icons/interface_mech.png)"></i><span>Teams</span></div></div>
     <div class="slot"><div class="fc"><i class="mask" style="--i:url(assets/icons/interface_shop.png)"></i><span>Shop</span></div><b class="pip">2</b></div>
     <div class="slot"><div class="fc"><i class="mask" style="--i:url(assets/icons/action_weapons.png)"></i><span>Test Lab</span></div></div>
+    <div class="slot camp"><div class="fc"><i class="mask" style="--i:url(assets/icons/interface_battle_singlePlayer.png)"></i><span>Campaign</span></div></div>
   </div>
-  <div class="dwrap"><div class="deploy"><div class="face"><div class="haz"></div><h3>DEPLOY</h3><div class="go2"></div></div></div></div>
 </div>
 <script src="assets/mech.js"></script>
 <script>
