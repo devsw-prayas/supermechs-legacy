@@ -70,13 +70,13 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
 .readout .plus{width:40px;height:40px;background:#39c45f;position:relative;box-shadow:inset 0 0 0 3px #05080c}
 .readout .plus::before,.readout .plus::after{content:"";position:absolute;left:50%;top:50%;background:#05180b;transform:translate(-50%,-50%)}
 .readout .plus::before{width:18px;height:5px}.readout .plus::after{width:5px;height:18px}
-.rack{position:absolute;left:34px;top:776px;width:560px;height:100px;z-index:8;padding:5px;background:#05080c;
+.rack{position:absolute;left:34px;top:752px;width:1112px;height:124px;z-index:8;padding:5px;background:#05080c;
   clip-path:polygon(18px 0,100% 0,100% calc(100% - 18px),calc(100% - 18px) 100%,0 100%,0 18px);display:flex;gap:5px}
 .slot{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:#1c4fb4;color:#fff;position:relative}
 .slot:nth-child(odd){background:#1a48a5}
 .slot::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:rgba(170,205,255,.45)}
-.slot .mask{width:40px;height:40px;background:#fff}
-.slot span{font:700 15px var(--f-label);letter-spacing:.1em;text-transform:uppercase}
+.slot .mask{width:52px;height:52px;background:#fff}
+.slot span{font:700 19px var(--f-label);letter-spacing:.12em;text-transform:uppercase}
 .slot .pip{position:absolute;right:8px;top:8px;min-width:22px;height:22px;padding:0 5px;background:#ff8a1a;color:#1d0e00;font:800 13px var(--f-num);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px #05080c}
 .deploy{position:absolute;left:1180px;top:752px;width:386px;height:124px;z-index:8;padding:5px;background:#05080c;
   clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,22px 100%,0 calc(100% - 22px))}
