@@ -21,7 +21,7 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
 .mask{display:inline-block;background:currentColor;-webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat}
 
 /* ---- block: item-style geometry. Fat dark outline, chamfered corners, clean light-to-dark face, bright top edge, dark lip ---- */
-.plate{position:absolute;--c:18px;padding:4px;filter:drop-shadow(0 8px 12px rgba(0,0,0,.45))}
+.plate{position:absolute;z-index:8;--c:18px;padding:4px;filter:drop-shadow(0 8px 12px rgba(0,0,0,.45))}
 .plate::before{content:"";position:absolute;inset:0;z-index:0;
   background:#05080c;
   clip-path:polygon(var(--c) 0,100% 0,100% calc(100% - var(--c)),calc(100% - var(--c)) 100%,0 100%,0 var(--c))}
@@ -126,7 +126,7 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
       <linearGradient id="ptop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3e4a5c"/><stop offset="1" stop-color="#2a3341"/></linearGradient>
       <linearGradient id="ptop2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a3341"/><stop offset="1" stop-color="#1c232d"/></linearGradient>
     </defs>
-    <ellipse id="scan" cx="800" cy="770" rx="360" ry="70" fill="none" stroke="#5fd4ff" stroke-width="3" stroke-dasharray="26 18" opacity=".55"/>
+    <ellipse id="scan" cx="800" cy="766" rx="332" ry="60" fill="none" stroke="#5fd4ff" stroke-width="3" stroke-dasharray="26 18" opacity=".55"/>
     <path d="M1077.2 756.7 L914.8 785.9 L914.8 815.9 L1077.2 786.7 Z" fill="#1f2833" stroke="#05080c" stroke-width="4" stroke-linejoin="round"/>
     <path d="M914.8 785.9 L685.2 785.9 L685.2 815.9 L914.8 815.9 Z" fill="#28323f" stroke="#05080c" stroke-width="4" stroke-linejoin="round"/>
     <path d="M685.2 785.9 L522.8 756.7 L522.8 786.7 L685.2 815.9 Z" fill="#1a222c" stroke="#05080c" stroke-width="4" stroke-linejoin="round"/>
