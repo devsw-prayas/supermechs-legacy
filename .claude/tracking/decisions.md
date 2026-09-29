@@ -32,3 +32,9 @@
 - **2026-09-29: Backfire at Ultimate.** The data has no backfire past Mythical. Rule: backfire follows the data up to Mythical, then grows at **half the damage's growth rate** through Ultimate (e.g. Lazy Falcon 490 at Mythical → ~583 at Ult 1 → ~737 at Ult 100). Applies to all backfire items.
 
 - 2026-09-29: UI direction locked to **Direction E (Mech Bay)**, `ui/mocks/E-bay.html`. New screens reuse its background, plate component, palette and type; refine it, don't start new directions. The user wants something new inspired by the original hangar, not a copy of it.
+- 2026-09-29: UI reference moves to **Direction F** (`ui/mocks/F-bay.html`), the flat geometric version of E. Rules:
+  - **No slants.** Panels, buttons, chips and tabs are upright blocks with a fat dark outline (4px, #05080c) and chamfered top-left and bottom-right corners, like the item plates.
+  - **Flat faces:** near-flat fill with a faint top-to-bottom shift and one thin light line on the top edge. No sheen, no bottom lip, no glows on bars.
+  - **Type:** Oxanium (upright) for headings, Rajdhani for labels, JetBrains Mono for numbers. One amber accent; cyan for progress; green only for claim.
+  - **Scene:** the bay is drawn in the same language (outlined chamfered wall plates, flat two-tone pipes, slatted shutter, hazard posts, truss gantry, outlined floor plates, octagonal faceted pedestal). Lighting stays but crisp.
+  - **Mechs in scenes:** fat dark outline around the silhouette, a warm-top / cool-bottom grade and a contact shadow, so they sit in the room.
