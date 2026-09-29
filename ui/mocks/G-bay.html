@@ -64,7 +64,9 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
 .readout{position:absolute;top:30px;height:56px;display:flex;align-items:center;gap:12px;padding:0 6px 0 14px;z-index:8;
   background:rgba(4,7,11,.72);box-shadow:inset 0 0 0 3px #05080c,inset 0 0 0 5px #1f2733}
 .readout svg{width:32px;height:32px}
-.readout b{font:700 26px var(--f-num);min-width:108px}
+.readout b{font:800 30px var(--f-head);letter-spacing:.04em;min-width:112px;-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 0 rgba(0,0,0,.6))}
+.readout b.gold{background-image:linear-gradient(180deg,#ffe8a0,#f2b233 55%,#c98410)}
+.readout b.tok{background-image:linear-gradient(180deg,#ff9a8c,#e2382a 55%,#a81a10)}
 .readout .plus{width:40px;height:40px;background:#39c45f;position:relative;box-shadow:inset 0 0 0 3px #05080c}
 .readout .plus::before,.readout .plus::after{content:"";position:absolute;left:50%;top:50%;background:#05180b;transform:translate(-50%,-50%)}
 .readout .plus::before{width:18px;height:5px}.readout .plus::after{width:5px;height:18px}
@@ -288,8 +290,8 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
 
   <!-- HUD -->
   <div class="plate lv"><div class="in"><div class="n"><b>157</b></div><div class="xp"><div class="row"><span></span><span class="num">46%</span></div><div class="seg"><i style="width:46.3%"></i></div></div></div></div>
-  <div class="readout" style="left:1034px"><svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="15" fill="#6a4004"/><circle cx="17" cy="17" r="12.5" fill="#f2b233" stroke="#3a2200" stroke-width="1.5"/><circle cx="17" cy="17" r="8" fill="none" stroke="#9a5f08" stroke-width="2"/></svg><b>23,390</b><div class="plus" aria-label="Add"></div></div>
-  <div class="readout" style="left:1270px"><svg viewBox="0 0 34 34"><path d="M11 3h12l8 8v12l-8 8H11l-8-8V11z" fill="#c2261a" stroke="#3a0a04" stroke-width="2"/><path d="M11 11h12v4h-4v10h-4V15h-4z" fill="#ffe6df"/></svg><b style="min-width:62px">14</b><div class="plus" aria-label="Add"></div></div>
+  <div class="readout" style="left:1034px"><svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="15" fill="#6a4004"/><circle cx="17" cy="17" r="12.5" fill="#f2b233" stroke="#3a2200" stroke-width="1.5"/><circle cx="17" cy="17" r="8" fill="none" stroke="#9a5f08" stroke-width="2"/></svg><b class="gold">23,390</b><div class="plus" aria-label="Add"></div></div>
+  <div class="readout" style="left:1270px"><svg viewBox="0 0 34 34"><path d="M11 3h12l8 8v12l-8 8H11l-8-8V11z" fill="#c2261a" stroke="#3a0a04" stroke-width="2"/><path d="M11 11h12v4h-4v10h-4V15h-4z" fill="#ffe6df"/></svg><b class="tok" style="min-width:62px">14</b><div class="plus" aria-label="Add"></div></div>
   <div class="plate gear"><div class="in"><i class="mask" style="--i:url(assets/icons/interface_options.png)"></i></div><div class="dot" style="right:6px;top:-6px"></div></div>
 
 
