@@ -45,6 +45,21 @@ def base_id(name):
     return name
 
 
+_BOUNDS = None
+def frame(name):
+    """Outer frame translation of the sprite's SVG export (data/sprite_bounds.json). The exporter shifted the art by
+    this much when it rendered the PNG, but the anchors were never shifted, so PNG-space anchor = anchor + frame."""
+    global _BOUNDS
+    if _BOUNDS is None:
+        _BOUNDS = json.load(open(os.path.join(ROOT, "data", "sprite_bounds.json")))
+    b = base_id(name)
+    for era in ("reloaded", "legacy"):
+        r = _BOUNDS.get(era, {}).get(b)
+        if r and "frame" in r:
+            return r["frame"][4], r["frame"][5]
+    return 0.0, 0.0
+
+
 def anchors(name):
     a = items[base_id(name)].get("anchors")
     if not a:
@@ -56,7 +71,8 @@ def assemble(loadout):
     """loadout: dict slot -> sprite name. Returns {w,h,parts}."""
     torso = loadout["torso"]
     ta = anchors(torso)
-    cx, cy = ta["mcCenter"]
+    tfx, tfy = frame(torso)
+    cx, cy = 0.0, 0.0
     placed = []  # (slot, sprite, x, y) in 2x px, origin = mech origin (torso mcCenter)
     for slot in ORDER:
         name = loadout.get(slot)
@@ -64,15 +80,16 @@ def assemble(loadout):
             continue
         w, h = png_size(sprite_path(name))
         if slot == "torso":
-            x, y = -cx * S, -cy * S
+            x, y = 0.0, 0.0
         else:
             key = {"leg1": "mcLeg1", "leg2": "mcLeg2", "top1": "mcTop1", "top2": "mcTop2",
                    "side1": "mcSide1", "side2": "mcSide2", "side3": "mcSide3", "side4": "mcSide4"}[slot]
             if key not in ta:
                 raise SystemExit("%s has no %s" % (torso, key))
             pa = anchors(name)["mcTorso"]
-            x = (ta[key][0] - cx) * S - pa[0] * S
-            y = (ta[key][1] - cy) * S - pa[1] * S
+            pfx, pfy = frame(name)
+            x = ((ta[key][0] + tfx) - (pa[0] + pfx)) * S
+            y = ((ta[key][1] + tfy) - (pa[1] + pfy)) * S
         placed.append((slot, name, x, y, w, h))
     x0 = min(p[2] for p in placed)
     y0 = min(p[3] for p in placed)
@@ -114,7 +131,7 @@ LOADOUTS = {
     # Brutality torso (torso52) on leg73 legs, checked against the game's own workshop screenshot
     "m1": {"torso": "torso52_phys", "leg1": "leg73D_phys", "leg2": "leg73D_phys",
            "top1": "topLaser2B_phys", "top2": "topLaser2C_phys",
-           "side1": "cannon3C", "side2": "sideRifle1E"},
+           "side1": "cannon3C", "side2": "sideRifle1E", "side3": "sideRifle2E", "side4": "sideRifle1E"},
     "m2": {"torso": "torso46_phys", "leg1": "leg67D_phys", "leg2": "leg67D_phys",
            "top1": "topLaser2C_phys", "top2": "topBeam2E_phys",
            "side1": "sideRifle1E", "side2": "sideRifle2E"},
@@ -134,7 +151,7 @@ if __name__ == "__main__":
     out = {k: assemble(v) for k, v in LOADOUTS.items()}
     saved = os.path.join(ROOT, "ui", "aligner", "saved", "torso52.json")
     if os.path.exists(saved):
-        out["m1"] = assemble_aligned(saved)   # the user's hand-aligned Brutality
+        out["m1hand"] = assemble_aligned(saved)   # the user's hand-aligned Brutality, for comparison
     for k, v in out.items():
         print(k, v["w"], v["h"], [p["slot"] for p in v["parts"]])
     with open(os.path.join(MOCKS, "assets", "mech.js"), "w") as f:
