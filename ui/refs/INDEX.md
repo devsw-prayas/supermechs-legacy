@@ -33,6 +33,7 @@ Reloaded-era client, taken from the user's own account (2026-09-29). Reference o
 | battle-pickups-loot.webp | Battle after picking up a kit and destroying structures: left column now stacks three panels (STATS, PICKUPS with the kit icon, WIN LOOT with gold amount), crater sprites left on the floor where crates were destroyed |
 | battle-explosion.webp | Explosion effect that plays when any structure is destroyed; two pickups now shown (repair, energy) and Win Loot at 150 gold; craters left on the floor |
 | battle-fight.webp | 1v1 fight view: player panel top-left and enemy panel top-right (portrait, name, HP bar, energy and heat bars, resist shields, turn lamps), settings and power buttons in the centre, zoom button, action bar bottom-left (6 slots: move, target, shield, empty, flame, chevrons) and x2 / play bottom-right, tech-panel strip above the bar |
+| battle-hover-enemy-weapon.webp | Hovering an enemy weapon in the fight view: a red-bordered stat card appears on the left (knockback, heat gain, resist, damage range 130-275, resist drain -6), a green-bordered card on the right (turn lamps, +11 heat, EPIC rarity), the targeted mech tints red and red beams shoot up from the ground |
 | upgrade-transform.png | Upgrade, Transform mode (selected item at level cap, Mythical target, 5 empty material slots, Transform button with gold cost, locked tile in grid) |
 
 Still to come: item detail, others as sent. Battle: action bar icons not yet explained.
