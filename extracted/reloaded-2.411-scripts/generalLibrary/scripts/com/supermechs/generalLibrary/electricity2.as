@@ -1,0 +1,15 @@
+package com.supermechs.generalLibrary
+{
+   import net.tacticsoft.mobileOpt.BMUncachedMovieClip;
+   
+   [Embed(source="/_assets/assets.swf", symbol="symbol1936")]
+   public dynamic class electricity2 extends BMUncachedMovieClip
+   {
+      
+      public function electricity2()
+      {
+         super();
+      }
+   }
+}
+

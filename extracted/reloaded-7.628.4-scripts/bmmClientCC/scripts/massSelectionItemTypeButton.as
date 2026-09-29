@@ -1,0 +1,21 @@
+package
+{
+   import net.battleMechsMulti.mobiles.buttons.BMBasicSelectable;
+   
+   [Embed(source="/_assets/assets.swf", symbol="symbol2810")]
+   public dynamic class massSelectionItemTypeButton extends BMBasicSelectable
+   {
+      
+      public function massSelectionItemTypeButton()
+      {
+         super();
+         addFrameScript(0,this.frame1);
+      }
+      
+      internal function frame1() : *
+      {
+         stop();
+      }
+   }
+}
+

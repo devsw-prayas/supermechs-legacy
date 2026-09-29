@@ -1,0 +1,15 @@
+package com.supermechs.generalLibrary
+{
+   import flash.display.MovieClip;
+   
+   [Embed(source="/_assets/assets.swf", symbol="symbol2083")]
+   public dynamic class animationPicture_bulletCharge1 extends MovieClip
+   {
+      
+      public function animationPicture_bulletCharge1()
+      {
+         super();
+      }
+   }
+}
+
