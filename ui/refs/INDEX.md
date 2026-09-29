@@ -19,9 +19,10 @@ Reloaded-era client, taken from the user's own account (2026-09-29). Reference o
 | upgrade-complete.png | Item Boosted result screen (ribbon level, stat rows, item art, XP bar, SWEET! button) |
 | upgrade-complete-mission-toast.png | Same result screen with a "Mission completed" toast at the top |
 | upgrade-boost-selected.png | Upgrade with an item selected (level 41/50, XP bar, HP / Energy / Heat lines, Boost button) and a full grid with orange, gold, purple and locked tile borders |
+| workshop.png | Workshop editor: category buttons down the left, mech on a pedestal with weight bar and equipped items, Mech Summary stats panel, inventory grid with scroll buttons |
 | upgrade-transform.png | Upgrade, Transform mode (selected item at level cap, Mythical target, 5 empty material slots, Transform button with gold cost, locked tile in grid) |
 
-Still to come: workshop editor, item detail, battle HUD, others as sent.
+Still to come: item detail, battle HUD, others as sent.
 Open question: meaning of the mech glyph + number on item tiles ("/50" looks like a cap, MAX replaces it).
 
 ## Seen in chat, no file saved (push to ui/refs/ if you want them kept)
