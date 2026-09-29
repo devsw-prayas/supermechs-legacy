@@ -1,0 +1,14 @@
+{
+ "note": "Saved from the Mech Aligner artifact (mechAlign2/torso52, version 13, 2026-09-29). x,y = top-left of the item in pixels of the 2x torso PNG, origin = torso PNG top-left. dx,dy = offset from the game's anchor math.",
+ "torso": {"file": "torso52_phys", "w": 614, "h": 560},
+ "items": {
+  "leg1":  {"sprite": "leg73D_phys",      "x": 235.5,  "y": 490.5,  "dx": 137.25, "dy": 93.75,  "layer": 8},
+  "leg2":  {"sprite": "leg73D_phys",      "x": 357.25, "y": 488.75, "dx": 111,    "dy": 92,     "layer": 4},
+  "side1": {"sprite": "cannon3C",         "x": 241.75, "y": 222.75, "dx": 122.25, "dy": 44.75,  "layer": 9},
+  "side2": {"sprite": "sideRifle1E",      "x": 368.75, "y": 193,    "dx": 58.25,  "dy": 18.5,   "layer": 1},
+  "side3": {"sprite": "sideRifle2E",      "x": 175,    "y": 333,    "dx": 73.5,   "dy": 63.5,   "layer": 10},
+  "side4": {"sprite": "sideRifle1E",      "x": 368.75, "y": 332,    "dx": 72.25,  "dy": 62.5,   "layer": 2},
+  "top1":  {"sprite": "topLaser2B_phys",  "x": 250.25, "y": 113.75, "dx": 117.25, "dy": 119.25, "layer": 7},
+  "top2":  {"sprite": "topLaser2C_phys",  "x": 412.5,  "y": 69.25,  "dx": 149,    "dy": 109.25, "layer": 3}
+ }
+}

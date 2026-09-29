@@ -87,6 +87,29 @@ def assemble(loadout):
     return {"w": round(x1 - x0), "h": round(y1 - y0), "parts": parts}
 
 
+
+def assemble_aligned(saved_path):
+    """Use absolute positions saved from the Mech Aligner (ui/aligner/saved/*.json) instead of the anchor formula."""
+    a = json.load(open(saved_path))
+    parts = [("torso", a["torso"]["file"], 0.0, 0.0, 6)]
+    for slot, it in a["items"].items():
+        if it.get("sprite"):
+            parts.append((slot, it["sprite"], it["x"], it["y"], it["layer"]))
+    sized = []
+    for slot, name, x, y, z in parts:
+        w, h = png_size(sprite_path(name))
+        sized.append((slot, name, x, y, z, w, h))
+    x0 = min(p[2] for p in sized); y0 = min(p[3] for p in sized)
+    x1 = max(p[2] + p[5] for p in sized); y1 = max(p[3] + p[6] for p in sized)
+    out = []
+    for slot, name, x, y, z, w, h in sorted(sized, key=lambda p: p[4]):
+        dst = "assets/mechs/%s.png" % name
+        os.makedirs(os.path.join(MOCKS, "assets", "mechs"), exist_ok=True)
+        shutil.copy(sprite_path(name), os.path.join(MOCKS, dst))
+        out.append({"src": dst, "x": round(x - x0), "y": round(y - y0), "z": z, "slot": slot})
+    return {"w": round(x1 - x0), "h": round(y1 - y0), "parts": out}
+
+
 LOADOUTS = {
     # Brutality torso (torso52) on leg73 legs, checked against the game's own workshop screenshot
     "m1": {"torso": "torso52_phys", "leg1": "leg73D_phys", "leg2": "leg73D_phys",
@@ -109,6 +132,9 @@ window.fitStage=function(){const st=document.querySelector('.stage');function f(
 
 if __name__ == "__main__":
     out = {k: assemble(v) for k, v in LOADOUTS.items()}
+    saved = os.path.join(ROOT, "ui", "aligner", "saved", "torso52.json")
+    if os.path.exists(saved):
+        out["m1"] = assemble_aligned(saved)   # the user's hand-aligned Brutality
     for k, v in out.items():
         print(k, v["w"], v["h"], [p["slot"] for p in v["parts"]])
     with open(os.path.join(MOCKS, "assets", "mech.js"), "w") as f:
