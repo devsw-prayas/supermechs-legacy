@@ -4,7 +4,8 @@ Run from the repo root:  python ui/mocks/build_pedestal.py
 import math, os, re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = '#05080c'
+OUT = '#0b1119'   # softer than the UI outline
+TEX = 'url(#brush)'
 CX, TOP_Y = 800, 712
 BASE = dict(cy=766, rx=306, ry=60, h=50)   # lower tier
 TOP = dict(cy=TOP_Y, rx=244, ry=44, h=42)  # upper tier, the mech stands on it
@@ -25,9 +26,15 @@ def lerp(a, b, t):
 defs = []
 
 
+def mix(a, b, t):
+    a = [int(a[i:i + 2], 16) for i in (1, 3, 5)]; b = [int(b[i:i + 2], 16) for i in (1, 3, 5)]
+    return '#%02x%02x%02x' % tuple(int(a[i] + (b[i] - a[i]) * t) for i in range(3))
+
+
 def grad(top, bot):
     n = 'pf%d' % (len(defs) + 1)
-    defs.append('<linearGradient id="%s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="%s"/><stop offset="1" stop-color="%s"/></linearGradient>' % (n, top, bot))
+    defs.append('<linearGradient id="%s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="%s"/><stop offset=".35" stop-color="%s"/><stop offset="1" stop-color="%s"/></linearGradient>'
+                % (n, mix(top, '#ffffff', .08), top, bot))
     return 'url(#%s)' % n
 
 
@@ -49,7 +56,8 @@ def tier(cy, rx, ry, h, top, lvl, strip=None, ribs=0):
         if (a[1] + b[1]) / 2 <= cy + 1:
             continue  # back faces are hidden
         quad = [a, b, (b[0], b[1] + h), (a[0], a[1] + h)]
-        s.append('<path d="%s" fill="%s" stroke="%s" stroke-width="4" stroke-linejoin="round"/>' % (P(quad), shade(a, b, lvl), OUT))
+        s.append('<path d="%s" fill="%s" stroke="%s" stroke-width="3" stroke-linejoin="round"/>' % (P(quad), shade(a, b, lvl), OUT))
+        s.append('<path d="%s" fill="url(#brush)"/><path d="%s" fill="#000" filter="url(#grain)" opacity=".5"/>' % (P(quad), P(quad)))
         s.append('<path d="M%.1f %.1f L%.1f %.1f" stroke="rgba(200,220,245,.32)" stroke-width="2.5"/>' % (a[0] + 2, a[1] + 4, b[0] - 2, b[1] + 4))
         for r in range(1, ribs + 1):
             p = lerp(a, b, r / (ribs + 1))
@@ -58,8 +66,10 @@ def tier(cy, rx, ry, h, top, lvl, strip=None, ribs=0):
             y0, y1 = h * .44, h * .64
             q0, q1 = lerp(a, b, .14), lerp(a, b, .86)
             q = [(q0[0], q0[1] + y0), (q1[0], q1[1] + y0), (q1[0], q1[1] + y1), (q0[0], q0[1] + y1)]
-            s.append('<path d="%s" fill="%s" stroke="%s" stroke-width="2.5"/>' % (P(q), strip, OUT))
-    s.append('<path d="%s" fill="%s" stroke="%s" stroke-width="4" stroke-linejoin="round"/>' % (P(pts), top, OUT))
+            s.append('<path d="%s" fill="%s" filter="url(#glow)" opacity=".8"/>' % (P(q), strip))
+            s.append('<path d="%s" fill="%s" stroke="%s" stroke-width="2" stroke-linejoin="round"/>' % (P(q), strip, OUT))
+    s.append('<path d="%s" fill="%s" stroke="%s" stroke-width="3" stroke-linejoin="round"/>' % (P(pts), top, OUT))
+    s.append('<path d="%s" fill="url(#brush)"/><path d="%s" fill="url(#toplight)"/>' % (P(pts), P(pts)))
     s.append('<path d="%s" fill="none" stroke="rgba(0,0,0,.45)" stroke-width="3"/>' % P(octo(CX, cy, rx - 14, ry - 4)))
     front = sorted(p for p in pts if p[1] > cy)
     s.append('<path d="M%s" fill="none" stroke="rgba(200,220,245,.22)" stroke-width="2"/>' % ' L'.join('%.1f %.1f' % (x, y - 3) for x, y in front))
@@ -74,7 +84,7 @@ def support():
     s.append('<ellipse cx="%d" cy="%d" rx="230" ry="30" fill="#000" opacity=".5"/>' % (CX, foot - 60))
     for sgn in (-1, 1):
         x0, x1 = CX + sgn * 190, CX + sgn * 64
-        s.append('<path d="M%d %d L%d %d L%d %d L%d %d Z" fill="%s" stroke="%s" stroke-width="4" stroke-linejoin="round"/>'
+        s.append('<path d="M%d %d L%d %d L%d %d L%d %d Z" fill="%s" stroke="%s" stroke-width="3" stroke-linejoin="round"/>'
                  % (x0 - 14, top - 6, x0 + 14, top - 6, x1 + 10 * sgn, foot - 70, x1 - 12 * sgn, foot - 70, grad('#2e3847', '#1a212b'), OUT))
     s.append('<path d="M%d %d L%d %d L%d %d L%d %d Z" fill="%s" stroke="%s" stroke-width="4"/>'
              % (CX - 150, foot - 70, CX + 150, foot - 70, CX + 176, foot, CX - 176, foot, grad('#343f4f', '#1c232d'), OUT))
@@ -89,12 +99,14 @@ def support():
 
 
 out = support()
+# soft shadow the tier casts on the column
+out.append('<ellipse cx="%d" cy="%d" rx="120" ry="20" fill="#000" opacity=".6" filter="url(#soft)"/>' % (CX, TOP['cy'] + TOP['ry'] + TOP['h'] + 8))
 t, pts = tier(TOP['cy'], TOP['rx'], TOP['ry'], TOP['h'], grad('#465366', '#2c3645'), 1.0, strip='#ffae2b')
 out += t
 out.append('<path d="%s" fill="url(#hex)" stroke="%s" stroke-width="3"/>' % (P(octo(CX, TOP_Y, 196, 34)), OUT))
 out.append('<path d="%s" fill="none" stroke="#ffae2b" stroke-width="4"/>' % P(octo(CX, TOP_Y, 150, 26)))
 out.append('<path d="%s" fill="none" stroke="%s" stroke-width="2"/>' % (P(octo(CX, TOP_Y, 156, 27.5)), OUT))
-out.append('<ellipse id="contact" cx="818" cy="716" rx="150" ry="15" fill="#000" opacity=".5"/>')
+out.append('<ellipse id="contact" cx="818" cy="716" rx="160" ry="18" fill="#000" opacity=".55" filter="url(#soft)"/>')
 for (x, y) in pts:
     out.append('<rect x="%.1f" y="%.1f" width="9" height="6" fill="#56697f" stroke="%s" stroke-width="2"/>' % (x - 4.5 + (CX - x) * .08, y - 3 + (TOP_Y - y) * .14, OUT))
 
@@ -103,6 +115,11 @@ import sys
 TARGET = sys.argv[1] if len(sys.argv) > 1 else 'F-bay.html'
 SIDES = [tuple(map(float, v.split(','))) for v in sys.argv[2:]] or [(282, 702, .5), (1410, 700, .5)]   # (centre x, top y, scale)
 svg = ('<svg id="ped" width="1600" height="900" viewBox="0 0 1600 900">\n    <defs>\n'
+       '      <pattern id="brush" width="400" height="4" patternUnits="userSpaceOnUse"><rect width="400" height="1" fill="#fff" opacity=".09"/><rect y="2" width="400" height="1" fill="#000" opacity=".12"/></pattern>\n'
+       '      <filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="4"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .45 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>\n'
+       '      <filter id="glow" x="-40%" y="-200%" width="180%" height="500%"><feGaussianBlur stdDeviation="5"/></filter>\n'
+       '      <filter id="soft" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="8"/></filter>\n'
+       '      <radialGradient id="toplight" cx=".5" cy=".35" r=".6"><stop offset="0" stop-color="#ffe9c8" stop-opacity=".34"/><stop offset=".6" stop-color="#ffe9c8" stop-opacity=".08"/><stop offset="1" stop-color="#ffe9c8" stop-opacity="0"/></radialGradient>\n'
        '      <pattern id="hex" width="24" height="14" patternUnits="userSpaceOnUse" patternTransform="scale(1,.42)">\n'
        '        <path d="M6 0h12l6 7-6 7H6L0 7z" fill="#1d2530" stroke="#0b0f15" stroke-width="2.5"/>\n      </pattern>\n      '
        + '\n      '.join(defs) + '\n    </defs>\n    <g id="pedMain">\n    ' + '\n    '.join(out) + '\n    </g>\n  </svg>')
