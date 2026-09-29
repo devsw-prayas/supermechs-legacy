@@ -27,9 +27,10 @@ Reloaded-era client, taken from the user's own account (2026-09-29). Reference o
 | campaign-map-final-zone.webp | Campaign map, last zone: hex mission nodes with numbers and 3-star ratings, boss tower node, energy counter (89/79) with back button top-left, player marker with badge |
 | campaign-map-danger-zone.webp | Zone name banner reference: blue ribbon with cream outline, swallow-tail ends, white heavy title ("THE DANGER ZONE"), shown at the top of the map on zone entry. Also a mid-zone map view. Windows Snipping Tool popup in the corner is not part of the game UI |
 | campaign-mission-select.webp | Mission panel over the map: Normal / Hard / Insane difficulty tabs with star medallions, Rewards list (gold, box, XP), green Battle button with energy cost, orange "Watch ad" banner below |
+| battle.png | Battle screen: top HUD strip (gold, tokens, level + XP bar, star rank badge), STATS panel top-left (HP bar, energy, regen, heat, cooling), red X / x1 speed / play buttons bottom-left, grid arena with walls and crates on the right |
 | upgrade-transform.png | Upgrade, Transform mode (selected item at level cap, Mythical target, 5 empty material slots, Transform button with gold cost, locked tile in grid) |
 
-Still to come: item detail, battle HUD, others as sent.
+Still to come: item detail, in-battle action bar (weapons, movement, turn UI), others as sent.
 Open question: meaning of the mech glyph + number on item tiles ("/50" looks like a cap, MAX replaces it).
 
 ## Seen in chat, no file saved (push to ui/refs/ if you want them kept)
