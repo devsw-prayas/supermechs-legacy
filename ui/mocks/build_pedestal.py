@@ -79,7 +79,9 @@ for (x, y) in pts:
     out.append('<rect x="%.1f" y="%.1f" width="9" height="6" fill="#56697f" stroke="%s" stroke-width="2"/>' % (x - 4.5 + (CX - x) * .08, y - 3 + (TOP_Y - y) * .14, OUT))
 
 # Main pedestal as a reusable group; the side bays reuse it scaled down and dimmed, on a layer behind the side mechs.
-SIDES = [(282, 702, .5), (1410, 700, .5)]   # (centre x, top y where the feet stand, scale)
+import sys
+TARGET = sys.argv[1] if len(sys.argv) > 1 else 'F-bay.html'
+SIDES = [tuple(map(float, v.split(','))) for v in sys.argv[2:]] or [(282, 702, .5), (1410, 700, .5)]   # (centre x, top y, scale)
 svg = ('<svg id="ped" width="1600" height="900" viewBox="0 0 1600 900">\n    <defs>\n'
        '      <pattern id="hex" width="24" height="14" patternUnits="userSpaceOnUse" patternTransform="scale(1,.42)">\n'
        '        <path d="M6 0h12l6 7-6 7H6L0 7z" fill="#1d2530" stroke="#0b0f15" stroke-width="2.5"/>\n      </pattern>\n      '
@@ -87,7 +89,7 @@ svg = ('<svg id="ped" width="1600" height="900" viewBox="0 0 1600 900">\n    <de
 side = ('<svg id="pedSide" width="1600" height="900" viewBox="0 0 1600 900">\n'
         + '\n'.join('    <use href="#pedMain" transform="translate(%g %g) scale(%g) translate(%g %g)"/>' % (x, y, k, -CX, -TOP_Y) for x, y, k in SIDES)
         + '\n  </svg>')
-p = os.path.join(HERE, 'F-bay.html')
+p = os.path.join(HERE, TARGET)
 s = open(p, encoding='utf-8').read()
 s = re.sub(r'<svg id="ped".*?</svg>', lambda m: svg, s, flags=re.S)
 if '<svg id="pedSide"' in s:

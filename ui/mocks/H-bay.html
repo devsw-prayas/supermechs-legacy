@@ -177,7 +177,7 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
 #refl{position:absolute;z-index:3;transform:scaleY(-1);opacity:.2;filter:blur(1.5px) saturate(.7);-webkit-mask:linear-gradient(0deg,#000,transparent 55%);mask:linear-gradient(0deg,#000,transparent 55%)}
 #ped{position:absolute;left:0;top:0;z-index:4;pointer-events:none}
 #pedSide{position:absolute;left:0;top:0;z-index:1;pointer-events:none;filter:brightness(.72) saturate(.8)}
-#side1,#side2{position:absolute;z-index:2;filter:brightness(.62) saturate(.75) drop-shadow(2px 0 0 #05080c) drop-shadow(-2px 0 0 #05080c) drop-shadow(0 2px 0 #05080c) drop-shadow(0 -2px 0 #05080c)}
+#side1,#side2{position:absolute;z-index:2;filter:brightness(.5) saturate(.7) drop-shadow(2px 0 0 #05080c) drop-shadow(-2px 0 0 #05080c) drop-shadow(0 2px 0 #05080c) drop-shadow(0 -2px 0 #05080c)}
 
 /* ---- dock ---- */
 .nb{top:778px;width:118px;height:96px;--c:14px}
@@ -229,8 +229,8 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
   <canvas id="bg" width="3200" height="1800"></canvas>
 
   <svg id="pedSide" width="1600" height="900" viewBox="0 0 1600 900">
-    <use href="#pedMain" transform="translate(282 702) scale(0.5) translate(-800 -712)"/>
-    <use href="#pedMain" transform="translate(1410 700) scale(0.5) translate(-800 -712)"/>
+    <use href="#pedMain" transform="translate(440 672) scale(0.78) translate(-800 -712)"/>
+    <use href="#pedMain" transform="translate(1160 672) scale(0.78) translate(-800 -712)"/>
   </svg>
   <div id="side1"></div><div id="side2"></div>
   <div id="refl"></div>
@@ -250,6 +250,7 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
     </defs>
     <g id="pedMain">
     <ellipse cx="800" cy="856" rx="336" ry="46" fill="#000" opacity=".45"/>
+    <ellipse id="scan" cx="800" cy="810" rx="366" ry="68" fill="none" stroke="#5fd4ff" stroke-width="3" stroke-dasharray="26 18" opacity=".55"/>
     <path d="M1082.7 789.0 L917.1 821.4 L917.1 871.4 L1082.7 839.0 Z" fill="url(#pf2)" stroke="#05080c" stroke-width="4" stroke-linejoin="round"/>
     <path d="M1084.7 793.0 L915.1 825.4" stroke="rgba(200,220,245,.32)" stroke-width="2.5"/>
     <path d="M1027.5 807.8 L1027.5 843.8" stroke="rgba(0,0,0,.45)" stroke-width="3"/>
@@ -357,8 +358,8 @@ let seed=7; const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
 /* ---------------- mechs ---------------- */
 function place(id,key,h,left,top){const w=document.getElementById(id);const i=document.createElement('div');buildMech(i,key,h);w.appendChild(i);w.style.width=i.dataset.w+'px';w.style.height=i.dataset.h+'px';if(left!=null){w.style.left=left+'px';w.style.top=top+'px';}return w;}
 // every mech stands with its feet centred on its pedestal (standOn uses the midpoint between the legs)
-const PED={main:[800,716],left:[282,704],right:[1410,702]};
-const H=520, m=window.MECHS.target, W=m.w*H/m.h, L=PED.main[0]-m.fx*H/m.h, T=PED.main[1]-m.fy*H/m.h;
+const PED={main:[800,716],left:[440,672],right:[1160,672]};
+const H=610, m=window.MECHS.target, W=m.w*H/m.h, L=PED.main[0]-m.fx*H/m.h, T=PED.main[1]-m.fy*H/m.h;
 place('mech','target',H,L,T); place('refl','target',H,L,716-6);
 { const sh=document.getElementById('shade'); sh.style.left=L+'px'; sh.style.top=T+'px'; sh.style.width=W+'px'; sh.style.height=H+'px';
   const src=[...document.querySelectorAll('#mech img')];
@@ -366,8 +367,8 @@ place('mech','target',H,L,T); place('refl','target',H,L,716-6);
   const holder=document.createElement('div'); buildMech(holder,'target',H); sh.appendChild(holder);
   holder.querySelectorAll('img').forEach(i=>{i.style.filter='brightness(0) invert(1)';});
   const grad=document.createElement('div'); grad.style.cssText='position:absolute;inset:0;mix-blend-mode:multiply;background:linear-gradient(180deg,rgba(255,236,210,1) 0%,rgba(150,175,215,1) 55%,rgba(70,90,130,1) 100%)'; sh.appendChild(grad); sh.style.isolation='isolate'; }
-place('side1','m2',250); standOn(document.getElementById('side1'),'m2',250,...PED.left);
-place('side2','m3',230); standOn(document.getElementById('side2'),'m3',230,...PED.right);
+place('side1','m2',420); standOn(document.getElementById('side1'),'m2',420,...PED.left);
+place('side2','m3',390); standOn(document.getElementById('side2'),'m3',390,...PED.right);
 
 
 /* ---------------- dust in the light (animated) ---------------- */
