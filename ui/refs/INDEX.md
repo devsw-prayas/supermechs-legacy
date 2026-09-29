@@ -67,7 +67,7 @@ Reloaded-era client, taken from the user's own account (2026-09-29). Reference o
 | upgrade-transform.png | Upgrade, Transform mode (selected item at level cap, Mythical target, 5 empty material slots, Transform button with gold cost, locked tile in grid) |
 
 Still to come: item detail, others as sent. Battle action bar: chevrons = Shut engine down, flame/claw = Stomp; move opens the movement sub-menu (jump / walk left and right); target, shield and the empty slot still unconfirmed.
-Likely answer (inferred from workshop-item-info.webp, please confirm): the mech glyph + number on an item tile is the team mech it is equipped on (the mech counter reads 3 and both equipped items show 3); the number at the bottom-right is the item level, or MAX.
+Confirmed by the user: the mech glyph + number on an item tile is the current position (which team mech slot the item is equipped on). The number at the bottom-right is the item level, or MAX.
 
 ## Seen in chat, no file saved (push to ui/refs/ if you want them kept)
 - upgrade-mass-select: Upgrade with Mass Select open. Rarity checkboxes (Common / Rare / Epic), Element checkboxes (Physical / Explosive / Electric), Item type icon grid (7 types with checkmarks). Selected item shows in the machine slot with a row of chosen items below, "LEVEL 23 / 50", XP bar "92,366/95,320 +2", stat lines with +N gains, Boost button with gold cost 24,026.
