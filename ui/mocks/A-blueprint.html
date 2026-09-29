@@ -68,7 +68,7 @@ html,body{height:100%;background:#0b1020;overflow:hidden}
 .pad{position:absolute;left:700px;top:640px;width:640px;height:58px;background:repeating-linear-gradient(-55deg,var(--yellow) 0 22px,var(--ink) 22px 44px);border:4px solid var(--ink);transform:skewX(-30deg);box-shadow:8px 10px 0 var(--ink)}
 .pad::after{content:"";position:absolute;left:0;right:0;top:0;height:16px;background:var(--ink)}
 .shadow{position:absolute;left:800px;top:648px;width:440px;height:30px;border-radius:50%;background:rgba(11,16,32,.35);filter:blur(6px)}
-#mech{position:absolute;left:800px;top:104px;filter:drop-shadow(10px 12px 0 rgba(11,16,32,.28))}
+#mech{position:absolute;left:830px;top:140px;filter:drop-shadow(10px 12px 0 rgba(11,16,32,.28))}
 
 /* callouts */
 .co{position:absolute;color:#fff;display:flex;align-items:baseline;gap:10px;white-space:nowrap}
@@ -134,8 +134,8 @@ svg.lines circle{fill:#fff;stroke:var(--ink);stroke-width:3}
 
   <!-- callouts -->
   <svg class="lines" viewBox="0 0 1600 900">
-    <line x1="1000" y1="232" x2="1320" y2="232"/><circle cx="1000" cy="232" r="9"/>
-    <line x1="1085" y1="318" x2="1320" y2="318"/><circle cx="1085" cy="318" r="9"/>
+    <line x1="1080" y1="240" x2="1320" y2="240"/><circle cx="1080" cy="240" r="9"/>
+    <line x1="1150" y1="330" x2="1320" y2="330"/><circle cx="1150" cy="330" r="9"/>
     <line x1="1030" y1="410" x2="1320" y2="410"/><circle cx="1030" cy="410" r="9"/>
     <line x1="975" y1="540" x2="1320" y2="540"/><circle cx="975" cy="540" r="9"/>
   </svg>
@@ -157,7 +157,7 @@ svg.lines circle{fill:#fff;stroke:var(--ink);stroke-width:3}
 <script>
 fitStage();
 function place(id,key,h){const w=document.getElementById(id);const i=document.createElement('div');buildMech(i,key,h);w.appendChild(i);w.style.width=i.dataset.w+'px';w.style.height=i.dataset.h+'px';}
-place('mech','m1',540);
+place('mech','m1',496);
 place('t1','m1',64);place('t2','m2',64);place('t3','m3',64);
 </script>
 </body></html>
