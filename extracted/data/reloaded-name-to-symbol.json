@@ -1,0 +1,1322 @@
+{
+ "Abomination": {
+  "symbol": "sideSuperRocketLauncher2E",
+  "dist": 0.007,
+  "second": "rocketLauncher14B",
+  "gap": 0.0443
+ },
+ "AdvancedRepulser": {
+  "symbol": "topSuperPusher1E",
+  "dist": 0.009,
+  "second": "topSuperPusher1D",
+  "gap": 0.0604
+ },
+ "AdvancedTeleporter": {
+  "symbol": "superTeleportBase3E",
+  "dist": 0.0179,
+  "second": "superTeleportBase3D",
+  "gap": 0.0598
+ },
+ "Anguish": {
+  "symbol": "droneRegenDamage3E",
+  "dist": 0.0151,
+  "second": "droneRegenDamage2E",
+  "gap": 0.0143
+ },
+ "Annihilation": {
+  "symbol": "sideSuperMachineGun1E",
+  "dist": 0.0177,
+  "second": "machineGun11B",
+  "gap": 0.0112
+ },
+ "Archimonde": {
+  "symbol": "torso67E",
+  "dist": 0.0097,
+  "second": "torso51",
+  "gap": 0.0486
+ },
+ "ArmorAnnihilator": {
+  "symbol": "sideSuperResistanceBreaker1E",
+  "dist": 0.0127,
+  "second": "sideSuperResistanceBreaker2E",
+  "gap": 0.0111
+ },
+ "AshCreator": {
+  "symbol": "flameThrower9B2",
+  "dist": 0.0088,
+  "second": "flameThrower9C2",
+  "gap": 0.0072
+ },
+ "Avenger": {
+  "symbol": "torso82E",
+  "dist": 0.0114,
+  "second": "torso89D",
+  "gap": 0.1249
+ },
+ "BackBreaker": {
+  "symbol": "sideAxe1E",
+  "dist": 0.0026,
+  "second": "sideAxe2E",
+  "gap": 0.0134
+ },
+ "Backstabber": {
+  "symbol": "dronePull1E",
+  "dist": 0.0106,
+  "second": "dronePull1D",
+  "gap": 0.0725
+ },
+ "BackstabbingGuardian": {
+  "symbol": "droneDamageSelfB2E",
+  "dist": 0.0169,
+  "second": "droneDamageSelfB1E",
+  "gap": 0.0047
+ },
+ "BackstabbingProtector": {
+  "symbol": "droneDamageSelf2E",
+  "dist": 0.0069,
+  "second": "droneDamageSelf1E",
+  "gap": 0.0046
+ },
+ "BasaltDissolver": {
+  "symbol": "sideSuperResistanceBreaker2E",
+  "dist": 0.0126,
+  "second": "sideSuperResistanceBreaker1E",
+  "gap": 0.0097
+ },
+ "BasaltPolisher": {
+  "symbol": "sideGrinder2D",
+  "dist": 0.005,
+  "second": "sideGrinder1D",
+  "gap": 0.0051
+ },
+ "BatteryArmor": {
+  "symbol": "torso94E",
+  "dist": 0.0049,
+  "second": "torso95E",
+  "gap": 0.0098
+ },
+ "BigDaddy": {
+  "symbol": "sideSuperBlaster3E",
+  "dist": 0.0073,
+  "second": "sideSuperBlaster3D",
+  "gap": 0.1302
+ },
+ "BlizzardDissolver": {
+  "symbol": "sideSuperResistanceBreaker3E",
+  "dist": 0.0171,
+  "second": "sideSuperResistanceBreaker1E",
+  "gap": 0.0286
+ },
+ "BloodWeep": {
+  "symbol": "sideSuperBulletCannon1E",
+  "dist": 0.01,
+  "second": "cannon6A",
+  "gap": 0.085
+ },
+ "BrightRoar": {
+  "symbol": "sideSuperSword3E",
+  "dist": 0.006,
+  "second": "sideSword3C",
+  "gap": 0.063
+ },
+ "BrokenBlizzardAnnihilator": {
+  "symbol": "sideSuperBackfireResBreaker3E",
+  "dist": 0.0137,
+  "second": "sideSuperBackfireResBreaker1E",
+  "gap": 0.0175
+ },
+ "BrokenBlizzardDissolver": {
+  "symbol": "sideBackfireResBreaker3E",
+  "dist": 0.009,
+  "second": "sideBackfireResBreaker1E",
+  "gap": 0.0312
+ },
+ "BrokenDevourer": {
+  "symbol": "cannon8C",
+  "dist": 0.007,
+  "second": "cannon8C2",
+  "gap": 0.0053
+ },
+ "Brutality": {
+  "symbol": "torso52",
+  "dist": 0.0064,
+  "second": "torso1000",
+  "gap": 0.0681
+ },
+ "BullDog": {
+  "symbol": "shotgun2B",
+  "dist": 0.019,
+  "second": "shotgun2B3",
+  "gap": 0.0249
+ },
+ "BunkerShell": {
+  "symbol": "sideRPG3E",
+  "dist": 0.0129,
+  "second": "blaster16B",
+  "gap": 0.0151
+ },
+ "BurningShower": {
+  "symbol": "topDiagonalRocketLauncher2E",
+  "dist": 0.0065,
+  "second": "rocketLauncher26B",
+  "gap": 0.0071
+ },
+ "ChaosBringer": {
+  "symbol": "sideSuperBlaster2E",
+  "dist": 0.0145,
+  "second": "superDroneTypeDamage2E",
+  "gap": 0.1383
+ },
+ "ChargeEngine": {
+  "symbol": "charge4",
+  "dist": 0.0109,
+  "second": "charge3",
+  "gap": 0.04
+ },
+ "ChargedWalkers": {
+  "symbol": "leg62E",
+  "dist": 0.0053,
+  "second": "leg61E",
+  "gap": 0.0072
+ },
+ "Clash": {
+  "symbol": "superDroneBasic2E",
+  "dist": 0.0082,
+  "second": "superDroneBasic1E",
+  "gap": 0.0096
+ },
+ "CockpitBurner": {
+  "symbol": "topMegaSniperB2E",
+  "dist": 0.0119,
+  "second": "topMegaSniperB1E",
+  "gap": 0.0019
+ },
+ "CockpitElectrocuter": {
+  "symbol": "topMegaSniperB3E",
+  "dist": 0.0117,
+  "second": "topMegaSniperB1E",
+  "gap": 0.0097
+ },
+ "CockpitPiercer": {
+  "symbol": "topMegaSniperB1E",
+  "dist": 0.0166,
+  "second": "topMegaSniperB2E",
+  "gap": 0.0021
+ },
+ "CombinedEngineUnit": {
+  "symbol": "module_superEnergyHeatCap5",
+  "dist": 0.031,
+  "second": "module_energy14",
+  "gap": 0.0666
+ },
+ "CombinedStorageUnit": {
+  "symbol": "module_regularEnergyHeatCap5",
+  "dist": 0.0344,
+  "second": "module_regularEnergyHeatCap4",
+  "gap": 0.0205
+ },
+ "CoolingMassBooster": {
+  "symbol": "module_heat105",
+  "dist": 0.0258,
+  "second": "module_heat104",
+  "gap": 0.0013
+ },
+ "CorruptLight": {
+  "symbol": "laser30C",
+  "dist": 0.0141,
+  "second": "laser32C",
+  "gap": 0.0605
+ },
+ "CrackedPlasmaCannon": {
+  "symbol": "cannon11A3",
+  "dist": 0.0087,
+  "second": "cannon11C3",
+  "gap": 0.0052
+ },
+ "CrimsonRapture": {
+  "symbol": "flameThrower9A2",
+  "dist": 0.0084,
+  "second": "flameThrower9D2",
+  "gap": 0.0048
+ },
+ "DamagedArmorAnnihilator": {
+  "symbol": "sideSuperBackfireResBreaker1E",
+  "dist": 0.0092,
+  "second": "sideSuperBackfireResBreaker2E",
+  "gap": 0.005
+ },
+ "DamagedArmorDissolver": {
+  "symbol": "sideBackfireResBreaker1E",
+  "dist": 0.022,
+  "second": "sideBackfireResBreaker2E",
+  "gap": 0.0109
+ },
+ "DarkEagle": {
+  "symbol": "sideLongRangeShotgun1E",
+  "dist": 0.0095,
+  "second": "sideLongRangeShotgun2E",
+  "gap": 0.0049
+ },
+ "DawnBlaze": {
+  "symbol": "sideLaser2E",
+  "dist": 0.011,
+  "second": "sideLaser3E",
+  "gap": 0.0186
+ },
+ "DefenceMatrix": {
+  "symbol": "module_resistanceAllHP5",
+  "dist": 0.0396,
+  "second": "module_resistanceAllHP4",
+  "gap": 0.0076
+ },
+ "Delerium": {
+  "symbol": "topSuperLaser3E",
+  "dist": 0.0095,
+  "second": "topSuperLaser2E",
+  "gap": 0.0155
+ },
+ "DesertFury": {
+  "symbol": "topSniper1E",
+  "dist": 0.013,
+  "second": "topSniper3E",
+  "gap": 0.0122
+ },
+ "DesertSnake": {
+  "symbol": "blaster20B",
+  "dist": 0.0184,
+  "second": "blaster19B",
+  "gap": 0.0126
+ },
+ "Desolation": {
+  "symbol": "topArtillery2E",
+  "dist": 0.0137,
+  "second": "rocketLauncher8B",
+  "gap": 0.0952
+ },
+ "DevouringPaws": {
+  "symbol": "leg32B",
+  "dist": 0.0095,
+  "second": "leg70E",
+  "gap": 0.0003
+ },
+ "Disintegration": {
+  "symbol": "machineGun8B",
+  "dist": 0.0217,
+  "second": "machineGun8B2",
+  "gap": 0.0057
+ },
+ "DistanceController": {
+  "symbol": "laser48C3",
+  "dist": 0.015,
+  "second": "laser48C",
+  "gap": 0.0094
+ },
+ "DistanceGenerator": {
+  "symbol": "laser48C2",
+  "dist": 0.0154,
+  "second": "laser48C3",
+  "gap": 0.0299
+ },
+ "DistanceShredder": {
+  "symbol": "sideDistanceCloser1E",
+  "dist": 0.0198,
+  "second": "sideDistanceCloser2E",
+  "gap": 0.009
+ },
+ "DoubleTeleporter": {
+  "symbol": "teleportTwoUsesD",
+  "dist": 0.0115,
+  "second": "teleport6",
+  "gap": 0.0496
+ },
+ "DrunkLightning": {
+  "symbol": "cannon8C3",
+  "dist": 0.0096,
+  "second": "cannon8C2",
+  "gap": 0.0152
+ },
+ "DustMaker": {
+  "symbol": "droneRegenDamage1E",
+  "dist": 0.0147,
+  "second": "droneRegenDamage2E",
+  "gap": 0.0047
+ },
+ "DynamicStompers": {
+  "symbol": "leg67E",
+  "dist": 0.0095,
+  "second": "leg67D",
+  "gap": 0.0866
+ },
+ "DynamiteBoots": {
+  "symbol": "leg78E",
+  "dist": 0.0077,
+  "second": "leg79E",
+  "gap": 0.0103
+ },
+ "EMP": {
+  "symbol": "sideEnergyBomb3E",
+  "dist": 0.0094,
+  "second": "sideEnergyBomb3D",
+  "gap": 0.074
+ },
+ "EjectionBlast": {
+  "symbol": "cannon3C",
+  "dist": 0.0069,
+  "second": "cannon3B",
+  "gap": 0.0973
+ },
+ "ElectricFortress": {
+  "symbol": "module_resistanceElectricHP5",
+  "dist": 0.0324,
+  "second": "module_resistanceElectricHP4",
+  "gap": 0.0087
+ },
+ "ElectrocutedScope": {
+  "symbol": "sideMegaBlaster3E",
+  "dist": 0.0061,
+  "second": "sideMegaBlaster2E",
+  "gap": 0.0215
+ },
+ "Electrolyte": {
+  "symbol": "droneRanged3E",
+  "dist": 0.0114,
+  "second": "droneRanged1E",
+  "gap": 0.0207
+ },
+ "EnergyBatteryArmor": {
+  "symbol": "torso93E",
+  "dist": 0.005,
+  "second": "torso93D",
+  "gap": 0.0181
+ },
+ "EnergyEngine": {
+  "symbol": "module_energy5",
+  "dist": 0.0171,
+  "second": "module_heat5",
+  "gap": 0.036
+ },
+ "EnergyFreeArmor": {
+  "symbol": "torso96E",
+  "dist": 0.0067,
+  "second": "torso96D",
+  "gap": 0.0273
+ },
+ "EnergyMassBooster": {
+  "symbol": "module_energy105",
+  "dist": 0.0209,
+  "second": "module_energy104",
+  "gap": 0.0049
+ },
+ "EnergyProtector": {
+  "symbol": "module_resistanceElectric2",
+  "dist": 0.034,
+  "second": "module_resistanceElectric4",
+  "gap": 0.0008
+ },
+ "EnergyStorageUnit": {
+  "symbol": "module_energy14",
+  "dist": 0.0247,
+  "second": "module_heat14",
+  "gap": 0.0384
+ },
+ "EvacSpark": {
+  "symbol": "rocketLauncher29C3",
+  "dist": 0.0091,
+  "second": "rocketLauncher29C1",
+  "gap": 0.0214
+ },
+ "ExplosiveRetreat": {
+  "symbol": "rocketLauncher29C1",
+  "dist": 0.012,
+  "second": "rocketLauncher29C2",
+  "gap": 0.0038
+ },
+ "FaceShocker": {
+  "symbol": "droneHighDamage3E",
+  "dist": 0.0164,
+  "second": "droneHighDamage2E",
+  "gap": 0.1271
+ },
+ "Falcon": {
+  "symbol": "topMegaSniper1E",
+  "dist": 0.0068,
+  "second": "topMegaSniper2E",
+  "gap": 0.008
+ },
+ "FireFly": {
+  "symbol": "droneRanged2E",
+  "dist": 0.0214,
+  "second": "droneRanged1E",
+  "gap": 0.0065
+ },
+ "FlameSpear": {
+  "symbol": "droneRangedB2E",
+  "dist": 0.0201,
+  "second": "droneRangedB1E",
+  "gap": 0.0072
+ },
+ "FlameWave": {
+  "symbol": "dronePush2E",
+  "dist": 0.007,
+  "second": "drone35B",
+  "gap": 0.0015
+ },
+ "Flaminator": {
+  "symbol": "sideEnergyHeatBlaster2E",
+  "dist": 0.0099,
+  "second": "sideEnergyHeatBlaster3E",
+  "gap": 0.0307
+ },
+ "FlamingBatteryArmor": {
+  "symbol": "torso95E",
+  "dist": 0.0049,
+  "second": "torso94E",
+  "gap": 0.0093
+ },
+ "FlamingGrapplingHook": {
+  "symbol": "superHarpoonBase2E",
+  "dist": 0.0086,
+  "second": "superHarpoonBase1E",
+  "gap": 0.0194
+ },
+ "FlamingHammer": {
+  "symbol": "sideHammer2E",
+  "dist": 0.0038,
+  "second": "sideHammer1E",
+  "gap": 0.0073
+ },
+ "FlamingScope": {
+  "symbol": "topMegaSniper2E",
+  "dist": 0.0068,
+  "second": "topMegaSniper1E",
+  "gap": 0.0077
+ },
+ "FracturedBasaltAnnihilator": {
+  "symbol": "sideSuperBackfireResBreaker2E",
+  "dist": 0.0438,
+  "second": "sideSuperBackfireResBreaker1E",
+  "gap": 0.0036
+ },
+ "FracturedBasaltDissolver": {
+  "symbol": "sideBackfireResBreaker2E",
+  "dist": 0.0364,
+  "second": "sideBackfireResBreaker1E",
+  "gap": 0.0087
+ },
+ "FracturedCyberArmor": {
+  "symbol": "torso98E",
+  "dist": 0.0052,
+  "second": "torso97E",
+  "gap": 0.0027
+ },
+ "FracturedHeatArmor": {
+  "symbol": "torso91E",
+  "dist": 0.0153,
+  "second": "torso90E",
+  "gap": 0.0037
+ },
+ "FranticBrute": {
+  "symbol": "cannon7C2",
+  "dist": 0.0057,
+  "second": "cannon7C",
+  "gap": 0.0097
+ },
+ "FranticFlame": {
+  "symbol": "cannon7C",
+  "dist": 0.0113,
+  "second": "cannon7C2",
+  "gap": 0.0097
+ },
+ "FranticLightning": {
+  "symbol": "cannon7C3",
+  "dist": 0.0116,
+  "second": "cannon7C2",
+  "gap": 0.0225
+ },
+ "GraveDiggers": {
+  "symbol": "leg76E",
+  "dist": 0.0091,
+  "second": "leg76D",
+  "gap": 0.054
+ },
+ "Greedy": {
+  "symbol": "superDroneTypeDamage1E",
+  "dist": 0.0129,
+  "second": "superDroneTypeDamage2E",
+  "gap": 0.0037
+ },
+ "GrimCobra": {
+  "symbol": "topGrenadeLauncher3E",
+  "dist": 0.01,
+  "second": "topGrenadeLauncher1E",
+  "gap": 0.0233
+ },
+ "GrimReaper": {
+  "symbol": "torso70E",
+  "dist": 0.0066,
+  "second": "torso46",
+  "gap": 0.0984
+ },
+ "HalfBurntScope": {
+  "symbol": "sideMegaBlaster2E",
+  "dist": 0.0061,
+  "second": "sideMegaBlaster1E",
+  "gap": 0.0045
+ },
+ "HardenedPlatinumVest": {
+  "symbol": "torso87E2",
+  "dist": 0.0097,
+  "second": "torso86E",
+  "gap": 0.021
+ },
+ "HeatBomb": {
+  "symbol": "sideHeatBomb2E",
+  "dist": 0.0125,
+  "second": "sideHeatBomb2D",
+  "gap": 0.0785
+ },
+ "HeatEngine": {
+  "symbol": "module_heat5",
+  "dist": 0.0209,
+  "second": "module_energy5",
+  "gap": 0.0331
+ },
+ "HeatPoint": {
+  "symbol": "droneHighDamage2E",
+  "dist": 0.0054,
+  "second": "droneHighDamage3C",
+  "gap": 0.1055
+ },
+ "HeatProtector": {
+  "symbol": "module_resistanceExplosive3",
+  "dist": 0.0347,
+  "second": "module_resistanceExplosive4",
+  "gap": 0.0016
+ },
+ "HeatStorageUnit": {
+  "symbol": "module_heat14",
+  "dist": 0.0278,
+  "second": "module_energy14",
+  "gap": 0.0252
+ },
+ "HeronMark": {
+  "symbol": "sideSuperSword2E",
+  "dist": 0.0048,
+  "second": "sideSuperSword2D",
+  "gap": 0.1076
+ },
+ "HollowCyberArmor": {
+  "symbol": "torso97E",
+  "dist": 0.0054,
+  "second": "torso98E",
+  "gap": 0.0026
+ },
+ "HollowSpectralArmor": {
+  "symbol": "torso90E",
+  "dist": 0.0097,
+  "second": "torso91E",
+  "gap": 0.0052
+ },
+ "HotFlash": {
+  "symbol": "sideEnergyHeatBlaster3E",
+  "dist": 0.01,
+  "second": "sideEnergyHeatBlaster2E",
+  "gap": 0.0306
+ },
+ "HurlBat": {
+  "symbol": "droneCapacityDamage1E",
+  "dist": 0.0128,
+  "second": "droneCapacityDamage2E",
+  "gap": 0.0079
+ },
+ "HybridEnergyCannon": {
+  "symbol": "sideEnergyHeatBlasterB3E",
+  "dist": 0.0108,
+  "second": "sideEnergyHeatBlasterB2E",
+  "gap": 0.0233
+ },
+ "HybridHeatCannon": {
+  "symbol": "sideEnergyHeatBlasterB2E",
+  "dist": 0.0217,
+  "second": "sideEnergyHeatBlasterB3E",
+  "gap": 0.0186
+ },
+ "Hysteria": {
+  "symbol": "topBeam3E",
+  "dist": 0.0143,
+  "second": "blaster21B",
+  "gap": 0.0037
+ },
+ "Interceptor": {
+  "symbol": "torso62E",
+  "dist": 0.0097,
+  "second": "torso61E",
+  "gap": 0.0136
+ },
+ "IronBoots": {
+  "symbol": "leg61E",
+  "dist": 0.0042,
+  "second": "leg60E",
+  "gap": 0.0053
+ },
+ "IronFrenzy": {
+  "symbol": "topSuperLaser2E",
+  "dist": 0.0094,
+  "second": "topSuperLaser3E",
+  "gap": 0.0156
+ },
+ "IronPlating": {
+  "symbol": "module_HP3",
+  "dist": 0.0185,
+  "second": "module_HP1",
+  "gap": 0.0259
+ },
+ "LastResortVulcan": {
+  "symbol": "sideVulcanB1E",
+  "dist": 0.0134,
+  "second": "sideVulcanB1D",
+  "gap": 0.1068
+ },
+ "LastWords": {
+  "symbol": "sideGrenadeLauncher3E",
+  "dist": 0.0088,
+  "second": "sideGrenadeLauncher3D",
+  "gap": 0.0533
+ },
+ "LazyFalcon": {
+  "symbol": "sideMegaBlaster1E",
+  "dist": 0.0063,
+  "second": "sideMegaBlaster2E",
+  "gap": 0.0047
+ },
+ "LightningCutter": {
+  "symbol": "sideGrinder3D",
+  "dist": 0.0069,
+  "second": "sideGrinder1D",
+  "gap": 0.0129
+ },
+ "LightningPlatinumVest": {
+  "symbol": "torso87E",
+  "dist": 0.0055,
+  "second": "torso87E2",
+  "gap": 0.043
+ },
+ "LightningRecoiler": {
+  "symbol": "pushSelfShotgun3E",
+  "dist": 0.0089,
+  "second": "pushSelfShotgun2E",
+  "gap": 0.0124
+ },
+ "LightningScope": {
+  "symbol": "topMegaSniper3E",
+  "dist": 0.0069,
+  "second": "topMegaSniper1E",
+  "gap": 0.0174
+ },
+ "LightningSupporters": {
+  "symbol": "leg73E",
+  "dist": 0.0053,
+  "second": "leg73D",
+  "gap": 0.0641
+ },
+ "MagmaBlast": {
+  "symbol": "sideRPG2E",
+  "dist": 0.0155,
+  "second": "blaster16B",
+  "gap": 0.0055
+ },
+ "MagmaRecoiler": {
+  "symbol": "pushSelfShotgun2E",
+  "dist": 0.0251,
+  "second": "pushSelfShotgun1E",
+  "gap": 0.0028
+ },
+ "MalfunctioningBlaster": {
+  "symbol": "sideBeamCannon1E",
+  "dist": 0.0061,
+  "second": "sideBeamCannon2E",
+  "gap": 0.0129
+ },
+ "MaliceBeam": {
+  "symbol": "laser32C",
+  "dist": 0.0138,
+  "second": "laser30C",
+  "gap": 0.0599
+ },
+ "MassiveLavaFeet": {
+  "symbol": "leg81E",
+  "dist": 0.0047,
+  "second": "leg80E",
+  "gap": 0.0032
+ },
+ "MassiveShockerFeet": {
+  "symbol": "leg82E",
+  "dist": 0.0049,
+  "second": "leg80E",
+  "gap": 0.0098
+ },
+ "MassiveStoneFeet": {
+  "symbol": "leg80E",
+  "dist": 0.005,
+  "second": "leg81E",
+  "gap": 0.003
+ },
+ "MaximumProtector": {
+  "symbol": "module_resistanceAll5",
+  "dist": 0.0128,
+  "second": "module_resistanceAll4",
+  "gap": 0.0039
+ },
+ "Mercy": {
+  "symbol": "shotgun2B3",
+  "dist": 0.0173,
+  "second": "shotgun2B2",
+  "gap": 0.0086
+ },
+ "MightyCannon": {
+  "symbol": "blaster19B",
+  "dist": 0.0188,
+  "second": "blaster20B",
+  "gap": 0.0122
+ },
+ "MightyProtector": {
+  "symbol": "module_resistancePhysical5",
+  "dist": 0.0164,
+  "second": "module_resistancePhysical4",
+  "gap": 0.0024
+ },
+ "MisguidedRocketBattery": {
+  "symbol": "rocketLauncher17C",
+  "dist": 0.0135,
+  "second": "rocketLauncher17B",
+  "gap": 0.064
+ },
+ "MoltenPlatinumVest": {
+  "symbol": "torso86E",
+  "dist": 0.0057,
+  "second": "torso87E2",
+  "gap": 0.0212
+ },
+ "MortalBullet": {
+  "symbol": "sideRifle3E",
+  "dist": 0.0091,
+  "second": "cannon4C",
+  "gap": 0.0121
+ },
+ "Murmur": {
+  "symbol": "droneRegenDamage2E",
+  "dist": 0.0152,
+  "second": "droneRegenDamage1E",
+  "gap": 0.0067
+ },
+ "Naga": {
+  "symbol": "torso78E",
+  "dist": 0.0079,
+  "second": "torso42C",
+  "gap": 0.0549
+ },
+ "Nemo": {
+  "symbol": "droneCapacityDamage2E",
+  "dist": 0.011,
+  "second": "droneCapacityDamage1E",
+  "gap": 0.0125
+ },
+ "NightEagle": {
+  "symbol": "topGrenadeLauncher1E",
+  "dist": 0.0076,
+  "second": "topGrenadeLauncher3E",
+  "gap": 0.0243
+ },
+ "NightFall": {
+  "symbol": "sideVulcan1E",
+  "dist": 0.0112,
+  "second": "sideVulcan1D",
+  "gap": 0.054
+ },
+ "Nightmare": {
+  "symbol": "torso61E",
+  "dist": 0.0101,
+  "second": "torso62E",
+  "gap": 0.0129
+ },
+ "ObsoleteEnergyCannon": {
+  "symbol": "cannon11B3",
+  "dist": 0.0086,
+  "second": "cannon11C3",
+  "gap": 0.0184
+ },
+ "OverchargedRocketBattery": {
+  "symbol": "rocketLauncher16C",
+  "dist": 0.0074,
+  "second": "rocketLauncher16B",
+  "gap": 0.0707
+ },
+ "OvercookingOven": {
+  "symbol": "flameThrower8B",
+  "dist": 0.0085,
+  "second": "flameThrower8B2",
+  "gap": 0.0062
+ },
+ "OverheatedHeatBomb": {
+  "symbol": "topHeatBombE",
+  "dist": 0.0107,
+  "second": "topPhysicalBombE",
+  "gap": 0.0108
+ },
+ "OverloadPreventor": {
+  "symbol": "module_superEnergyHeatReg5",
+  "dist": 0.0255,
+  "second": "module_superEnergyHeatReg4",
+  "gap": 0.0073
+ },
+ "OverloadedEMP": {
+  "symbol": "topEMPE",
+  "dist": 0.0111,
+  "second": "topPhysicalBombE",
+  "gap": 0.0228
+ },
+ "PartyCrasher": {
+  "symbol": "sideDistanceCloser3E",
+  "dist": 0.0206,
+  "second": "sideDistanceCloser1E",
+  "gap": 0.0274
+ },
+ "PerimeterProtector": {
+  "symbol": "laser48C",
+  "dist": 0.0099,
+  "second": "laser48C3",
+  "gap": 0.0126
+ },
+ "PhysicalDualTeleporer": {
+  "symbol": "teleportDamageSelfD",
+  "dist": 0.0122,
+  "second": "teleportTwoUsesD",
+  "gap": 0.085
+ },
+ "PhysicalProtector": {
+  "symbol": "module_resistancePhysical3",
+  "dist": 0.0325,
+  "second": "module_resistancePhysical2",
+  "gap": 0.003
+ },
+ "PiercingFox": {
+  "symbol": "sideLongRangeShotgun3E",
+  "dist": 0.0092,
+  "second": "sideLongRangeShotgun1E",
+  "gap": 0.0153
+ },
+ "PlasmaFortress": {
+  "symbol": "module_resistanceExplosiveHP5",
+  "dist": 0.0369,
+  "second": "module_resistanceExplosiveHP4",
+  "gap": 0.0064
+ },
+ "PlatinumFortress": {
+  "symbol": "module_resistancePhysicalHP5",
+  "dist": 0.0368,
+  "second": "module_resistancePhysicalHP4",
+  "gap": 0.0063
+ },
+ "PlatinumGrapplingHook": {
+  "symbol": "superHarpoonBase1E",
+  "dist": 0.0124,
+  "second": "superHarpoonBase2E",
+  "gap": 0.0155
+ },
+ "PlatinumPlating": {
+  "symbol": "module_HP5",
+  "dist": 0.0347,
+  "second": "module_HP4",
+  "gap": 0.0686
+ },
+ "Purifier": {
+  "symbol": "sideRifle1E",
+  "dist": 0.0053,
+  "second": "sideRifle2E",
+  "gap": 0.0043
+ },
+ "QuadCoreBooster": {
+  "symbol": "module_superEnergyHeatCapReg5",
+  "dist": 0.0367,
+  "second": "module_superEnergyHeatCapReg4",
+  "gap": 0.0145
+ },
+ "RailGun": {
+  "symbol": "droneRangedB3E",
+  "dist": 0.0129,
+  "second": "droneRangedB1E",
+  "gap": 0.021
+ },
+ "RecklessBeam": {
+  "symbol": "topBeam1E",
+  "dist": 0.0143,
+  "second": "blaster21B2",
+  "gap": 0.0036
+ },
+ "Reckoning": {
+  "symbol": "shotgun2B2",
+  "dist": 0.0187,
+  "second": "shotgun2B3",
+  "gap": 0.0051
+ },
+ "RecoilStompers": {
+  "symbol": "leg79E",
+  "dist": 0.006,
+  "second": "leg78E",
+  "gap": 0.011
+ },
+ "RedRain": {
+  "symbol": "topDiagonalRocketLauncherB2E",
+  "dist": 0.0075,
+  "second": "rocketLauncher28B",
+  "gap": 0.0051
+ },
+ "RockPolisher": {
+  "symbol": "sideGrinder1D",
+  "dist": 0.0049,
+  "second": "sideGrinder2D",
+  "gap": 0.0057
+ },
+ "RockRecoiler": {
+  "symbol": "pushSelfShotgun1E",
+  "dist": 0.0242,
+  "second": "pushSelfShotgun2E",
+  "gap": 0.0045
+ },
+ "RollingBeasts": {
+  "symbol": "wheels69E",
+  "dist": 0.0071,
+  "second": "wheels69D",
+  "gap": 0.0833
+ },
+ "RustyCyberArmor": {
+  "symbol": "torso99E",
+  "dist": 0.0051,
+  "second": "torso97E",
+  "gap": 0.0087
+ },
+ "RustyEnergyArmor": {
+  "symbol": "torso89E",
+  "dist": 0.0065,
+  "second": "torso90E",
+  "gap": 0.017
+ },
+ "RustyHeatBlaster": {
+  "symbol": "sideBeamCannon2E",
+  "dist": 0.0058,
+  "second": "sideBeamCannon1E",
+  "gap": 0.012
+ },
+ "Sabretooth": {
+  "symbol": "torso88",
+  "dist": 0.0057,
+  "second": "torso64C",
+  "gap": 0.1307
+ },
+ "SacrificeCannon": {
+  "symbol": "cannon8C2",
+  "dist": 0.007,
+  "second": "cannon8C",
+  "gap": 0.005
+ },
+ "Savagery": {
+  "symbol": "topBeam2E",
+  "dist": 0.016,
+  "second": "blaster21B3",
+  "gap": 0.0001
+ },
+ "SaviorResistance": {
+  "symbol": "module_resistanceAll3",
+  "dist": 0.0374,
+  "second": "module_resistanceAll2",
+  "gap": 0.0036
+ },
+ "ScorchingFeet": {
+  "symbol": "leg60E",
+  "dist": 0.0058,
+  "second": "leg61E",
+  "gap": 0.005
+ },
+ "ScrappedEnergyBlaster": {
+  "symbol": "sideBeamCannon3E",
+  "dist": 0.006,
+  "second": "sideBeamCannon1E",
+  "gap": 0.0346
+ },
+ "SelfishGuardian": {
+  "symbol": "droneDamageSelfB1E",
+  "dist": 0.0167,
+  "second": "droneDamageSelfB2E",
+  "gap": 0.0055
+ },
+ "SelfishProtector": {
+  "symbol": "droneDamageSelf1E",
+  "dist": 0.0074,
+  "second": "droneDamageSelf2E",
+  "gap": 0.0041
+ },
+ "SeraphBlade": {
+  "symbol": "sideSuperSword1E",
+  "dist": 0.0027,
+  "second": "sideSword3B",
+  "gap": 0.1226
+ },
+ "ShadowWolf": {
+  "symbol": "sideLongRangeShotgun2E",
+  "dist": 0.0091,
+  "second": "sideLongRangeShotgun1E",
+  "gap": 0.0052
+ },
+ "ShockingGrapplingHook": {
+  "symbol": "superHarpoonBase3E",
+  "dist": 0.0132,
+  "second": "harpoon6D",
+  "gap": 0.0194
+ },
+ "Shockwave": {
+  "symbol": "dronePush3E",
+  "dist": 0.0072,
+  "second": "drone35B",
+  "gap": 0.0237
+ },
+ "Sith": {
+  "symbol": "torso60E",
+  "dist": 0.01,
+  "second": "torso62E",
+  "gap": 0.0354
+ },
+ "Snack": {
+  "symbol": "superDroneBasic3E",
+  "dist": 0.0078,
+  "second": "superDroneBasic2E",
+  "gap": 0.0218
+ },
+ "SolarTorch": {
+  "symbol": "droneRangedB1E",
+  "dist": 0.0122,
+  "second": "droneRangedB2E",
+  "gap": 0.0076
+ },
+ "Sorrow": {
+  "symbol": "sideRifle2E",
+  "dist": 0.006,
+  "second": "sideRifle1E",
+  "gap": 0.0037
+ },
+ "SpaceInvader": {
+  "symbol": "sideDistanceCloser2E",
+  "dist": 0.0132,
+  "second": "sideDistanceCloser1E",
+  "gap": 0.0145
+ },
+ "SparkedRunners": {
+  "symbol": "wheels66E",
+  "dist": 0.0042,
+  "second": "wheels8C",
+  "gap": 0.02
+ },
+ "SpartanCarnage": {
+  "symbol": "topSuperMachineGun1E",
+  "dist": 0.0161,
+  "second": "machineGun6B",
+  "gap": 0.0102
+ },
+ "SpineFall": {
+  "symbol": "blaster18B",
+  "dist": 0.0185,
+  "second": "blaster19B",
+  "gap": 0.0589
+ },
+ "StormWeaver": {
+  "symbol": "sideAxe3E",
+  "dist": 0.0024,
+  "second": "sideAxe2E",
+  "gap": 0.0333
+ },
+ "SuperChargeProtector": {
+  "symbol": "module_resistanceElectric5",
+  "dist": 0.0198,
+  "second": "module_resistanceElectric3",
+  "gap": 0.0018
+ },
+ "SuperbChargeEngine": {
+  "symbol": "chargeHighDamage1E",
+  "dist": 0.0125,
+  "second": "chargeHighDamage1D",
+  "gap": 0.0065
+ },
+ "SupremeCannon": {
+  "symbol": "topSuperRocketLauncher2E",
+  "dist": 0.013,
+  "second": "rocketLauncher25C",
+  "gap": 0.0081
+ },
+ "Sweetie": {
+  "symbol": "sideBulletSprayer1E",
+  "dist": 0.0116,
+  "second": "laser42A",
+  "gap": 0.0183
+ },
+ "Swoop": {
+  "symbol": "superDroneTypeDamage2E",
+  "dist": 0.0131,
+  "second": "superDroneTypeDamage1E",
+  "gap": 0.0045
+ },
+ "TeleporterMarkI": {
+  "symbol": "teleport1",
+  "dist": 0.0088,
+  "second": "teleport2",
+  "gap": 0.008
+ },
+ "TerrorBlade": {
+  "symbol": "sideAxe2E",
+  "dist": 0.0024,
+  "second": "sideAxe1E",
+  "gap": 0.0134
+ },
+ "TerrorCry": {
+  "symbol": "sideGrenadeLauncher1E",
+  "dist": 0.0087,
+  "second": "grenadeLauncher2B3",
+  "gap": 0.058
+ },
+ "TheClaw": {
+  "symbol": "leg77E",
+  "dist": 0.0073,
+  "second": "leg77D",
+  "gap": 0.1168
+ },
+ "Tonto": {
+  "symbol": "droneRanged1E",
+  "dist": 0.0113,
+  "second": "droneRanged2E",
+  "gap": 0.0074
+ },
+ "Torment": {
+  "symbol": "droneCapacityDamage3E",
+  "dist": 0.0115,
+  "second": "droneCapacityDamage2E",
+  "gap": 0.0244
+ },
+ "UltraBright": {
+  "symbol": "sideLaser3E",
+  "dist": 0.0112,
+  "second": "sideLaser2E",
+  "gap": 0.0187
+ },
+ "UltrahotProtector": {
+  "symbol": "module_resistanceExplosive5",
+  "dist": 0.0123,
+  "second": "module_resistanceExplosive4",
+  "gap": 0.002
+ },
+ "UnreliableGuardian": {
+  "symbol": "droneDamageSelfB3E",
+  "dist": 0.0168,
+  "second": "droneDamageSelfB2E",
+  "gap": 0.0146
+ },
+ "UnreliableProtector": {
+  "symbol": "droneDamageSelf3E",
+  "dist": 0.0069,
+  "second": "droneDamageSelf2E",
+  "gap": 0.0136
+ },
+ "UnrepairedLaserCannon": {
+  "symbol": "cannon11C3",
+  "dist": 0.0127,
+  "second": "cannon11A3",
+  "gap": 0.0061
+ },
+ "UnstablePowerCell": {
+  "symbol": "flameThrower8B2",
+  "dist": 0.0085,
+  "second": "flameThrower8B",
+  "gap": 0.0059
+ },
+ "ValiantSniper": {
+  "symbol": "topSniper3E",
+  "dist": 0.0133,
+  "second": "topSniper1E",
+  "gap": 0.0121
+ },
+ "VandalRage": {
+  "symbol": "topBlaster2E",
+  "dist": 0.0077,
+  "second": "topBlaster3E",
+  "gap": 0.0205
+ },
+ "VikingHammer": {
+  "symbol": "sideHammer3E",
+  "dist": 0.0039,
+  "second": "sideHammer1E",
+  "gap": 0.0167
+ },
+ "Void": {
+  "symbol": "superDroneBasic1E",
+  "dist": 0.0091,
+  "second": "superDroneBasic2E",
+  "gap": 0.0069
+ },
+ "WarHammer": {
+  "symbol": "sideHammer1E",
+  "dist": 0.0039,
+  "second": "sideHammer2E",
+  "gap": 0.0071
+ },
+ "WindForge": {
+  "symbol": "superDroneTypeDamage3E",
+  "dist": 0.0131,
+  "second": "superDroneTypeDamage1E",
+  "gap": 0.0095
+ },
+ "Windigo": {
+  "symbol": "torso83E",
+  "dist": 0.0088,
+  "second": "torso50",
+  "gap": 0.0461
+ },
+ "Zarkares": {
+  "symbol": "torso84E",
+  "dist": 0.007,
+  "second": "torso97E",
+  "gap": 0.1171
+ },
+ "sideGrinder1E": {
+  "symbol": "sideGrinder1E",
+  "dist": 0.0038,
+  "second": "sideGrinder2E",
+  "gap": 0.007
+ },
+ "sideGrinder1E_Blade": {
+  "symbol": "enhancerRepairD",
+  "dist": 0.2111,
+  "second": "enhancerRepairE",
+  "gap": 0.0017
+ },
+ "sideGrinder2E": {
+  "symbol": "sideGrinder2E",
+  "dist": 0.0036,
+  "second": "sideGrinder1E",
+  "gap": 0.0066
+ },
+ "sideGrinder2E_Blade": {
+  "symbol": "enhancerRepairD",
+  "dist": 0.2115,
+  "second": "enhancerRepairE",
+  "gap": 0.0018
+ },
+ "sideGrinder3E": {
+  "symbol": "sideGrinder3E",
+  "dist": 0.0038,
+  "second": "sideGrinder1E",
+  "gap": 0.018
+ },
+ "sideGrinder3E_Blade": {
+  "symbol": "enhancerRepairD",
+  "dist": 0.2109,
+  "second": "enhancerRepairE",
+  "gap": 0.0018
+ }
+}
