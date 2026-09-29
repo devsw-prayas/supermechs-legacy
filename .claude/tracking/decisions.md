@@ -38,4 +38,4 @@
   - **Type:** Oxanium (upright) for headings, Rajdhani for labels, JetBrains Mono for numbers. One amber accent; cyan for progress; green only for claim.
   - **Scene:** the bay is drawn in the same language (outlined chamfered wall plates, flat two-tone pipes, slatted shutter, hazard posts, truss gantry, outlined floor plates, octagonal faceted pedestal). Lighting stays but crisp.
   - **Mechs in scenes:** fat dark outline around the silhouette, a warm-top / cool-bottom grade and a contact shadow, so they sit in the room.
-- 2026-09-29: **Test Lab mode added (user).** A sandbox where the player builds a mech from all items in the game and tests it against any bot. Separate from progression: no rewards, nothing carried over. Details are open in roadmap Phase 3 item 9. Entry point on the main menu is a Test Lab button under Tasks.
+- 2026-09-29: **Test Lab mode added (user).** A sandbox where the player builds a mech from all items in the game and tests it against any bot. Separate from progression: no rewards, nothing carried over. Details are open in roadmap Phase 3 item 9. Entry point: a Test Lab button in the main menu's bottom row, between Shop and Deploy.
