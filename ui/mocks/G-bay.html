@@ -217,6 +217,12 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
 .readout .plus{background:linear-gradient(180deg,#63dd84,#35b85a 55%,#2a9d4b)!important;box-shadow:inset 0 0 0 3px #05080c,inset 0 5px 0 rgba(220,255,230,.35)}
 .tasksBtn .cnt{background:linear-gradient(180deg,#ffd06a,#f5a020 55%,#e08a10)}
 .lv .n b{background:linear-gradient(180deg,#ffe29a,#ffae2b 55%,#d97e00);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+.xpbar{height:30px!important;border-width:3px!important}
+.xpbar::after{opacity:.28}
+.xpbar i{background:linear-gradient(180deg,#8fe0ff,#3cb8f0 50%,#1b8cc8)!important}
+.xpbar span{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;font:800 16px var(--f-head);color:#fff;letter-spacing:.05em;
+  text-shadow:0 1px 0 #05080c,1px 0 0 #05080c,-1px 0 0 #05080c,0 -1px 0 #05080c,0 2px 3px rgba(0,0,0,.7)}
 </style></head>
 <body>
 <div class="stage">
@@ -290,7 +296,7 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
   <canvas id="fx" width="1600" height="900"></canvas>
 
   <!-- HUD -->
-  <div class="plate lv"><div class="in"><div class="n"><b>157</b></div><div class="xp"><div class="row"><span></span><span class="num">46,288 / 100,000 XP</span></div><div class="seg"><i style="width:46.3%"></i></div></div></div></div>
+  <div class="plate lv"><div class="in"><div class="n"><b>157</b></div><div class="xp"><div class="seg xpbar"><i style="width:46.3%"></i><span class="num">46,288 / 100,000</span></div></div></div></div>
   <div class="readout" style="left:1034px"><svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="15" fill="#6a4004"/><circle cx="17" cy="17" r="12.5" fill="#f2b233" stroke="#3a2200" stroke-width="1.5"/><circle cx="17" cy="17" r="8" fill="none" stroke="#9a5f08" stroke-width="2"/></svg><b class="gold">23,390</b><div class="plus" aria-label="Add"></div></div>
   <div class="readout" style="left:1270px"><svg viewBox="0 0 34 34"><path d="M11 3h12l8 8v12l-8 8H11l-8-8V11z" fill="#c2261a" stroke="#3a0a04" stroke-width="2"/><path d="M11 11h12v4h-4v10h-4V15h-4z" fill="#ffe6df"/></svg><b class="tok" style="min-width:62px">14</b><div class="plus" aria-label="Add"></div></div>
   <div class="plate gear"><div class="in"><i class="mask" style="--i:url(assets/icons/interface_options.png)"></i></div><div class="dot" style="right:6px;top:-6px"></div></div>
