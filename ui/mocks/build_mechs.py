@@ -24,6 +24,9 @@ items = {i["id"]: i for i in json.load(open(os.path.join(ROOT, "data", "items_se
 
 
 def sprite_path(name):
+    native = os.path.join(MOCKS, "assets", "native", name + ".png")
+    if os.path.exists(native):
+        return native
     hits = glob.glob(os.path.join(ROOT, "Plans", "**", name + ".png"), recursive=True)
     hits = [h for h in hits if "_archive" not in h]
     if not hits:
@@ -159,12 +162,13 @@ LOADOUTS = {
            "top1": "topLaser2B_phys", "side1": "cannon3C", "side2": "sideRifle1E"},
 }
 
-LOADOUTS["target"] = {  # matched by eye to ui/refs/mech-target.png
-    "torso": "torso52_phys", "leg1": "leg73E_phys", "leg2": "leg73E_phys",
-    "top1": "topBlaster2E_phys", "top2": "rocketLauncher22A_phys",
-    "side1": "sideSuperRocketLauncher1D", "side2": "rocketLauncher17B_1",
-    "side3": "cannon3C", "side4": "cannon3C",
-    "filters": {"leg1": "hue-rotate(168deg) saturate(1.5)", "leg2": "hue-rotate(168deg) saturate(1.5)"},
+LOADOUTS["target"] = {  # the user's reference build (ui/refs/mech-target.png), native art rendered from the SVGs
+    "torso": "torso52", "leg1": "leg73E", "leg2": "leg73E",
+    "top1": "sideMegaBlaster1E",            # Lazy Falcon (backfiring scope)
+    "top2": "sideDistanceCloser1E",         # Distance Shredder
+    "side1": "sideSuperRocketLauncher2D",   # Abomination
+    "side2": "cannon8C2",                   # Sacrifice Cannon
+    "side3": "cannon3C", "side4": "cannon3C",  # Dino Rifle x2
 }
 
 JS_TAIL = """
