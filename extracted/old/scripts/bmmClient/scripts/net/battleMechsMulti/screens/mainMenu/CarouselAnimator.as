@@ -1,0 +1,155 @@
+package net.battleMechsMulti.screens.mainMenu
+{
+   import com.greensock.TweenMax;
+   import com.greensock.easing.Linear;
+   import fl.motion.Color;
+   import flash.display.MovieClip;
+   import flash.events.Event;
+   import flash.geom.Point;
+   
+   public class CarouselAnimator extends MovieClip
+   {
+      
+      public static const ON_MOVE_COMPLETE:String = "ON_MOVE_COMPLETE";
+      
+      private var _items:Vector.<MovieClip> = new Vector.<MovieClip>();
+      
+      private var _radius:Point;
+      
+      private var _scale:Number = 0.45;
+      
+      private var _tint:Number = 0.9;
+      
+      private var _angle:Number = -90;
+      
+      private var _moveTo:* = 0;
+      
+      private var _selectedIndex:int = 0;
+      
+      public function CarouselAnimator()
+      {
+         super();
+      }
+      
+      public function setItems(param1:Vector.<MovieClip>) : *
+      {
+         this._items = param1;
+         this.angle = -90;
+         this._moveTo = this.angle;
+      }
+      
+      public function set angle(param1:Number) : void
+      {
+         this._angle = param1;
+         var _loc2_:Number = 360 / this._items.length;
+         var _loc3_:int = 0;
+         while(_loc3_ < this._items.length)
+         {
+            this.setObjectAt(this._items[_loc3_],this._angle + _loc2_ * _loc3_);
+            _loc3_++;
+         }
+      }
+      
+      public function get angle() : Number
+      {
+         return this._angle;
+      }
+      
+      private function setObjectAt(param1:MovieClip, param2:Number) : *
+      {
+         var _loc5_:Number = NaN;
+         var _loc3_:Number = param2 * (Math.PI / 180);
+         param1.x = this._radius.x * Math.cos(_loc3_);
+         param1.y = this._radius.y * Math.sin(_loc3_);
+         var _loc4_:Number = 1 - (Math.sin(_loc3_) + 1) / 2;
+         _loc5_ = 1 - this._scale + this._scale * _loc4_;
+         param1.scaleX = _loc5_;
+         param1.scaleY = _loc5_;
+         var _loc6_:Number = this._tint * (1 - _loc4_);
+         var _loc7_:Color = new Color();
+         _loc7_.setTint(0,_loc6_);
+         param1.transform.colorTransform = _loc7_;
+         addChildAt(param1,_loc4_ * numChildren);
+      }
+      
+      public function set radius(param1:Point) : void
+      {
+         this._radius = param1;
+      }
+      
+      public function set scale(param1:Number) : void
+      {
+         this._scale = param1;
+      }
+      
+      public function set tint(param1:Number) : void
+      {
+         this._tint = param1;
+      }
+      
+      public function get selectedIndex() : int
+      {
+         return this._selectedIndex;
+      }
+      
+      public function set selectedIndex(param1:int) : void
+      {
+         TweenMax.killTweensOf(this);
+         this._selectedIndex = this.processIndex(param1);
+         this.angle = this._selectedIndex * 360 / this._items.length - 90;
+         this._moveTo = this.angle;
+      }
+      
+      public function getItemByIndex(param1:int) : MovieClip
+      {
+         param1 = this.processIndex(param1);
+         return this._items[param1];
+      }
+      
+      public function getSelectedItem() : MovieClip
+      {
+         return this._items[this._selectedIndex];
+      }
+      
+      private function processIndex(param1:int) : int
+      {
+         if(param1 < 0)
+         {
+            param1 = this._items.length + param1;
+         }
+         return int(param1 % this._items.length);
+      }
+      
+      public function moveBy(param1:int, param2:Number = 1) : void
+      {
+         this._moveTo += param1 * 360 / this._items.length;
+         this._selectedIndex = this.processIndex(this._selectedIndex + param1);
+         this.moveToAngle(this._moveTo,param2);
+      }
+      
+      public function moveToAngle(param1:Number, param2:Number = 1) : *
+      {
+         TweenMax.killTweensOf(this);
+         TweenMax.to(this,param2,{
+            "angle":param1,
+            "onComplete":this.onMoveComplete
+         });
+      }
+      
+      private function onMoveComplete() : void
+      {
+         dispatchEvent(new Event(ON_MOVE_COMPLETE));
+      }
+      
+      public function doRotateAnimation(param1:Number) : *
+      {
+         TweenMax.killTweensOf(this);
+         TweenMax.to(this,param1,{
+            "angle":this.angle + 360,
+            "repeat":-1,
+            "ease":Linear.ease
+         });
+      }
+   }
+}
+

@@ -1,0 +1,2366 @@
+package net.battleMechsMulti.screens
+{
+   import flash.display.Bitmap;
+   import flash.display.BitmapData;
+   import flash.display.MovieClip;
+   import flash.display.Sprite;
+   import flash.events.MouseEvent;
+   import flash.text.TextField;
+   import net.battleMechsMulti.managers.BMDataManager;
+   import net.battleMechsMulti.mobiles.BMAvatarImage;
+   import net.battleMechsMulti.mobiles.BMClanFlag;
+   import net.battleMechsMulti.mobiles.BMFingerWheeling;
+   import net.battleMechsMulti.mobiles.BMItem;
+   import net.battleMechsMulti.mobiles.BMItemData;
+   import net.battleMechsMulti.mobiles.BMMechStructure;
+   import net.battleMechsMulti.mobiles.BMMechView;
+   import net.battleMechsMulti.mobiles.BMPlayerData;
+   import net.battleMechsMulti.mobiles.BMPlayerItemData;
+   import net.battleMechsMulti.mobiles.BMPlayerRankingListData;
+   import net.battleMechsMulti.mobiles.BMReplayData;
+   import net.battleMechsMulti.mobiles.BMTileList;
+   import net.battleMechsMulti.mobiles.BMTileListItem;
+   import net.battleMechsMulti.mobiles.buttons.BMButton_arrowLeft;
+   import net.battleMechsMulti.mobiles.buttons.BMButton_arrowRight;
+   import net.battleMechsMulti.mobiles.buttons.BMButton_pictureE;
+   import net.battleMechsMulti.utils.TextUtils;
+   
+   [Embed(source="/_assets/assets.swf", symbol="symbol579")]
+   public class BMScreenInspectPlayer extends BMBaseScreen
+   {
+      
+      public var mcIconsHolder:Sprite;
+      
+      public var mcButtonsHolder:Sprite;
+      
+      public var mcSizer_rank:Sprite;
+      
+      public var mcSizer_mech:Sprite;
+      
+      public var mcSizer_btnPreviousMech:Sprite;
+      
+      public var mcSizer_btnNextMech:Sprite;
+      
+      public var mcSizer_btnBack:Sprite;
+      
+      public var mcSizer_btnMechs:Sprite;
+      
+      public var mcSizer_btnReplays:Sprite;
+      
+      public var mcSizer_btnAchievements:Sprite;
+      
+      public var mcSizer_btnClan:Sprite;
+      
+      public var mcSizer_btnDown:Sprite;
+      
+      public var mcSizer_btnUp:Sprite;
+      
+      public var mcSizer_tileList:Sprite;
+      
+      public var mcSizer_playerMedals:Sprite;
+      
+      public var mcSizer_clanMedals:Sprite;
+      
+      public var mcSizer_clanFlag:Sprite;
+      
+      public var btnPreviousMech:BMButton_arrowLeft;
+      
+      public var btnNextMech:BMButton_arrowRight;
+      
+      public var btnBack:BMButton_pictureE;
+      
+      public var btnMechs:BMButton_pictureE;
+      
+      public var btnReplays:BMButton_pictureE;
+      
+      public var btnAchievements:BMButton_pictureE;
+      
+      public var btnClan:BMButton_pictureE;
+      
+      public var btnDown:BMButton_pictureE;
+      
+      public var btnUp:BMButton_pictureE;
+      
+      public var mcButtonMarker:Sprite;
+      
+      public var mcBlackScreen:MovieClip;
+      
+      public var mcPlayerMedalsTooltip:Sprite;
+      
+      public var mcClanMedalsTooltip:Sprite;
+      
+      public var txtName:TextField;
+      
+      public var txtOnline:TextField;
+      
+      public var txtOffline:TextField;
+      
+      public var txtNoReplays:TextField;
+      
+      public var txtInfo:TextField;
+      
+      public var txtClanMedals:TextField;
+      
+      public var mcSandClock:MovieClip;
+      
+      public var mcFingerWheeling:Sprite;
+      
+      public var mcTextBackground:MovieClip;
+      
+      private var mcClanFlag:BMClanFlag;
+      
+      private var rankIcon:MovieClip;
+      
+      private var mechIcon:BMItem;
+      
+      public var currentPlayerClanID:Number = 0;
+      
+      private var generalTileList:BMTileList;
+      
+      private var _selectedReplayID:Number;
+      
+      private var _playerMedals:Array = new Array();
+      
+      private var _playerMedalsBMD:BitmapData;
+      
+      private var _playerMedalsBM:Bitmap;
+      
+      private var _clanMedals:Array = new Array();
+      
+      private var _clanMedalsBMD:BitmapData;
+      
+      private var _clanMedalsBM:Bitmap;
+      
+      private var _fingerWheeling:BMFingerWheeling;
+      
+      private var _sparks:Array = new Array();
+      
+      private var mechView:BMMechView;
+      
+      private var drone:BMItem;
+      
+      private var _droneTargetXPos:Number;
+      
+      private var _droneTargetYPos:Number;
+      
+      private var _droneMoving:Boolean;
+      
+      private var _droneStopCooldown:Number;
+      
+      private var _firstRefresh:Boolean = true;
+      
+      private const REPLAY_ROWS:uint = 10;
+      
+      private const REPLAY_ROW_WIDTH:uint = 442;
+      
+      private const REPLAY_ROW_HEIGHT:uint = 30;
+      
+      private const REPLAY_ROWS_MOBILE:uint = 9;
+      
+      private const REPLAY_ROW_WIDTH_MOBILE:uint = 482;
+      
+      private const REPLAY_ROW_HEIGHT_MOBILE:uint = 33;
+      
+      private const ACHIEVMENT_ROWS:uint = 5;
+      
+      private const ACHIEVMENT_ROW_WIDTH:uint = 442;
+      
+      private const ACHIEVMENT_ROW_HEIGHT:uint = 60;
+      
+      private const ACHIEVMENT_ROWS_MOBILE:uint = 4;
+      
+      private const ACHIEVMENT_ROW_WIDTH_MOBILE:uint = 482;
+      
+      private const ACHIEVMENT_ROW_HEIGHT_MOBILE:uint = 69;
+      
+      private const CLAN_ROWS:uint = 5;
+      
+      private const CLAN_ROW_WIDTH:uint = 442;
+      
+      private const CLAN_ROW_HEIGHT:uint = 32;
+      
+      private const CLAN_ROWS_MOBILE:uint = 4;
+      
+      private const CLAN_ROW_WIDTH_MOBILE:uint = 482;
+      
+      private const CLAN_ROW_HEIGHT_MOBILE:uint = 34;
+      
+      private const DRONE_ORIGIN_X_POS:uint = 340;
+      
+      private const DRONE_ORIGIN_Y_POS:uint = 165;
+      
+      public function BMScreenInspectPlayer()
+      {
+         super();
+      }
+      
+      public function initialize() : void
+      {
+         generateSingletonClassesPointers("");
+         setLanguageManagerScreenName("inspectPlayer");
+      }
+      
+      public function refreshScreenWithLastData() : void
+      {
+         this.refreshScreen(dataM.inspectPlayer_playerID,dataM.inspectPlayer_outsideRankingList,dataM.inspectPlayer_name,dataM.inspectPlayer_level,dataM.inspectPlayer_ladderProgress,dataM.inspectPlayer_clanID,"replays");
+      }
+      
+      public function refreshScreen(param1:Number, param2:Boolean, param3:String, param4:Number, param5:Number, param6:Number, param7:String = "") : void
+      {
+         var _loc8_:Function = null;
+         var _loc9_:Function = null;
+         var _loc10_:Function = null;
+         var _loc11_:Function = null;
+         var _loc12_:Function = null;
+         var _loc13_:Function = null;
+         var _loc14_:Function = null;
+         var _loc15_:Function = null;
+         var _loc16_:Function = null;
+         if(this._firstRefresh)
+         {
+            screensM.createButtonFromSizer("screenInspectPlayer","btnPreviousMech","arrowLeft");
+            screensM.createButtonFromSizer("screenInspectPlayer","btnNextMech","arrowRight");
+            screensM.createButtonFromSizer("screenInspectPlayer","btnBack","pictureE");
+            screensM.createButtonFromSizer("screenInspectPlayer","btnMechs","pictureE");
+            screensM.createButtonFromSizer("screenInspectPlayer","btnReplays","pictureE");
+            screensM.createButtonFromSizer("screenInspectPlayer","btnAchievements","pictureE");
+            screensM.createButtonFromSizer("screenInspectPlayer","btnClan","pictureE");
+            screensM.createButtonFromSizer("screenInspectPlayer","btnDown","pictureE");
+            screensM.createButtonFromSizer("screenInspectPlayer","btnUp","pictureE");
+            _loc8_ = this.backClicked;
+            _loc9_ = this.mechsClicked;
+            _loc10_ = this.replaysClicked;
+            _loc11_ = this.achievementsClicked;
+            _loc12_ = this.clanClicked;
+            _loc13_ = this.previousMechClicked;
+            _loc14_ = this.nextMechClicked;
+            _loc15_ = this.downClicked;
+            _loc16_ = this.upClicked;
+            if(dataM.runAsMobile)
+            {
+               _loc8_ = null;
+               _loc9_ = null;
+               _loc10_ = null;
+               _loc11_ = null;
+               _loc12_ = null;
+               _loc13_ = null;
+               _loc14_ = null;
+               _loc15_ = null;
+               _loc16_ = null;
+            }
+            this.btnBack.initialize("","",externalAssetsM.getAsset("general","interface_cancel"),null,_loc8_,dataM.runAsMobile);
+            this.btnMechs.initialize("","",externalAssetsM.getAsset("general","interface_mech"),null,_loc9_,dataM.runAsMobile);
+            this.btnReplays.initialize("","",externalAssetsM.getAsset("general","interface_replays"),null,_loc10_,dataM.runAsMobile);
+            this.btnAchievements.initialize("","",externalAssetsM.getAsset("general","interface_achievements"),null,_loc11_,dataM.runAsMobile);
+            this.btnClan.initialize("","",externalAssetsM.getAsset("general","interface_clan"),null,_loc12_,dataM.runAsMobile);
+            this.btnPreviousMech.initialize("","",null,null,_loc13_,dataM.runAsMobile);
+            this.btnNextMech.initialize("","",null,null,_loc14_,dataM.runAsMobile);
+            this.btnDown.initialize("","",externalAssetsM.getAsset("general","interface_arrowDown"),null,_loc15_,dataM.runAsMobile);
+            this.btnUp.initialize("","",externalAssetsM.getAsset("general","interface_arrowUp"),null,_loc16_,dataM.runAsMobile);
+            if(dataM.runAsMobile == false)
+            {
+               this.btnMechs.buttonCore.addMouseOverListerner(this.mechsMouseOver);
+               this.btnMechs.buttonCore.addMouseOutListerner(this.buttonMouseOut);
+               this.btnReplays.buttonCore.addMouseOverListerner(this.replaysMouseOver);
+               this.btnReplays.buttonCore.addMouseOutListerner(this.buttonMouseOut);
+               this.btnAchievements.buttonCore.addMouseOverListerner(this.achievementsMouseOver);
+               this.btnAchievements.buttonCore.addMouseOutListerner(this.buttonMouseOut);
+               this.btnClan.buttonCore.addMouseOverListerner(this.clanMouseOver);
+               this.btnClan.buttonCore.addMouseOutListerner(this.buttonMouseOut);
+               this.btnNextMech.buttonCore.addMouseOverListerner(this.nextMechButtonMouseOver);
+               this.btnNextMech.buttonCore.addMouseOutListerner(this.buttonMouseOut);
+               this.btnPreviousMech.buttonCore.addMouseOverListerner(this.previousMechButtonMouseOver);
+               this.btnPreviousMech.buttonCore.addMouseOutListerner(this.buttonMouseOut);
+            }
+            this.btnMechs.activateSoundFunctions(screensM.sound_buttonClicked,screensM.sound_buttonRollover);
+            this.btnReplays.activateSoundFunctions(screensM.sound_buttonClicked,screensM.sound_buttonRollover);
+            this.btnAchievements.activateSoundFunctions(screensM.sound_buttonClicked,screensM.sound_buttonRollover);
+            this.btnClan.activateSoundFunctions(screensM.sound_buttonClicked,screensM.sound_buttonRollover);
+            this.btnBack.activateSoundFunctions(screensM.sound_buttonClicked,screensM.sound_buttonRollover);
+            this.btnDown.activateSoundFunctions(screensM.sound_buttonClicked,screensM.sound_buttonRollover);
+            this.btnUp.activateSoundFunctions(screensM.sound_buttonClicked,screensM.sound_buttonRollover);
+            this.btnNextMech.activateSoundFunctions(screensM.sound_buttonClicked,screensM.sound_buttonRollover);
+            this.btnPreviousMech.activateSoundFunctions(screensM.sound_buttonClicked,screensM.sound_buttonRollover);
+            this.txtOnline.text = getScreenText("online");
+            this.txtOffline.text = getScreenText("offline");
+            this.txtNoReplays.text = getSpecificText("replays_noReplays");
+            this.mcSandClock.mouseEnabled = false;
+            this.mcSandClock.mouseChildren = false;
+            if(dataM.runAsMobile == false)
+            {
+               this.mcPlayerMedalsTooltip.addEventListener(MouseEvent.MOUSE_OVER,this.playerMedalsTooltipMouseOver);
+               this.mcPlayerMedalsTooltip.addEventListener(MouseEvent.MOUSE_OUT,this.generalTooltipMouseOut);
+               this.mcClanMedalsTooltip.addEventListener(MouseEvent.MOUSE_OVER,this.clanMedalsTooltipMouseOver);
+               this.mcClanMedalsTooltip.addEventListener(MouseEvent.MOUSE_OUT,this.generalTooltipMouseOut);
+            }
+            if(dataM.runAsMobile)
+            {
+               this._fingerWheeling = new BMFingerWheeling();
+               this._fingerWheeling.initialize("inspectPlayer",this.generalTileList,this.mcFingerWheeling,this.tileListItemClicked,null,false);
+               addChild(this._fingerWheeling);
+            }
+            else
+            {
+               this.mcFingerWheeling.parent.removeChild(this.mcFingerWheeling);
+               this.mcFingerWheeling = null;
+            }
+            this.languageUpdate();
+            this._firstRefresh = false;
+         }
+         else if(lastLanguageID != dataM.languageID)
+         {
+            this.languageUpdate();
+         }
+         if(dataM.inspectPlayer_playerID != param1)
+         {
+            dataM.inspectPlayer_activeMechIDs = new Array();
+            dataM.inspectPlayer_currentMechSlot = 0;
+            dataM.inspectPlayer_currentMechID = 1;
+         }
+         dataM.inspectPlayer_playerID = param1;
+         dataM.inspectPlayer_outsideRankingList = param2;
+         dataM.inspectPlayer_name = param3;
+         dataM.inspectPlayer_level = param4;
+         dataM.inspectPlayer_ladderProgress = param5;
+         dataM.inspectPlayer_clanID = param6;
+         dataM.inspectPlayer_playerID = param1;
+         dataM.inspectPlayer_outsideRankingList = param2;
+         dataM.inspectPlayer_name = param3;
+         dataM.inspectPlayer_level = param4;
+         dataM.inspectPlayer_ladderProgress = param5;
+         this.txtClanMedals.text = getScreenText("medals");
+         this.currentPlayerClanID = param6;
+         this.refreshPlayerStats();
+         dataM.createProfile(dataM.INSPECT_PLAYER_ID,"",0);
+         this.refreshPlayerMedals();
+         if(dataM.inspectPlayer_outsideRankingList)
+         {
+            this.btnDown.visible = false;
+            this.btnUp.visible = false;
+         }
+         else
+         {
+            this.btnDown.visible = true;
+            this.btnUp.visible = true;
+         }
+         if(dataM.runAsMobile)
+         {
+            this._fingerWheeling.addMouseListeners();
+         }
+         if(param7 == "")
+         {
+            this.tabClicked("mechs",true);
+         }
+         else
+         {
+            this.removeClanFlag();
+            this.tabClicked(param7,true);
+         }
+      }
+      
+      private function languageUpdate() : void
+      {
+         var _loc1_:uint = 0;
+         if(lastLanguageID != dataM.languageID)
+         {
+            lastLanguageID = dataM.languageID;
+            _loc1_ = 18;
+            switch(dataM.languageID)
+            {
+               case 5:
+                  _loc1_ = 15;
+            }
+            TextUtils.updateTextFormat(this.txtClanMedals,_loc1_);
+            TextUtils.updateTextFormat(this.txtInfo,18);
+            TextUtils.updateTextFormat(this.txtName,18);
+            TextUtils.updateTextFormat(this.txtNoReplays,16);
+            TextUtils.updateTextFormat(this.txtOffline,16);
+            TextUtils.updateTextFormat(this.txtOnline,16);
+         }
+      }
+      
+      public function onEnterFrameTrigger() : void
+      {
+         if(parent != null)
+         {
+            this.sparksHandler();
+            if(dataM.runAsMobile)
+            {
+               this._fingerWheeling.onEnterFrameTrigger();
+            }
+            if(this.mechView != null)
+            {
+               this.mechView.onEnterFrameTrigger();
+            }
+            this.droneMovememntHandler();
+         }
+      }
+      
+      public function cancelFingerWheeling() : void
+      {
+         if(dataM.runAsMobile)
+         {
+            this._fingerWheeling.cancelFingerWheeling();
+         }
+      }
+      
+      private function refreshCurrentTab() : void
+      {
+         if(dataM.inspectPlayer_lastTab != dataM.inspectPlayer_selectedTab)
+         {
+            this.removeClanFlag();
+            this.removeClanMedals();
+            switch(dataM.inspectPlayer_lastTab)
+            {
+               case "":
+                  this.btnNextMech.visible = false;
+                  this.btnPreviousMech.visible = false;
+                  this.mcBlackScreen.visible = false;
+                  this.txtNoReplays.visible = false;
+                  this.txtInfo.visible = false;
+                  this.txtClanMedals.visible = false;
+                  if(dataM.runAsMobile)
+                  {
+                     screensM.createMultipleTextsBitmap("inspectPlayer_achievmenetsCompleted",[this.txtInfo,this.txtClanMedals],"",this);
+                  }
+                  break;
+               case "mechs":
+                  this.removeMech();
+                  this.btnNextMech.visible = false;
+                  this.btnPreviousMech.visible = false;
+                  this.mcBlackScreen.visible = false;
+                  break;
+               case "replays":
+                  if(this.generalTileList != null)
+                  {
+                     this.generalTileList.removeMe();
+                     this.generalTileList = null;
+                     if(dataM.runAsMobile)
+                     {
+                        this._fingerWheeling.resetTileList(null);
+                     }
+                  }
+                  this.txtNoReplays.visible = false;
+                  break;
+               case "achievements":
+                  this.txtInfo.visible = false;
+                  this.txtClanMedals.visible = false;
+                  this.txtNoReplays.visible = false;
+                  if(dataM.runAsMobile)
+                  {
+                     screensM.createMultipleTextsBitmap("inspectPlayer_achievmenetsCompleted",[this.txtInfo,this.txtClanMedals],"",this);
+                  }
+                  if(this.generalTileList != null)
+                  {
+                     this.generalTileList.removeMe();
+                     this.generalTileList = null;
+                     if(dataM.runAsMobile)
+                     {
+                        this._fingerWheeling.resetTileList(null);
+                     }
+                  }
+                  break;
+               case "clan":
+                  if(this.generalTileList != null)
+                  {
+                     this.generalTileList.removeMe();
+                     this.generalTileList = null;
+                     if(dataM.runAsMobile)
+                     {
+                        this._fingerWheeling.resetTileList(null);
+                     }
+                  }
+                  this.txtInfo.visible = false;
+                  this.txtClanMedals.visible = false;
+            }
+         }
+         switch(dataM.inspectPlayer_selectedTab)
+         {
+            case "mechs":
+               this.setButtonMarker(this.btnMechs);
+               this.refreshMechsTab();
+               this.mcTextBackground.gotoAndStop("empty");
+               break;
+            case "replays":
+               this.setButtonMarker(this.btnReplays);
+               this._selectedReplayID = -1;
+               this.refreshReplayTileList();
+               this.mcTextBackground.gotoAndStop("empty");
+               break;
+            case "achievements":
+               this.setButtonMarker(this.btnAchievements);
+               if(dataM.inspectPlayersStatistics[dataM.inspectPlayer_playerID] == null)
+               {
+                  remoteM.socketM.lobby_getAchievementStatistic(dataM.inspectPlayer_playerID);
+                  this.mcSandClock.gotoAndStop("animOn");
+                  this.createTextsBitmapForMobile();
+                  this.disableAllNavigationButtons();
+               }
+               else
+               {
+                  this.displayAchievements();
+               }
+               if(dataM.runAsMobile)
+               {
+                  this.mcTextBackground.gotoAndStop("achievements_mobile");
+               }
+               else
+               {
+                  this.mcTextBackground.gotoAndStop("achievements");
+               }
+               break;
+            case "clan":
+               this.setButtonMarker(this.btnClan);
+               if(dataM.inspectPlayersClan[this.currentPlayerClanID] == null)
+               {
+                  remoteM.socketM.clan_getClanData(this.currentPlayerClanID);
+                  this.createTextsBitmapForMobile();
+                  this.disableAllNavigationButtons();
+               }
+               else
+               {
+                  this.displayClan();
+               }
+               if(dataM.runAsMobile)
+               {
+                  this.mcTextBackground.gotoAndStop("clan_mobile");
+               }
+               else
+               {
+                  this.mcTextBackground.gotoAndStop("clan");
+               }
+         }
+      }
+      
+      private function getTargetRankingList() : Object
+      {
+         var _loc1_:Object = null;
+         switch(screensM.screenRankingList.getRankingType())
+         {
+            case "playersWeekly":
+               _loc1_ = dataM.rankingList_weekly;
+               break;
+            case "playersOnline":
+               _loc1_ = dataM.rankingList_online;
+         }
+         return _loc1_;
+      }
+      
+      private function refreshPlayerStats() : void
+      {
+         var _loc1_:Number = NaN;
+         var _loc2_:Number = NaN;
+         var _loc3_:String = null;
+         var _loc4_:Number = NaN;
+         var _loc5_:Boolean = false;
+         var _loc6_:Number = NaN;
+         var _loc7_:BMPlayerRankingListData = null;
+         this.mcSandClock.gotoAndStop("animOff");
+         if(dataM.inspectPlayer_playerID > 0)
+         {
+            _loc5_ = false;
+            if(dataM.inspectPlayer_outsideRankingList)
+            {
+               _loc3_ = dataM.inspectPlayer_name;
+               _loc1_ = dataM.inspectPlayer_level;
+               _loc2_ = dataM.inspectPlayer_ladderProgress;
+               _loc5_ = true;
+            }
+            else
+            {
+               _loc7_ = this.getTargetRankingList()[dataM.inspectPlayer_playerID];
+               _loc3_ = _loc7_.playerName;
+               _loc1_ = _loc7_.level;
+               _loc2_ = _loc7_.ladderProgress;
+               _loc5_ = _loc7_.isOnline;
+            }
+            if(dataM.specialUser)
+            {
+               _loc3_ = dataM.inspectPlayer_playerID + " " + _loc3_;
+            }
+            this.txtName.text = _loc3_;
+            if(this.rankIcon != null)
+            {
+               this.mcIconsHolder.removeChild(this.rankIcon);
+               this.rankIcon = null;
+            }
+            _loc6_ = dataM.getLadderRankIconNumber(dataM.getLadderRankByProgress(_loc2_));
+            this.rankIcon = externalAssetsM.getAsset("general","Grp_rank" + _loc6_,this.mcSizer_rank.width,this.mcSizer_rank.height,false,false);
+            this.rankIcon.x = this.mcSizer_rank.x;
+            this.rankIcon.y = this.mcSizer_rank.y;
+            this.mcIconsHolder.addChild(this.rankIcon);
+            this.btnBack.enableMe();
+            if(_loc5_)
+            {
+               this.txtOnline.visible = true;
+               this.txtOffline.visible = false;
+            }
+            else
+            {
+               this.txtOnline.visible = false;
+               this.txtOffline.visible = true;
+            }
+         }
+      }
+      
+      private function refreshMechsTab() : void
+      {
+         var _loc1_:uint = 0;
+         this.disableAllNavigationButtons();
+         if(dataM.inspectPlayerData[dataM.inspectPlayer_playerID] == null)
+         {
+            remoteM.lobby_getPlayerMechs(dataM.inspectPlayer_playerID);
+            this.removeMech();
+            this.mcBlackScreen.gotoAndStop("animOff");
+         }
+         else
+         {
+            this.mcBlackScreen.visible = true;
+            dataM.inspectPlayer_activeMechIDs = new Array();
+            if(dataM.inspectPlayerData[dataM.inspectPlayer_playerID].activeMechIDs != null)
+            {
+               _loc1_ = 0;
+               while(_loc1_ < dataM.inspectPlayerData[dataM.inspectPlayer_playerID].activeMechIDs.length)
+               {
+                  dataM.inspectPlayer_activeMechIDs.push(dataM.inspectPlayerData[dataM.inspectPlayer_playerID].activeMechIDs[_loc1_]);
+                  _loc1_++;
+               }
+            }
+            if(dataM.inspectPlayer_activeMechIDs.length > 0)
+            {
+               dataM.inspectPlayer_currentMechID = dataM.inspectPlayer_activeMechIDs[0];
+            }
+            this.displayPlayerMech();
+            this.enableAllNavigationButtons();
+            this.refreshToggleMechsButtons();
+            this.createTextsBitmapForMobile();
+         }
+      }
+      
+      public function mechsLoaded(param1:Object) : void
+      {
+         var _loc3_:uint = 0;
+         var _loc4_:Object = null;
+         var _loc5_:BMItemData = null;
+         var _loc2_:Array = new Array();
+         for each(_loc4_ in param1)
+         {
+            _loc3_ = uint(_loc4_.equipped);
+            if(_loc3_ >= 1)
+            {
+               _loc5_ = dataM.itemsDB[_loc4_.itemID];
+               _loc4_.type = _loc5_.type;
+               _loc4_.equipmentID = 0;
+               switch(_loc5_.type)
+               {
+                  case "sideWeapon":
+                  case "topWeapon":
+                  case "kit":
+                  case "module":
+                     if(_loc4_.slotName != "")
+                     {
+                        _loc4_.equipmentID = int(_loc4_.slotName.substr(_loc4_.slotName.length - 1,1));
+                     }
+               }
+               switch(_loc5_.type)
+               {
+                  case "torso":
+                  case "leg":
+                  case "sideWeapon":
+                  case "topWeapon":
+                     if(_loc2_[_loc3_] == null)
+                     {
+                        _loc2_[_loc3_] = new Object();
+                        _loc2_[_loc3_].torso = false;
+                        _loc2_[_loc3_].leg = false;
+                        _loc2_[_loc3_].weapon = false;
+                     }
+                     switch(_loc5_.type)
+                     {
+                        case "torso":
+                           _loc2_[_loc3_].torso = true;
+                           break;
+                        case "leg":
+                           _loc2_[_loc3_].leg = true;
+                           break;
+                        case "sideWeapon":
+                        case "topWeapon":
+                           _loc2_[_loc3_].weapon = true;
+                     }
+               }
+            }
+            else
+            {
+               TsLogger.log("ERROR - screenInspectPlayer - item data equipped = 0");
+            }
+         }
+         dataM.inspectPlayerData[dataM.inspectPlayer_playerID] = new Object();
+         dataM.inspectPlayerData[dataM.inspectPlayer_playerID].inventory = param1;
+         dataM.inspectPlayerData[dataM.inspectPlayer_playerID].mechStructures = new Array();
+         dataM.inspectPlayerData[dataM.inspectPlayer_playerID].activeMechIDs = new Array();
+         _loc3_ = 1;
+         while(_loc3_ <= dataM.battleMaxMechs)
+         {
+            dataM.inspectPlayerData[dataM.inspectPlayer_playerID].mechStructures[_loc3_] = new BMMechStructure();
+            if(_loc2_[_loc3_] != null)
+            {
+               if(Boolean(_loc2_[_loc3_].torso) && Boolean(_loc2_[_loc3_].leg) && Boolean(_loc2_[_loc3_].weapon))
+               {
+                  dataM.inspectPlayerData[dataM.inspectPlayer_playerID].activeMechIDs.push(_loc3_);
+               }
+            }
+            _loc3_++;
+         }
+         dataM.inspectPlayer_activeMechIDs = dataM.inspectPlayerData[dataM.inspectPlayer_playerID].activeMechIDs;
+         if(dataM.inspectPlayer_activeMechIDs.length > 0)
+         {
+            dataM.inspectPlayer_currentMechID = dataM.inspectPlayer_activeMechIDs[0];
+         }
+         this.refreshMechsTab();
+      }
+      
+      private function displayPlayerMech() : void
+      {
+         var _loc4_:Object = null;
+         var _loc5_:Object = null;
+         var _loc6_:BMMechStructure = null;
+         var _loc1_:Object = dataM.inspectPlayerData[dataM.inspectPlayer_playerID].inventory;
+         var _loc2_:Object = dataM.inspectPlayerData[dataM.inspectPlayer_playerID].mechs;
+         dataM["playerData" + dataM.INSPECT_PLAYER_ID + "Inventory"] = new Array();
+         var _loc3_:Array = dataM["playerData" + dataM.INSPECT_PLAYER_ID + "Inventory"];
+         for each(_loc4_ in _loc1_)
+         {
+            _loc3_[_loc4_.playerItemID] = _loc4_;
+         }
+         for each(_loc5_ in _loc2_)
+         {
+            dataM["playerData" + dataM.INSPECT_PLAYER_ID + "MechStructure"] = new BMMechStructure();
+            _loc6_ = dataM["playerData" + dataM.INSPECT_PLAYER_ID + "MechStructure"];
+            _loc6_.initialize(dataM.INSPECT_PLAYER_ID,0);
+            _loc6_.torso = _loc5_.torso;
+            _loc6_.leg = _loc5_.leg;
+            _loc6_.sideWeapon1 = _loc5_.sideWeapon1;
+            _loc6_.sideWeapon2 = _loc5_.sideWeapon2;
+            _loc6_.sideWeapon3 = _loc5_.sideWeapon3;
+            _loc6_.sideWeapon4 = _loc5_.sideWeapon4;
+            _loc6_.topWeapon1 = _loc5_.topWeapon1;
+            _loc6_.topWeapon2 = _loc5_.topWeapon2;
+            _loc6_.drone = _loc5_.drone;
+         }
+         dataM.createPlayerData(dataM.INSPECT_PLAYER_ID,"screenInspectPlayer - displayPlayerMech");
+         this.removeMech();
+         this.addMech();
+         if(this.mcBlackScreen.currentLabel != "animOff")
+         {
+            this.mcBlackScreen.gotoAndStop("animOff");
+         }
+         this.mcBlackScreen.gotoAndStop("animOn");
+      }
+      
+      private function removeMech() : void
+      {
+         if(this.mechView != null)
+         {
+            this.mechView.deactivateBreathing();
+            this.mechView.removeMe();
+         }
+         if(this.drone != null)
+         {
+            this.drone.removeMe();
+            this.drone = null;
+         }
+      }
+      
+      private function addMech() : void
+      {
+         var _loc6_:BMPlayerItemData = null;
+         var _loc7_:Number = NaN;
+         var _loc8_:BMItemData = null;
+         var _loc9_:Number = NaN;
+         this.mechView = new BMMechView();
+         var _loc1_:Number = 0.65;
+         this.mechView.initialize(dataM.INSPECT_PLAYER_ID,"hanger","playerItemID",_loc1_,false);
+         var _loc2_:BMPlayerData = dataM.playersData[dataM.INSPECT_PLAYER_ID];
+         var _loc3_:BMMechStructure = _loc2_.mechStructures[dataM.inspectPlayer_currentMechID];
+         this.mechView.buildMech(_loc3_,"inspectPlayer");
+         this.mechView.activateBreathing();
+         if(_loc3_.drone > 0)
+         {
+            _loc6_ = dataM.getPlayerItemData(dataM.INSPECT_PLAYER_ID,_loc3_.drone);
+            _loc7_ = _loc6_.itemID;
+            _loc8_ = dataM.itemsDB[_loc7_];
+            this.drone = new BMItem();
+            this.drone.initialize(0,0,0,externalAssetsM.getAsset("items1",_loc8_.grp,0,0,false,true),0,0,true,null,dataM.runAsMobile);
+            _loc9_ = _loc6_.colorID;
+            if(_loc9_ == 0)
+            {
+               _loc9_ = dataM.getItemPowerColorID(dataM.INSPECT_PLAYER_ID,_loc6_.playerItemID);
+            }
+            dataM.colorItem(this.drone,_loc9_);
+            this.drone.scaleX = _loc1_;
+            this.drone.scaleY = _loc1_;
+            this.drone.x = this.DRONE_ORIGIN_X_POS;
+            this.drone.y = this.DRONE_ORIGIN_Y_POS;
+            this.resetDroneMovement();
+            addChild(this.drone);
+         }
+         var _loc4_:Number = this.mcSizer_mech.x + this.mcSizer_mech.width / 2;
+         var _loc5_:Number = this.mcSizer_mech.y + this.mcSizer_mech.height - (this.mechView.mechSizer.height + this.mechView.mechSizer.y);
+         if(this.mechView.mechSizer.height < this.mcSizer_mech.height)
+         {
+            _loc5_ -= (this.mcSizer_mech.height - this.mechView.mechSizer.height) / 2;
+         }
+         this.mechView.x = _loc4_;
+         this.mechView.y = _loc5_;
+         this.mcIconsHolder.addChild(this.mechView);
+      }
+      
+      private function addItemToMechStructure(param1:BMMechStructure, param2:Object, param3:Object, param4:String) : BMMechStructure
+      {
+         if(param2[param4] > 0)
+         {
+            param1[param4] = param3[param2[param4]];
+         }
+         return param1;
+      }
+      
+      private function resetDroneMovement() : void
+      {
+         this._droneTargetXPos = this.DRONE_ORIGIN_X_POS + Math.random() * 30 - 15;
+         this._droneTargetYPos = this.DRONE_ORIGIN_Y_POS + Math.random() * 70 - 35;
+         this._droneMoving = true;
+      }
+      
+      private function droneMovememntHandler() : void
+      {
+         var _loc1_:Number = NaN;
+         var _loc2_:Number = NaN;
+         if(this.drone != null)
+         {
+            if(this._droneMoving)
+            {
+               _loc1_ = this._droneTargetXPos - this.drone.x;
+               _loc2_ = this._droneTargetYPos - this.drone.y;
+               this.drone.x += _loc1_ * 0.05;
+               this.drone.y += _loc2_ * 0.05;
+               if(Math.abs(this.drone.y - this._droneTargetYPos) < 1)
+               {
+                  this._droneMoving = false;
+                  this._droneStopCooldown = Math.ceil(Math.random() * 100) + 50;
+               }
+            }
+            else if(this._droneStopCooldown > 0)
+            {
+               --this._droneStopCooldown;
+            }
+            else
+            {
+               this.resetDroneMovement();
+            }
+         }
+      }
+      
+      public function gotOnlinePlayerReplays() : void
+      {
+         this.mcSandClock.gotoAndStop("animOff");
+         this._selectedReplayID = -1;
+         this.refreshReplayTileList();
+         this.enableAllNavigationButtons();
+      }
+      
+      public function refreshReplayTileList() : void
+      {
+         var _loc1_:Array = null;
+         var _loc2_:Number = NaN;
+         var _loc3_:Array = null;
+         var _loc4_:BMReplayData = null;
+         var _loc5_:uint = 0;
+         var _loc6_:uint = 0;
+         var _loc7_:uint = 0;
+         var _loc8_:uint = 0;
+         var _loc9_:MovieClip = null;
+         var _loc10_:String = null;
+         var _loc11_:uint = 0;
+         var _loc12_:String = null;
+         var _loc13_:String = null;
+         var _loc14_:Sprite = null;
+         var _loc15_:BMItem = null;
+         var _loc16_:BMTileListItem = null;
+         var _loc17_:Function = null;
+         var _loc18_:MovieClip = null;
+         var _loc19_:MovieClip = null;
+         var _loc20_:MovieClip = null;
+         var _loc21_:uint = 0;
+         var _loc22_:Boolean = false;
+         var _loc23_:Number = NaN;
+         if(dataM.replayInspectedPlayerIDs[dataM.inspectPlayer_playerID] == null)
+         {
+            this.txtNoReplays.visible = false;
+            if(this.generalTileList != null)
+            {
+               this.generalTileList.visible = false;
+            }
+            if(dataM.runAsMobile)
+            {
+               this._fingerWheeling.resetTileList(null);
+            }
+            this.mcSandClock.gotoAndStop("animOn");
+            remoteM.lobby_getPlayerReplays(dataM.inspectPlayer_playerID);
+            dataM.replayInspectedPlayerIDs[dataM.inspectPlayer_playerID] = true;
+            this.disableAllNavigationButtons();
+         }
+         else
+         {
+            _loc1_ = new Array();
+            _loc2_ = 0;
+            _loc3_ = new Array();
+            for each(_loc4_ in dataM.replaysDB_inspect)
+            {
+               if(_loc4_.playerID1 == dataM.inspectPlayer_playerID || _loc4_.playerID2 == dataM.inspectPlayer_playerID)
+               {
+                  if(_loc4_.quitPlayerID == 0 || _loc4_.quitPlayerID != 0 && _loc4_.numberOfTurns > 1)
+                  {
+                     _loc3_.push({"replayID":_loc4_.replayID});
+                  }
+               }
+            }
+            _loc3_.sortOn("replayID",Array.NUMERIC);
+            _loc5_ = this.REPLAY_ROWS;
+            _loc6_ = this.REPLAY_ROW_WIDTH;
+            _loc7_ = this.REPLAY_ROW_HEIGHT;
+            if(dataM.runAsMobile)
+            {
+               _loc5_ = this.REPLAY_ROWS_MOBILE;
+               _loc6_ = this.REPLAY_ROW_WIDTH_MOBILE;
+               _loc7_ = this.REPLAY_ROW_HEIGHT_MOBILE;
+            }
+            _loc8_ = 0;
+            while(_loc8_ < _loc3_.length)
+            {
+               _loc4_ = dataM.replaysDB_inspect[_loc3_[_loc8_].replayID];
+               _loc2_++;
+               if(dataM.runAsMobile)
+               {
+                  _loc9_ = new mcReplayList2Row_mobile();
+               }
+               else
+               {
+                  _loc9_ = new mcReplayList2Row();
+               }
+               if(_loc4_.playerName1 == this.txtName.text)
+               {
+                  _loc10_ = _loc2_ + " - VS " + dataM.getCensoredString(_loc4_.playerName2);
+               }
+               else if(_loc4_.playerName2 == this.txtName.text)
+               {
+                  _loc10_ = _loc2_ + " - VS " + dataM.getCensoredString(_loc4_.playerName1);
+               }
+               else
+               {
+                  _loc10_ = _loc2_ + " - " + dataM.getCensoredString(_loc4_.playerName1) + " VS " + dataM.getCensoredString(_loc4_.playerName2);
+               }
+               _loc11_ = 15;
+               switch(dataM.languageID)
+               {
+                  case 7:
+                     _loc11_ = 12;
+               }
+               TextUtils.updateTextFormat(_loc9_.txtDescription,15);
+               TextUtils.updateTextFormat(_loc9_.txtTurns,15);
+               TextUtils.updateTextFormat(_loc9_.txtType,15);
+               TextUtils.updateTextFormat(_loc9_.txtWinLoss,_loc11_);
+               _loc9_.txtDescription.text = _loc10_;
+               _loc9_.txtTurns.text = _loc4_.numberOfTurns;
+               _loc12_ = "1V1";
+               if(_loc4_.battleMechsPerPlayer == 2)
+               {
+                  _loc12_ = "2V2";
+               }
+               else if(_loc4_.battleMechsPerPlayer == 3)
+               {
+                  _loc12_ = "3V3";
+               }
+               _loc9_.txtType.text = _loc12_;
+               _loc13_ = getSpecificText("replays_win");
+               if(_loc4_.wonPlayerID > 0)
+               {
+                  if(_loc4_.wonPlayerID != dataM.inspectPlayer_playerID)
+                  {
+                     _loc13_ = getSpecificText("replays_lose");
+                  }
+               }
+               else if(_loc4_.quitPlayerID == dataM.inspectPlayer_playerID)
+               {
+                  _loc13_ = getSpecificText("replays_lose");
+               }
+               _loc9_.txtWinLoss.text = _loc13_;
+               _loc14_ = _loc9_.mcSizer_watched;
+               if(_loc2_ % 2 == 0)
+               {
+                  _loc9_.mcBackground.gotoAndStop("regular2");
+               }
+               if(_loc4_.watched)
+               {
+                  _loc18_ = externalAssetsM.getAsset("general","interface_V",_loc14_.width,_loc14_.height,false,false);
+                  _loc18_.x = _loc14_.x;
+                  _loc18_.y = _loc14_.y;
+                  _loc9_.addChild(_loc18_);
+               }
+               if(this._selectedReplayID == _loc4_.replayID)
+               {
+                  _loc9_.mcBackground.gotoAndStop("selected");
+               }
+               _loc15_ = new BMItem();
+               _loc15_.initialize(_loc4_.replayID,_loc6_,_loc7_,_loc9_,-1,-1,false,null,dataM.runAsMobile);
+               if(dataM.runAsMobile)
+               {
+                  _loc15_.createAssetsBitmap([_loc9_.txtDescription,_loc9_.txtTurns,_loc9_.txtType,_loc9_.txtWinLoss],null,_loc9_);
+               }
+               _loc16_ = new BMTileListItem();
+               _loc17_ = this.tileListItemClicked;
+               if(dataM.runAsMobile)
+               {
+                  _loc17_ = null;
+               }
+               _loc16_.initialize(_loc6_,_loc7_,_loc15_,"","","",0,_loc17_,null,null,null,null,dataM.runAsMobile);
+               _loc1_.push(_loc16_);
+               _loc8_++;
+            }
+            if(this.generalTileList == null)
+            {
+               this.generalTileList = new BMTileList();
+               _loc19_ = new Grp_scrollerContent();
+               if(dataM.runAsMobile)
+               {
+                  _loc20_ = new mcReplayList2Header_mobile();
+                  this.generalTileList.activateExtendedMode(0.22,true);
+               }
+               else
+               {
+                  _loc20_ = new mcReplayList2Header();
+               }
+               _loc20_.txtDescription.text = getSpecificText("replays_description");
+               _loc20_.txtTurns.text = getSpecificText("replays_turns");
+               _loc20_.txtType.text = getSpecificText("replays_type");
+               _loc20_.txtResult.text = getSpecificText("replays_result");
+               _loc21_ = 13;
+               switch(dataM.languageID)
+               {
+                  case 7:
+                     _loc21_ = 10;
+               }
+               TextUtils.updateTextFormat(_loc20_.txtDescription,13);
+               TextUtils.updateTextFormat(_loc20_.txtTurns,_loc21_);
+               TextUtils.updateTextFormat(_loc20_.txtType,_loc21_);
+               TextUtils.updateTextFormat(_loc20_.txtResult,_loc21_);
+               _loc22_ = false;
+               if(dataM.runAsMobile)
+               {
+                  _loc22_ = true;
+               }
+               this.generalTileList.initialize(screensM.stagePointer.stage,_loc1_,_loc5_,1,_loc6_,_loc7_,null,true,_loc19_,null,_loc20_,false,0,1,true,_loc22_,dataM.runAsMobile);
+               this.generalTileList.x = this.mcSizer_tileList.x;
+               this.generalTileList.y = this.mcSizer_tileList.y;
+               this.mcButtonsHolder.addChild(this.generalTileList);
+            }
+            else
+            {
+               _loc23_ = this.generalTileList.getCurrentRow();
+               this.generalTileList.removeAllItems();
+               this.generalTileList.addItems(0,_loc1_,true);
+               this.generalTileList.jumpToRow(_loc23_,false,"screenInspectPlayer - refreshReplayTileList");
+            }
+            if(_loc1_.length == 0)
+            {
+               this.txtNoReplays.visible = true;
+               this.generalTileList.visible = false;
+               if(dataM.runAsMobile)
+               {
+                  this._fingerWheeling.resetTileList(null);
+               }
+            }
+            else
+            {
+               this.txtNoReplays.visible = false;
+               this.generalTileList.visible = true;
+               if(dataM.runAsMobile)
+               {
+                  this._fingerWheeling.resetTileList(this.generalTileList);
+               }
+            }
+         }
+         this.createTextsBitmapForMobile();
+      }
+      
+      private function tileListItemClicked(param1:Number, param2:Number) : void
+      {
+         var _loc3_:BMReplayData = null;
+         var _loc4_:Number = NaN;
+         var _loc5_:BMTileListItem = null;
+         var _loc6_:Sprite = null;
+         var _loc7_:MovieClip = null;
+         if(param1 > -1)
+         {
+            switch(dataM.inspectPlayer_selectedTab)
+            {
+               case "replays":
+                  this._selectedReplayID = param2;
+                  _loc3_ = dataM.replaysDB_inspect[this._selectedReplayID];
+                  if(_loc3_.watched == false)
+                  {
+                     _loc5_ = this.generalTileList.findTileListItemByTileListItemID(this._selectedReplayID);
+                     _loc6_ = _loc5_.item.itemGrp.mcSizer_watched;
+                     _loc7_ = externalAssetsM.getAsset("general","interface_V",_loc6_.width,_loc6_.height,false,false);
+                     _loc7_.x = _loc6_.x;
+                     _loc7_.y = _loc6_.y;
+                     _loc5_.item.itemGrp.addChild(_loc7_);
+                  }
+                  if(dataM.runAsMobile)
+                  {
+                     screensM.screenBlack.activateBlackScreen(this.tileListItemClickedSub,true,true,null,0);
+                  }
+                  else
+                  {
+                     this.tileListItemClickedSub();
+                  }
+                  soundM.createSound("buttonClick",1);
+                  break;
+               case "clan":
+                  _loc4_ = param2;
+                  if(dataM.inspectPlayer_playerID != _loc4_)
+                  {
+                     if(dataM.playersGeneralData[_loc4_] != null)
+                     {
+                        this.inspectGeneralPlayerData(_loc4_);
+                     }
+                     else
+                     {
+                        remoteM.socketM.lobby_getPlayerGeneralData(_loc4_);
+                        screensM.screenConfirmation.displayQuestionOrNotification("pleaseWait",-1,-1);
+                     }
+                  }
+                  soundM.createSound("buttonClick",1);
+            }
+         }
+      }
+      
+      private function tileListItemClickedSub() : void
+      {
+         if(screensM.isScreenOpened("screenRankingList"))
+         {
+            dataM.setGameTypeAndPlayers(BMDataManager.GAME_TYPE_REPLAY,BMDataManager.GAME_SUB_TYPE_REPLAY_RANKING_LIST_INSPECT);
+         }
+         else if(screensM.isScreenOpened("screenClan"))
+         {
+            dataM.setGameTypeAndPlayers(BMDataManager.GAME_TYPE_REPLAY,BMDataManager.GAME_SUB_TYPE_REPLAY_CLAN_INSPECT);
+         }
+         else
+         {
+            dataM.setGameTypeAndPlayers(BMDataManager.GAME_TYPE_REPLAY,BMDataManager.GAME_SUB_TYPE_REPLAY_MENU_CHAT_INSPECT);
+         }
+         dataM.unpackReplay(this._selectedReplayID);
+      }
+      
+      public function achievementsNotAvailable() : void
+      {
+         this.enableAllNavigationButtons();
+         this.mcSandClock.gotoAndStop("animOff");
+         this.txtNoReplays.text = getScreenText("noData");
+         this.txtNoReplays.visible = true;
+      }
+      
+      public function displayAchievements() : void
+      {
+         var _loc6_:uint = 0;
+         var _loc10_:Object = null;
+         var _loc12_:Object = null;
+         var _loc13_:Array = null;
+         var _loc17_:uint = 0;
+         var _loc18_:Number = NaN;
+         var _loc19_:Object = null;
+         var _loc20_:String = null;
+         var _loc21_:MovieClip = null;
+         var _loc22_:MovieClip = null;
+         var _loc23_:MovieClip = null;
+         var _loc24_:uint = 0;
+         var _loc25_:BMItem = null;
+         var _loc26_:BMTileListItem = null;
+         var _loc27_:Array = null;
+         var _loc28_:Array = null;
+         this.enableAllNavigationButtons();
+         this.mcSandClock.gotoAndStop("animOff");
+         var _loc1_:Number = 0;
+         var _loc2_:Number = 0;
+         var _loc3_:uint = this.ACHIEVMENT_ROWS;
+         var _loc4_:uint = this.ACHIEVMENT_ROW_WIDTH;
+         var _loc5_:uint = this.ACHIEVMENT_ROW_HEIGHT;
+         if(dataM.runAsMobile)
+         {
+            _loc3_ = this.ACHIEVMENT_ROWS_MOBILE;
+            _loc4_ = this.ACHIEVMENT_ROW_WIDTH_MOBILE;
+            _loc5_ = this.ACHIEVMENT_ROW_HEIGHT_MOBILE;
+         }
+         this.generalTileList = new BMTileList();
+         if(dataM.runAsMobile)
+         {
+            this._fingerWheeling.resetTileList(this.generalTileList);
+         }
+         var _loc7_:Array = new Array();
+         var _loc8_:Array = new Array();
+         var _loc9_:Array = new Array();
+         var _loc11_:Object = dataM.inspectPlayersStatistics[dataM.inspectPlayer_playerID];
+         for each(_loc12_ in dataM.achievementsSortedDB)
+         {
+            _loc17_ = 1;
+            while(_loc17_ <= _loc12_.length - 1)
+            {
+               _loc18_ = Number(_loc12_[_loc17_]);
+               _loc10_ = dataM.achievementsDB[_loc18_];
+               _loc10_.completed = false;
+               _loc10_.locked = false;
+               if(_loc10_.requirement > _loc11_[_loc10_.type])
+               {
+                  if(_loc17_ > 1)
+                  {
+                     _loc19_ = dataM.achievementsDB[_loc12_[_loc17_ - 1]];
+                     if(_loc19_.requirement > _loc11_[_loc10_.type])
+                     {
+                        _loc10_.locked = true;
+                     }
+                  }
+               }
+               else
+               {
+                  _loc10_.completed = true;
+               }
+               _loc17_++;
+            }
+         }
+         for each(_loc10_ in dataM.achievementsDB)
+         {
+            if(_loc10_.completed)
+            {
+               _loc20_ = dataM.getAchievmentDescriptionText(_loc10_);
+               if(dataM.runAsMobile)
+               {
+                  _loc21_ = new mcAchievementsListRowInspect_mobile();
+               }
+               else
+               {
+                  _loc21_ = new mcAchievementsListRowInspect();
+               }
+               _loc22_ = null;
+               if(_loc10_.locked)
+               {
+                  _loc22_ = new mcAchievementLocked();
+               }
+               else
+               {
+                  _loc22_ = externalAssetsM.getAsset("general","achievement_" + _loc10_.type);
+               }
+               if(_loc22_ != null)
+               {
+                  _loc22_.width = _loc21_.mcSizer_icon.width;
+                  _loc22_.height = _loc21_.mcSizer_icon.height;
+                  _loc22_.x = _loc21_.mcSizer_icon.x;
+                  _loc22_.y = _loc21_.mcSizer_icon.y;
+                  _loc21_.mcHolder.addChild(_loc22_);
+               }
+               _loc23_ = externalAssetsM.getAsset("general","achievementRank");
+               _loc23_.width = _loc21_.mcSizer_icon.width;
+               _loc23_.height = _loc21_.mcSizer_icon.height;
+               _loc23_.x = _loc21_.mcSizer_icon.x;
+               _loc23_.y = _loc21_.mcSizer_icon.y;
+               _loc23_.gotoAndStop("rank" + _loc10_.level);
+               _loc21_.mcHolder.addChild(_loc23_);
+               _loc24_ = 16;
+               TextUtils.updateTextFormat(_loc21_.txtDescription,_loc24_);
+               _loc21_.txtDescription.htmlText = TextUtils.getTextFont(_loc24_) + _loc20_;
+               if(_loc10_.completed)
+               {
+                  _loc21_.mcBackground.gotoAndStop("completed");
+                  _loc1_++;
+               }
+               _loc25_ = new BMItem();
+               _loc25_.initialize(0,_loc4_,_loc5_,_loc21_,0,0,false,null,dataM.runAsMobile);
+               if(dataM.runAsMobile)
+               {
+                  _loc27_ = new Array();
+                  if(_loc22_ != null)
+                  {
+                     _loc27_.push(_loc22_);
+                  }
+                  if(_loc23_ != null)
+                  {
+                     _loc27_.push(_loc23_);
+                  }
+                  _loc28_ = [_loc21_.txtDescription];
+                  if(dataM.runAsMobile)
+                  {
+                     _loc25_.createAssetsBitmap(_loc28_,_loc27_,_loc21_);
+                  }
+               }
+               _loc26_ = new BMTileListItem();
+               _loc26_.initialize(_loc4_,_loc5_,_loc25_,"","","",0,null,null,null,null,null,dataM.runAsMobile);
+               _loc26_.disableMouseOverEffect();
+               if(_loc10_.completed)
+               {
+                  _loc9_.push(_loc26_);
+               }
+               else if(_loc10_.locked)
+               {
+                  _loc8_.push(_loc26_);
+               }
+               else
+               {
+                  _loc7_.push(_loc26_);
+               }
+            }
+            _loc2_++;
+         }
+         _loc13_ = new Array();
+         _loc6_ = 0;
+         while(_loc6_ < _loc7_.length)
+         {
+            _loc13_.push(_loc7_[_loc6_]);
+            _loc6_++;
+         }
+         _loc6_ = 0;
+         while(_loc6_ < _loc9_.length)
+         {
+            _loc13_.push(_loc9_[_loc6_]);
+            _loc6_++;
+         }
+         _loc6_ = 0;
+         while(_loc6_ < _loc8_.length)
+         {
+            _loc13_.push(_loc8_[_loc6_]);
+            _loc6_++;
+         }
+         var _loc14_:MovieClip = new Grp_scrollerContent();
+         var _loc15_:Boolean = false;
+         if(dataM.runAsMobile)
+         {
+            _loc15_ = true;
+            this.generalTileList.activateExtendedMode(0.33,true);
+         }
+         this.generalTileList.initialize(screensM.stagePointer,_loc13_,_loc3_,1,_loc4_,_loc5_,null,true,_loc14_,null,null,false,0,1,true,_loc15_,dataM.runAsMobile);
+         if(dataM.runAsMobile)
+         {
+            this.generalTileList.x = this.mcSizer_tileList.x + 2;
+            this.generalTileList.y = this.mcSizer_tileList.y + 36;
+         }
+         else
+         {
+            this.generalTileList.x = this.mcSizer_tileList.x;
+            this.generalTileList.y = this.mcSizer_tileList.y + 34;
+         }
+         if(_loc13_.length == 0)
+         {
+            this.generalTileList.visible = false;
+            if(dataM.runAsMobile)
+            {
+               this._fingerWheeling.resetTileList(null);
+            }
+         }
+         else
+         {
+            this.generalTileList.visible = true;
+            if(dataM.runAsMobile)
+            {
+               this._fingerWheeling.resetTileList(this.generalTileList);
+            }
+         }
+         this.mcButtonsHolder.addChild(this.generalTileList);
+         var _loc16_:Number = Math.floor(_loc1_ / _loc2_ * 100);
+         this.txtInfo.htmlText = TextUtils.getTextFont() + getSpecificText("achievements_totalEarned") + _loc1_ + " / " + _loc2_ + "  <FONT COLOR =\'#B2B2B2\'>(" + _loc16_ + "%)</FONT>";
+         this.txtInfo.visible = true;
+         this.createTextsBitmapForMobile();
+      }
+      
+      public function downClicked() : void
+      {
+         var _loc2_:BMPlayerRankingListData = null;
+         var _loc3_:Number = NaN;
+         var _loc1_:Number = this.getPreviousPlayerID(dataM.inspectPlayer_playerID);
+         if(_loc1_ > 0)
+         {
+            this.disableAllNavigationButtons();
+            _loc2_ = dataM.rankingList_weekly[_loc1_];
+            _loc3_ = 0;
+            if(_loc2_ != null)
+            {
+               _loc3_ = _loc2_.clanID;
+            }
+            this.refreshScreen(_loc1_,false,"",0,0,_loc3_);
+            screensM.screenRankingList.jumpToPlayer(_loc1_);
+         }
+      }
+      
+      private function getPreviousPlayerID(param1:Number) : Number
+      {
+         var _loc5_:BMPlayerRankingListData = null;
+         var _loc2_:BMPlayerRankingListData = this.getTargetRankingList()[param1];
+         var _loc3_:Number = 9999999;
+         var _loc4_:Number = 0;
+         for each(_loc5_ in this.getTargetRankingList())
+         {
+            if(_loc5_.playerID != _loc2_.playerID)
+            {
+               if(_loc5_.overallRank > _loc2_.overallRank)
+               {
+                  if(_loc5_.overallRank < _loc3_)
+                  {
+                     _loc4_ = _loc5_.playerID;
+                     _loc3_ = _loc5_.overallRank;
+                  }
+               }
+            }
+         }
+         return _loc4_;
+      }
+      
+      public function upClicked() : void
+      {
+         var _loc2_:BMPlayerRankingListData = null;
+         var _loc3_:Number = NaN;
+         var _loc1_:Number = this.getNextPlayerID(dataM.inspectPlayer_playerID);
+         if(_loc1_ > 0)
+         {
+            this.disableAllNavigationButtons();
+            _loc2_ = dataM.rankingList_weekly[_loc1_];
+            _loc3_ = 0;
+            if(_loc2_ != null)
+            {
+               _loc3_ = _loc2_.clanID;
+            }
+            this.refreshScreen(_loc1_,false,"",0,0,_loc3_);
+            screensM.screenRankingList.jumpToPlayer(_loc1_);
+         }
+      }
+      
+      private function getNextPlayerID(param1:Number) : Number
+      {
+         var _loc5_:BMPlayerRankingListData = null;
+         var _loc2_:BMPlayerRankingListData = this.getTargetRankingList()[param1];
+         var _loc3_:Number = 0;
+         var _loc4_:Number = 0;
+         for each(_loc5_ in this.getTargetRankingList())
+         {
+            if(_loc5_.playerID != _loc2_.playerID)
+            {
+               if(_loc5_.overallRank < _loc2_.overallRank)
+               {
+                  if(_loc5_.overallRank > _loc3_)
+                  {
+                     _loc4_ = _loc5_.playerID;
+                     _loc3_ = _loc5_.overallRank;
+                  }
+               }
+            }
+         }
+         return _loc4_;
+      }
+      
+      public function displayClan() : void
+      {
+         var _loc11_:MovieClip = null;
+         var _loc12_:Number = NaN;
+         var _loc13_:MovieClip = null;
+         var _loc14_:Object = null;
+         var _loc15_:MovieClip = null;
+         var _loc16_:String = null;
+         var _loc17_:uint = 0;
+         var _loc18_:Number = NaN;
+         var _loc19_:Sprite = null;
+         var _loc20_:Boolean = false;
+         var _loc21_:BMItem = null;
+         var _loc22_:BMTileListItem = null;
+         var _loc23_:Function = null;
+         var _loc24_:BMAvatarImage = null;
+         this.enableAllNavigationButtons();
+         this.refreshClanMedals();
+         var _loc1_:Object = dataM.inspectPlayersClan[this.currentPlayerClanID];
+         var _loc2_:String = "<FONT COLOR =\'#" + dataM.COLOR_GOLD + "\'>" + _loc1_.name + "</FONT><BR>";
+         if(_loc1_.ladderBattles > 0)
+         {
+            _loc12_ = Math.ceil(_loc1_.ladderWins / _loc1_.ladderBattles * 100);
+            _loc2_ = _loc2_ + "Ladder wins : " + dataM.getNumberWithComma(_loc1_.ladderWins) + " / " + dataM.getNumberWithComma(_loc1_.ladderBattles) + " (" + _loc12_ + "%)";
+         }
+         else
+         {
+            _loc2_ += "Ladder wins : 0 / 0";
+         }
+         _loc2_ = _loc2_ + "<BR>Members : " + _loc1_.members.length + " / " + dataM.clanMaxMembers;
+         this.txtInfo.htmlText = TextUtils.getTextFont() + _loc2_;
+         this.txtInfo.visible = true;
+         this.txtClanMedals.visible = true;
+         var _loc3_:Array = dataM.getClanFlagData(_loc1_.flag);
+         if(_loc3_.length > 0)
+         {
+            this.mcClanFlag = new BMClanFlag();
+            _loc13_ = externalAssetsM.getAsset("general","clanFlag",this.mcSizer_clanFlag.width,this.mcSizer_clanFlag.height,false,false);
+            _loc13_.x = this.mcSizer_clanFlag.x;
+            _loc13_.y = this.mcSizer_clanFlag.y;
+            this.mcClanFlag.initialize(_loc13_,dataM.runAsMobile);
+            this.mcClanFlag.updateFlag(_loc3_);
+            this.mcIconsHolder.addChild(_loc13_);
+         }
+         var _loc4_:Array = new Array();
+         var _loc5_:uint = this.CLAN_ROWS;
+         var _loc6_:uint = this.CLAN_ROW_WIDTH;
+         var _loc7_:uint = this.CLAN_ROW_HEIGHT;
+         if(dataM.runAsMobile)
+         {
+            _loc5_ = this.CLAN_ROWS_MOBILE;
+            _loc6_ = this.CLAN_ROW_WIDTH_MOBILE;
+            _loc7_ = this.CLAN_ROW_HEIGHT_MOBILE;
+         }
+         var _loc8_:uint = 0;
+         while(_loc8_ < _loc1_.members.length)
+         {
+            _loc14_ = _loc1_.members[_loc8_];
+            if(dataM.runAsMobile)
+            {
+               _loc15_ = new mcClanMemberRowInspect_mobile();
+            }
+            else
+            {
+               _loc15_ = new mcClanMemberRowInspect();
+            }
+            _loc16_ = "regular1";
+            if(_loc1_.leaderID == _loc14_.playerID)
+            {
+               _loc16_ = "top10";
+            }
+            else if(_loc8_ % 2 == 0)
+            {
+               _loc16_ = "regular2";
+            }
+            _loc15_.mcBackground.gotoAndStop(_loc16_);
+            TextUtils.updateTextFormat(_loc15_.txtName,15);
+            TextUtils.updateTextFormat(_loc15_.txtLevel,15);
+            switch(_loc14_.lastDevice)
+            {
+               case "1":
+               case "2":
+                  _loc15_.txtName.width -= 18;
+                  break;
+               default:
+                  _loc15_.mcMobileDevice.parent.removeChild(_loc15_.mcMobileDevice);
+                  _loc15_.mcMobileDevice = null;
+            }
+            _loc17_ = dataM.getLadderRankIconNumber(dataM.getLadderRankByProgress(_loc14_.ladderProgress));
+            _loc18_ = Number(_loc15_.mcSizer_rank.width);
+            _loc19_ = externalAssetsM.getAsset("general","Grp_rank" + _loc17_,_loc18_,_loc18_,false,false);
+            _loc19_.x = _loc15_.mcSizer_rank.x;
+            _loc19_.y = _loc15_.mcSizer_rank.y;
+            _loc15_.addChild(_loc19_);
+            _loc20_ = false;
+            if(_loc14_.geo != null && _loc14_.geo != "")
+            {
+               _loc20_ = true;
+            }
+            if(_loc20_)
+            {
+               _loc24_ = dataM.getAvatarImage(_loc14_.geo);
+               _loc24_.x = _loc15_.mcSizer_flag.x;
+               _loc24_.y = _loc15_.mcSizer_flag.y;
+               _loc15_.addChild(_loc24_);
+            }
+            _loc15_.txtLevel.text = String(_loc14_.level);
+            _loc15_.txtName.text = _loc14_.name;
+            _loc21_ = new BMItem();
+            _loc21_.initialize(_loc14_.playerID,_loc6_,_loc7_,_loc15_,0,0,false,null,dataM.runAsMobile);
+            _loc22_ = new BMTileListItem();
+            _loc23_ = this.tileListItemClicked;
+            if(dataM.runAsMobile)
+            {
+               _loc23_ = null;
+            }
+            _loc22_.initialize(_loc6_,_loc7_,_loc21_,"","","",0,_loc23_,null,null,null,null,dataM.runAsMobile);
+            _loc4_.push(_loc22_);
+            _loc8_++;
+         }
+         this.generalTileList = new BMTileList();
+         var _loc9_:MovieClip = new Grp_scrollerContent();
+         var _loc10_:Boolean = false;
+         if(dataM.runAsMobile)
+         {
+            _loc10_ = true;
+            this.generalTileList.activateExtendedMode(0.63,true);
+         }
+         if(dataM.runAsMobile)
+         {
+            _loc11_ = new mcClanMemberHeaderInspect_mobile();
+         }
+         else
+         {
+            _loc11_ = new mcClanMemberHeaderInspect();
+         }
+         TextUtils.updateTextFormat(_loc11_.txtLevel,13);
+         TextUtils.updateTextFormat(_loc11_.txtName,13);
+         _loc11_.txtLevel.text = getGeneralText("levelCaps");
+         _loc11_.txtName.text = getGeneralText("nameCaps");
+         this.generalTileList.initialize(screensM.clientPointer.stage,_loc4_,_loc5_,1,_loc6_,_loc7_,null,true,_loc9_,null,_loc11_,false,-1,1,true,_loc10_,dataM.runAsMobile);
+         if(dataM.runAsMobile)
+         {
+            this.generalTileList.x = this.mcSizer_tileList.x + 2;
+            this.generalTileList.y = this.mcSizer_tileList.y + 148;
+         }
+         else
+         {
+            this.generalTileList.x = this.mcSizer_tileList.x;
+            this.generalTileList.y = this.mcSizer_tileList.y + 144;
+         }
+         if(_loc4_.length == 0)
+         {
+            this.generalTileList.visible = false;
+            if(dataM.runAsMobile)
+            {
+               this._fingerWheeling.resetTileList(null);
+            }
+         }
+         else
+         {
+            this.generalTileList.visible = true;
+            if(dataM.runAsMobile)
+            {
+               this._fingerWheeling.resetTileList(this.generalTileList);
+            }
+         }
+         this.mcButtonsHolder.addChild(this.generalTileList);
+         this.createTextsBitmapForMobile();
+      }
+      
+      public function playerGeneralDataLoaded(param1:Number) : void
+      {
+         screensM.removeScreen("screenConfirmation");
+         this.inspectGeneralPlayerData(param1);
+      }
+      
+      private function inspectGeneralPlayerData(param1:Number) : void
+      {
+         var _loc2_:Object = dataM.playersGeneralData[param1];
+         this.refreshScreen(_loc2_.playerID,true,_loc2_.name,_loc2_.level,_loc2_.ladderProgress,_loc2_.clanID);
+      }
+      
+      private function removeClanFlag() : void
+      {
+         if(this.mcClanFlag != null)
+         {
+            this.mcClanFlag.removeMe();
+            this.mcClanFlag = null;
+         }
+      }
+      
+      private function removePlayerMedals() : void
+      {
+         var _loc1_:uint = 0;
+         var _loc2_:MovieClip = null;
+         if(this._playerMedals != null)
+         {
+            _loc1_ = 0;
+            while(_loc1_ < this._playerMedals.length)
+            {
+               _loc2_ = this._playerMedals[_loc1_];
+               if(_loc2_.parent != null)
+               {
+                  _loc2_.parent.removeChild(_loc2_);
+               }
+               this._playerMedals[_loc1_] = null;
+               _loc1_++;
+            }
+         }
+         this._playerMedals = new Array();
+      }
+      
+      private function refreshPlayerMedals() : void
+      {
+         var _loc1_:uint = 0;
+         var _loc2_:uint = 0;
+         var _loc3_:Number = NaN;
+         var _loc4_:String = null;
+         var _loc5_:MovieClip = null;
+         var _loc8_:Sprite = null;
+         var _loc9_:Number = NaN;
+         var _loc10_:Array = null;
+         this.removePlayerMedals();
+         var _loc6_:Number = 0;
+         var _loc7_:uint = 0;
+         if(dataM.weeklyClanWinners[dataM.inspectPlayer_playerID] != null)
+         {
+            _loc2_ = 3;
+            while(_loc2_ >= 1)
+            {
+               _loc3_ = Number(dataM.weeklyClanWinners[dataM.inspectPlayer_playerID].places[_loc2_]);
+               if(_loc3_ > 0)
+               {
+                  _loc1_ = 1;
+                  while(_loc1_ <= _loc3_)
+                  {
+                     _loc4_ = "medalClan" + _loc2_;
+                     if(_loc3_ - _loc1_ >= 9)
+                     {
+                        _loc1_ += 9;
+                        _loc4_ += "_10";
+                     }
+                     else if(_loc3_ - _loc1_ >= 4)
+                     {
+                        _loc1_ += 4;
+                        _loc4_ += "_5";
+                     }
+                     else if(_loc3_ - _loc1_ >= 2)
+                     {
+                        _loc1_ += 2;
+                        _loc4_ += "_3";
+                     }
+                     _loc5_ = externalAssetsM.getAsset("general",_loc4_);
+                     if(_loc6_ == 0)
+                     {
+                        _loc6_ = this.mcSizer_playerMedals.x + this.mcSizer_playerMedals.width + _loc5_.width / 2;
+                     }
+                     _loc5_.x = _loc6_ - (1 + this._playerMedals.length) * _loc5_.width;
+                     _loc5_.y = this.mcSizer_playerMedals.y;
+                     if(this._playerMedals.length % 2 == 1)
+                     {
+                        _loc5_.gotoAndStop("long");
+                     }
+                     this.mcIconsHolder.addChild(_loc5_);
+                     this._playerMedals.push(_loc5_);
+                     _loc7_++;
+                     _loc1_++;
+                  }
+               }
+               _loc2_--;
+            }
+         }
+         _loc6_ = 0;
+         if(dataM.weeklySoloWinners[dataM.inspectPlayer_playerID] != null)
+         {
+            _loc2_ = 3;
+            while(_loc2_ >= 1)
+            {
+               _loc3_ = Number(dataM.weeklySoloWinners[dataM.inspectPlayer_playerID].places[_loc2_]);
+               if(_loc3_ > 0)
+               {
+                  _loc1_ = 1;
+                  while(_loc1_ <= _loc3_)
+                  {
+                     _loc4_ = "medal" + _loc2_;
+                     if(_loc3_ - _loc1_ >= 9)
+                     {
+                        _loc1_ += 9;
+                        _loc4_ += "_10";
+                     }
+                     else if(_loc3_ - _loc1_ >= 4)
+                     {
+                        _loc1_ += 4;
+                        _loc4_ += "_5";
+                     }
+                     else if(_loc3_ - _loc1_ >= 2)
+                     {
+                        _loc1_ += 2;
+                        _loc4_ += "_3";
+                     }
+                     _loc5_ = externalAssetsM.getAsset("general",_loc4_);
+                     if(_loc6_ == 0)
+                     {
+                        if(_loc7_ > 0)
+                        {
+                           _loc6_ = this._playerMedals[this._playerMedals.length - 1].x - _loc5_.width / 2;
+                        }
+                        else
+                        {
+                           _loc6_ = this.mcSizer_playerMedals.x + this.mcSizer_playerMedals.width + _loc5_.width / 2;
+                        }
+                     }
+                     _loc5_.x = _loc6_ - (1 + this._playerMedals.length - _loc7_) * (_loc5_.width - 3);
+                     _loc5_.y = this.mcSizer_playerMedals.y;
+                     if(this._playerMedals.length % 2 == 1)
+                     {
+                        _loc5_.gotoAndStop("long");
+                     }
+                     this.mcIconsHolder.addChild(_loc5_);
+                     this._playerMedals.push(_loc5_);
+                     _loc1_++;
+                  }
+               }
+               _loc2_--;
+            }
+         }
+         if(this._playerMedals.length > 1)
+         {
+            _loc8_ = this._playerMedals[this._playerMedals.length - 1];
+            if(_loc8_.x < this.mcSizer_playerMedals.x + 15)
+            {
+               _loc9_ = this.mcSizer_playerMedals.x + 15 - _loc8_.x;
+               _loc1_ = this._playerMedals.length - 1;
+               while(_loc1_ > 0)
+               {
+                  this._playerMedals[_loc1_].x += _loc9_ / (this._playerMedals.length - 1) * _loc1_;
+                  _loc1_--;
+               }
+            }
+         }
+         if(this._playerMedals.length == 0)
+         {
+            this.mcPlayerMedalsTooltip.visible = false;
+         }
+         else
+         {
+            this.mcPlayerMedalsTooltip.visible = true;
+         }
+         if(dataM.runAsMobile)
+         {
+            if(this._playerMedalsBMD != null)
+            {
+               this._playerMedalsBMD.dispose();
+               this._playerMedalsBMD = null;
+            }
+            if(this._playerMedalsBM != null)
+            {
+               this._playerMedalsBM.parent.removeChild(this._playerMedalsBM);
+               this._playerMedalsBM = null;
+            }
+            if(this._playerMedals.length > 0)
+            {
+               _loc10_ = screensM.createAssetsBitmap([],this._playerMedals,15,15);
+               this._playerMedalsBMD = _loc10_[0];
+               this._playerMedalsBM = _loc10_[1];
+               this.mcIconsHolder.addChild(this._playerMedalsBM);
+            }
+         }
+      }
+      
+      private function playerMedalsTooltipMouseOver(param1:MouseEvent) : void
+      {
+         this.playerMedalsTooltipMouseOverSub();
+      }
+      
+      public function playerMedalsTooltipMouseOverSub() : void
+      {
+         var _loc4_:uint = 0;
+         var _loc5_:uint = 0;
+         var _loc6_:uint = 0;
+         var _loc7_:uint = 0;
+         var _loc8_:uint = 0;
+         var _loc9_:uint = 0;
+         var _loc1_:String = "";
+         var _loc2_:String = "<FONT COLOR=\'#" + dataM.COLOR_LEGENDARY_ITEM + "\'>";
+         var _loc3_:String = "</FONT>";
+         if(dataM.weeklySoloWinners[dataM.inspectPlayer_playerID] != null)
+         {
+            _loc4_ = uint(dataM.weeklySoloWinners[dataM.inspectPlayer_playerID].places[1]);
+            _loc5_ = uint(dataM.weeklySoloWinners[dataM.inspectPlayer_playerID].places[2]);
+            _loc6_ = uint(dataM.weeklySoloWinners[dataM.inspectPlayer_playerID].places[3]);
+            if(_loc4_ > 0 || _loc5_ > 0 || _loc6_ > 0)
+            {
+               _loc1_ = "Solo weekly wins:";
+               if(_loc4_ > 0)
+               {
+                  _loc1_ = _loc1_ + "<BR>   First place: " + _loc2_ + _loc4_ + _loc3_;
+               }
+               if(_loc5_ > 0)
+               {
+                  _loc1_ = _loc1_ + "<BR>   Second place: " + _loc2_ + _loc5_ + _loc3_;
+               }
+               if(_loc6_ > 0)
+               {
+                  _loc1_ = _loc1_ + "<BR>   Third place: " + _loc2_ + _loc6_ + _loc3_;
+               }
+            }
+         }
+         if(dataM.weeklyClanWinners[dataM.inspectPlayer_playerID] != null)
+         {
+            _loc7_ = uint(dataM.weeklyClanWinners[dataM.inspectPlayer_playerID].places[1]);
+            _loc8_ = uint(dataM.weeklyClanWinners[dataM.inspectPlayer_playerID].places[2]);
+            _loc9_ = uint(dataM.weeklyClanWinners[dataM.inspectPlayer_playerID].places[3]);
+            if(_loc7_ > 0 || _loc8_ > 0 || _loc9_ > 0)
+            {
+               if(_loc1_ == "")
+               {
+                  _loc1_ = "Clan weekly wins:";
+               }
+               else
+               {
+                  _loc1_ += "<BR>Clan weekly wins:";
+               }
+               if(_loc7_ > 0)
+               {
+                  _loc1_ = _loc1_ + "<BR>   First place: " + _loc2_ + _loc7_ + _loc3_;
+               }
+               if(_loc8_ > 0)
+               {
+                  _loc1_ = _loc1_ + "<BR>   Second place: " + _loc2_ + _loc8_ + _loc3_;
+               }
+               if(_loc9_ > 0)
+               {
+                  _loc1_ = _loc1_ + "<BR>   Third place: " + _loc2_ + _loc9_ + _loc3_;
+               }
+            }
+         }
+         tooltip.showToolTip("regularText",_loc1_,-1,-1);
+      }
+      
+      private function generalTooltipMouseOut(param1:MouseEvent) : void
+      {
+         this.generalTooltipMouseOutSub();
+      }
+      
+      public function generalTooltipMouseOutSub() : void
+      {
+         tooltip.hideToolTip();
+      }
+      
+      private function clanMedalsTooltipMouseOver(param1:MouseEvent) : void
+      {
+         this.clanMedalsTooltipMouseOverSub();
+      }
+      
+      public function clanMedalsTooltipMouseOverSub() : void
+      {
+         var _loc2_:String = null;
+         var _loc3_:String = null;
+         var _loc4_:uint = 0;
+         var _loc5_:uint = 0;
+         var _loc6_:uint = 0;
+         var _loc1_:String = "";
+         if(this.currentPlayerClanID > 0)
+         {
+            if(dataM.weeklyTopClans[this.currentPlayerClanID] != null)
+            {
+               _loc2_ = "<FONT COLOR=\'#" + dataM.COLOR_LEGENDARY_ITEM + "\'>";
+               _loc3_ = "</FONT>";
+               _loc4_ = uint(dataM.weeklyTopClans[this.currentPlayerClanID].places[1]);
+               _loc5_ = uint(dataM.weeklyTopClans[this.currentPlayerClanID].places[2]);
+               _loc6_ = uint(dataM.weeklyTopClans[this.currentPlayerClanID].places[3]);
+               if(_loc4_ > 0 || _loc5_ > 0 || _loc6_ > 0)
+               {
+                  if(_loc1_ == "")
+                  {
+                     _loc1_ = "Clan weekly wins:";
+                  }
+                  else
+                  {
+                     _loc1_ += "<BR>Clan weekly wins:";
+                  }
+                  if(_loc4_ > 0)
+                  {
+                     _loc1_ = _loc1_ + "<BR>   First place: " + _loc2_ + _loc4_ + _loc3_;
+                  }
+                  if(_loc5_ > 0)
+                  {
+                     _loc1_ = _loc1_ + "<BR>   Second place: " + _loc2_ + _loc5_ + _loc3_;
+                  }
+                  if(_loc6_ > 0)
+                  {
+                     _loc1_ = _loc1_ + "<BR>   Third place: " + _loc2_ + _loc6_ + _loc3_;
+                  }
+               }
+            }
+            tooltip.showToolTip("regularText",_loc1_,-1,-1);
+         }
+      }
+      
+      private function clanMedalsTooltipMouseOut(param1:MouseEvent) : void
+      {
+         tooltip.hideToolTip();
+      }
+      
+      private function removeClanMedals() : void
+      {
+         var _loc1_:uint = 0;
+         var _loc2_:MovieClip = null;
+         this.mcClanMedalsTooltip.visible = false;
+         if(this._clanMedals != null)
+         {
+            _loc1_ = 0;
+            while(_loc1_ < this._clanMedals.length)
+            {
+               _loc2_ = this._clanMedals[_loc1_];
+               if(_loc2_.parent != null)
+               {
+                  _loc2_.parent.removeChild(_loc2_);
+               }
+               this._clanMedals[_loc1_] = null;
+               _loc1_++;
+            }
+         }
+         this._clanMedals = new Array();
+         if(this._clanMedalsBMD != null)
+         {
+            this._clanMedalsBMD.dispose();
+            this._clanMedalsBMD = null;
+         }
+         if(this._clanMedalsBM != null)
+         {
+            this._clanMedalsBM.parent.removeChild(this._clanMedalsBM);
+            this._clanMedalsBM = null;
+         }
+      }
+      
+      private function refreshClanMedals() : void
+      {
+         var _loc2_:uint = 0;
+         var _loc3_:uint = 0;
+         var _loc4_:Number = NaN;
+         var _loc5_:String = null;
+         var _loc6_:MovieClip = null;
+         var _loc7_:uint = 0;
+         var _loc8_:Number = NaN;
+         var _loc9_:Sprite = null;
+         var _loc10_:Number = NaN;
+         var _loc11_:Array = null;
+         this.removeClanMedals();
+         var _loc1_:Number = 0;
+         if(dataM.weeklyTopClans[this.currentPlayerClanID] != null)
+         {
+            _loc7_ = 0;
+            _loc8_ = 0;
+            _loc3_ = 3;
+            while(_loc3_ >= 1)
+            {
+               _loc4_ = Number(dataM.weeklyTopClans[this.currentPlayerClanID].places[_loc3_]);
+               if(_loc4_ > 0)
+               {
+                  _loc2_ = 1;
+                  while(_loc2_ <= _loc4_)
+                  {
+                     _loc5_ = "medalClan" + _loc3_;
+                     if(_loc4_ - _loc2_ >= 9)
+                     {
+                        _loc2_ += 9;
+                        _loc5_ += "_10";
+                     }
+                     else if(_loc4_ - _loc2_ >= 4)
+                     {
+                        _loc2_ += 4;
+                        _loc5_ += "_5";
+                     }
+                     else if(_loc4_ - _loc2_ >= 2)
+                     {
+                        _loc2_ += 2;
+                        _loc5_ += "_3";
+                     }
+                     _loc6_ = externalAssetsM.getAsset("general",_loc5_);
+                     if(_loc8_ == 0)
+                     {
+                        _loc8_ = this.mcSizer_clanMedals.x + this.mcSizer_clanMedals.width + _loc6_.width / 2;
+                     }
+                     _loc6_.x = _loc8_ - (1 + this._clanMedals.length) * _loc6_.width;
+                     _loc6_.y = this.mcSizer_clanMedals.y;
+                     if(this._clanMedals.length % 2 == 1)
+                     {
+                        _loc6_.gotoAndStop("long");
+                     }
+                     this.mcIconsHolder.addChild(_loc6_);
+                     this._clanMedals.push(_loc6_);
+                     _loc7_++;
+                     _loc2_++;
+                  }
+               }
+               _loc3_--;
+            }
+            if(_loc7_ > 0)
+            {
+               this.mcClanMedalsTooltip.visible = true;
+            }
+            if(_loc7_ > 1)
+            {
+               _loc9_ = this._clanMedals[this._clanMedals.length - 1];
+               if(_loc9_.x < this.mcSizer_clanMedals.x + 15)
+               {
+                  _loc10_ = this.mcSizer_clanMedals.x + 15 - _loc9_.x;
+                  _loc2_ = this._clanMedals.length - 1;
+                  while(_loc2_ > 0)
+                  {
+                     this._clanMedals[_loc2_].x += _loc10_ / (this._clanMedals.length - 1) * _loc2_;
+                     _loc2_--;
+                  }
+               }
+            }
+         }
+         if(dataM.runAsMobile)
+         {
+            if(this._clanMedalsBMD != null)
+            {
+               this._clanMedalsBMD.dispose();
+               this._clanMedalsBMD = null;
+            }
+            if(this._clanMedalsBM != null)
+            {
+               this._clanMedalsBM.parent.removeChild(this._clanMedalsBM);
+               this._clanMedalsBM = null;
+            }
+            if(this._clanMedals.length > 0)
+            {
+               _loc11_ = screensM.createAssetsBitmap([],this._clanMedals,15,15);
+               this._clanMedalsBMD = _loc11_[0];
+               this._clanMedalsBM = _loc11_[1];
+               this.mcIconsHolder.addChild(this._clanMedalsBM);
+            }
+         }
+      }
+      
+      private function refreshToggleMechsButtons() : void
+      {
+         if(dataM.inspectPlayer_activeMechIDs.length > 1)
+         {
+            this.btnNextMech.visible = true;
+            this.btnPreviousMech.visible = true;
+         }
+         else
+         {
+            this.btnNextMech.visible = false;
+            this.btnPreviousMech.visible = false;
+         }
+      }
+      
+      public function previousMechClicked() : void
+      {
+         if(dataM.inspectPlayer_activeMechIDs.length > 1)
+         {
+            if(dataM.inspectPlayer_currentMechSlot <= 0)
+            {
+               dataM.inspectPlayer_currentMechSlot = dataM.inspectPlayer_activeMechIDs.length - 1;
+            }
+            else
+            {
+               --dataM.inspectPlayer_currentMechSlot;
+            }
+            dataM.inspectPlayer_currentMechID = dataM.inspectPlayer_activeMechIDs[dataM.inspectPlayer_currentMechSlot];
+            this.displayPlayerMech();
+         }
+      }
+      
+      public function nextMechClicked() : void
+      {
+         if(dataM.inspectPlayer_activeMechIDs.length > 1)
+         {
+            if(dataM.inspectPlayer_currentMechSlot >= dataM.inspectPlayer_activeMechIDs.length - 1)
+            {
+               dataM.inspectPlayer_currentMechSlot = 0;
+            }
+            else
+            {
+               ++dataM.inspectPlayer_currentMechSlot;
+            }
+            dataM.inspectPlayer_currentMechID = dataM.inspectPlayer_activeMechIDs[dataM.inspectPlayer_currentMechSlot];
+            this.displayPlayerMech();
+         }
+      }
+      
+      private function sparksHandler() : void
+      {
+         var _loc2_:uint = 0;
+         var _loc3_:Number = NaN;
+         var _loc4_:Number = NaN;
+         var _loc5_:Number = NaN;
+         var _loc6_:Number = NaN;
+         var _loc7_:Sprite = null;
+         var _loc8_:Sprite = null;
+         var _loc9_:Sprite = null;
+         var _loc1_:uint = this._clanMedals.length + this._playerMedals.length;
+         if(_loc1_ > 0)
+         {
+            _loc3_ = 22 - (_loc1_ - 1);
+            if(_loc3_ < 5)
+            {
+               _loc3_ = 5;
+            }
+            _loc4_ = Math.ceil(Math.random() * _loc3_);
+            if(_loc4_ == 1)
+            {
+               _loc4_ = Math.ceil(Math.random() * _loc1_) - 1;
+               if(_loc4_ >= this._clanMedals.length)
+               {
+                  _loc7_ = this._playerMedals[_loc4_ - this._clanMedals.length];
+                  _loc5_ = _loc7_.x;
+                  _loc6_ = _loc7_.y + _loc7_.height - 10;
+               }
+               else
+               {
+                  _loc7_ = this._clanMedals[_loc4_];
+                  _loc5_ = _loc7_.x;
+                  _loc6_ = _loc7_.y + _loc7_.height - 15;
+               }
+               _loc8_ = externalAssetsM.getAsset("general","Grp_itemBoxSpark",0,0,false,false);
+               _loc8_.scaleX = 1.3;
+               _loc8_.scaleY = 1.3;
+               _loc8_.x = _loc5_ + Math.random() * 16 - 8;
+               _loc8_.y = _loc6_ + Math.random() * 16 - 8;
+               this.mcIconsHolder.addChild(_loc8_);
+               this._sparks.push(_loc8_);
+            }
+         }
+         _loc2_ = 0;
+         while(_loc2_ < this._sparks.length)
+         {
+            _loc9_ = this._sparks[_loc2_];
+            if(_loc9_.scaleX > 0.075)
+            {
+               _loc9_.scaleX -= 0.075;
+               _loc9_.scaleY -= 0.075;
+            }
+            else
+            {
+               this._sparks[_loc2_].parent.removeChild(this._sparks[_loc2_]);
+               this._sparks[_loc2_] = null;
+               this._sparks.splice(_loc2_,1);
+            }
+            _loc2_++;
+         }
+      }
+      
+      private function disableAllNavigationButtons() : void
+      {
+         this.btnBack.disableMe();
+         this.btnMechs.disableMe();
+         this.btnReplays.disableMe();
+         this.btnAchievements.disableMe();
+         this.btnClan.disableMe();
+         this.btnUp.disableMe();
+         this.btnDown.disableMe();
+      }
+      
+      private function enableAllNavigationButtons() : void
+      {
+         this.btnBack.enableMe();
+         this.btnMechs.enableMe();
+         this.btnReplays.enableMe();
+         this.btnAchievements.enableMe();
+         if(screensM.isScreenOpened("screenClan") == false)
+         {
+            if(this.currentPlayerClanID > 0)
+            {
+               this.btnClan.enableMe();
+            }
+         }
+         if(dataM.inspectPlayer_outsideRankingList == false)
+         {
+            this.btnDown.enableMe();
+            this.btnUp.enableMe();
+            if(this.getNextPlayerID(dataM.inspectPlayer_playerID) == 0)
+            {
+               this.btnUp.disableMe();
+            }
+            if(this.getPreviousPlayerID(dataM.inspectPlayer_playerID) == 0)
+            {
+               this.btnDown.disableMe();
+            }
+         }
+      }
+      
+      public function mechsClicked() : void
+      {
+         this.tabClicked("mechs",false);
+      }
+      
+      public function replaysClicked() : void
+      {
+         this.tabClicked("replays",false);
+      }
+      
+      public function achievementsClicked() : void
+      {
+         this.tabClicked("achievements",false);
+      }
+      
+      public function clanClicked() : void
+      {
+         this.tabClicked("clan",false);
+      }
+      
+      private function tabClicked(param1:String, param2:Boolean) : void
+      {
+         if(dataM.inspectPlayer_selectedTab != param1 || param2)
+         {
+            dataM.inspectPlayer_lastTab = dataM.inspectPlayer_selectedTab;
+            dataM.inspectPlayer_selectedTab = param1;
+            if(param1 != "" && param2)
+            {
+               this.btnNextMech.visible = false;
+               this.btnPreviousMech.visible = false;
+               this.mcBlackScreen.visible = false;
+               this.txtNoReplays.visible = false;
+               this.txtInfo.visible = false;
+               this.txtClanMedals.visible = false;
+               if(dataM.runAsMobile)
+               {
+                  screensM.createMultipleTextsBitmap("inspectPlayer_achievmenetsCompleted",[this.txtInfo,this.txtClanMedals],"",this);
+               }
+            }
+            this.refreshCurrentTab();
+         }
+      }
+      
+      private function createTextsBitmapForMobile() : void
+      {
+         var _loc1_:Array = null;
+         if(dataM.runAsMobile)
+         {
+            _loc1_ = [this.txtName,this.txtNoReplays,this.txtOffline,this.txtOnline,this.txtInfo,this.txtClanMedals];
+            screensM.createMultipleTextsBitmap("inspectPlayer_texts",_loc1_,"",this);
+         }
+      }
+      
+      public function mechsMouseOver() : void
+      {
+         tooltip.showToolTip("regularText",getScreenText("mechs"),-1,-1);
+      }
+      
+      public function replaysMouseOver() : void
+      {
+         tooltip.showToolTip("regularText",getSpecificText("menu_replays"),-1,-1);
+      }
+      
+      public function achievementsMouseOver() : void
+      {
+         tooltip.showToolTip("regularText",getSpecificText("menu_achievements"),-1,-1);
+      }
+      
+      public function clanMouseOver() : void
+      {
+         tooltip.showToolTip("regularText",getScreenText("clan"),-1,-1);
+      }
+      
+      public function nextMechButtonMouseOver() : void
+      {
+         tooltip.showToolTip("regularText",getGeneralText("nextMech"),-1,-1);
+      }
+      
+      public function previousMechButtonMouseOver() : void
+      {
+         tooltip.showToolTip("regularText",getGeneralText("previousMech"),-1,-1);
+      }
+      
+      private function buttonMouseOut() : void
+      {
+         tooltip.hideToolTip();
+      }
+      
+      private function setButtonMarker(param1:BMButton_pictureE) : void
+      {
+         this.mcButtonMarker.x = param1.x;
+         this.mcButtonMarker.y = param1.y;
+      }
+      
+      public function backClicked() : void
+      {
+         screensM.removeScreen("screenInspectPlayer");
+         if(this.generalTileList != null)
+         {
+            this.generalTileList.removeMe();
+            this.generalTileList = null;
+         }
+         if(dataM.runAsMobile)
+         {
+            this._fingerWheeling.removeMouseListeners();
+         }
+         this.removePlayerMedals();
+         this.removeClanMedals();
+      }
+   }
+}
+

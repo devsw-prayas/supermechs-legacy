@@ -1,0 +1,23 @@
+package com.supermechs.itemsLibrary2
+{
+   import flash.display.MovieClip;
+   
+   [Embed(source="/_assets/assets.swf", symbol="symbol1415")]
+   public dynamic class cannon11B1 extends MovieClip
+   {
+      
+      public var itemGfx:MovieClip;
+      
+      public var mcColor:MovieClip;
+      
+      public var mcFire1:MovieClip;
+      
+      public var mcTorso:MovieClip;
+      
+      public function cannon11B1()
+      {
+         super();
+      }
+   }
+}
+

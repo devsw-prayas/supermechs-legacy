@@ -1,0 +1,15 @@
+package
+{
+   import flash.display.MovieClip;
+   
+   [Embed(source="/_assets/assets.swf", symbol="symbol1880")]
+   public dynamic class mcCenter extends MovieClip
+   {
+      
+      public function mcCenter()
+      {
+         super();
+      }
+   }
+}
+

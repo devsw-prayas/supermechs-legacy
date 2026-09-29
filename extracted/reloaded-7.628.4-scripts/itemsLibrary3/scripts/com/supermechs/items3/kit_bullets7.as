@@ -1,0 +1,17 @@
+package com.supermechs.items3
+{
+   import flash.display.MovieClip;
+   
+   [Embed(source="/_assets/assets.swf", symbol="symbol1379")]
+   public dynamic class kit_bullets7 extends MovieClip
+   {
+      
+      public var itemGfx:MovieClip;
+      
+      public function kit_bullets7()
+      {
+         super();
+      }
+   }
+}
+
