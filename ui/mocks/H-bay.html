@@ -332,19 +332,23 @@ const cv=document.getElementById('bg'), g=cv.getContext('2d'); g.setTransform(2,
 g.fillStyle='#070a10'; g.fillRect(0,0,1600,900);
 const img=new Image(); img.onload=()=>{
   // the game's own hangar (mcBgDark from bmmClientCC.swf), scaled to cover the stage
-  const k=Math.max(1600/img.width,900/img.height), w=img.width*k, h=img.height*k;
-  g.drawImage(img,(1600-w)/2,0,w,h);
+  // fit to width so the whole room shows (crane, machinery, barrels, crates); lift it a little
+  const k=1600/img.width, w=1600, h=img.height*k;
+  g.save(); g.filter='brightness(1.25) saturate(1.1)'; g.drawImage(img,0,0,w,h); g.restore();
+  // below the room: floor that continues its colour
+  const fl0=g.createLinearGradient(0,h-40,0,900); fl0.addColorStop(0,'#0e1522'); fl0.addColorStop(1,'#05080d'); g.fillStyle=fl0; g.fillRect(0,h-2,1600,900-h+2);
+  // the game's own dock frame (hazard posts either side, dark dock plate at the bottom)
+  if(frame.complete&&frame.naturalWidth){ const fk=1600/frame.naturalWidth, fh=frame.naturalHeight*fk; g.drawImage(frame,0,900-fh,1600,fh); }
   // spotlight on the centre bay and a warm pool under the pedestal
   g.save(); g.globalCompositeOperation='lighter'; g.filter='blur(4px)';
   const cone=g.createLinearGradient(0,40,0,760); cone.addColorStop(0,'rgba(255,236,200,.22)'); cone.addColorStop(.7,'rgba(255,226,180,.06)'); cone.addColorStop(1,'rgba(255,220,170,0)');
   g.fillStyle=cone; g.beginPath(); g.moveTo(748,40); g.lineTo(852,40); g.lineTo(1070,760); g.lineTo(530,760); g.fill();
   g.filter='blur(26px)'; g.fillStyle='rgba(255,170,70,.28)'; g.beginPath(); g.ellipse(800,730,300,40,0,0,7); g.fill(); g.restore();
   // floor band so the pedestals have something to stand on
-  const fl=g.createLinearGradient(0,690,0,900); fl.addColorStop(0,'rgba(6,9,14,0)'); fl.addColorStop(.3,'rgba(6,9,14,.75)'); fl.addColorStop(1,'rgba(3,5,8,.95)');
-  g.fillStyle=fl; g.fillRect(0,690,1600,210);
-  const vg=g.createRadialGradient(800,430,380,800,430,1000); vg.addColorStop(0,'rgba(0,0,0,0)'); vg.addColorStop(1,'rgba(0,0,0,.55)'); g.fillStyle=vg; g.fillRect(0,0,1600,900);
+  
+  const vg=g.createRadialGradient(800,430,380,800,430,1000); vg.addColorStop(0,'rgba(0,0,0,0)'); vg.addColorStop(1,'rgba(0,0,0,.3)'); g.fillStyle=vg; g.fillRect(0,0,1600,900);
 };
-img.src='assets/hangar_dark.png';
+const frame=new Image(); frame.src='assets/hangar_frame.png'; frame.onload=()=>{ img.src='assets/hangar_dark.png'; };
 }
 Promise.all(['800 150px "Oxanium"','800 360px "Oxanium"','700 15px "Rajdhani"'].map(f=>document.fonts.load(f))).then(paint,paint);
 let seed=7; const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
