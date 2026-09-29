@@ -66,9 +66,29 @@ def tier(cy, rx, ry, h, top, lvl, strip=None, ribs=0):
     return s, pts
 
 
-out = ['<ellipse cx="%d" cy="%d" rx="%d" ry="46" fill="#000" opacity=".45"/>' % (CX, BASE['cy'] + BASE['ry'] + BASE['h'] - 20, BASE['rx'] + 30),
-       '<ellipse id="scan" cx="%d" cy="%d" rx="%d" ry="%d" fill="none" stroke="#5fd4ff" stroke-width="3" stroke-dasharray="26 18" opacity=".55"/>' % (CX, BASE['cy'] + 44, BASE['rx'] + 60, BASE['ry'] + 8)]
-out += tier(BASE['cy'], BASE['rx'], BASE['ry'], BASE['h'], grad('#2c3643', '#1f2833'), .8, ribs=2)[0]
+def support():
+    """Hydraulic column under the top tier, two braces and a foot plate on the floor."""
+    s = []
+    top = TOP['cy'] + TOP['ry'] - 10          # just under the tier's front edge
+    foot = 900 + 30                             # runs past the bottom of the screen
+    s.append('<ellipse cx="%d" cy="%d" rx="230" ry="30" fill="#000" opacity=".5"/>' % (CX, foot - 60))
+    for sgn in (-1, 1):
+        x0, x1 = CX + sgn * 190, CX + sgn * 64
+        s.append('<path d="M%d %d L%d %d L%d %d L%d %d Z" fill="%s" stroke="%s" stroke-width="4" stroke-linejoin="round"/>'
+                 % (x0 - 14, top - 6, x0 + 14, top - 6, x1 + 10 * sgn, foot - 70, x1 - 12 * sgn, foot - 70, grad('#2e3847', '#1a212b'), OUT))
+    s.append('<path d="M%d %d L%d %d L%d %d L%d %d Z" fill="%s" stroke="%s" stroke-width="4"/>'
+             % (CX - 150, foot - 70, CX + 150, foot - 70, CX + 176, foot, CX - 176, foot, grad('#343f4f', '#1c232d'), OUT))
+    cg = 'pf%d' % (len(defs) + 1)
+    defs.append('<linearGradient id="%s" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#141a22"/><stop offset=".3" stop-color="#3c4859"/><stop offset=".45" stop-color="#56667c"/><stop offset=".7" stop-color="#2a3341"/><stop offset="1" stop-color="#10151c"/></linearGradient>' % cg)
+    s.append('<rect x="%d" y="%d" width="140" height="%d" fill="url(#%s)" stroke="%s" stroke-width="4"/>' % (CX - 70, top, foot - 70 - top, cg, OUT))
+    s.append('<rect x="%d" y="%d" width="70" height="40" fill="url(#%s)" stroke="%s" stroke-width="3"/>' % (CX - 35, top - 4, cg, OUT))
+    for y in range(top + 44, foot - 70, 28):
+        s.append('<rect x="%d" y="%d" width="148" height="9" fill="#1c232d" stroke="%s" stroke-width="3"/>' % (CX - 74, y, OUT))
+    s.append('<rect x="%d" y="%d" width="8" height="%d" fill="#ffae2b" stroke="%s" stroke-width="2"/>' % (CX + 44, top + 60, 34, OUT))
+    return s
+
+
+out = support()
 t, pts = tier(TOP['cy'], TOP['rx'], TOP['ry'], TOP['h'], grad('#465366', '#2c3645'), 1.0, strip='#ffae2b')
 out += t
 out.append('<path d="%s" fill="url(#hex)" stroke="%s" stroke-width="3"/>' % (P(octo(CX, TOP_Y, 196, 34)), OUT))
