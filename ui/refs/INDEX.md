@@ -23,6 +23,7 @@ Reloaded-era client, taken from the user's own account (2026-09-29). Reference o
 | teams.png | Teams dialog: team list on the left (selected one outlined orange), three mech cards with weights on the right, Rename / Clone / Select buttons |
 | quests-daily.webp | Daily Quests tab: quest cards with round icon, title, task, reward, Claim / progress button, countdown under the tab |
 | quests-achievements.webp | Achievements tab: cards with star tiers, COMPLETED sash across finished ones, progress buttons |
+| select-campaign.webp | Select Campaign dialog: stacked campaign cards (1v1 / 2v2 / next below), each with map preview and stars, progress bar, Enter button, scroll arrows |
 | upgrade-transform.png | Upgrade, Transform mode (selected item at level cap, Mythical target, 5 empty material slots, Transform button with gold cost, locked tile in grid) |
 
 Still to come: item detail, battle HUD, others as sent.
