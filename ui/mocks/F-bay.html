@@ -48,6 +48,10 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
 .chip .in{display:flex;align-items:center;gap:12px;padding-left:16px}
 .chip svg{width:34px;height:34px;flex:none}
 .chip b{flex:1;font-size:26px}
+.chip .add{position:relative}
+.chip .add::before,.chip .add::after{content:"";position:absolute;left:50%;top:50%;background:#2a1400;transform:translate(-50%,-50%)}
+.chip .add::before{width:18px;height:5px}
+.chip .add::after{width:5px;height:18px}
 .chip .add{width:44px;height:36px;margin-right:8px;background:var(--amber);color:#2a1400;font:700 28px var(--f-head);display:flex;align-items:center;justify-content:center;clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px)}
 .gear{left:1500px;top:28px;width:66px;height:62px;--c:14px}
 .gear .in{display:flex;align-items:center;justify-content:center;color:#cbd6e4}
@@ -158,8 +162,8 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
 
   <!-- HUD -->
   <div class="plate lv"><div class="in"><div class="n"><small class="lbl">Pilot lv</small><b>157</b></div><div class="xp"><div class="row"><span class="lbl">XP</span><span class="num">46.3%</span></div><div class="seg"><i style="width:46.3%"></i></div></div></div><div class="notch"></div></div>
-  <div class="plate chip" style="left:990px"><div class="in"><svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="15" fill="#6a4004"/><circle cx="17" cy="17" r="12.5" fill="#f2b233" stroke="#3a2200" stroke-width="1.5"/><circle cx="17" cy="17" r="8" fill="none" stroke="#9a5f08" stroke-width="2"/></svg><b class="num">23,390</b><div class="add">+</div></div></div>
-  <div class="plate chip" style="left:1246px"><div class="in"><svg viewBox="0 0 34 34"><path d="M11 3h12l8 8v12l-8 8H11l-8-8V11z" fill="#c2261a" stroke="#3a0a04" stroke-width="2"/><path d="M11 11h12v4h-4v10h-4V15h-4z" fill="#ffe6df"/></svg><b class="num">14</b><div class="add">+</div></div></div>
+  <div class="plate chip" style="left:990px"><div class="in"><svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="15" fill="#6a4004"/><circle cx="17" cy="17" r="12.5" fill="#f2b233" stroke="#3a2200" stroke-width="1.5"/><circle cx="17" cy="17" r="8" fill="none" stroke="#9a5f08" stroke-width="2"/></svg><b class="num">23,390</b><div class="add" aria-label="Add"></div></div></div>
+  <div class="plate chip" style="left:1246px"><div class="in"><svg viewBox="0 0 34 34"><path d="M11 3h12l8 8v12l-8 8H11l-8-8V11z" fill="#c2261a" stroke="#3a0a04" stroke-width="2"/><path d="M11 11h12v4h-4v10h-4V15h-4z" fill="#ffe6df"/></svg><b class="num">14</b><div class="add" aria-label="Add"></div></div></div>
   <div class="plate gear"><div class="in"><i class="mask" style="--i:url(assets/icons/interface_options.png)"></i></div><div class="dot" style="right:6px;top:-6px"></div></div>
 
   <!-- operations -->
