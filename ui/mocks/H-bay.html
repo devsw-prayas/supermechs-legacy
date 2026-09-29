@@ -230,7 +230,7 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
   background:linear-gradient(180deg,#9aa6b8,#5f6c82 30%,#3a4457 62%,#6b788e)!important;
   box-shadow:0 0 0 3px #05080c,0 7px 0 #05080c,0 12px 18px rgba(0,0,0,.55)!important;display:block!important}
 .slot::after{display:none!important}
-.slot>.fc{height:100%;border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+.slot .fc{height:100%;border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
   background:var(--sheen),var(--brush),linear-gradient(180deg,#2c5fb8,#1b4494 45%,#12306e);box-shadow:inset 0 0 0 3px #05080c,inset 0 5px 0 3px rgba(170,205,255,.22),inset 0 -8px 12px rgba(0,10,40,.45)}
 .slot .mask{width:58px!important;height:58px!important;background:#fff!important;filter:drop-shadow(0 3px 0 rgba(0,0,0,.6))}
 .slot span{font:800 20px var(--f-head)!important;white-space:nowrap;letter-spacing:.06em!important;color:#ffd24a;text-shadow:0 2px 0 #05080c,2px 0 0 #05080c,-2px 0 0 #05080c,0 -2px 0 #05080c,0 4px 0 rgba(0,0,0,.4)}
@@ -248,12 +248,8 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
 /* diagonal seams: Workshop|Upgrade share a "\" cut, Shop|Deploy share a "/" cut */
 .rack{gap:16px!important;filter:drop-shadow(0 0 0 #05080c)}
 .slot{border-radius:0!important;box-shadow:none!important;--d:34px}
-.slot>.fc{border-radius:0!important}
-.slot:nth-child(1),.slot:nth-child(1)>.fc{clip-path:polygon(0 0,calc(100% - var(--d)) 0,100% 100%,0 100%)}
-.slot:nth-child(2),.slot:nth-child(2)>.fc{clip-path:polygon(0 0,100% 0,100% 100%,var(--d) 100%)}
-.slot:nth-child(5),.slot:nth-child(5)>.fc{clip-path:polygon(0 0,100% 0,calc(100% - var(--d)) 100%,0 100%)}
-.slot:nth-child(1)>.fc{padding-right:var(--d)}.slot:nth-child(2)>.fc{padding-left:var(--d)}.slot:nth-child(5)>.fc{padding-right:var(--d)}
-.rack,.dwrap{filter:drop-shadow(3px 0 0 #05080c) drop-shadow(-3px 0 0 #05080c) drop-shadow(0 3px 0 #05080c) drop-shadow(0 -3px 0 #05080c) drop-shadow(0 8px 0 #05080c) drop-shadow(0 12px 14px rgba(0,0,0,.5))}
+.slot .fc{border-radius:0!important}
+.slot:nth-child(1),.slot:nth-child(2),.slot:nth-child(5),.rack,.dwrap{filter:drop-shadow(3px 0 0 #05080c) drop-shadow(-3px 0 0 #05080c) drop-shadow(0 3px 0 #05080c) drop-shadow(0 -3px 0 #05080c) drop-shadow(0 8px 0 #05080c) drop-shadow(0 12px 14px rgba(0,0,0,.5))}
 .deploy{transform:none!important;border-radius:0!important;box-shadow:none!important;clip-path:polygon(34px 0,100% 0,100% 100%,0 100%)!important}
 .deploy .face{border-radius:0!important;clip-path:polygon(32px 0,100% 0,100% 100%,0 100%)!important}
 .deploy .haz{border-radius:0!important;clip-path:polygon(32px 0,100% 0,calc(100% - 0px) 100%,0 100%)}
@@ -274,10 +270,8 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
 .slot:nth-child(2),.slot:nth-child(6){margin-left:calc(4px - var(--d) - 4px)}
 .slot:nth-child(1) .mask{width:58px!important;height:58px!important}
 .slot:nth-child(1) span{font-size:20px!important}
-.slot:nth-child(6),.slot:nth-child(6)>.fc{clip-path:polygon(var(--d) 0,100% 0,100% 100%,0 100%)}
-.slot:nth-child(6)>.fc{padding-left:var(--d)}
-.slot.camp{background:linear-gradient(180deg,#a8c9b0,#6a9a76 30%,#3b6446 62%,#7aa885)!important}
-.slot.camp>.fc{background:var(--sheen),var(--brush),linear-gradient(180deg,#3faa5c,#2b8a45 45%,#1f6a34)!important;box-shadow:inset 0 0 0 3px #05080c,inset 0 5px 0 3px rgba(225,255,230,.3),inset 0 -8px 12px rgba(0,40,15,.45)}
+.slot:nth-child(6),.slot.camp{background:linear-gradient(180deg,#a8c9b0,#6a9a76 30%,#3b6446 62%,#7aa885)!important}
+.slot.camp .fc{background:var(--sheen),var(--brush),linear-gradient(180deg,#3faa5c,#2b8a45 45%,#1f6a34)!important;box-shadow:inset 0 0 0 3px #05080c,inset 0 5px 0 3px rgba(225,255,230,.3),inset 0 -8px 12px rgba(0,40,15,.45)}
 
 .rack{top:708px!important;height:172px!important;align-items:flex-end!important}
 .slot{height:138px!important}
@@ -287,13 +281,32 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
 
 /* seams v2: one slope (1:4) on every diagonal, face cut 7px inside the frame so the rim is even */
 .slot:nth-child(1){clip-path:polygon(0 0,calc(100% - 43px) 0,100% 100%,0 100%)!important}
-.slot:nth-child(1)>.fc{clip-path:polygon(0 0,calc(100% - 42.5px) 0,calc(100% - 9.5px) 100%,0 100%)!important;padding-right:40px!important}
 .slot:nth-child(2){clip-path:polygon(0 0,100% 0,100% 100%,34.5px 100%)!important;margin-left:-32.5px!important}
-.slot:nth-child(2)>.fc{clip-path:polygon(9.5px 0,100% 0,100% 100%,41px 100%)!important;padding-left:40px!important}
 .slot:nth-child(5){clip-path:polygon(0 0,100% 0,calc(100% - 34.5px) 100%,0 100%)!important}
-.slot:nth-child(5)>.fc{clip-path:polygon(0 0,calc(100% - 9.5px) 0,calc(100% - 41px) 100%,0 100%)!important;padding-right:40px!important}
 .slot:nth-child(6){clip-path:polygon(43px 0,100% 0,100% 100%,0 100%)!important;margin-left:-32.5px!important}
-.slot:nth-child(6)>.fc{clip-path:polygon(42.5px 0,100% 0,100% 100%,9.5px 100%)!important;padding-left:40px!important}
+
+/* layered plates: outline (slot) > steel rim (inset 3) > face (inset 9); diagonals share one 1:4 slope */
+.slot{padding:0!important;background:#05080c!important;box-shadow:none!important}
+.slot>.rim{position:absolute;inset:3px;background:linear-gradient(180deg,#9aa6b8,#5f6c82 30%,#3a4457 62%,#6b788e)}
+.slot.camp>.rim{background:linear-gradient(180deg,#a8c9b0,#6a9a76 30%,#3b6446 62%,#7aa885)}
+.slot>.rim>.fc{position:absolute;inset:6px;height:auto!important;clip-path:none}
+
+.rack{filter:drop-shadow(0 8px 0 #05080c) drop-shadow(0 12px 14px rgba(0,0,0,.5))!important}
+.slot:nth-child(1)>.rim>.fc,.slot:nth-child(5)>.rim>.fc{padding-right:34px!important}
+.slot:nth-child(2)>.rim>.fc,.slot:nth-child(6)>.rim>.fc{padding-left:34px!important}
+.slot:nth-child(2),.slot:nth-child(6){margin-left:-34.5px!important}
+.slot:nth-child(1){clip-path:polygon(0 0,calc(100% - 43.0px) 0,calc(100% - 0.0px) 100%,0 100%)!important}
+.slot:nth-child(1)>.rim{clip-path:polygon(0 0,calc(100% - 42.25px) 0,calc(100% - 0.75px) 100%,0 100%)!important}
+.slot:nth-child(1)>.rim>.fc{clip-path:polygon(0 0,calc(100% - 40.75px) 0,calc(100% - 2.25px) 100%,0 100%)!important}
+.slot:nth-child(2){clip-path:polygon(0.0px 0,100% 0,100% 100%,34.5px 100%)!important}
+.slot:nth-child(2)>.rim{clip-path:polygon(0.75px 0,100% 0,100% 100%,33.75px 100%)!important}
+.slot:nth-child(2)>.rim>.fc{clip-path:polygon(2.25px 0,100% 0,100% 100%,32.25px 100%)!important}
+.slot:nth-child(5){clip-path:polygon(0 0,calc(100% - 0.0px) 0,calc(100% - 34.5px) 100%,0 100%)!important}
+.slot:nth-child(5)>.rim{clip-path:polygon(0 0,calc(100% - 0.75px) 0,calc(100% - 33.75px) 100%,0 100%)!important}
+.slot:nth-child(5)>.rim>.fc{clip-path:polygon(0 0,calc(100% - 2.25px) 0,calc(100% - 32.25px) 100%,0 100%)!important}
+.slot:nth-child(6){clip-path:polygon(43.0px 0,100% 0,100% 100%,0.0px 100%)!important}
+.slot:nth-child(6)>.rim{clip-path:polygon(42.25px 0,100% 0,100% 100%,0.75px 100%)!important}
+.slot:nth-child(6)>.rim>.fc{clip-path:polygon(40.75px 0,100% 0,100% 100%,2.25px 100%)!important}
 </style></head>
 <body>
 <div class="stage">
@@ -413,12 +426,12 @@ canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
   <!-- dock -->
   
   <div class="rack">
-    <div class="slot"><div class="fc"><i class="mask" style="--i:url(assets/icons/interface_mech.png)"></i><span>Teams</span></div></div>
-    <div class="slot"><div class="fc"><i class="mask" style="--i:url(assets/icons/interface_fusion.png)"></i><span>Upgrade</span></div></div>
-    <div class="slot"><div class="fc"><i class="mask" style="--i:url(assets/icons/interface_hanger.png)"></i><span>Workshop</span></div><b class="pip">!</b></div>
-    <div class="slot"><div class="fc"><i class="mask" style="--i:url(assets/icons/interface_shop.png)"></i><span>Shop</span></div><b class="pip">2</b></div>
-    <div class="slot"><div class="fc"><i class="mask" style="--i:url(assets/icons/action_weapons.png)"></i><span>Test Lab</span></div></div>
-    <div class="slot camp"><div class="fc"><i class="mask" style="--i:url(assets/icons/interface_battle_singlePlayer.png)"></i><span>Campaign</span></div></div>
+    <div class="slot"><div class="rim"><div class="fc"><i class="mask" style="--i:url(assets/icons/interface_mech.png)"></i><span>Teams</span></div></div></div>
+    <div class="slot"><div class="rim"><div class="fc"><i class="mask" style="--i:url(assets/icons/interface_fusion.png)"></i><span>Upgrade</span></div></div></div>
+    <div class="slot"><div class="rim"><div class="fc"><i class="mask" style="--i:url(assets/icons/interface_hanger.png)"></i><span>Workshop</span></div></div><b class="pip">!</b></div>
+    <div class="slot"><div class="rim"><div class="fc"><i class="mask" style="--i:url(assets/icons/interface_shop.png)"></i><span>Shop</span></div></div><b class="pip">2</b></div>
+    <div class="slot"><div class="rim"><div class="fc"><i class="mask" style="--i:url(assets/icons/action_weapons.png)"></i><span>Test Lab</span></div></div></div>
+    <div class="slot camp"><div class="rim"><div class="fc"><i class="mask" style="--i:url(assets/icons/interface_battle_singlePlayer.png)"></i><span>Campaign</span></div></div></div>
   </div>
   </div>
 </div>
