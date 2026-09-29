@@ -30,7 +30,7 @@ Reloaded-era client, taken from the user's own account (2026-09-29). Reference o
 | battle.png | Live battle screen: top HUD strip (gold, tokens, level + XP bar, star rank badge), STATS panel top-left (HP bar, energy, regen, heat, cooling), red X (leave) / x1 (battle speed) / play (auto-play) buttons bottom-left, grid arena with walls and crates on the right |
 | battle-tile-select.png | Same battle screen a moment after clicking a floor square: the tile flashes solid green (move target). Speed button now reads x2 |
 | battle-attack-structure.webp | Clicking a structure (crate) in battle: the player mech fires, muzzle flames and hit sparks on the target, targeting crosshair on the enemy |
-| battle-pickups-loot.webp | Battle after picking up a kit and destroying structures: left column now stacks three panels (STATS, PICKUPS with the kit icon, WIN LOOT with gold amount), dust clouds where crates were destroyed |
+| battle-pickups-loot.webp | Battle after picking up a kit and destroying structures: left column now stacks three panels (STATS, PICKUPS with the kit icon, WIN LOOT with gold amount), crater sprites left on the floor where crates were destroyed |
 | upgrade-transform.png | Upgrade, Transform mode (selected item at level cap, Mythical target, 5 empty material slots, Transform button with gold cost, locked tile in grid) |
 
 Still to come: item detail, manual-mode action bar (weapons, movement, turn UI) if it exists separately from auto-play, others as sent.
