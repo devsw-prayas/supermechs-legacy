@@ -13,7 +13,7 @@ Anchors are 1x, sprite PNGs are 2x, hence S = 2.
 Run from the repo root:  python ui/mocks/build_mechs.py
 Writes ui/mocks/assets/mech.js and copies the used sprites to ui/mocks/assets/mechs/.
 """
-import glob, json, os, shutil, struct
+import glob, json, os, re, shutil, struct
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 MOCKS = os.path.join(ROOT, "ui", "mocks")
@@ -46,25 +46,41 @@ def base_id(name):
 
 
 _BOUNDS = None
-def frame(name):
-    """Outer frame translation of the sprite's SVG export (data/sprite_bounds.json). The exporter shifted the art by
-    this much when it rendered the PNG, but the anchors were never shifted, so PNG-space anchor = anchor + frame."""
+def _bounds():
     global _BOUNDS
     if _BOUNDS is None:
         _BOUNDS = json.load(open(os.path.join(ROOT, "data", "sprite_bounds.json")))
-    b = base_id(name)
-    for era in ("reloaded", "legacy"):
-        r = _BOUNDS.get(era, {}).get(b)
-        if r and "frame" in r:
-            return r["frame"][4], r["frame"][5]
+    return _BOUNDS
+
+
+def frame(name):
+    """Outer frame translation of the sprite's SVG export (data/sprite_bounds.json). The exporter shifted the art by
+    this much when it rendered the PNG, but the anchors were never shifted, so PNG-space anchor = anchor + frame."""
+    b = ALIAS.get(base_id(name), base_id(name))
+    for cand in (b, re.sub(r"_\d+$", "", b), re.sub(r"[A-E]$", "", b)):
+        for era in ("reloaded", "legacy"):
+            r = _bounds().get(era, {}).get(cand)
+            if r and "frame" in r:
+                return r["frame"][4], r["frame"][5]
     return 0.0, 0.0
 
 
+ALIAS = {"sideSuperRocketLauncher1D": "sideSuperRocketLauncher2D", "sideSuperRocketLauncher1E": "sideSuperRocketLauncher2E"}
+
+
 def anchors(name):
-    a = items[base_id(name)].get("anchors")
-    if not a:
-        raise SystemExit("no anchors for " + name)
-    return a
+    """Anchor dict for a sprite: the item list first, then the exported SVG data (clip placements)."""
+    a = items.get(base_id(name), {}).get("anchors")
+    if a:
+        return a
+    b = ALIAS.get(base_id(name), base_id(name))
+    for cand in (b, re.sub(r"_\d+$", "", b), re.sub(r"[A-E]$", "", b)):
+        for era in ("reloaded", "legacy"):
+            r = _bounds().get(era, {}).get(cand)
+            if r and "mcTorso" in r.get("clips", {}):
+                m = r["clips"]["mcTorso"]
+                return {"mcTorso": [m[4], m[5]] if len(m) == 6 else m}
+    raise SystemExit("no anchors for " + name)
 
 
 def assemble(loadout):
@@ -74,6 +90,7 @@ def assemble(loadout):
     tfx, tfy = frame(torso)
     cx, cy = 0.0, 0.0
     placed = []  # (slot, sprite, x, y) in 2x px, origin = mech origin (torso mcCenter)
+    filters = loadout.get("filters", {})
     for slot in ORDER:
         name = loadout.get(slot)
         if not name:
@@ -100,7 +117,10 @@ def assemble(loadout):
         dst = "assets/mechs/%s.png" % name
         os.makedirs(os.path.join(MOCKS, "assets", "mechs"), exist_ok=True)
         shutil.copy(sprite_path(name), os.path.join(MOCKS, dst))
-        parts.append({"src": dst, "x": round(x - x0), "y": round(y - y0), "z": z, "slot": slot})
+        part = {"src": dst, "x": round(x - x0), "y": round(y - y0), "z": z, "slot": slot}
+        if slot in filters:
+            part["css"] = filters[slot]
+        parts.append(part)
     return {"w": round(x1 - x0), "h": round(y1 - y0), "parts": parts}
 
 
@@ -139,9 +159,17 @@ LOADOUTS = {
            "top1": "topLaser2B_phys", "side1": "cannon3C", "side2": "sideRifle1E"},
 }
 
+LOADOUTS["target"] = {  # matched by eye to ui/refs/mech-target.png
+    "torso": "torso52_phys", "leg1": "leg73E_phys", "leg2": "leg73E_phys",
+    "top1": "topBlaster2E_phys", "top2": "rocketLauncher22A_phys",
+    "side1": "sideSuperRocketLauncher1D", "side2": "rocketLauncher17B_1",
+    "side3": "cannon3C", "side4": "cannon3C",
+    "filters": {"leg1": "hue-rotate(168deg) saturate(1.5)", "leg2": "hue-rotate(168deg) saturate(1.5)"},
+}
+
 JS_TAIL = """
 window.buildMech=function(el,key,heightPx){const m=window.MECHS[key];el.style.position='relative';el.style.width=m.w+'px';el.style.height=m.h+'px';
- for(const p of m.parts){const i=document.createElement('img');i.src=p.src;i.draggable=false;i.style.cssText='position:absolute;left:'+p.x+'px;top:'+p.y+'px;z-index:'+p.z+';max-width:none';el.appendChild(i);}
+ for(const p of m.parts){const i=document.createElement('img');i.src=p.src;i.draggable=false;i.style.cssText='position:absolute;left:'+p.x+'px;top:'+p.y+'px;z-index:'+p.z+';max-width:none'+(p.css?';filter:'+p.css:'');el.appendChild(i);}
  if(heightPx){const s=heightPx/m.h;el.style.transformOrigin='0 0';el.style.transform='scale('+s+')';el.dataset.w=m.w*s;el.dataset.h=heightPx;el.style.marginRight=(-(m.w-m.w*s))+'px';el.style.marginBottom=(-(m.h-heightPx))+'px';}
  return el;};
 window.fitStage=function(){const st=document.querySelector('.stage');function f(){const s=Math.min(innerWidth/1600,innerHeight/900);st.style.transform='scale('+s+')';st.style.left=((innerWidth-1600*s)/2)+'px';st.style.top=((innerHeight-900*s)/2)+'px';}f();addEventListener('resize',f);};
