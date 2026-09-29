@@ -311,7 +311,9 @@ Promise.all(['800 360px "Oxanium"','700 15px "Rajdhani"'].map(f=>document.fonts.
 let seed=7; const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
 /* ---------------- mechs ---------------- */
 function place(id,key,h,left,top){const w=document.getElementById(id);const i=document.createElement('div');buildMech(i,key,h);w.appendChild(i);w.style.width=i.dataset.w+'px';w.style.height=i.dataset.h+'px';if(left!=null){w.style.left=left+'px';w.style.top=top+'px';}return w;}
-const H=520, m=window.MECHS.target, W=m.w*H/m.h, L=800-W/2, T=716-H;
+// every mech stands with its feet centred on its pedestal (standOn uses the midpoint between the legs)
+const PED={main:[800,716],left:[282,704],right:[1410,702]};
+const H=520, m=window.MECHS.target, W=m.w*H/m.h, L=PED.main[0]-m.fx*H/m.h, T=PED.main[1]-m.fy*H/m.h;
 place('mech','target',H,L,T); place('refl','target',H,L,716-6);
 { const sh=document.getElementById('shade'); sh.style.left=L+'px'; sh.style.top=T+'px'; sh.style.width=W+'px'; sh.style.height=H+'px';
   const src=[...document.querySelectorAll('#mech img')];
@@ -319,7 +321,8 @@ place('mech','target',H,L,T); place('refl','target',H,L,716-6);
   const holder=document.createElement('div'); buildMech(holder,'target',H); sh.appendChild(holder);
   holder.querySelectorAll('img').forEach(i=>{i.style.filter='brightness(0) invert(1)';});
   const grad=document.createElement('div'); grad.style.cssText='position:absolute;inset:0;mix-blend-mode:multiply;background:linear-gradient(180deg,rgba(255,236,210,1) 0%,rgba(150,175,215,1) 55%,rgba(70,90,130,1) 100%)'; sh.appendChild(grad); sh.style.isolation='isolate'; }
-place('side1','m2',250,160,452); place('side2','m3',230,1290,470);
+place('side1','m2',250); standOn(document.getElementById('side1'),'m2',250,...PED.left);
+place('side2','m3',230); standOn(document.getElementById('side2'),'m3',230,...PED.right);
 
 
 /* ---------------- dust in the light (animated) ---------------- */

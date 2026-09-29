@@ -86,6 +86,16 @@ def anchors(name):
     raise SystemExit("no anchors for " + name)
 
 
+def feet(placed, x0, y0):
+    """Where the mech stands: fx = midpoint between the two legs, fy = bottom of the lowest leg (mech-local px)."""
+    legs = [p for p in placed if p[0] in ("leg1", "leg2")]
+    if not legs:
+        return {}
+    cx = sum(p[2] + p[4] / 2 for p in legs) / len(legs)
+    by = max(p[3] + p[5] for p in legs)
+    return {"fx": round(cx - x0, 1), "fy": round(by - y0, 1)}
+
+
 def assemble(loadout):
     """loadout: dict slot -> sprite name. Returns {w,h,parts}."""
     torso = loadout["torso"]
@@ -124,7 +134,7 @@ def assemble(loadout):
         if slot in filters:
             part["css"] = filters[slot]
         parts.append(part)
-    return {"w": round(x1 - x0), "h": round(y1 - y0), "parts": parts}
+    return {"w": round(x1 - x0), "h": round(y1 - y0), "parts": parts, **feet(placed, x0, y0)}
 
 
 
@@ -147,7 +157,8 @@ def assemble_aligned(saved_path):
         os.makedirs(os.path.join(MOCKS, "assets", "mechs"), exist_ok=True)
         shutil.copy(sprite_path(name), os.path.join(MOCKS, dst))
         out.append({"src": dst, "x": round(x - x0), "y": round(y - y0), "z": z, "slot": slot})
-    return {"w": round(x1 - x0), "h": round(y1 - y0), "parts": out}
+    return {"w": round(x1 - x0), "h": round(y1 - y0), "parts": out,
+            **feet([(sl, n, x, y, w, h) for sl, n, x, y, z, w, h in sized], x0, y0)}
 
 
 LOADOUTS = {
@@ -176,6 +187,7 @@ window.buildMech=function(el,key,heightPx){const m=window.MECHS[key];el.style.po
  for(const p of m.parts){const i=document.createElement('img');i.src=p.src;i.draggable=false;i.style.cssText='position:absolute;left:'+p.x+'px;top:'+p.y+'px;z-index:'+p.z+';max-width:none'+(p.css?';filter:'+p.css:'');el.appendChild(i);}
  if(heightPx){const s=heightPx/m.h;el.style.transformOrigin='0 0';el.style.transform='scale('+s+')';el.dataset.w=m.w*s;el.dataset.h=heightPx;el.style.marginRight=(-(m.w-m.w*s))+'px';el.style.marginBottom=(-(m.h-heightPx))+'px';}
  return el;};
+window.standOn=function(el,key,h,cx,topY){const m=window.MECHS[key];const k=h/m.h;el.style.left=(cx-(m.fx??m.w/2)*k)+'px';el.style.top=(topY-(m.fy??m.h)*k)+'px';};
 window.fitStage=function(){const st=document.querySelector('.stage');function f(){const s=Math.min(innerWidth/1600,innerHeight/900);st.style.transform='scale('+s+')';st.style.left=((innerWidth-1600*s)/2)+'px';st.style.top=((innerHeight-900*s)/2)+'px';}f();addEventListener('resize',f);};
 """
 
