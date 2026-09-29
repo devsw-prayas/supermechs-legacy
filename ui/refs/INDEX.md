@@ -45,6 +45,7 @@ Reloaded-era client, taken from the user's own account (2026-09-29). Reference o
 | battle-vs.png | VS intro screen before a fight: screen split by a diagonal cut (blue side for the player, orange side for the enemy), big mechs facing each other, chrome VS medallion in the centre, grey tech-panel bars at top and bottom |
 | battle-shutdown-active.webp | Shut engine down in effect (new enemy, Gearcrusher 2K): two red down-triangles on the player mech mark the shutdown, both turn lamps hollow, action bar hidden, heat bar at 0, mech dimmed with a green ground glow |
 | battle-drones-menu.webp | Drones sub-menu of the action bar: back arrow, drone icon with a red down arrow (recall), globe/target icon with a lamp, dimmed slot with crossed-out range icon; two drones hovering over the arena beside the player mech |
+| battle-after-crimson-rapture.webp | State after a Crimson Rapture attack (flamethrower): player resist shield dropped to 35, enemy resist shield to 23 (was 25), heat bars in the red on both sides (472/552 and 384/276, enemy over its cap), HP bars mid-fight (1,256 and 671), drones hovering, action bar back at the top level |
 | upgrade-transform.png | Upgrade, Transform mode (selected item at level cap, Mythical target, 5 empty material slots, Transform button with gold cost, locked tile in grid) |
 
 Still to come: item detail, others as sent. Battle action bar: chevrons = Shut engine down, flame/claw = Stomp; move opens the movement sub-menu (jump / walk left and right); target, shield and the empty slot still unconfirmed.
