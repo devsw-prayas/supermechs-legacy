@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Direction E — Mech Bay</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<style>
+/* Night maintenance bay painted on canvas; UI is gunmetal plates with fat bevelled rims, slanted, one amber accent. */
+:root{
+  --ink:#04070b; --face:#141b24; --face2:#0c1118; --rim:#2c3a4c; --rimhi:#5b6f88; --text:#e4ecf5; --mute:#8594a8;
+  --amber:#ffae2b; --amber2:#e07a00; --cyan:#5fd4ff; --green:#4bd88a;
+  --f-head:'Barlow Condensed','Arial Narrow',sans-serif; --f-label:'Rajdhani','Barlow',sans-serif; --f-num:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#020305;overflow:hidden}
+.stage{position:absolute;width:1600px;height:900px;transform-origin:0 0;overflow:hidden;background:#06090e;color:var(--text);font-family:var(--f-label)}
+canvas{position:absolute;left:0;top:0;width:1600px;height:900px}
+#bg{z-index:0} #fx{z-index:7;pointer-events:none;mix-blend-mode:screen}
+.lbl{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.16em}
+.head{font-family:var(--f-head);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.num{font-family:var(--f-num);font-weight:700;font-variant-numeric:tabular-nums}
+.mask{display:inline-block;background:currentColor;-webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat}
+
+/* ---- plate: fat bevelled rim, slanted ---- */
+.plate{position:absolute;transform:skewX(-10deg);background:linear-gradient(180deg,#1b2430,var(--face) 45%,var(--face2));
+  border:4px solid var(--ink);
+  box-shadow:inset 0 0 0 2px var(--rim),inset 0 3px 0 2px rgba(150,180,215,.16),inset 0 -12px 24px rgba(0,0,0,.35),0 12px 26px rgba(0,0,0,.55)}
+.plate::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(90deg,rgba(255,255,255,.018) 0 1px,transparent 1px 3px)}
+.plate>.in{transform:skewX(10deg);position:relative;height:100%}
+.notch{position:absolute;top:-4px;left:18px;width:46px;height:4px;background:var(--amber)}
+
+/* ---- HUD ---- */
+.lv{left:34px;top:26px;width:430px;height:66px}
+.lv .in{display:flex;align-items:center;gap:16px;padding:0 22px 0 18px}
+.lv .n{display:flex;flex-direction:column;line-height:.9}
+.lv .n small{font-size:12px;color:var(--mute)}
+.lv .n b{font-family:var(--f-head);font-size:44px;color:var(--amber);font-weight:700}
+.xp{flex:1}
+.xp .row{display:flex;justify-content:space-between;font-size:12px;color:var(--mute);margin-bottom:5px}
+.xp .row .num{color:var(--text);font-size:13px}
+.seg{height:12px;background:#05080c;border:2px solid #1f2a38;position:relative;overflow:hidden}
+.seg i{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(180deg,#a8e8ff,var(--cyan) 50%,#1d8fc4);box-shadow:0 0 10px rgba(95,212,255,.6)}
+.seg::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 7px,rgba(0,0,0,.65) 7px 9px)}
+.chip{top:30px;width:236px;height:58px}
+.chip .in{display:flex;align-items:center;gap:12px;padding-left:16px}
+.chip svg{width:34px;height:34px;flex:none}
+.chip b{flex:1;font-size:26px}
+.chip .add{width:50px;align-self:stretch;background:linear-gradient(180deg,#ffc55a,var(--amber) 45%,var(--amber2));color:#2a1400;font:700 30px var(--f-head);display:flex;align-items:center;justify-content:center;border-left:3px solid var(--ink)}
+.gear{left:1500px;top:30px;width:64px;height:58px}
+.gear .in{display:flex;align-items:center;justify-content:center;color:#cbd6e4}
+.gear .mask{width:30px;height:30px}
+.dot{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 3px var(--ink),0 0 10px var(--amber)}
+
+/* ---- side panels ---- */
+.ops{left:34px;top:124px;width:410px;height:252px}
+.ops .in,.unit .in{padding:16px 22px 14px 24px}
+.ph{display:flex;align-items:baseline;justify-content:space-between;border-bottom:2px solid #223040;padding-bottom:8px;margin-bottom:6px}
+.ph .head{font-size:26px}
+.ph .lbl{font-size:11px;color:var(--mute)}
+.q{display:grid;grid-template-columns:26px 1fr auto;gap:4px 12px;align-items:center;padding:10px 0;border-bottom:1px solid #1b2633}
+.q:last-child{border-bottom:0}
+.q .st{width:20px;height:20px;border:2px solid #3a4a60;grid-row:span 2;transform:rotate(45deg)}
+.q .st.done{background:var(--green);border-color:var(--green);box-shadow:0 0 10px rgba(75,216,138,.6)}
+.q .t{font-size:18px;font-weight:600;letter-spacing:.02em;color:var(--text)}
+.q .v{font-size:13px;color:var(--mute)}
+.q .seg{grid-column:2 / 4;height:8px;border-width:1px}
+.q .seg::after{background:repeating-linear-gradient(90deg,transparent 0 5px,rgba(0,0,0,.6) 5px 7px)}
+.q.claim .v{color:var(--green)}
+.q.claim .seg i{background:linear-gradient(180deg,#b6ffd3,var(--green));box-shadow:0 0 8px rgba(75,216,138,.6)}
+
+.unit{left:1156px;top:124px;width:410px;height:330px}
+.unit .code{font-size:11px;color:var(--amber)}
+.unit h2{font-family:var(--f-head);font-size:48px;line-height:.95;font-weight:700;text-transform:uppercase}
+.unit .sub{font-size:14px;color:var(--mute);font-weight:600;margin:2px 0 10px;letter-spacing:.03em}
+.sr{display:grid;grid-template-columns:22px 92px 1fr 78px;gap:10px;align-items:center;height:34px;border-top:1px solid #1b2633}
+.sr .mask{width:18px;height:18px;color:var(--mute)}
+.sr .lbl{font-size:12px;color:var(--mute)}
+.sr .seg{height:8px;border-width:1px}
+.sr .seg::after{background:repeating-linear-gradient(90deg,transparent 0 5px,rgba(0,0,0,.6) 5px 7px)}
+.sr b{text-align:right;font-size:17px}
+.sr.warn b{color:var(--amber)}
+.sr.warn .seg i{background:linear-gradient(180deg,#ffd58a,var(--amber));box-shadow:0 0 8px rgba(255,174,43,.6)}
+.team{display:flex;gap:10px;margin-top:12px}
+.tm{flex:1;height:58px;border:3px solid var(--ink);box-shadow:inset 0 0 0 2px var(--rim);background:#0a0f15;position:relative;overflow:hidden;transform:skewX(-10deg)}
+.tm.on{box-shadow:inset 0 0 0 2px var(--amber),0 0 14px rgba(255,174,43,.35)}
+.tm .w{position:absolute;left:50%;top:4px;transform:skewX(10deg) translateX(-50%)}
+.tm span{position:absolute;left:8px;top:2px;font:700 13px var(--f-num);color:var(--mute);transform:skewX(10deg);z-index:2}
+.tm.on span{color:var(--amber)}
+
+/* ---- mech ---- */
+#mech{position:absolute;z-index:5;filter:drop-shadow(0 18px 18px rgba(0,0,0,.7))}
+#refl{position:absolute;z-index:3;transform:scaleY(-1);opacity:.2;filter:blur(1.5px) saturate(.7);-webkit-mask:linear-gradient(0deg,#000,transparent 55%);mask:linear-gradient(0deg,#000,transparent 55%)}
+#ped{position:absolute;left:0;top:0;z-index:4;pointer-events:none}
+#side1,#side2{position:absolute;z-index:2;filter:brightness(.2) contrast(1.15) saturate(.4) drop-shadow(0 0 1.5px rgba(95,212,255,.45)) drop-shadow(0 0 18px rgba(0,0,0,.9))}
+
+/* ---- dock ---- */
+.nb{top:780px;width:116px;height:92px}
+.nb .in{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:#d4deea}
+.nb .mask{width:40px;height:40px}
+.nb .lbl{font-size:13px;color:var(--text);letter-spacing:.12em}
+.nb .dot{top:-7px;right:10px}
+.go{left:1188px;top:762px;width:378px;height:110px;background:linear-gradient(180deg,#ffc55a,var(--amber) 40%,var(--amber2));
+  box-shadow:inset 0 0 0 2px #ffd690,inset 0 3px 0 2px rgba(255,255,255,.45),inset 0 -14px 24px rgba(120,40,0,.35),0 12px 26px rgba(0,0,0,.55),0 0 50px rgba(255,160,40,.35)}
+.go::before{background:repeating-linear-gradient(-55deg,rgba(0,0,0,.07) 0 14px,transparent 14px 28px)}
+.go .in{display:flex;align-items:center;padding:0 26px 0 30px;color:#1d0e00;gap:18px}
+.go .zone{font-size:12px;letter-spacing:.2em;opacity:.8}
+.go h3{font-family:var(--f-head);font-size:50px;line-height:.9;font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+.go .arr{margin-left:auto;width:56px;height:56px;background:var(--ink);color:var(--amber);display:flex;align-items:center;justify-content:center;font-size:26px;transform:skewX(-10deg)}
+.go .arr span{transform:skewX(10deg)}
+.foot{position:absolute;left:38px;top:754px;font-size:11px;color:var(--mute);z-index:9;letter-spacing:.24em}
+</style></head>
+<body>
+<div class="stage">
+  <canvas id="bg" width="3200" height="1800"></canvas>
+
+  <div id="side1"></div><div id="side2"></div>
+  <div id="refl"></div>
+  <svg id="ped" width="1600" height="900" viewBox="0 0 1600 900">
+    <defs>
+      <pattern id="hex" width="24" height="14" patternUnits="userSpaceOnUse" patternTransform="scale(1,.42)">
+        <path d="M6 0h12l6 7-6 7H6L0 7z" fill="#18212c" stroke="#0a0f15" stroke-width="2"/>
+      </pattern>
+      <linearGradient id="side" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#05080c"/><stop offset=".3" stop-color="#1c2633"/><stop offset=".55" stop-color="#2b3747"/><stop offset=".8" stop-color="#121a24"/><stop offset="1" stop-color="#04060a"/>
+      </linearGradient>
+      <radialGradient id="topg" cx=".5" cy=".4" r=".6"><stop offset="0" stop-color="#26303d"/><stop offset="1" stop-color="#0d131a"/></radialGradient>
+      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <!-- base -->
+    <path d="M540 712 L540 760 A260 46 0 0 0 1060 760 L1060 712 Z" fill="url(#side)" stroke="#04060a" stroke-width="3"/>
+    <path d="M556 740 A244 40 0 0 0 1044 740" fill="none" stroke="#ffae2b" stroke-width="3" opacity=".9" filter="url(#glow)"/>
+    <g opacity=".9">
+      <rect x="770" y="752" width="10" height="14" fill="#ff5a2a"/><rect x="786" y="753" width="10" height="14" fill="#ff5a2a"/><rect x="802" y="753" width="10" height="14" fill="#ff5a2a"/><rect x="818" y="752" width="10" height="14" fill="#ff5a2a"/>
+    </g>
+    <ellipse cx="800" cy="712" rx="260" ry="46" fill="url(#topg)" stroke="#04060a" stroke-width="4"/>
+    <ellipse cx="800" cy="712" rx="244" ry="40" fill="url(#hex)" opacity=".85"/>
+    <ellipse cx="800" cy="712" rx="244" ry="40" fill="none" stroke="#3b4b60" stroke-width="2"/>
+    <ellipse cx="800" cy="712" rx="170" ry="26" fill="none" stroke="#ffae2b" stroke-width="2.5" opacity=".75" filter="url(#glow)"/>
+    <!-- scan ring -->
+    <ellipse id="scan" cx="800" cy="706" rx="300" ry="56" fill="none" stroke="#5fd4ff" stroke-width="2" stroke-dasharray="40 14 6 14" opacity=".75" filter="url(#glow)"/>
+  </svg>
+  <div id="mech"></div>
+  <canvas id="fx" width="1600" height="900"></canvas>
+
+  <!-- HUD -->
+  <div class="plate lv"><div class="in"><div class="n"><small class="lbl">Pilot lv</small><b>157</b></div><div class="xp"><div class="row"><span class="lbl">XP</span><span class="num">46.3%</span></div><div class="seg"><i style="width:46.3%"></i></div></div></div><div class="notch"></div></div>
+  <div class="plate chip" style="left:990px"><div class="in"><svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="15" fill="#6a4004"/><circle cx="17" cy="17" r="12.5" fill="#f2b233" stroke="#3a2200" stroke-width="1.5"/><circle cx="17" cy="17" r="8" fill="none" stroke="#9a5f08" stroke-width="2"/></svg><b class="num">23,390</b><div class="add">+</div></div></div>
+  <div class="plate chip" style="left:1246px"><div class="in"><svg viewBox="0 0 34 34"><path d="M11 3h12l8 8v12l-8 8H11l-8-8V11z" fill="#c2261a" stroke="#3a0a04" stroke-width="2"/><path d="M11 11h12v4h-4v10h-4V15h-4z" fill="#ffe6df"/></svg><b class="num">14</b><div class="add">+</div></div></div>
+  <div class="plate gear"><div class="in"><i class="mask" style="--i:url(assets/icons/interface_options.png)"></i></div><div class="dot" style="right:6px;top:-6px"></div></div>
+
+  <!-- operations -->
+  <div class="plate ops"><div class="in">
+    <div class="ph"><span class="head">Operations</span><span class="lbl">1 ready</span></div>
+    <div class="q"><div class="st"></div><span class="t">Boost 15 items</span><span class="v num">6/15</span><div class="seg"><i style="width:40%"></i></div></div>
+    <div class="q claim"><div class="st done"></div><span class="t">Clear 3 campaign missions</span><span class="v lbl">Claim</span><div class="seg"><i style="width:100%"></i></div></div>
+    <div class="q"><div class="st"></div><span class="t">Field a 2,000 HP mech</span><span class="v num">1,778</span><div class="seg"><i style="width:88.9%"></i></div></div>
+  </div><div class="notch"></div></div>
+
+  <!-- unit -->
+  <div class="plate unit"><div class="in">
+    <div class="code lbl">Unit 01 · Team 1</div>
+    <h2>Nemesis</h2>
+    <div class="sub">Brutality frame · Lightning Supporters</div>
+    <div class="sr"><i class="mask" style="--i:url(assets/icons/icon_HP.png)"></i><span class="lbl">Hit points</span><div class="seg"><i style="width:89%"></i></div><b class="num">1,778</b></div>
+    <div class="sr"><i class="mask" style="--i:url(assets/icons/icon_energy.png)"></i><span class="lbl">Energy</span><div class="seg"><i style="width:68%"></i></div><b class="num">406</b></div>
+    <div class="sr"><i class="mask" style="--i:url(assets/icons/icon_heat.png)"></i><span class="lbl">Heat cap</span><div class="seg"><i style="width:79%"></i></div><b class="num">552</b></div>
+    <div class="sr warn"><i class="mask" style="--i:url(assets/icons/icon_power.png)"></i><span class="lbl">Weight</span><div class="seg"><i style="width:99.2%"></i></div><b class="num">992</b></div>
+    <div class="team"><div class="tm on"><span>01</span><div class="w" id="t1"></div></div><div class="tm"><span>02</span><div class="w" id="t2"></div></div><div class="tm"><span>03</span><div class="w" id="t3"></div></div></div>
+  </div><div class="notch"></div></div>
+
+  <!-- dock -->
+  <div class="foot lbl">Bay 07 · Night shift</div>
+  <div class="plate nb" style="left:34px"><div class="in"><i class="mask" style="--i:url(assets/icons/interface_hanger.png)"></i><span class="lbl">Workshop</span></div><div class="dot"></div></div>
+  <div class="plate nb" style="left:166px"><div class="in"><i class="mask" style="--i:url(assets/icons/interface_fusion.png)"></i><span class="lbl">Upgrade</span></div></div>
+  <div class="plate nb" style="left:298px"><div class="in"><i class="mask" style="--i:url(assets/icons/interface_mech.png)"></i><span class="lbl">Teams</span></div></div>
+  <div class="plate nb" style="left:430px"><div class="in"><i class="mask" style="--i:url(assets/icons/interface_shop.png)"></i><span class="lbl">Shop</span></div><div class="dot"></div></div>
+  <div class="plate go"><div class="in"><div><div class="zone lbl">Zone 08 · The Junkyard</div><h3>Deploy</h3></div><div class="arr"><span>&#9654;</span></div></div></div>
+</div>
+<script src="assets/mech.js"></script>
+<script>
+fitStage();
+/* ---------------- environment painting ---------------- */
+function paint(){
+const cv=document.getElementById('bg'), g=cv.getContext('2d'); g.scale(2,2);
+const lin=(x0,y0,x1,y1,stops)=>{const gr=g.createLinearGradient(x0,y0,x1,y1);stops.forEach(([o,c])=>gr.addColorStop(o,c));return gr;};
+let seed=7; const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+
+// back wall
+g.fillStyle=lin(0,0,0,660,[[0,'#0a0f16'],[.6,'#101822'],[1,'#0c121a']]); g.fillRect(0,0,1600,660);
+// wall panels, seams and rivets
+for(let x=0;x<=1600;x+=150){ g.fillStyle='rgba(0,0,0,.55)'; g.fillRect(x,0,3,660); g.fillStyle='rgba(140,170,205,.07)'; g.fillRect(x+3,0,1,660);
+  for(let y=24;y<660;y+=46){ g.fillStyle='rgba(0,0,0,.6)'; g.beginPath(); g.arc(x+10,y,2.2,0,7); g.fill(); g.fillStyle='rgba(150,180,210,.14)'; g.beginPath(); g.arc(x+9.4,y-.6,1.1,0,7); g.fill(); } }
+for(const y of [250,470]){ g.fillStyle='rgba(0,0,0,.5)'; g.fillRect(0,y,1600,3); g.fillStyle='rgba(140,170,205,.06)'; g.fillRect(0,y+3,1600,1); }
+// grime
+for(let i=0;i<40;i++){ const x=rnd()*1600,y=rnd()*600,w=30+rnd()*120; g.fillStyle=`rgba(0,0,0,${.05+rnd()*.12})`; g.fillRect(x,y,2+rnd()*3,w); }
+
+// high windows (cool moonlight)
+function win(x,y,w,h){ g.fillStyle=lin(x,y,x,y+h,[[0,'#3c6a8e'],[1,'#173149']]); g.fillRect(x,y,w,h);
+  g.fillStyle='#070b10'; for(let i=0;i<=4;i++) g.fillRect(x+i*w/4-3,y,6,h); for(let j=0;j<=2;j++) g.fillRect(x,y+j*h/2-3,w,6);
+  g.strokeStyle='#04070b'; g.lineWidth=8; g.strokeRect(x,y,w,h); }
+win(96,110,280,120); win(1224,110,280,120);
+
+// pipes along the side walls
+function pipe(x0,x1,y,r){ g.fillStyle=lin(0,y-r,0,y+r,[[0,'#2c3a4a'],[.35,'#56697f'],[.6,'#1d2733'],[1,'#080b10']]); g.fillRect(x0,y-r,x1-x0,2*r);
+  for(let x=x0+40;x<x1;x+=150){ g.fillStyle='#0a0e14'; g.fillRect(x,y-r-4,14,2*r+8); g.fillStyle='rgba(150,180,210,.18)'; g.fillRect(x,y-r-4,14,2);} }
+pipe(0,460,300,11); pipe(0,460,330,6); pipe(1140,1600,300,11); pipe(1140,1600,330,6);
+pipe(0,1600,40,9);
+
+// bay door frame and shutter
+g.fillStyle=lin(470,0,1130,0,[[0,'#0e141c'],[.5,'#18212c'],[1,'#0e141c']]); g.fillRect(470,96,660,560);
+for(let y=100;y<656;y+=15){ g.fillStyle='rgba(160,190,220,.07)'; g.fillRect(470,y,660,1); g.fillStyle='rgba(0,0,0,.55)'; g.fillRect(470,y+11,660,4); }
+g.save(); g.globalAlpha=.07; g.fillStyle='#ffb54a'; g.font='700 380px "Barlow Condensed"'; g.textAlign='center'; g.fillText('07',800,520); g.restore();
+function post(x){ g.fillStyle=lin(x,0,x+44,0,[[0,'#06090d'],[.35,'#2a3544'],[.6,'#3d4b5e'],[1,'#07090d']]); g.fillRect(x,70,44,590);
+  g.save(); g.beginPath(); g.rect(x+10,430,24,226); g.clip(); for(let y=410;y<680;y+=22){ g.fillStyle='#d9a21c'; g.beginPath(); g.moveTo(x+10,y); g.lineTo(x+34,y-14); g.lineTo(x+34,y-3); g.lineTo(x+10,y+11); g.fill(); } g.restore();
+  g.fillStyle='rgba(0,0,0,.35)'; g.fillRect(x+10,430,24,226); }
+post(426); post(1130);
+g.fillStyle=lin(0,62,0,100,[[0,'#3a4758'],[.4,'#1f2a37'],[1,'#07090d']]); g.fillRect(426,62,748,38);
+g.fillStyle='#8a97a8'; g.font='700 15px "Rajdhani"'; g.textAlign='center'; g.fillText('B A Y   0 7   ·   M A I N T E N A N C E',800,87);
+// warning lamps on lintel
+for(const x of [452,1148]){ const r=g.createRadialGradient(x,82,0,x,82,40); r.addColorStop(0,'rgba(255,140,30,.9)'); r.addColorStop(1,'rgba(255,140,30,0)'); g.fillStyle=r; g.fillRect(x-40,42,80,80); g.fillStyle='#ffcf7a'; g.beginPath(); g.arc(x,82,6,0,7); g.fill(); }
+
+// overhead gantry beam, trolley, chain and hook
+g.fillStyle=lin(0,8,0,56,[[0,'#3e4c5e'],[.3,'#232e3b'],[1,'#07090d']]); g.fillRect(0,8,1600,48);
+for(let x=0;x<1600;x+=64){ g.strokeStyle='rgba(0,0,0,.5)'; g.lineWidth=3; g.beginPath(); g.moveTo(x,14); g.lineTo(x+32,50); g.lineTo(x+64,14); g.stroke(); }
+g.fillStyle='#10161e'; g.fillRect(1180,52,70,26); g.fillStyle='#2e3a4a'; g.fillRect(1184,56,62,6);
+for(let y=80;y<330;y+=13){ g.strokeStyle=(y/13)%2?'#3a4a5e':'#1b2530'; g.lineWidth=5; g.beginPath(); g.ellipse(1215,y,4,7,0,0,7); g.stroke(); }
+g.strokeStyle='#4a5b70'; g.lineWidth=10; g.beginPath(); g.arc(1215,352,20,-.4*Math.PI,1.05*Math.PI); g.stroke(); g.fillStyle='#1d2632'; g.fillRect(1203,322,24,18);
+
+// floor
+g.fillStyle=lin(0,656,0,900,[[0,'#101922'],[.4,'#0a1017'],[1,'#030507']]); g.fillRect(0,656,1600,244);
+g.fillStyle='rgba(0,0,0,.7)'; g.fillRect(0,654,1600,4);
+const vx=800,vy=430;
+g.strokeStyle='rgba(120,165,210,.07)'; g.lineWidth=1.5;
+for(let x=-1600;x<=3200;x+=150){ const t=(656-vy)/(900-vy); g.beginPath(); g.moveTo(vx+(x-vx)*t,656); g.lineTo(x,900); g.stroke(); }
+for(let k=1;k<9;k++){ const y=656+244*Math.pow(k/9,1.7); g.beginPath(); g.moveTo(0,y); g.lineTo(1600,y); g.stroke(); }
+// painted bay lines, worn
+g.strokeStyle='rgba(230,170,30,.55)'; g.lineWidth=6; g.setLineDash([60,10,20,8]);
+g.beginPath(); g.moveTo(470,672); g.lineTo(290,900); g.moveTo(1130,672); g.lineTo(1310,900); g.stroke(); g.setLineDash([]);
+g.save(); g.globalAlpha=.25; g.fillStyle='#e6aa1e'; g.font='700 70px "Barlow Condensed"'; g.textAlign='center';
+g.setTransform(2,0,0,2*.45,0,0); g.fillText('07',800,1900); g.restore();
+
+// light: overhead spot cone and window shafts (additive, blurred)
+g.save(); g.globalCompositeOperation='lighter'; g.filter='blur(16px)';
+g.fillStyle=lin(0,40,0,760,[[0,'rgba(255,236,200,.30)'],[.6,'rgba(255,226,180,.10)'],[1,'rgba(255,220,170,0)']]);
+g.beginPath(); g.moveTo(740,40); g.lineTo(860,40); g.lineTo(1080,760); g.lineTo(520,760); g.fill();
+g.fillStyle=lin(0,110,0,720,[[0,'rgba(120,180,240,.22)'],[1,'rgba(120,180,240,0)']]);
+g.beginPath(); g.moveTo(120,120); g.lineTo(360,120); g.lineTo(700,740); g.lineTo(420,740); g.fill();
+g.beginPath(); g.moveTo(1240,120); g.lineTo(1480,120); g.lineTo(1180,740); g.lineTo(900,740); g.fill();
+g.filter='blur(30px)';
+g.fillStyle='rgba(255,170,70,.35)'; g.beginPath(); g.ellipse(800,730,300,40,0,0,7); g.fill();
+g.fillStyle='rgba(120,190,255,.14)'; g.beginPath(); g.ellipse(560,760,160,22,0,0,7); g.fill(); g.beginPath(); g.ellipse(1040,760,160,22,0,0,7); g.fill();
+g.restore();
+// wet-floor streak reflections
+g.save(); g.globalCompositeOperation='lighter'; g.filter='blur(6px)';
+for(const [x,c,a] of [[800,'255,190,110',.18],[452,'255,140,30',.16],[1148,'255,140,30',.16],[560,'140,200,255',.10],[1040,'140,200,255',.10]]){
+  g.fillStyle=lin(0,720,0,900,[[0,`rgba(${c},${a})`],[1,`rgba(${c},0)`]]); g.fillRect(x-10,720,20,180); }
+g.restore();
+// floor haze
+g.save(); g.filter='blur(24px)'; g.fillStyle=lin(0,560,0,720,[[0,'rgba(120,160,200,0)'],[.6,'rgba(120,160,200,.10)'],[1,'rgba(120,160,200,0)']]); g.fillRect(0,560,1600,160); g.restore();
+// side bay pedestals (dark)
+for(const x of [230,1370]){ g.fillStyle='#070a0f'; g.beginPath(); g.ellipse(x,700,130,22,0,0,7); g.fill(); g.strokeStyle='rgba(95,212,255,.25)'; g.lineWidth=2; g.stroke(); }
+// grain and vignette
+const nz=document.createElement('canvas'); nz.width=nz.height=256; const nx=nz.getContext('2d'); const im=nx.createImageData(256,256);
+for(let i=0;i<im.data.length;i+=4){ const v=rnd()*255; im.data[i]=im.data[i+1]=im.data[i+2]=v; im.data[i+3]=16; } nx.putImageData(im,0,0);
+g.fillStyle=g.createPattern(nz,'repeat'); g.fillRect(0,0,1600,900);
+const vg=g.createRadialGradient(800,430,300,800,430,1000); vg.addColorStop(0,'rgba(0,0,0,0)'); vg.addColorStop(1,'rgba(0,0,0,.78)'); g.fillStyle=vg; g.fillRect(0,0,1600,900);
+
+}
+Promise.all(['700 380px "Barlow Condensed"','700 15px "Rajdhani"'].map(f=>document.fonts.load(f))).then(paint,paint);
+/* ---------------- mechs ---------------- */
+function place(id,key,h,left,top){const w=document.getElementById(id);const i=document.createElement('div');buildMech(i,key,h);w.appendChild(i);w.style.width=i.dataset.w+'px';w.style.height=i.dataset.h+'px';if(left!=null){w.style.left=left+'px';w.style.top=top+'px';}return w;}
+const H=520, m=window.MECHS.target, W=m.w*H/m.h, L=800-W/2, T=716-H;
+place('mech','target',H,L,T); place('refl','target',H,L,716-6);
+place('side1','m2',250,160,452); place('side2','m3',230,1290,470);
+place('t1','target',48);place('t2','m2',48);place('t3','m3',48);
+
+/* ---------------- dust in the light (animated) ---------------- */
+const fx=document.getElementById('fx').getContext('2d'); const motes=[];
+for(let i=0;i<90;i++) motes.push({x:520+rnd()*560,y:60+rnd()*680,r:.6+rnd()*1.6,s:.08+rnd()*.25,a:.15+rnd()*.5});
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function frame(){ fx.clearRect(0,0,1600,900); for(const p of motes){ if(!reduce){p.y-=p.s; p.x+=Math.sin(p.y/40)*.15; if(p.y<50){p.y=740;}}
+  fx.fillStyle=`rgba(255,236,200,${p.a})`; fx.beginPath(); fx.arc(p.x,p.y,p.r,0,7); fx.fill(); } if(!reduce) requestAnimationFrame(frame); }
+frame();
+if(!reduce){ let o=0; const sc=document.getElementById('scan'); (function spin(){ o-=.6; sc.setAttribute('stroke-dashoffset',o); requestAnimationFrame(spin); })(); }
+</script>
+</body></html>
